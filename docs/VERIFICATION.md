@@ -122,6 +122,15 @@ These checks do not establish Intel gameplay,
 execution on macOS 13, notarized distribution, or a complete NetHack campaign.
 The local test logs and screenshots are in ignored `.artifacts/`.
 
+The README screenshots were captured from the 1.0.0 packaged app at source
+revision `f75ef5b5ae7e52d7fdbe0b48be32535d1fa76663` on Apple Silicon. The
+Lantern Modern native fixture passed restore, ordinary arrow movement and
+automatic save checks; the Soot & Brass Modern Sokoban fixture passed native
+restore and rendering checks. Both use isolated developer saves and capture
+only the WebKit game view. See [screenshot provenance](screenshots/README.md)
+for the staged scene and wizard-map setup; these captures do not establish
+normal campaign progression.
+
 Prior development runs exercised real gameplay on Apple Silicon, all five shipped
 tilesets, male/female creation, Standard/Beginner/Explore, keypad modes, rebound
 Save, exact restoration, isolated recovery, custom-sheet selection and malformed

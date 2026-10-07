@@ -14,6 +14,18 @@ Atlas was developed from product requirements through a development cycle driven
 
 The project is provided **as is, without warranty of any kind**. Any use is **at your own risk**. See the [license map](LICENSES.md) and [verification notes](docs/VERIFICATION.md) for terms, tested coverage, and known limitations.
 
+## Screenshots
+
+Captured from Atlas 1.0.0 using disposable developer saves. Only the game view is shown; the Sokoban map is revealed for this example.
+
+**Lantern Modern**: a tiled dungeon with your adventurer, nearby creatures and objects, and contextual actions.
+
+![Atlas with Lantern Modern artwork, showing a Valkyrie, floating eye, chest and fountain in a stone dungeon.](docs/screenshots/lantern-modern.png)
+
+**Soot & Brass Modern**: a Sokoban boulder puzzle with ironwork and dark masonry.
+
+![Atlas with Soot and Brass Modern artwork, showing a Sokoban puzzle with boulders, pits and connected masonry.](docs/screenshots/soot-and-brass-sokoban.png)
+
 ## Play
 
 Download `Atlas-for-NetHack-1.0.0.zip` from [GitHub Releases](https://github.com/atlas-for-nethack/atlas/releases), unzip it, move **Atlas.app** to your Applications folder, and open it. If you prefer to compile the app yourself, follow [Build from source](#build-from-source) below. Generated apps are not included in a Git clone.
