@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas tileset preview</title>
+<style>
+*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:#101518;color:#e7dcc4;font:15px system-ui,sans-serif;padding:28px;max-width:1440px;margin-inline:auto}h1{font:48px Georgia,serif;color:#dfbc79;margin:0 0 8px}h2{font:24px Georgia,serif;margin:26px 0 12px}p{line-height:1.5;color:#b8beb8;max-width:950px}button,select,input{background:#20282b;border:1px solid #837453;color:#eee0c4;border-radius:5px;padding:10px 12px;font:inherit}label{display:inline-flex;align-items:center;gap:8px;margin:6px 14px 6px 0}button{cursor:pointer}canvas{image-rendering:pixelated;display:block}.room-wrap{overflow:auto;background:#070b0d;border:1px solid #4c5149;padding:14px;margin-top:16px}#room{margin:auto}.samples{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px}.sample{border:1px solid #514d3d;background:#192126;text-align:center;padding:10px 4px;min-width:0}.sample canvas{width:96px;height:96px;margin:auto}.sample span{font:13px Georgia,serif;color:#e3d5ae;display:block;margin-top:8px;overflow-wrap:anywhere}a{color:#e0bd7f}.note,#status{font-size:13px;color:#b9bbae}.footer{border-top:1px solid #464b43;margin-top:28px;padding-top:14px}#catalog{max-height:620px;overflow:auto;padding:8px}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid #f3d28f;outline-offset:3px}
+#map-comparison.fitted canvas{max-width:100%;height:auto}
+</style>
+<h1>Atlas tileset preview</h1>
+<p>Inspect the current shipped artwork using the game's renderer. Classic and Modern share architecture within each original family; Modern uses the shared seven creature size tiers. Hover a square to inspect overlapping creatures.</p>
+<label>Tileset <select id="edition" aria-label="Tileset"></select></label>
+<label>Room <select id="scene"><option value="company">Odd company</option><option value="crowding">Large creatures at walls</option><option value="biggest">Three biggest creatures</option><option value="scale">Seven size tiers</option><option value="doors">Directional doors</option><option value="bars">Iron bars</option><option value="junctions">Shared walls</option><option value="ice">Ice and shared walls</option><option value="garden">Garden trees and paths</option><option value="swamp">Swamp pools and occupants</option></select></label>
+<label><input type="checkbox" id="open"> Open doors</label>
+<label>Size <select id="size"><option value="48">48 pixels</option><option value="64" selected>64 pixels</option><option value="80">80 pixels</option><option value="96">96 pixels</option></select></label>
+<label><input type="checkbox" id="fit-maps" checked> Fit map to window</label>
+<p id="status" role="status">Loading artwork…</p>
+<div id="map-comparison" class="collection fitted"><div class="room-wrap"><canvas id="room" aria-label="Tileset renderer preview"></canvas></div></div>
+<p class="note" id="map-note">Illustrative renderer fixtures, not live gameplay. Each square is one engine step. Changing this view spends no turns.</p>
+<p class="note">To inspect a local frozen engine capture, use <code>?capture=name</code> for <code>.artifacts/name-review-manifest.json</code>. Captures remain local, retain only recorded displayed cells, and do not establish live gameplay behavior.</p>
+<h2>A few familiar faces</h2><div class="samples" id="anchors"></div>
+<h2>Explore the artwork</h2>
+<label>Category <select id="category"><option value="monster">Creatures</option><option value="object">Objects</option><option value="terrain">Terrain</option><option value="effect">Effects</option></select></label>
+<label>Find <input type="search" id="search" placeholder="Name or appearance"></label>
+<div class="samples" id="catalog"></div>
+<p class="footer note">Original Lantern and Soot &amp; Brass artwork by the NetHack Atlas project, <a href="../../assets/tiles/lantern/LICENSE.txt">CC BY 4.0</a>. <a href="../../assets/tiles/LICENSES.txt">Tileset sources and credits</a>.</p>
+<script src="../../web/tiles.js"></script>
+<script>
+"use strict";
+let atlas,image,catalog,tilesets,creatureScale,captures=null,reviewFocus=null,editionRequest=0;
+const el=id=>document.getElementById(id),params=new URLSearchParams(location.search);
+const scaleExamples=['newt','goblin','human','bone devil','balrog','titan','red dragon'];
+function biggest(){
+ return catalog.art_keys.filter(t=>t.category==='monster').map(item=>({item,rule:creatureScale.monsters[item.key]}))
+  .sort((a,b)=>b.rule.height-a.rule.height||a.item.slots[0]-b.item.slots[0]).slice(0,3);
+}
+function syncLocation(){
+ const url=new URL(location.href);url.searchParams.set('tileset',atlas.id);url.searchParams.set('scene',el('scene').value);history.replaceState(null,'',url);
+}
+async function edition(){
+ const request=++editionRequest,next=tilesets.find(t=>t.id===el('edition').value);
+ if(!next)throw Error('Tileset is absent from the current manifest.');
+ const loaded=await new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(Error('Atlas image could not load.'));im.src='../../assets/tiles/'+next.file+'?v='+encodeURIComponent(next.revision||next.version||'');});
+ if(request!==editionRequest)return;
+ atlas=next;image=loaded;reviewFocus=null;
+ document.title=atlas.name+' | Tileset preview';
+ const samples=['knight','little dog','goblin','giant ant','acid blob','lichen','Asmodeus','chest','fountain','staircase down'].flatMap(n=>catalog.art_keys.filter(i=>i.label===n));
+ el('anchors').replaceChildren(...samples.map(sample));draw();gallery();
+}
+function room(){
+ const capture=captures?.scenes[el('scene').value];
+ if(capture)return new Map(capture.cells.map(c=>[`${c.x},${c.y}`,{...c}]));
+ const cells=new Map(),mode=el('scene').value,opened=el('open').checked;
+ const put=(x,y,tile,groundTile)=>cells.set(`${x},${y}`,{x,y,tile,...(groundTile===undefined?{}:{groundTile})});
+ for(let y=2;y<9;y++)for(let x=3;x<13;x++)put(x,y,1291);
+ for(let x=3;x<13;x++){put(x,1,1274);put(x,9,1274);}
+ for(let y=2;y<9;y++){put(2,y,1273);put(13,y,1273);}
+ for(const[x,y,t]of[[2,1,1275],[13,1,1276],[2,9,1277],[13,9,1278]])put(x,y,t);
+ for(const[x,y,vertical]of[[2,5,true],[13,5,true],[7,1,false],[7,9,false]]){
+  put(x,y,vertical?(opened?1285:1287):(opened?1286:1288),1291);
+ }
+ for(const x of [0,1,14,15])put(x,5,1291);
+ for(const y of [0,10])put(7,y,1291);
+ if(mode==='company'){
+  for(const[x,y,t]of[[4,6,684],[5,6,32],[4,3,12],[11,7,324],[10,3,632],[7,7,1006],[9,7,1114],[10,6,1313],[6,3,1298]])put(x,y,t,1291);
+ }else if(mode==='crowding'){
+  for(const[x,y,name]of[[4,2,'titan'],[5,2,'red dragon'],[9,2,'Asmodeus'],[10,2,'stone giant'],[5,8,'mastodon'],[6,8,'minotaur'],[9,8,'blue dragon'],[10,8,'ettin'],[7,5,'human']]){
+   const item=catalog.art_keys.find(i=>i.category==='monster'&&i.label===name);if(item)put(x,y,item.slots[0],1291);
+  }
+ }else if(mode==='scale'){
+  const positions=[[3,3],[5,3],[8,3],[11,3],[4,7],[8,7],[11,7]];
+  scaleExamples.forEach((name,i)=>{const item=catalog.art_keys.find(t=>t.category==='monster'&&t.label===name);put(...positions[i],item.slots[0],1291);});
+ }else if(mode==='biggest'){
+  biggest().forEach(({item},i)=>put(6+i,2,item.slots[0],1291));
+  put(7,3,684,1291);
+ }else if(mode==='bars'){
+  for(const[x,y]of[[5,1],[6,1],[8,9],[9,9],[2,3],[2,4],[13,7],[13,8],
+   [5,4],[6,4],[7,4],[7,5],[7,6],[9,4],[9,5],[9,6],[10,5],[11,5]])put(x,y,1289,1291);
+  put(5,7,684,1291);put(6,7,32,1291);
+ }else if(mode==='ice'){
+  for(let y=2;y<9;y++)for(let x=3;x<8;x++)put(x,y,1315);
+  for(let y=2;y<9;y++)put(8,y,1273);
+  put(8,1,1281);put(8,9,1280);
+  put(8,5,opened?1285:1287,1315);
+  put(5,4,684,1315);put(10,6,32,1291);
+ }else if(mode==='garden'){
+  // Illustrative trees use the shipped canonical art and ordinary room ground.
+  for(const cell of cells.values())if(cell.tile>=1273&&cell.tile<=1283)put(cell.x,cell.y,1290,1291);
+  for(const[x,y]of[[5,3],[5,4],[8,3],[8,4],[8,6],[10,7]])put(x,y,1290,1291);
+  put(4,6,684,1291);put(10,3,138,1291);put(6,7,1313,1291);
+ }else if(mode==='swamp'){
+  // Upstream swamps alternate eligible wet/dry squares inside ordinary rooms.
+  for(let y=3;y<8;y++)for(let x=4;x<12;x++)if((x+y)%2)put(x,y,1314);
+  put(4,6,684,1291);put(7,6,652,1314);put(9,4,648,1314);put(10,6,324,1291);
+ }else if(mode==='junctions'){
+  for(let y=2;y<9;y++)put(8,y,1273);
+  for(let x=3;x<13;x++)put(x,5,1274);
+  for(const[x,y,t]of[[8,1,1281],[8,9,1280],[2,5,1283],[13,5,1282],[8,5,1279]])put(x,y,t);
+  put(8,3,opened?1285:1287,1291);put(8,7,opened?1285:1287,1291);
+  put(5,5,opened?1286:1288,1291);put(11,5,opened?1286:1288,1291);
+  put(5,3,684,1291);put(10,7,632,1291);
+ }
+ return cells;
+}
+function previewPadding(){return atlas.projectedFrames?.padding||[0,0,0,0];}
+function draw(){
+ if(!image)return;
+ syncLocation();
+ const size=Number(el('size').value),c=el('room'),ctx=c.getContext('2d'),cells=room(),pad=previewPadding(),capture=captures?.scenes[el('scene').value];
+ c.width=((capture?.width||16)+(pad[0]+pad[2])/64)*size;c.height=((capture?.height||11)+(pad[1]+pad[3])/64)*size;
+ ctx.imageSmoothingEnabled=false;ctx.fillStyle='#080b0d';ctx.fillRect(0,0,c.width,c.height);ctx.translate(pad[0]/64*size,pad[1]/64*size);
+ if(!AtlasTiles.paintMap(ctx,image,atlas,cells,size,size,reviewFocus,{waterPlane:!!capture?.waterPlane}))for(const cell of cells.values())AtlasTiles.paint(ctx,image,atlas,cell,cell.x*size,cell.y*size,size,size,true,cells);
+ if(reviewFocus){ctx.strokeStyle='#e5c98d';ctx.lineWidth=2;ctx.strokeRect(reviewFocus.x*size+1,reviewFocus.y*size+1,size-2,size-2);}
+ el('map-comparison').classList.toggle('fitted',el('fit-maps').checked);el('open').disabled=!!capture;
+ el('status').textContent=`${atlas.name} · ${capture?.label||el('scene').selectedOptions[0].textContent} · ${size} pixels per step`;
+ el('map-note').textContent=capture?'Frozen recorded engine display. Terrain, lighting, materials and perceived contents come from the capture. This view does not simulate gameplay.':'Illustrative renderer fixture, not live gameplay. Each square is one engine step. Changing this view spends no turns.';
+}
+function sample(item){
+ const box=document.createElement('div');box.className='sample';
+ const frame=atlas.projectedFrames?.frames?.[item.slots[0]];
+ const x=Math.max(32,8-(frame?.offset[0]||0)),y=Math.max(88,8-(frame?.offset[1]||0));
+ const c=document.createElement('canvas');
+ c.width=Math.max(x+96,x+(frame?.offset[0]||0)+(frame?.source[2]||64)+8);
+ c.height=Math.max(y+72,y+(frame?.offset[1]||0)+(frame?.source[3]||64)+8);
+ c.style.width=c.width+'px';c.style.height=c.height+'px';box.style.width=(c.width+12)+'px';
+ const ctx=c.getContext('2d');ctx.imageSmoothingEnabled=false;
+ ctx.strokeStyle='#7e715555';ctx.strokeRect(x+.5,y+.5,63,63);
+ AtlasTiles.paint(ctx,image,atlas,{tile:item.slots[0]},x,y,64,64,true);
+ const label=document.createElement('span');label.textContent=item.label;
+ if(frame)label.textContent+=` · ${frame.source[3]}px`;
+ const rule=creatureScale.monsters[item.key];if(rule)label.textContent+=` · ${creatureScale.tiers[rule.tier].label}`;
+ box.append(c,label);return box;
+}
+function gallery(){
+ if(!catalog)return;
+ const query=el('search').value.trim().toLowerCase(),category=el('category').value;
+ el('catalog').replaceChildren(...catalog.art_keys.filter(i=>i.category===category&&i.label.toLowerCase().includes(query)).map(sample));
+}
+
+el('scene').addEventListener('change',()=>{reviewFocus=null;draw();});
+for(const id of ['open','size','fit-maps'])el(id).addEventListener('change',draw);
+el('edition').addEventListener('change',()=>edition().catch(e=>el('status').textContent=e.message));
+el('room').addEventListener('mousemove',event=>{
+ if(!atlas)return;const c=el('room'),rect=c.getBoundingClientRect(),size=Number(el('size').value),pad=previewPadding();
+ const x=Math.floor((event.clientX-rect.left)*c.width/rect.width/size-pad[0]/64),y=Math.floor((event.clientY-rect.top)*c.height/rect.height/size-pad[1]/64);
+ const next=room().has(`${x},${y}`)?{x,y}:null;if(JSON.stringify(next)!==JSON.stringify(reviewFocus)){reviewFocus=next;draw();}
+});
+el('room').addEventListener('mouseleave',()=>{reviewFocus=null;draw();});
+el('category').addEventListener('change',gallery);el('search').addEventListener('input',gallery);
+async function readJSON(path){const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw Error('Could not load '+path);return response.json();}
+async function start(){
+ const [manifest,keys,scale]=await Promise.all([readJSON('../../assets/tiles/manifest.json'),readJSON('../../assets/tiles/lantern/catalog.json'),readJSON('../../assets/tiles/creature-scale.json')]);
+ tilesets=manifest.tilesets;catalog=keys;creatureScale=scale;
+ el('edition').replaceChildren(...tilesets.map(t=>new Option(t.name,t.id)));
+ el('edition').value=tilesets.some(t=>t.id===params.get('tileset'))?params.get('tileset'):manifest.default;
+ const capture=params.get('capture');
+ if(capture){
+  if(!/^[a-z0-9-]+$/.test(capture))throw Error('Capture must be a local manifest name using letters, digits and hyphens.');
+  captures=await readJSON('../../.artifacts/'+capture+'-review-manifest.json');
+  if(!captures.scenes||!Object.values(captures.scenes).every(s=>Array.isArray(s.cells)&&s.width>0&&s.height>0))throw Error('Capture manifest needs scenes with cells, width and height.');
+  for(const [key,scene]of Object.entries(captures.scenes).reverse())el('scene').add(new Option(scene.label||key,key),0);
+  el('scene').value=Object.keys(captures.scenes)[0];
+ }
+ if([...el('scene').options].some(o=>o.value===params.get('scene')))el('scene').value=params.get('scene');
+ await edition();
+}
+start().catch(e=>el('status').textContent=e.message);
+</script>
+</html>

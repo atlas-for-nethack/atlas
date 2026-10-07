@@ -1,0 +1,161 @@
+{
+  "sourceCrops": {
+    "north": {
+      "file": "approved-odd-company-source.png",
+      "sourceBounds": [
+        570,
+        105,
+        666,
+        211
+      ],
+      "outputSize": [
+        64,
+        71
+      ]
+    },
+    "north-connector": {
+      "file": "approved-odd-company-source.png",
+      "sourceBounds": [
+        666,
+        105,
+        762,
+        211
+      ],
+      "outputSize": [
+        64,
+        71
+      ]
+    },
+    "west": {
+      "file": "approved-odd-company-source.png",
+      "sourceBounds": [
+        255,
+        211,
+        331,
+        307
+      ],
+      "outputSize": [
+        51,
+        64
+      ]
+    },
+    "east": {
+      "file": "approved-odd-company-source.png",
+      "sourceBounds": [
+        1211,
+        211,
+        1287,
+        307
+      ],
+      "outputSize": [
+        51,
+        64
+      ]
+    },
+    "south": {
+      "file": "approved-odd-company-source.png",
+      "sourceBounds": [
+        431,
+        578,
+        527,
+        635
+      ],
+      "outputSize": [
+        64,
+        38
+      ]
+    },
+    "northwest": {
+      "file": "approved-odd-company-source.png",
+      "sourceBounds": [
+        255,
+        105,
+        331,
+        211
+      ],
+      "outputSize": [
+        51,
+        71
+      ]
+    },
+    "northeast": {
+      "file": "approved-odd-company-source.png",
+      "sourceBounds": [
+        1211,
+        105,
+        1287,
+        211
+      ],
+      "outputSize": [
+        51,
+        71
+      ]
+    },
+    "southwest": {
+      "file": "approved-odd-company-source.png",
+      "sourceBounds": [
+        255,
+        578,
+        331,
+        635
+      ],
+      "outputSize": [
+        51,
+        38
+      ]
+    },
+    "southeast": {
+      "file": "approved-odd-company-source.png",
+      "sourceBounds": [
+        1211,
+        578,
+        1287,
+        635
+      ],
+      "outputSize": [
+        51,
+        38
+      ]
+    },
+    "west-door": {
+      "file": "approved-odd-company-source.png",
+      "sourceBounds": [
+        255,
+        316,
+        331,
+        478
+      ],
+      "outputSize": [
+        51,
+        108
+      ]
+    },
+    "east-open-source": {
+      "file": "approved-odd-company-source.png",
+      "sourceBounds": [
+        1211,
+        316,
+        1287,
+        478
+      ],
+      "outputSize": [
+        51,
+        108
+      ]
+    },
+    "front-door": {
+      "file": "approved-first-concept-source.png",
+      "sourceBounds": [
+        884,
+        96,
+        968,
+        205
+      ],
+      "outputSize": [
+        64,
+        83
+      ]
+    }
+  },
+  "projection": "Arbitrary-size original directional art anchored to a 64-pixel logical floor cell. All sampling nearest-neighbor."
+}

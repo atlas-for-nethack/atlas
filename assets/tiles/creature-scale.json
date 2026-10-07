@@ -1,0 +1,6780 @@
+{
+  "schema": 1,
+  "floorPitch": 64,
+  "scope": "NetHack Atlas original Modern tilesets; Classic and third-party artwork unchanged",
+  "units": "canonical display size in pixels at 64px floor pitch; height unless scaleAxis is longest; preserve original aspect ratio",
+  "source": {
+    "file": "vendor/NetHack-5.0.0/include/monsters.h",
+    "sha256": "c63db922770c96a9956d221f364ba4368a9f81f81c8d64ed28251a0506d4a906",
+    "evidence": "metadata/upstream-sizes.json",
+    "conditionalPolicy": "Enabled all #if 0 blocks, CHARON and MAIL_STRUCTURES for canonical artwork coverage only. No engine files or gameplay changed."
+  },
+  "sizeOrder": [
+    "tiny",
+    "small",
+    "standard",
+    "large",
+    "very-large",
+    "huge",
+    "massive"
+  ],
+  "monsters": {
+    "monster/000-giant-ant": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "tiny-insect",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "GIANT_ANT",
+      "upstreamClass": "S_ANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/001-killer-bee": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "tiny-insect",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "KILLER_BEE",
+      "upstreamClass": "S_ANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/002-soldier-ant": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "tiny-insect",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "SOLDIER_ANT",
+      "upstreamClass": "S_ANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/003-fire-ant": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "tiny-insect",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "FIRE_ANT",
+      "upstreamClass": "S_ANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/004-giant-beetle": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "large-insect",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "GIANT_BEETLE",
+      "upstreamClass": "S_ANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/005-queen-bee": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "tiny-insect",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "QUEEN_BEE",
+      "upstreamClass": "S_ANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/006-acid-blob": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "blob-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "ACID_BLOB",
+      "upstreamClass": "S_BLOB",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/007-quivering-blob": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "blob-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "QUIVERING_BLOB",
+      "upstreamClass": "S_BLOB",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/008-gelatinous-cube": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "large-cube",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "GELATINOUS_CUBE",
+      "upstreamClass": "S_BLOB",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/009-chickatrice": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "small-bird",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "CHICKATRICE",
+      "upstreamClass": "S_COCKATRICE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/010-cockatrice": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "small-bird",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "COCKATRICE",
+      "upstreamClass": "S_COCKATRICE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/011-pyrolisk": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "small-bird",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "PYROLISK",
+      "upstreamClass": "S_COCKATRICE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/012-jackal": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "JACKAL",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/013-fox": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "FOX",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/014-coyote": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "COYOTE",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/015-werejackal-animal-form": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "WEREJACKAL",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/016-little-dog": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "LITTLE_DOG",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/017-dingo": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "DINGO",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/018-dog": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "DOG",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/019-large-dog": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "LARGE_DOG",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/020-wolf": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "WOLF",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/021-werewolf-animal-form": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "WEREWOLF",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/022-winter-wolf-cub": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "WINTER_WOLF_CUB",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/023-warg": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "WARG",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/024-winter-wolf": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "WINTER_WOLF",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/025-hell-hound-pup": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "HELL_HOUND_PUP",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/026-hell-hound": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "HELL_HOUND",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/027-cerberus": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "CERBERUS",
+      "upstreamClass": "S_DOG",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/028-gas-spore": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "floating-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "GAS_SPORE",
+      "upstreamClass": "S_EYE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/029-floating-eye": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "floating-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "FLOATING_EYE",
+      "upstreamClass": "S_EYE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/030-freezing-sphere": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "floating-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "FREEZING_SPHERE",
+      "upstreamClass": "S_EYE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/031-flaming-sphere": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "floating-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "FLAMING_SPHERE",
+      "upstreamClass": "S_EYE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/032-shocking-sphere": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "floating-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "SHOCKING_SPHERE",
+      "upstreamClass": "S_EYE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/033-beholder": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "floating-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "BEHOLDER",
+      "upstreamClass": "S_EYE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/034-kitten": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "KITTEN",
+      "upstreamClass": "S_FELINE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/035-housecat": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "HOUSECAT",
+      "upstreamClass": "S_FELINE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/036-jaguar": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "JAGUAR",
+      "upstreamClass": "S_FELINE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/037-lynx": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "LYNX",
+      "upstreamClass": "S_FELINE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/038-panther": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "PANTHER",
+      "upstreamClass": "S_FELINE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/039-large-cat": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "LARGE_CAT",
+      "upstreamClass": "S_FELINE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/040-tiger": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "TIGER",
+      "upstreamClass": "S_FELINE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/041-displacer-beast": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "DISPLACER_BEAST",
+      "upstreamClass": "S_FELINE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/042-gremlin": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "GREMLIN",
+      "upstreamClass": "S_GREMLIN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/043-gargoyle": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "GARGOYLE",
+      "upstreamClass": "S_GREMLIN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/044-winged-gargoyle": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "WINGED_GARGOYLE",
+      "upstreamClass": "S_GREMLIN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/045-hobbit": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "HOBBIT",
+      "upstreamClass": "S_HUMANOID",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/046-dwarf": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dwarf",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "DWARF",
+      "upstreamClass": "S_HUMANOID",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Short, stout humanoid; explicit visual refinement of the broad human engine category.",
+      "tier": "small"
+    },
+    "monster/047-bugbear": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "BUGBEAR",
+      "upstreamClass": "S_HUMANOID",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/048-dwarf-leader": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dwarf",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "DWARF_LEADER",
+      "upstreamClass": "S_HUMANOID",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Short, stout humanoid; explicit visual refinement of the broad human engine category.",
+      "tier": "small"
+    },
+    "monster/049-dwarf-ruler": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dwarf",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "DWARF_RULER",
+      "upstreamClass": "S_HUMANOID",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Short, stout humanoid; explicit visual refinement of the broad human engine category.",
+      "tier": "small"
+    },
+    "monster/050-mind-flayer": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "MIND_FLAYER",
+      "upstreamClass": "S_HUMANOID",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/051-master-mind-flayer": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "MASTER_MIND_FLAYER",
+      "upstreamClass": "S_HUMANOID",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/052-manes": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "MANES",
+      "upstreamClass": "S_IMP",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/053-homunculus": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "HOMUNCULUS",
+      "upstreamClass": "S_IMP",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/054-imp": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "IMP",
+      "upstreamClass": "S_IMP",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/055-lemure": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "LEMURE",
+      "upstreamClass": "S_IMP",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/056-quasit": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "QUASIT",
+      "upstreamClass": "S_IMP",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/057-tengu": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "TENGU",
+      "upstreamClass": "S_IMP",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/058-blue-jelly": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "jelly",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "BLUE_JELLY",
+      "upstreamClass": "S_JELLY",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/059-spotted-jelly": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "jelly",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "SPOTTED_JELLY",
+      "upstreamClass": "S_JELLY",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/060-ochre-jelly": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "jelly",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "OCHRE_JELLY",
+      "upstreamClass": "S_JELLY",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/061-kobold": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "KOBOLD",
+      "upstreamClass": "S_KOBOLD",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/062-large-kobold": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "LARGE_KOBOLD",
+      "upstreamClass": "S_KOBOLD",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/063-kobold-leader": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "KOBOLD_LEADER",
+      "upstreamClass": "S_KOBOLD",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/064-kobold-shaman": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "KOBOLD_SHAMAN",
+      "upstreamClass": "S_KOBOLD",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/065-leprechaun": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "LEPRECHAUN",
+      "upstreamClass": "S_LEPRECHAUN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/066-small-mimic": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "mimic-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "SMALL_MIMIC",
+      "upstreamClass": "S_MIMIC",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/067-large-mimic": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "mimic-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "LARGE_MIMIC",
+      "upstreamClass": "S_MIMIC",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/068-giant-mimic": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "mimic-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "GIANT_MIMIC",
+      "upstreamClass": "S_MIMIC",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/069-wood-nymph": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "WOOD_NYMPH",
+      "upstreamClass": "S_NYMPH",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/070-water-nymph": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "WATER_NYMPH",
+      "upstreamClass": "S_NYMPH",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/071-mountain-nymph": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "MOUNTAIN_NYMPH",
+      "upstreamClass": "S_NYMPH",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/072-goblin": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "GOBLIN",
+      "upstreamClass": "S_ORC",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/073-hobgoblin": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HOBGOBLIN",
+      "upstreamClass": "S_ORC",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/074-orc": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ORC",
+      "upstreamClass": "S_ORC",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/075-hill-orc": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HILL_ORC",
+      "upstreamClass": "S_ORC",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/076-mordor-orc": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "MORDOR_ORC",
+      "upstreamClass": "S_ORC",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/077-uruk-hai": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "URUK_HAI",
+      "upstreamClass": "S_ORC",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/078-orc-shaman": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ORC_SHAMAN",
+      "upstreamClass": "S_ORC",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/079-orc-captain": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ORC_CAPTAIN",
+      "upstreamClass": "S_ORC",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/080-rock-piercer": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "piercer",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "ROCK_PIERCER",
+      "upstreamClass": "S_PIERCER",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/081-iron-piercer": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "piercer",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "IRON_PIERCER",
+      "upstreamClass": "S_PIERCER",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/082-glass-piercer": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "piercer",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "GLASS_PIERCER",
+      "upstreamClass": "S_PIERCER",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/083-rothe": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "ROTHE",
+      "upstreamClass": "S_QUADRUPED",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/084-mumak": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "MUMAK",
+      "upstreamClass": "S_QUADRUPED",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/085-leocrotta": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "LEOCROTTA",
+      "upstreamClass": "S_QUADRUPED",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/086-wumpus": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "WUMPUS",
+      "upstreamClass": "S_QUADRUPED",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/087-titanothere": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "TITANOTHERE",
+      "upstreamClass": "S_QUADRUPED",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/088-baluchitherium": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "BALUCHITHERIUM",
+      "upstreamClass": "S_QUADRUPED",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/089-mastodon": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "MASTODON",
+      "upstreamClass": "S_QUADRUPED",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/090-sewer-rat": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "rodent-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "SEWER_RAT",
+      "upstreamClass": "S_RODENT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/091-giant-rat": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "rodent-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "GIANT_RAT",
+      "upstreamClass": "S_RODENT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/092-rabid-rat": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "rodent-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "RABID_RAT",
+      "upstreamClass": "S_RODENT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/093-wererat-animal-form": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "rodent-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "WERERAT",
+      "upstreamClass": "S_RODENT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/094-rock-mole": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "ROCK_MOLE",
+      "upstreamClass": "S_RODENT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/095-woodchuck": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "WOODCHUCK",
+      "upstreamClass": "S_RODENT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/096-cave-spider": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "tiny-insect",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "CAVE_SPIDER",
+      "upstreamClass": "S_SPIDER",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/097-centipede": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "tiny-insect",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "CENTIPEDE",
+      "upstreamClass": "S_SPIDER",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/098-giant-spider": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "large-insect",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "GIANT_SPIDER",
+      "upstreamClass": "S_SPIDER",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/099-scorpion": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "SCORPION",
+      "upstreamClass": "S_SPIDER",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/100-lurker-above": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "lurker",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "LURKER_ABOVE",
+      "upstreamClass": "S_TRAPPER",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack Huge flattened body; tier size measures longest image dimension, not upright height.",
+      "tier": "huge",
+      "scaleAxis": "longest"
+    },
+    "monster/101-trapper": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "trapper",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "TRAPPER",
+      "upstreamClass": "S_TRAPPER",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack Huge flattened body; tier size measures longest image dimension, not upright height.",
+      "tier": "huge",
+      "scaleAxis": "longest"
+    },
+    "monster/102-pony": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "PONY",
+      "upstreamClass": "S_UNICORN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/103-white-unicorn": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "WHITE_UNICORN",
+      "upstreamClass": "S_UNICORN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/104-gray-unicorn": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "GRAY_UNICORN",
+      "upstreamClass": "S_UNICORN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/105-black-unicorn": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "BLACK_UNICORN",
+      "upstreamClass": "S_UNICORN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/106-horse": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "HORSE",
+      "upstreamClass": "S_UNICORN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/107-warhorse": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "WARHORSE",
+      "upstreamClass": "S_UNICORN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/108-fog-cloud": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "cloud",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "FOG_CLOUD",
+      "upstreamClass": "S_VORTEX",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/109-dust-vortex": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "vortex",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "DUST_VORTEX",
+      "upstreamClass": "S_VORTEX",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/110-ice-vortex": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "vortex",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "ICE_VORTEX",
+      "upstreamClass": "S_VORTEX",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/111-energy-vortex": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "vortex",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "ENERGY_VORTEX",
+      "upstreamClass": "S_VORTEX",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/112-steam-vortex": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "vortex",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "STEAM_VORTEX",
+      "upstreamClass": "S_VORTEX",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/113-fire-vortex": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "vortex",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "FIRE_VORTEX",
+      "upstreamClass": "S_VORTEX",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/114-baby-long-worm": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "worm-baby",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "BABY_LONG_WORM",
+      "upstreamClass": "S_WORM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/115-baby-purple-worm": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "worm-baby",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "BABY_PURPLE_WORM",
+      "upstreamClass": "S_WORM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/116-long-worm": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "worm-giant",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "LONG_WORM",
+      "upstreamClass": "S_WORM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/117-purple-worm": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "worm-giant",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "PURPLE_WORM",
+      "upstreamClass": "S_WORM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/118-grid-bug": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "tiny-insect",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "GRID_BUG",
+      "upstreamClass": "S_XAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/119-xan": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "tiny-insect",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "XAN",
+      "upstreamClass": "S_XAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/120-yellow-light": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "floating-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "YELLOW_LIGHT",
+      "upstreamClass": "S_LIGHT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/121-black-light": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "floating-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "BLACK_LIGHT",
+      "upstreamClass": "S_LIGHT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/122-zruty": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "ZRUTY",
+      "upstreamClass": "S_ZRUTY",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/123-couatl": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "celestial",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "COUATL",
+      "upstreamClass": "S_ANGEL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/124-aleax": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "celestial",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ALEAX",
+      "upstreamClass": "S_ANGEL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/125-angel": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "celestial",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ANGEL",
+      "upstreamClass": "S_ANGEL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/126-ki-rin": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "celestial",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "KI_RIN",
+      "upstreamClass": "S_ANGEL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/127-archon": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "celestial",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "ARCHON",
+      "upstreamClass": "S_ANGEL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/128-bat": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "flying-small",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "BAT",
+      "upstreamClass": "S_BAT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/129-giant-bat": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "flying-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "GIANT_BAT",
+      "upstreamClass": "S_BAT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/130-raven": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "flying-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "RAVEN",
+      "upstreamClass": "S_BAT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/131-vampire-bat": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "flying-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "VAMPIRE_BAT",
+      "upstreamClass": "S_BAT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/132-plains-centaur": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "centaur",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "PLAINS_CENTAUR",
+      "upstreamClass": "S_CENTAUR",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/133-forest-centaur": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "centaur",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "FOREST_CENTAUR",
+      "upstreamClass": "S_CENTAUR",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/134-mountain-centaur": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "centaur",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "MOUNTAIN_CENTAUR",
+      "upstreamClass": "S_CENTAUR",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/135-baby-gray-dragon": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-baby",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "BABY_GRAY_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/136-baby-gold-dragon": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-baby",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "BABY_GOLD_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/137-baby-silver-dragon": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-baby",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "BABY_SILVER_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/138-baby-shimmering-dragon": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-baby",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "BABY_SHIMMERING_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/139-baby-red-dragon": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-baby",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "BABY_RED_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/140-baby-white-dragon": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-baby",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "BABY_WHITE_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/141-baby-orange-dragon": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-baby",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "BABY_ORANGE_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/142-baby-black-dragon": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-baby",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "BABY_BLACK_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/143-baby-blue-dragon": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-baby",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "BABY_BLUE_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/144-baby-green-dragon": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-baby",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "BABY_GREEN_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/145-baby-yellow-dragon": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-baby",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "BABY_YELLOW_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/146-gray-dragon": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "GRAY_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/147-gold-dragon": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "GOLD_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/148-silver-dragon": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "SILVER_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/149-shimmering-dragon": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "SHIMMERING_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/150-red-dragon": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "RED_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/151-white-dragon": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "WHITE_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/152-orange-dragon": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "ORANGE_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/153-black-dragon": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "BLACK_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/154-blue-dragon": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "BLUE_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/155-green-dragon": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "GREEN_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/156-yellow-dragon": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "YELLOW_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/157-stalker": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "STALKER",
+      "upstreamClass": "S_ELEMENTAL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/158-air-elemental": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "elemental-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "AIR_ELEMENTAL",
+      "upstreamClass": "S_ELEMENTAL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/159-fire-elemental": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "elemental-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "FIRE_ELEMENTAL",
+      "upstreamClass": "S_ELEMENTAL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/160-earth-elemental": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "elemental-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "EARTH_ELEMENTAL",
+      "upstreamClass": "S_ELEMENTAL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/161-water-elemental": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "elemental-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "WATER_ELEMENTAL",
+      "upstreamClass": "S_ELEMENTAL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/162-lichen": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "fungus-low",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "LICHEN",
+      "upstreamClass": "S_FUNGUS",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/163-brown-mold": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "fungus-low",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "BROWN_MOLD",
+      "upstreamClass": "S_FUNGUS",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/164-yellow-mold": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "fungus-low",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "YELLOW_MOLD",
+      "upstreamClass": "S_FUNGUS",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/165-green-mold": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "fungus-low",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "GREEN_MOLD",
+      "upstreamClass": "S_FUNGUS",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/166-red-mold": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "fungus-low",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "RED_MOLD",
+      "upstreamClass": "S_FUNGUS",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/167-shrieker": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "fungus-upright",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "SHRIEKER",
+      "upstreamClass": "S_FUNGUS",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/168-violet-fungus": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "fungus-upright",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "VIOLET_FUNGUS",
+      "upstreamClass": "S_FUNGUS",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/169-gnome": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "GNOME",
+      "upstreamClass": "S_GNOME",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/170-gnome-leader": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "GNOME_LEADER",
+      "upstreamClass": "S_GNOME",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/171-gnomish-wizard": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "GNOMISH_WIZARD",
+      "upstreamClass": "S_GNOME",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/172-gnome-ruler": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "GNOME_RULER",
+      "upstreamClass": "S_GNOME",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/173-giant": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "GIANT",
+      "upstreamClass": "S_GIANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/174-stone-giant": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "STONE_GIANT",
+      "upstreamClass": "S_GIANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/175-hill-giant": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "HILL_GIANT",
+      "upstreamClass": "S_GIANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/176-fire-giant": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "FIRE_GIANT",
+      "upstreamClass": "S_GIANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/177-frost-giant": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "FROST_GIANT",
+      "upstreamClass": "S_GIANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/178-ettin": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "ETTIN",
+      "upstreamClass": "S_GIANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/179-storm-giant": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "STORM_GIANT",
+      "upstreamClass": "S_GIANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/180-titan": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "TITAN",
+      "upstreamClass": "S_GIANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/181-minotaur": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "MINOTAUR",
+      "upstreamClass": "S_GIANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/182-jabberwock": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "JABBERWOCK",
+      "upstreamClass": "S_JABBERWOCK",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/183-vorpal-jabberwock": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "VORPAL_JABBERWOCK",
+      "upstreamClass": "S_JABBERWOCK",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/184-keystone-kop": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "KEYSTONE_KOP",
+      "upstreamClass": "S_KOP",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/185-kop-sergeant": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "KOP_SERGEANT",
+      "upstreamClass": "S_KOP",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/186-kop-lieutenant": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "KOP_LIEUTENANT",
+      "upstreamClass": "S_KOP",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/187-kop-kaptain": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "KOP_KAPTAIN",
+      "upstreamClass": "S_KOP",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/188-lich": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "LICH",
+      "upstreamClass": "S_LICH",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/189-demilich": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.72
+      ],
+      "profile": "floating-skull",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "DEMILICH",
+      "upstreamClass": "S_LICH",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/190-master-lich": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "MASTER_LICH",
+      "upstreamClass": "S_LICH",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/191-arch-lich": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ARCH_LICH",
+      "upstreamClass": "S_LICH",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/192-kobold-mummy": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "KOBOLD_MUMMY",
+      "upstreamClass": "S_MUMMY",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/193-gnome-mummy": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "GNOME_MUMMY",
+      "upstreamClass": "S_MUMMY",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/194-orc-mummy": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ORC_MUMMY",
+      "upstreamClass": "S_MUMMY",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/195-dwarf-mummy": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dwarf",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "DWARF_MUMMY",
+      "upstreamClass": "S_MUMMY",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Short, stout humanoid; explicit visual refinement of the broad human engine category.",
+      "tier": "small"
+    },
+    "monster/196-elf-mummy": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ELF_MUMMY",
+      "upstreamClass": "S_MUMMY",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/197-human-mummy": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HUMAN_MUMMY",
+      "upstreamClass": "S_MUMMY",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/198-ettin-mummy": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "ETTIN_MUMMY",
+      "upstreamClass": "S_MUMMY",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/199-giant-mummy": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "GIANT_MUMMY",
+      "upstreamClass": "S_MUMMY",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/200-red-naga-hatchling": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "naga-hatchling",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "RED_NAGA_HATCHLING",
+      "upstreamClass": "S_NAGA",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/201-black-naga-hatchling": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "naga-hatchling",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "BLACK_NAGA_HATCHLING",
+      "upstreamClass": "S_NAGA",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/202-golden-naga-hatchling": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "naga-hatchling",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "GOLDEN_NAGA_HATCHLING",
+      "upstreamClass": "S_NAGA",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/203-guardian-naga-hatchling": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "naga-hatchling",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "GUARDIAN_NAGA_HATCHLING",
+      "upstreamClass": "S_NAGA",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/204-red-naga": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "naga-adult",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "RED_NAGA",
+      "upstreamClass": "S_NAGA",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/205-black-naga": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "naga-adult",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "BLACK_NAGA",
+      "upstreamClass": "S_NAGA",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/206-golden-naga": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "naga-adult",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "GOLDEN_NAGA",
+      "upstreamClass": "S_NAGA",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/207-guardian-naga": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "naga-adult",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "GUARDIAN_NAGA",
+      "upstreamClass": "S_NAGA",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/208-ogre": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "OGRE",
+      "upstreamClass": "S_OGRE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/209-ogre-leader": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "OGRE_LEADER",
+      "upstreamClass": "S_OGRE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/210-ogre-tyrant": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "OGRE_TYRANT",
+      "upstreamClass": "S_OGRE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/211-gray-ooze": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "pudding-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "GRAY_OOZE",
+      "upstreamClass": "S_PUDDING",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/212-brown-pudding": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "pudding-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "BROWN_PUDDING",
+      "upstreamClass": "S_PUDDING",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/213-green-slime": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "pudding-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "GREEN_SLIME",
+      "upstreamClass": "S_PUDDING",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/214-black-pudding": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "pudding-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "BLACK_PUDDING",
+      "upstreamClass": "S_PUDDING",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/215-quantum-mechanic": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "QUANTUM_MECHANIC",
+      "upstreamClass": "S_QUANTMECH",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/216-genetic-engineer": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "GENETIC_ENGINEER",
+      "upstreamClass": "S_QUANTMECH",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/217-rust-monster": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "RUST_MONSTER",
+      "upstreamClass": "S_RUSTMONST",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/218-disenchanter": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "DISENCHANTER",
+      "upstreamClass": "S_RUSTMONST",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/219-garter-snake": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "lizard-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "GARTER_SNAKE",
+      "upstreamClass": "S_SNAKE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/220-snake": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "snake",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "SNAKE",
+      "upstreamClass": "S_SNAKE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/221-water-moccasin": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "snake",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "WATER_MOCCASIN",
+      "upstreamClass": "S_SNAKE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/222-python": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "snake-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "PYTHON",
+      "upstreamClass": "S_SNAKE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/223-pit-viper": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "snake",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "PIT_VIPER",
+      "upstreamClass": "S_SNAKE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/224-cobra": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "snake",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "COBRA",
+      "upstreamClass": "S_SNAKE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/225-troll": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "TROLL",
+      "upstreamClass": "S_TROLL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/226-ice-troll": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "ICE_TROLL",
+      "upstreamClass": "S_TROLL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/227-rock-troll": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "ROCK_TROLL",
+      "upstreamClass": "S_TROLL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/228-water-troll": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "WATER_TROLL",
+      "upstreamClass": "S_TROLL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/229-olog-hai": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "OLOG_HAI",
+      "upstreamClass": "S_TROLL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/230-umber-hulk": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "UMBER_HULK",
+      "upstreamClass": "S_UMBER",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/231-vampire": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "VAMPIRE",
+      "upstreamClass": "S_VAMPIRE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/232-vampire-leader": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "VAMPIRE_LEADER",
+      "upstreamClass": "S_VAMPIRE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/233-vampire-mage": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "VAMPIRE_MAGE",
+      "upstreamClass": "S_VAMPIRE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/234-vlad-the-impaler": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "VLAD_THE_IMPALER",
+      "upstreamClass": "S_VAMPIRE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/235-barrow-wight": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "BARROW_WIGHT",
+      "upstreamClass": "S_WRAITH",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/236-wraith": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "WRAITH",
+      "upstreamClass": "S_WRAITH",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/237-nazgul": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "NAZGUL",
+      "upstreamClass": "S_WRAITH",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/238-xorn": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "XORN",
+      "upstreamClass": "S_XORN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/239-monkey": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "MONKEY",
+      "upstreamClass": "S_YETI",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/240-ape": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "APE",
+      "upstreamClass": "S_YETI",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/241-owlbear": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "OWLBEAR",
+      "upstreamClass": "S_YETI",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/242-yeti": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "YETI",
+      "upstreamClass": "S_YETI",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/243-carnivorous-ape": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "CARNIVOROUS_APE",
+      "upstreamClass": "S_YETI",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/244-sasquatch": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "SASQUATCH",
+      "upstreamClass": "S_YETI",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/245-kobold-zombie": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "KOBOLD_ZOMBIE",
+      "upstreamClass": "S_ZOMBIE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/246-gnome-zombie": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "GNOME_ZOMBIE",
+      "upstreamClass": "S_ZOMBIE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/247-orc-zombie": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ORC_ZOMBIE",
+      "upstreamClass": "S_ZOMBIE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/248-dwarf-zombie": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dwarf",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "DWARF_ZOMBIE",
+      "upstreamClass": "S_ZOMBIE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Short, stout humanoid; explicit visual refinement of the broad human engine category.",
+      "tier": "small"
+    },
+    "monster/249-elf-zombie": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ELF_ZOMBIE",
+      "upstreamClass": "S_ZOMBIE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/250-human-zombie": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HUMAN_ZOMBIE",
+      "upstreamClass": "S_ZOMBIE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/251-ettin-zombie": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "ETTIN_ZOMBIE",
+      "upstreamClass": "S_ZOMBIE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/252-ghoul": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "GHOUL",
+      "upstreamClass": "S_ZOMBIE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/253-giant-zombie": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "GIANT_ZOMBIE",
+      "upstreamClass": "S_ZOMBIE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/254-skeleton": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "SKELETON",
+      "upstreamClass": "S_ZOMBIE",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/255-straw-golem": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "STRAW_GOLEM",
+      "upstreamClass": "S_GOLEM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/256-paper-golem": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "PAPER_GOLEM",
+      "upstreamClass": "S_GOLEM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/257-rope-golem": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "ROPE_GOLEM",
+      "upstreamClass": "S_GOLEM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/258-gold-golem": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "GOLD_GOLEM",
+      "upstreamClass": "S_GOLEM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/259-leather-golem": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "LEATHER_GOLEM",
+      "upstreamClass": "S_GOLEM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/260-wood-golem": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "WOOD_GOLEM",
+      "upstreamClass": "S_GOLEM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/261-flesh-golem": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "FLESH_GOLEM",
+      "upstreamClass": "S_GOLEM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/262-clay-golem": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "CLAY_GOLEM",
+      "upstreamClass": "S_GOLEM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/263-stone-golem": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "STONE_GOLEM",
+      "upstreamClass": "S_GOLEM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/264-glass-golem": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "GLASS_GOLEM",
+      "upstreamClass": "S_GOLEM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/265-iron-golem": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "IRON_GOLEM",
+      "upstreamClass": "S_GOLEM",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/266-human": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HUMAN",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/267-wererat-human-form": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HUMAN_WERERAT",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/268-werejackal-human-form": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HUMAN_WEREJACKAL",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/269-werewolf-human-form": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HUMAN_WEREWOLF",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/270-elf": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ELF",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/271-woodland-elf": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "WOODLAND_ELF",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/272-green-elf": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "GREEN_ELF",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/273-grey-elf": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "GREY_ELF",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/274-elf-noble": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ELF_NOBLE",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/275-elven-monarch": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ELVEN_MONARCH",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/276-doppelganger": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "DOPPELGANGER",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/277-shopkeeper": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "SHOPKEEPER",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/278-guard": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "GUARD",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/279-prisoner": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "PRISONER",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/280-oracle": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ORACLE",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/281-aligned-cleric": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ALIGNED_CLERIC",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/282-high-cleric": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HIGH_CLERIC",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/283-soldier": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "SOLDIER",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/284-sergeant": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "SERGEANT",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/285-nurse": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "NURSE",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/286-lieutenant": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "LIEUTENANT",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/287-captain": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "CAPTAIN",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/288-watchman": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "WATCHMAN",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/289-watch-captain": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "WATCH_CAPTAIN",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/290-medusa": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "MEDUSA",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/291-wizard-of-yendor": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "WIZARD_OF_YENDOR",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/292-croesus": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "CROESUS",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/293-charon": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "CHARON",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/294-ghost": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.82
+      ],
+      "profile": "ghost",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "GHOST",
+      "upstreamClass": "S_GHOST",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/295-shade": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.82
+      ],
+      "profile": "ghost",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "SHADE",
+      "upstreamClass": "S_GHOST",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/296-water-demon": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "WATER_DEMON",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/297-amorous-demon": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "AMOROUS_DEMON",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/298-horned-devil": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HORNED_DEVIL",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/299-erinys": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ERINYS",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/300-barbed-devil": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "BARBED_DEVIL",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/301-marilith": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "MARILITH",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/302-vrock": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "VROCK",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/303-hezrou": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "HEZROU",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/304-bone-devil": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "BONE_DEVIL",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/305-ice-devil": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "ICE_DEVIL",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/306-nalfeshnee": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "NALFESHNEE",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/307-pit-fiend": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "PIT_FIEND",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/308-sandestin": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "SANDESTIN",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/309-balrog": {
+      "height": 128,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "BALROG",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Bulky creature or juvenile dragon, between Large creatures and Huge giants.",
+      "tier": "very-large"
+    },
+    "monster/310-juiblex": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "JUIBLEX",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/311-yeenoghu": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "YEENOGHU",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/312-orcus": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "demon-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "ORCUS",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/313-geryon": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "demon-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "GERYON",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/314-dispater": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "DISPATER",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/315-baalzebub": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "BAALZEBUB",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/316-asmodeus": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "demon-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "ASMODEUS",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/317-demogorgon": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "demon-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "DEMOGORGON",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/318-death": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "DEATH",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/319-pestilence": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "PESTILENCE",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/320-famine": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "FAMINE",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/321-mail-daemon": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "MAIL_DAEMON",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/322-djinni": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.78
+      ],
+      "profile": "human-broad",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "DJINNI",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/323-jellyfish": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.85
+      ],
+      "profile": "water-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "JELLYFISH",
+      "upstreamClass": "S_EEL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/324-piranha": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.85
+      ],
+      "profile": "water-small",
+      "upstreamSize": "MZ_SMALL",
+      "upstreamSymbol": "PIRANHA",
+      "upstreamClass": "S_EEL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "small"
+    },
+    "monster/325-shark": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.85
+      ],
+      "profile": "water-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "SHARK",
+      "upstreamClass": "S_EEL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/326-giant-eel": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.85
+      ],
+      "profile": "water-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "GIANT_EEL",
+      "upstreamClass": "S_EEL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/327-electric-eel": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.85
+      ],
+      "profile": "water-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "ELECTRIC_EEL",
+      "upstreamClass": "S_EEL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/328-kraken": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.85
+      ],
+      "profile": "water-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "KRAKEN",
+      "upstreamClass": "S_EEL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/329-newt": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "lizard-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "NEWT",
+      "upstreamClass": "S_LIZARD",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/330-gecko": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "lizard-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "GECKO",
+      "upstreamClass": "S_LIZARD",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/331-iguana": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "lizard-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "IGUANA",
+      "upstreamClass": "S_LIZARD",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/332-baby-crocodile": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-medium",
+      "upstreamSize": "MZ_MEDIUM",
+      "upstreamSymbol": "BABY_CROCODILE",
+      "upstreamClass": "S_LIZARD",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/333-lizard": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "lizard-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "LIZARD",
+      "upstreamClass": "S_LIZARD",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/334-chameleon": {
+      "height": 32,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "lizard-tiny",
+      "upstreamSize": "MZ_TINY",
+      "upstreamSymbol": "CHAMELEON",
+      "upstreamClass": "S_LIZARD",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "tiny"
+    },
+    "monster/335-crocodile": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "quadruped-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "CROCODILE",
+      "upstreamClass": "S_LIZARD",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/336-salamander": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "SALAMANDER",
+      "upstreamClass": "S_LIZARD",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/337-long-worm-tail": {
+      "height": 48,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "tail-segment",
+      "upstreamSize": "0",
+      "upstreamSymbol": "LONG_WORM_TAIL",
+      "upstreamClass": "S_WORM_TAIL",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "One engine-owned worm segment; the whole worm has its own tier.",
+      "tier": "small"
+    },
+    "monster/338-archeologist": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ARCHEOLOGIST",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/339-barbarian": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "BARBARIAN",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/340-cave-dweller": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "CAVE_DWELLER",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/341-healer": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HEALER",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/342-knight": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "KNIGHT",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/343-monk": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "MONK",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/344-cleric": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "CLERIC",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/345-ranger": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "RANGER",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/346-rogue": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ROGUE",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/347-samurai": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "SAMURAI",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/348-tourist": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "TOURIST",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/349-valkyrie": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "VALKYRIE",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/350-wizard": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "WIZARD",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/351-lord-carnarvon": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "LORD_CARNARVON",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/352-pelias": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "PELIAS",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/353-shaman-karnov": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "SHAMAN_KARNOV",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/354-earendil": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "EARENDIL",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/355-elwing": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ELWING",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/356-hippocrates": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HIPPOCRATES",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/357-king-arthur": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "KING_ARTHUR",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/358-grand-master": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "GRAND_MASTER",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/359-arch-priest": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ARCH_PRIEST",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/360-orion": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "ORION",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/361-master-of-thieves": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "MASTER_OF_THIEVES",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/362-lord-sato": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "LORD_SATO",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/363-twoflower": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "TWOFLOWER",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/364-norn": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "NORN",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/365-neferet-the-green": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "NEFERET_THE_GREEN",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/366-minion-of-huhetotl": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "MINION_OF_HUHETOTL",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/367-thoth-amon": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "THOTH_AMON",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/368-chromatic-dragon": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "CHROMATIC_DRAGON",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/369-goblin-king": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "GOBLIN_KING",
+      "upstreamClass": "S_ORC",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/370-cyclops": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "CYCLOPS",
+      "upstreamClass": "S_GIANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/371-ixoth": {
+      "height": 192,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "dragon-adult",
+      "upstreamSize": "MZ_GIGANTIC",
+      "upstreamSymbol": "IXOTH",
+      "upstreamClass": "S_DRAGON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "massive"
+    },
+    "monster/372-master-kaen": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "MASTER_KAEN",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/373-nalzok": {
+      "height": 104,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-large",
+      "upstreamSize": "MZ_LARGE",
+      "upstreamSymbol": "NALZOK",
+      "upstreamClass": "S_DEMON",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "large"
+    },
+    "monster/374-scorpius": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-small",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "SCORPIUS",
+      "upstreamClass": "S_SPIDER",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/375-master-assassin": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "MASTER_ASSASSIN",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/376-ashikaga-takauji": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ASHIKAGA_TAKAUJI",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/377-lord-surtur": {
+      "height": 160,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "upright-huge",
+      "upstreamSize": "MZ_HUGE",
+      "upstreamSymbol": "LORD_SURTUR",
+      "upstreamClass": "S_GIANT",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "huge"
+    },
+    "monster/378-dark-one": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "DARK_ONE",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/379-student": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "STUDENT",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/380-chieftain": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "CHIEFTAIN",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/381-neanderthal": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "NEANDERTHAL",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/382-high-elf": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HIGH_ELF",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/383-attendant": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ATTENDANT",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/384-page": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "PAGE",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/385-abbot": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ABBOT",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/386-acolyte": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ACOLYTE",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/387-hunter": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "HUNTER",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/388-thug": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "THUG",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/389-ninja": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "NINJA",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/390-roshi": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "ROSHI",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/391-guide": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "GUIDE",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/392-warrior": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "WARRIOR",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/393-apprentice": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.88
+      ],
+      "profile": "human",
+      "upstreamSize": "MZ_HUMAN",
+      "upstreamSymbol": "APPRENTICE",
+      "upstreamClass": "S_HUMAN",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "NetHack body-size category.",
+      "tier": "standard"
+    },
+    "monster/394-invisible-monster": {
+      "height": 80,
+      "footAnchor": [
+        0.5,
+        0.78
+      ],
+      "profile": "marker",
+      "upstreamSize": null,
+      "upstreamSymbol": "INVISIBLE_MARKER",
+      "upstreamClass": "perceptual marker",
+      "logicalFootprint": [
+        1,
+        1
+      ],
+      "rationale": "Neutral uncertainty marker; never infer a hidden creature size.",
+      "tier": "standard"
+    }
+  },
+  "tiers": {
+    "tiny": {
+      "label": "Tiny",
+      "height": 32
+    },
+    "small": {
+      "label": "Small",
+      "height": 48
+    },
+    "standard": {
+      "label": "Standard",
+      "height": 80
+    },
+    "large": {
+      "label": "Large",
+      "height": 104
+    },
+    "very-large": {
+      "label": "Very Large",
+      "height": 128
+    },
+    "huge": {
+      "label": "Huge",
+      "height": 160
+    },
+    "massive": {
+      "label": "Massive",
+      "height": 192
+    }
+  },
+  "assignmentPolicy": "NetHack body size supplies the default tier. Explicit creature assignments refine it; all original Modern artwork uses the same tier height, without width caps. Classic remains one square.",
+  "upstreamDefaults": {
+    "MZ_TINY": "tiny",
+    "MZ_SMALL": "small",
+    "MZ_MEDIUM": "standard",
+    "MZ_HUMAN": "standard",
+    "MZ_LARGE": "large",
+    "MZ_HUGE": "huge",
+    "MZ_GIGANTIC": "massive"
+  }
+}

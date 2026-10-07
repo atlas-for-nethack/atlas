@@ -1,0 +1,14 @@
+# macOS metadata and language caches
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Generated builds, distributions and test games
+/.build/
+/build/
+/dist/
+/.artifacts/
+/engine/runtime/
+
+# Checksum-pinned upstream downloads and disposable build trees
+/vendor/

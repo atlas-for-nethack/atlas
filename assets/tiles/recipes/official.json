@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "official",
+  "name": "NetHack Classic",
+  "engineVersion": "5.0.0",
+  "output": "official.png",
+  "provenance": "official/provenance.json",
+  "license": "NGPL",
+  "credit": "NetHack DevTeam and contributing artists",
+  "licenseFile": "assets/tiles/sources/NGPL.txt",
+  "description": "The official 5.0 artwork, exactly as shipped by NetHack.",
+  "version": "5.0.0",
+  "source": {
+    "kind": "atlas",
+    "path": "vendor/NetHack-5.0.0/dat/nhtiles.bmp",
+    "sha256": "709adc50ee1bb83badef8f04833e470430d028467b968537520683f793f5c81b",
+    "tileWidth": 16,
+    "tileHeight": 16,
+    "columns": 40,
+    "count": 2304,
+    "preferredTileSize": 32
+  }
+}

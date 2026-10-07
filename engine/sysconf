@@ -1,0 +1,7 @@
+# Private single-player application runtime. No setuid, shells, or mail.
+WIZARDS=
+MAXPLAYERS=0
+PERSMAX=3
+POINTSMIN=1
+ENTRYMAX=100
+PERS_IS_UID=0

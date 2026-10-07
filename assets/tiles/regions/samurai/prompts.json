@@ -1,0 +1,14 @@
+{
+  "tool": "built-in image generation",
+  "scope": "review-only mockups, not integrated tiles",
+  "lantern": {
+    "prompt": "Use case: precise-object-edit. Asset: review-only NetHack Atlas Lantern Modern Samurai architecture mockup. Edit target: supplied actual game-renderer screenshot of a 22 by 13 tile compound gate, no actors. Change ONLY existing wall and door surfaces, preserving EXACT same map geometry, tile grid, wall footprint, corners, junctions, full-height semi-isometric wall faces, every gap, lighting and all floor pixels. Proposal: defensible Japanese clan-castle architecture, warm pale aged plaster panels supported by dark oak framing, low dark dressed-stone base and quiet stone coping. Keep the compact NetHack pixel-art texture, repeated tile cadence and existing Lantern subdued palette; no generic anime. Existing narrow east/west door should become a solid oak gate with restrained iron fittings, same orientation, opening and placement. Do not add new walls, gates, roof, banners, lanterns, statues, actors, trees, furniture, inscriptions or any other terrain. Particularly preserve the open gaps at the top and middle and ordinary slate floor exactly. No camera change, no perspective rotation, no 3D illustration. No text or labels. This is a modest wall-material alternative to existing dungeon masonry, not a cinematic Japan scene.",
+    "reference": ".artifacts/samurai-lantern-normal.png",
+    "output": ".artifacts/samurai-lantern-proposal.png"
+  },
+  "soot": {
+    "prompt": "Use case: precise-object-edit. Asset: review-only NetHack Atlas Soot & Brass Modern Samurai architecture mockup. Edit target: supplied actual game-renderer screenshot of a 22 by 13 tile compound gate, no actors. Change ONLY existing wall and door surfaces, preserving EXACT map geometry, tile grid, wall footprint, corners, junctions, gaps, full-height semi-isometric faces, lighting and all slate floor pixels. Proposal: understated Japanese clan-castle construction within our grimdark steampunk family: aged pale gray-beige plaster between very dark timber posts, dark stone lower courses, restrained bronze fasteners and a quiet stone coping. Retain existing brass/bronze identity at framing joins; no added pipes. Gate is solid dark wood, bronze hinges and ring, same narrow east/west orientation/placement. Keep our established gritty compact pixel art with crisp nearest-neighbor pixels and repeated tile rhythm. No roof, banners, statues, actors, trees, furniture, signage, new doorways or changing camera/perspective. Preserve every open gap and actual floor texture exactly. No text/labels. This is a modest material alternative, not a cinematic scene.",
+    "reference": ".artifacts/samurai-soot-normal.png",
+    "output": ".artifacts/samurai-soot-proposal.png"
+  }
+}

@@ -1,0 +1,2269 @@
+{
+  "sheets": [
+    {
+      "id": "objects-00",
+      "file": "sources/objects-00.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "bac9933f1d8b988b2928a961b3a5ed0d0fc80db3d09c80870b5f608cd7e060e0",
+      "prompt_file": "OBJECT-PROMPTS.md"
+    },
+    {
+      "id": "objects-01",
+      "file": "sources/objects-01.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "b254b178fa5ce2899e4fce4823dd72ee13072295910080b3aca246440555174c",
+      "prompt_file": "OBJECT-PROMPTS.md"
+    },
+    {
+      "id": "objects-02",
+      "file": "sources/objects-02.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "ea7857804ce8aa1f900bc13aada4a8dca39dd1449661c8722568c994812a8f8e",
+      "prompt_file": "OBJECT-PROMPTS.md"
+    },
+    {
+      "id": "objects-03",
+      "file": "sources/objects-03.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "0188e2cae6b0aefbbdd7ef0c60f3200a1ef43ef517b02a5d39c66bb90e0c2295",
+      "prompt_file": "OBJECT-PROMPTS.md"
+    },
+    {
+      "id": "objects-04",
+      "file": "sources/objects-04.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "ae1f26edfa0ccddde4139907daaad0c3b443b6d014f0c7a9e76fe815fd922fb8",
+      "prompt_file": "OBJECT-PROMPTS.md"
+    },
+    {
+      "id": "objects-05",
+      "file": "sources/objects-05.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "f119f774781af4a1c6e165badab69066209043e16a3cfbcd984f593ecd19922f",
+      "prompt_file": "OBJECT-PROMPTS.md"
+    },
+    {
+      "id": "objects-06",
+      "file": "sources/objects-06.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "6be5daf6d06d6395149e7c085d309ae9a1f91053c49f6d2c3e5d09acd9227976",
+      "prompt_file": "OBJECT-PROMPTS.md"
+    }
+  ],
+  "art": {
+    "object/strange/strange-object": {
+      "sheet": "objects-00",
+      "column": 0,
+      "row": 0
+    },
+    "object/generic/unidentified-strange": {
+      "sheet": "objects-00",
+      "column": 1,
+      "row": 0
+    },
+    "object/generic/unidentified-weapon": {
+      "sheet": "objects-00",
+      "column": 2,
+      "row": 0
+    },
+    "object/generic/unidentified-armor": {
+      "sheet": "objects-00",
+      "column": 3,
+      "row": 0
+    },
+    "object/generic/unidentified-ring": {
+      "sheet": "objects-00",
+      "column": 4,
+      "row": 0
+    },
+    "object/generic/unidentified-amulet": {
+      "sheet": "objects-00",
+      "column": 5,
+      "row": 0
+    },
+    "object/generic/unidentified-tool": {
+      "sheet": "objects-00",
+      "column": 6,
+      "row": 0
+    },
+    "object/generic/unidentified-food": {
+      "sheet": "objects-00",
+      "column": 7,
+      "row": 0
+    },
+    "object/generic/unidentified-potion": {
+      "sheet": "objects-00",
+      "column": 0,
+      "row": 1
+    },
+    "object/generic/unidentified-scroll": {
+      "sheet": "objects-00",
+      "column": 1,
+      "row": 1
+    },
+    "object/generic/unidentified-spellbook": {
+      "sheet": "objects-00",
+      "column": 2,
+      "row": 1
+    },
+    "object/generic/unidentified-wand": {
+      "sheet": "objects-00",
+      "column": 3,
+      "row": 1
+    },
+    "object/generic/unidentified-coin": {
+      "sheet": "objects-00",
+      "column": 4,
+      "row": 1
+    },
+    "object/generic/unidentified-gem": {
+      "sheet": "objects-00",
+      "column": 5,
+      "row": 1
+    },
+    "object/generic/unidentified-large-rock": {
+      "sheet": "objects-00",
+      "column": 6,
+      "row": 1
+    },
+    "object/generic/unidentified-iron-ball": {
+      "sheet": "objects-00",
+      "column": 7,
+      "row": 1
+    },
+    "object/generic/unidentified-iron-chain": {
+      "sheet": "objects-00",
+      "column": 0,
+      "row": 2
+    },
+    "object/generic/unidentified-venom": {
+      "sheet": "objects-00",
+      "column": 1,
+      "row": 2
+    },
+    "object/weapon/arrow": {
+      "sheet": "objects-00",
+      "column": 2,
+      "row": 2
+    },
+    "object/weapon/runed-arrow": {
+      "sheet": "objects-00",
+      "column": 3,
+      "row": 2
+    },
+    "object/weapon/crude-arrow": {
+      "sheet": "objects-00",
+      "column": 4,
+      "row": 2
+    },
+    "object/weapon/silver-arrow": {
+      "sheet": "objects-00",
+      "column": 5,
+      "row": 2
+    },
+    "object/weapon/bamboo-arrow": {
+      "sheet": "objects-00",
+      "column": 6,
+      "row": 2
+    },
+    "object/weapon/crossbow-bolt": {
+      "sheet": "objects-00",
+      "column": 7,
+      "row": 2
+    },
+    "object/weapon/dart": {
+      "sheet": "objects-00",
+      "column": 0,
+      "row": 3
+    },
+    "object/weapon/throwing-star": {
+      "sheet": "objects-00",
+      "column": 1,
+      "row": 3
+    },
+    "object/weapon/boomerang": {
+      "sheet": "objects-00",
+      "column": 2,
+      "row": 3
+    },
+    "object/weapon/spear": {
+      "sheet": "objects-00",
+      "column": 3,
+      "row": 3
+    },
+    "object/weapon/runed-spear": {
+      "sheet": "objects-00",
+      "column": 4,
+      "row": 3
+    },
+    "object/weapon/crude-spear": {
+      "sheet": "objects-00",
+      "column": 5,
+      "row": 3
+    },
+    "object/weapon/stout-spear": {
+      "sheet": "objects-00",
+      "column": 6,
+      "row": 3
+    },
+    "object/weapon/silver-spear": {
+      "sheet": "objects-00",
+      "column": 7,
+      "row": 3
+    },
+    "object/weapon/throwing-spear": {
+      "sheet": "objects-00",
+      "column": 0,
+      "row": 4
+    },
+    "object/weapon/trident": {
+      "sheet": "objects-00",
+      "column": 1,
+      "row": 4
+    },
+    "object/weapon/dagger": {
+      "sheet": "objects-00",
+      "column": 2,
+      "row": 4
+    },
+    "object/weapon/runed-dagger": {
+      "sheet": "objects-00",
+      "column": 3,
+      "row": 4
+    },
+    "object/weapon/crude-dagger": {
+      "sheet": "objects-00",
+      "column": 4,
+      "row": 4
+    },
+    "object/weapon/silver-dagger": {
+      "sheet": "objects-00",
+      "column": 5,
+      "row": 4
+    },
+    "object/weapon/athame": {
+      "sheet": "objects-00",
+      "column": 6,
+      "row": 4
+    },
+    "object/weapon/scalpel": {
+      "sheet": "objects-00",
+      "column": 7,
+      "row": 4
+    },
+    "object/weapon/knife": {
+      "sheet": "objects-00",
+      "column": 0,
+      "row": 5
+    },
+    "object/weapon/stiletto": {
+      "sheet": "objects-00",
+      "column": 1,
+      "row": 5
+    },
+    "object/weapon/worm-tooth": {
+      "sheet": "objects-00",
+      "column": 2,
+      "row": 5
+    },
+    "object/weapon/crysknife": {
+      "sheet": "objects-00",
+      "column": 3,
+      "row": 5
+    },
+    "object/weapon/axe": {
+      "sheet": "objects-00",
+      "column": 4,
+      "row": 5
+    },
+    "object/weapon/double-headed-axe": {
+      "sheet": "objects-00",
+      "column": 5,
+      "row": 5
+    },
+    "object/weapon/short-sword": {
+      "sheet": "objects-00",
+      "column": 6,
+      "row": 5
+    },
+    "object/weapon/runed-short-sword": {
+      "sheet": "objects-00",
+      "column": 7,
+      "row": 5
+    },
+    "object/weapon/crude-short-sword": {
+      "sheet": "objects-00",
+      "column": 0,
+      "row": 6
+    },
+    "object/weapon/broad-short-sword": {
+      "sheet": "objects-00",
+      "column": 1,
+      "row": 6
+    },
+    "object/weapon/curved-sword": {
+      "sheet": "objects-00",
+      "column": 2,
+      "row": 6
+    },
+    "object/weapon/silver-saber": {
+      "sheet": "objects-00",
+      "column": 3,
+      "row": 6
+    },
+    "object/weapon/broadsword": {
+      "sheet": "objects-00",
+      "column": 4,
+      "row": 6
+    },
+    "object/weapon/runed-broadsword": {
+      "sheet": "objects-00",
+      "column": 5,
+      "row": 6
+    },
+    "object/weapon/long-sword": {
+      "sheet": "objects-00",
+      "column": 6,
+      "row": 6
+    },
+    "object/weapon/two-handed-sword": {
+      "sheet": "objects-00",
+      "column": 7,
+      "row": 6
+    },
+    "object/weapon/samurai-sword": {
+      "sheet": "objects-00",
+      "column": 0,
+      "row": 7
+    },
+    "object/weapon/long-samurai-sword": {
+      "sheet": "objects-00",
+      "column": 1,
+      "row": 7
+    },
+    "object/weapon/vulgar-polearm": {
+      "sheet": "objects-00",
+      "column": 2,
+      "row": 7
+    },
+    "object/weapon/hilted-polearm": {
+      "sheet": "objects-00",
+      "column": 3,
+      "row": 7
+    },
+    "object/weapon/forked-polearm": {
+      "sheet": "objects-00",
+      "column": 4,
+      "row": 7
+    },
+    "object/weapon/single-edged-polearm": {
+      "sheet": "objects-00",
+      "column": 5,
+      "row": 7
+    },
+    "object/weapon/angled-poleaxe": {
+      "sheet": "objects-00",
+      "column": 6,
+      "row": 7
+    },
+    "object/weapon/long-poleaxe": {
+      "sheet": "objects-00",
+      "column": 7,
+      "row": 7
+    },
+    "object/weapon/pole-cleaver": {
+      "sheet": "objects-01",
+      "column": 0,
+      "row": 0
+    },
+    "object/weapon/pole-sickle": {
+      "sheet": "objects-01",
+      "column": 1,
+      "row": 0
+    },
+    "object/weapon/pruning-hook": {
+      "sheet": "objects-01",
+      "column": 2,
+      "row": 0
+    },
+    "object/weapon/hooked-polearm": {
+      "sheet": "objects-01",
+      "column": 3,
+      "row": 0
+    },
+    "object/weapon/pronged-polearm": {
+      "sheet": "objects-01",
+      "column": 4,
+      "row": 0
+    },
+    "object/weapon/beaked-polearm": {
+      "sheet": "objects-01",
+      "column": 5,
+      "row": 0
+    },
+    "object/weapon/broad-pick": {
+      "sheet": "objects-01",
+      "column": 6,
+      "row": 0
+    },
+    "object/weapon/lance": {
+      "sheet": "objects-01",
+      "column": 7,
+      "row": 0
+    },
+    "object/weapon/mace": {
+      "sheet": "objects-01",
+      "column": 0,
+      "row": 1
+    },
+    "object/weapon/silver-mace": {
+      "sheet": "objects-01",
+      "column": 1,
+      "row": 1
+    },
+    "object/weapon/morning-star": {
+      "sheet": "objects-01",
+      "column": 2,
+      "row": 1
+    },
+    "object/weapon/war-hammer": {
+      "sheet": "objects-01",
+      "column": 3,
+      "row": 1
+    },
+    "object/weapon/club": {
+      "sheet": "objects-01",
+      "column": 4,
+      "row": 1
+    },
+    "object/weapon/rubber-hose": {
+      "sheet": "objects-01",
+      "column": 5,
+      "row": 1
+    },
+    "object/weapon/staff": {
+      "sheet": "objects-01",
+      "column": 6,
+      "row": 1
+    },
+    "object/weapon/thonged-club": {
+      "sheet": "objects-01",
+      "column": 7,
+      "row": 1
+    },
+    "object/weapon/flail": {
+      "sheet": "objects-01",
+      "column": 0,
+      "row": 2
+    },
+    "object/weapon/bullwhip": {
+      "sheet": "objects-01",
+      "column": 1,
+      "row": 2
+    },
+    "object/weapon/bow": {
+      "sheet": "objects-01",
+      "column": 2,
+      "row": 2
+    },
+    "object/weapon/runed-bow": {
+      "sheet": "objects-01",
+      "column": 3,
+      "row": 2
+    },
+    "object/weapon/crude-bow": {
+      "sheet": "objects-01",
+      "column": 4,
+      "row": 2
+    },
+    "object/weapon/long-bow": {
+      "sheet": "objects-01",
+      "column": 5,
+      "row": 2
+    },
+    "object/weapon/sling": {
+      "sheet": "objects-01",
+      "column": 6,
+      "row": 2
+    },
+    "object/weapon/crossbow": {
+      "sheet": "objects-01",
+      "column": 7,
+      "row": 2
+    },
+    "object/armor/leather-hat": {
+      "sheet": "objects-01",
+      "column": 0,
+      "row": 3
+    },
+    "object/armor/iron-skull-cap": {
+      "sheet": "objects-01",
+      "column": 1,
+      "row": 3
+    },
+    "object/armor/hard-hat": {
+      "sheet": "objects-01",
+      "column": 2,
+      "row": 3
+    },
+    "object/armor/fedora": {
+      "sheet": "objects-01",
+      "column": 3,
+      "row": 3
+    },
+    "object/armor/conical-hat": {
+      "sheet": "objects-01",
+      "column": 4,
+      "row": 3
+    },
+    "object/armor/dented-pot": {
+      "sheet": "objects-01",
+      "column": 5,
+      "row": 3
+    },
+    "object/armor/crystal-helmet": {
+      "sheet": "objects-01",
+      "column": 6,
+      "row": 3
+    },
+    "object/armor/plumed-helmet": {
+      "sheet": "objects-01",
+      "column": 7,
+      "row": 3
+    },
+    "object/armor/etched-helmet": {
+      "sheet": "objects-01",
+      "column": 0,
+      "row": 4
+    },
+    "object/armor/crested-helmet": {
+      "sheet": "objects-01",
+      "column": 1,
+      "row": 4
+    },
+    "object/armor/visored-helmet": {
+      "sheet": "objects-01",
+      "column": 2,
+      "row": 4
+    },
+    "object/armor/gray-dragon-scale-mail": {
+      "sheet": "objects-01",
+      "column": 3,
+      "row": 4
+    },
+    "object/armor/gold-dragon-scale-mail": {
+      "sheet": "objects-01",
+      "column": 4,
+      "row": 4
+    },
+    "object/armor/silver-dragon-scale-mail": {
+      "sheet": "objects-01",
+      "column": 5,
+      "row": 4
+    },
+    "object/armor/shimmering-dragon-scale-mail": {
+      "sheet": "objects-01",
+      "column": 6,
+      "row": 4
+    },
+    "object/armor/red-dragon-scale-mail": {
+      "sheet": "objects-01",
+      "column": 7,
+      "row": 4
+    },
+    "object/armor/white-dragon-scale-mail": {
+      "sheet": "objects-01",
+      "column": 0,
+      "row": 5
+    },
+    "object/armor/orange-dragon-scale-mail": {
+      "sheet": "objects-01",
+      "column": 1,
+      "row": 5
+    },
+    "object/armor/black-dragon-scale-mail": {
+      "sheet": "objects-01",
+      "column": 2,
+      "row": 5
+    },
+    "object/armor/blue-dragon-scale-mail": {
+      "sheet": "objects-01",
+      "column": 3,
+      "row": 5
+    },
+    "object/armor/green-dragon-scale-mail": {
+      "sheet": "objects-01",
+      "column": 4,
+      "row": 5
+    },
+    "object/armor/yellow-dragon-scale-mail": {
+      "sheet": "objects-01",
+      "column": 5,
+      "row": 5
+    },
+    "object/armor/gray-dragon-scales": {
+      "sheet": "objects-01",
+      "column": 6,
+      "row": 5
+    },
+    "object/armor/gold-dragon-scales": {
+      "sheet": "objects-01",
+      "column": 7,
+      "row": 5
+    },
+    "object/armor/silver-dragon-scales": {
+      "sheet": "objects-01",
+      "column": 0,
+      "row": 6
+    },
+    "object/armor/shimmering-dragon-scales": {
+      "sheet": "objects-01",
+      "column": 1,
+      "row": 6
+    },
+    "object/armor/red-dragon-scales": {
+      "sheet": "objects-01",
+      "column": 2,
+      "row": 6
+    },
+    "object/armor/white-dragon-scales": {
+      "sheet": "objects-01",
+      "column": 3,
+      "row": 6
+    },
+    "object/armor/orange-dragon-scales": {
+      "sheet": "objects-01",
+      "column": 4,
+      "row": 6
+    },
+    "object/armor/black-dragon-scales": {
+      "sheet": "objects-01",
+      "column": 5,
+      "row": 6
+    },
+    "object/armor/blue-dragon-scales": {
+      "sheet": "objects-01",
+      "column": 6,
+      "row": 6
+    },
+    "object/armor/green-dragon-scales": {
+      "sheet": "objects-01",
+      "column": 7,
+      "row": 6
+    },
+    "object/armor/yellow-dragon-scales": {
+      "sheet": "objects-01",
+      "column": 0,
+      "row": 7
+    },
+    "object/armor/plate-mail": {
+      "sheet": "objects-01",
+      "column": 1,
+      "row": 7
+    },
+    "object/armor/crystal-plate-mail": {
+      "sheet": "objects-01",
+      "column": 2,
+      "row": 7
+    },
+    "object/armor/bronze-plate-mail": {
+      "sheet": "objects-01",
+      "column": 3,
+      "row": 7
+    },
+    "object/armor/splint-mail": {
+      "sheet": "objects-01",
+      "column": 4,
+      "row": 7
+    },
+    "object/armor/banded-mail": {
+      "sheet": "objects-01",
+      "column": 5,
+      "row": 7
+    },
+    "object/armor/dwarvish-mithril-coat": {
+      "sheet": "objects-01",
+      "column": 6,
+      "row": 7
+    },
+    "object/armor/elven-mithril-coat": {
+      "sheet": "objects-01",
+      "column": 7,
+      "row": 7
+    },
+    "object/armor/chain-mail": {
+      "sheet": "objects-02",
+      "column": 0,
+      "row": 0
+    },
+    "object/armor/crude-chain-mail": {
+      "sheet": "objects-02",
+      "column": 1,
+      "row": 0
+    },
+    "object/armor/scale-mail": {
+      "sheet": "objects-02",
+      "column": 2,
+      "row": 0
+    },
+    "object/armor/studded-leather-armor": {
+      "sheet": "objects-02",
+      "column": 3,
+      "row": 0
+    },
+    "object/armor/ring-mail": {
+      "sheet": "objects-02",
+      "column": 4,
+      "row": 0
+    },
+    "object/armor/crude-ring-mail": {
+      "sheet": "objects-02",
+      "column": 5,
+      "row": 0
+    },
+    "object/armor/leather-armor": {
+      "sheet": "objects-02",
+      "column": 6,
+      "row": 0
+    },
+    "object/armor/leather-jacket": {
+      "sheet": "objects-02",
+      "column": 7,
+      "row": 0
+    },
+    "object/armor/hawaiian-shirt": {
+      "sheet": "objects-02",
+      "column": 0,
+      "row": 1
+    },
+    "object/armor/t-shirt": {
+      "sheet": "objects-02",
+      "column": 1,
+      "row": 1
+    },
+    "object/armor/mummy-wrapping": {
+      "sheet": "objects-02",
+      "column": 2,
+      "row": 1
+    },
+    "object/armor/faded-pall": {
+      "sheet": "objects-02",
+      "column": 3,
+      "row": 1
+    },
+    "object/armor/coarse-mantelet": {
+      "sheet": "objects-02",
+      "column": 4,
+      "row": 1
+    },
+    "object/armor/hooded-cloak": {
+      "sheet": "objects-02",
+      "column": 5,
+      "row": 1
+    },
+    "object/armor/slippery-cloak": {
+      "sheet": "objects-02",
+      "column": 6,
+      "row": 1
+    },
+    "object/armor/robe": {
+      "sheet": "objects-02",
+      "column": 7,
+      "row": 1
+    },
+    "object/armor/apron": {
+      "sheet": "objects-02",
+      "column": 0,
+      "row": 2
+    },
+    "object/armor/leather-cloak": {
+      "sheet": "objects-02",
+      "column": 1,
+      "row": 2
+    },
+    "object/armor/tattered-cape": {
+      "sheet": "objects-02",
+      "column": 2,
+      "row": 2
+    },
+    "object/armor/opera-cloak": {
+      "sheet": "objects-02",
+      "column": 3,
+      "row": 2
+    },
+    "object/armor/ornamental-cope": {
+      "sheet": "objects-02",
+      "column": 4,
+      "row": 2
+    },
+    "object/armor/piece-of-cloth": {
+      "sheet": "objects-02",
+      "column": 5,
+      "row": 2
+    },
+    "object/armor/wooden-shield": {
+      "sheet": "objects-02",
+      "column": 6,
+      "row": 2
+    },
+    "object/armor/blue-and-green-shield": {
+      "sheet": "objects-02",
+      "column": 7,
+      "row": 2
+    },
+    "object/armor/white-handed-shield": {
+      "sheet": "objects-02",
+      "column": 0,
+      "row": 3
+    },
+    "object/armor/red-eyed-shield": {
+      "sheet": "objects-02",
+      "column": 1,
+      "row": 3
+    },
+    "object/armor/large-shield": {
+      "sheet": "objects-02",
+      "column": 2,
+      "row": 3
+    },
+    "object/armor/large-round-shield": {
+      "sheet": "objects-02",
+      "column": 3,
+      "row": 3
+    },
+    "object/armor/polished-silver-shield": {
+      "sheet": "objects-02",
+      "column": 4,
+      "row": 3
+    },
+    "object/armor/old-gloves": {
+      "sheet": "objects-02",
+      "column": 5,
+      "row": 3
+    },
+    "object/armor/padded-gloves": {
+      "sheet": "objects-02",
+      "column": 6,
+      "row": 3
+    },
+    "object/armor/riding-gloves": {
+      "sheet": "objects-02",
+      "column": 7,
+      "row": 3
+    },
+    "object/armor/fencing-gloves": {
+      "sheet": "objects-02",
+      "column": 0,
+      "row": 4
+    },
+    "object/armor/walking-shoes": {
+      "sheet": "objects-02",
+      "column": 1,
+      "row": 4
+    },
+    "object/armor/hard-shoes": {
+      "sheet": "objects-02",
+      "column": 2,
+      "row": 4
+    },
+    "object/armor/jackboots": {
+      "sheet": "objects-02",
+      "column": 3,
+      "row": 4
+    },
+    "object/armor/combat-boots": {
+      "sheet": "objects-02",
+      "column": 4,
+      "row": 4
+    },
+    "object/armor/jungle-boots": {
+      "sheet": "objects-02",
+      "column": 5,
+      "row": 4
+    },
+    "object/armor/hiking-boots": {
+      "sheet": "objects-02",
+      "column": 6,
+      "row": 4
+    },
+    "object/armor/mud-boots": {
+      "sheet": "objects-02",
+      "column": 7,
+      "row": 4
+    },
+    "object/armor/buckled-boots": {
+      "sheet": "objects-02",
+      "column": 0,
+      "row": 5
+    },
+    "object/armor/riding-boots": {
+      "sheet": "objects-02",
+      "column": 1,
+      "row": 5
+    },
+    "object/armor/snow-boots": {
+      "sheet": "objects-02",
+      "column": 2,
+      "row": 5
+    },
+    "object/ring/wooden-ring": {
+      "sheet": "objects-02",
+      "column": 3,
+      "row": 5
+    },
+    "object/ring/granite-ring": {
+      "sheet": "objects-02",
+      "column": 4,
+      "row": 5
+    },
+    "object/ring/opal-ring": {
+      "sheet": "objects-02",
+      "column": 5,
+      "row": 5
+    },
+    "object/ring/clay-ring": {
+      "sheet": "objects-02",
+      "column": 6,
+      "row": 5
+    },
+    "object/ring/coral-ring": {
+      "sheet": "objects-02",
+      "column": 7,
+      "row": 5
+    },
+    "object/ring/black-onyx-ring": {
+      "sheet": "objects-02",
+      "column": 0,
+      "row": 6
+    },
+    "object/ring/moonstone-ring": {
+      "sheet": "objects-02",
+      "column": 1,
+      "row": 6
+    },
+    "object/ring/tiger-eye-ring": {
+      "sheet": "objects-02",
+      "column": 2,
+      "row": 6
+    },
+    "object/ring/jade-ring": {
+      "sheet": "objects-02",
+      "column": 3,
+      "row": 6
+    },
+    "object/ring/bronze-ring": {
+      "sheet": "objects-02",
+      "column": 4,
+      "row": 6
+    },
+    "object/ring/agate-ring": {
+      "sheet": "objects-02",
+      "column": 5,
+      "row": 6
+    },
+    "object/ring/topaz-ring": {
+      "sheet": "objects-02",
+      "column": 6,
+      "row": 6
+    },
+    "object/ring/sapphire-ring": {
+      "sheet": "objects-02",
+      "column": 7,
+      "row": 6
+    },
+    "object/ring/ruby-ring": {
+      "sheet": "objects-02",
+      "column": 0,
+      "row": 7
+    },
+    "object/ring/diamond-ring": {
+      "sheet": "objects-02",
+      "column": 1,
+      "row": 7
+    },
+    "object/ring/pearl-ring": {
+      "sheet": "objects-02",
+      "column": 2,
+      "row": 7
+    },
+    "object/ring/iron-ring": {
+      "sheet": "objects-02",
+      "column": 3,
+      "row": 7
+    },
+    "object/ring/brass-ring": {
+      "sheet": "objects-02",
+      "column": 4,
+      "row": 7
+    },
+    "object/ring/copper-ring": {
+      "sheet": "objects-02",
+      "column": 5,
+      "row": 7
+    },
+    "object/ring/twisted-ring": {
+      "sheet": "objects-02",
+      "column": 6,
+      "row": 7
+    },
+    "object/ring/steel-ring": {
+      "sheet": "objects-02",
+      "column": 7,
+      "row": 7
+    },
+    "object/ring/silver-ring": {
+      "sheet": "objects-03",
+      "column": 0,
+      "row": 0
+    },
+    "object/ring/gold-ring": {
+      "sheet": "objects-03",
+      "column": 1,
+      "row": 0
+    },
+    "object/ring/ivory-ring": {
+      "sheet": "objects-03",
+      "column": 2,
+      "row": 0
+    },
+    "object/ring/emerald-ring": {
+      "sheet": "objects-03",
+      "column": 3,
+      "row": 0
+    },
+    "object/ring/wire-ring": {
+      "sheet": "objects-03",
+      "column": 4,
+      "row": 0
+    },
+    "object/ring/engagement-ring": {
+      "sheet": "objects-03",
+      "column": 5,
+      "row": 0
+    },
+    "object/ring/shiny-ring": {
+      "sheet": "objects-03",
+      "column": 6,
+      "row": 0
+    },
+    "object/amulet/circular-amulet": {
+      "sheet": "objects-03",
+      "column": 7,
+      "row": 0
+    },
+    "object/amulet/spherical-amulet": {
+      "sheet": "objects-03",
+      "column": 0,
+      "row": 1
+    },
+    "object/amulet/oval-amulet": {
+      "sheet": "objects-03",
+      "column": 1,
+      "row": 1
+    },
+    "object/amulet/triangular-amulet": {
+      "sheet": "objects-03",
+      "column": 2,
+      "row": 1
+    },
+    "object/amulet/pyramidal-amulet": {
+      "sheet": "objects-03",
+      "column": 3,
+      "row": 1
+    },
+    "object/amulet/square-amulet": {
+      "sheet": "objects-03",
+      "column": 4,
+      "row": 1
+    },
+    "object/amulet/concave-amulet": {
+      "sheet": "objects-03",
+      "column": 5,
+      "row": 1
+    },
+    "object/amulet/hexagonal-amulet": {
+      "sheet": "objects-03",
+      "column": 6,
+      "row": 1
+    },
+    "object/amulet/octagonal-amulet": {
+      "sheet": "objects-03",
+      "column": 7,
+      "row": 1
+    },
+    "object/amulet/perforated-amulet": {
+      "sheet": "objects-03",
+      "column": 0,
+      "row": 2
+    },
+    "object/amulet/cubical-amulet": {
+      "sheet": "objects-03",
+      "column": 1,
+      "row": 2
+    },
+    "object/amulet/amulet-of-yendor": {
+      "sheet": "objects-03",
+      "column": 2,
+      "row": 2
+    },
+    "object/tool/large-box": {
+      "sheet": "objects-03",
+      "column": 3,
+      "row": 2
+    },
+    "object/tool/chest": {
+      "sheet": "objects-03",
+      "column": 4,
+      "row": 2
+    },
+    "object/tool/ice-box": {
+      "sheet": "objects-03",
+      "column": 5,
+      "row": 2
+    },
+    "object/tool/bag": {
+      "sheet": "objects-03",
+      "column": 6,
+      "row": 2
+    },
+    "object/tool/key": {
+      "sheet": "objects-03",
+      "column": 7,
+      "row": 2
+    },
+    "object/tool/lock-pick": {
+      "sheet": "objects-03",
+      "column": 0,
+      "row": 3
+    },
+    "object/tool/credit-card": {
+      "sheet": "objects-03",
+      "column": 1,
+      "row": 3
+    },
+    "object/tool/candle": {
+      "sheet": "objects-03",
+      "column": 2,
+      "row": 3
+    },
+    "object/tool/brass-lantern": {
+      "sheet": "objects-03",
+      "column": 3,
+      "row": 3
+    },
+    "object/tool/lamp": {
+      "sheet": "objects-03",
+      "column": 4,
+      "row": 3
+    },
+    "object/tool/expensive-camera": {
+      "sheet": "objects-03",
+      "column": 5,
+      "row": 3
+    },
+    "object/tool/looking-glass": {
+      "sheet": "objects-03",
+      "column": 6,
+      "row": 3
+    },
+    "object/tool/glass-orb": {
+      "sheet": "objects-03",
+      "column": 7,
+      "row": 3
+    },
+    "object/tool/lenses": {
+      "sheet": "objects-03",
+      "column": 0,
+      "row": 4
+    },
+    "object/tool/blindfold": {
+      "sheet": "objects-03",
+      "column": 1,
+      "row": 4
+    },
+    "object/tool/towel": {
+      "sheet": "objects-03",
+      "column": 2,
+      "row": 4
+    },
+    "object/tool/saddle": {
+      "sheet": "objects-03",
+      "column": 3,
+      "row": 4
+    },
+    "object/tool/leash": {
+      "sheet": "objects-03",
+      "column": 4,
+      "row": 4
+    },
+    "object/tool/stethoscope": {
+      "sheet": "objects-03",
+      "column": 5,
+      "row": 4
+    },
+    "object/tool/tinning-kit": {
+      "sheet": "objects-03",
+      "column": 6,
+      "row": 4
+    },
+    "object/tool/tin-opener": {
+      "sheet": "objects-03",
+      "column": 7,
+      "row": 4
+    },
+    "object/tool/can-of-grease": {
+      "sheet": "objects-03",
+      "column": 0,
+      "row": 5
+    },
+    "object/tool/figurine": {
+      "sheet": "objects-03",
+      "column": 1,
+      "row": 5
+    },
+    "object/tool/magic-marker": {
+      "sheet": "objects-03",
+      "column": 2,
+      "row": 5
+    },
+    "object/tool/land-mine": {
+      "sheet": "objects-03",
+      "column": 3,
+      "row": 5
+    },
+    "object/tool/beartrap": {
+      "sheet": "objects-03",
+      "column": 4,
+      "row": 5
+    },
+    "object/tool/whistle": {
+      "sheet": "objects-03",
+      "column": 5,
+      "row": 5
+    },
+    "object/tool/flute": {
+      "sheet": "objects-03",
+      "column": 6,
+      "row": 5
+    },
+    "object/tool/horn": {
+      "sheet": "objects-03",
+      "column": 7,
+      "row": 5
+    },
+    "object/tool/harp": {
+      "sheet": "objects-03",
+      "column": 0,
+      "row": 6
+    },
+    "object/tool/bell": {
+      "sheet": "objects-03",
+      "column": 1,
+      "row": 6
+    },
+    "object/tool/bugle": {
+      "sheet": "objects-03",
+      "column": 2,
+      "row": 6
+    },
+    "object/tool/drum": {
+      "sheet": "objects-03",
+      "column": 3,
+      "row": 6
+    },
+    "object/tool/pick-axe": {
+      "sheet": "objects-03",
+      "column": 4,
+      "row": 6
+    },
+    "object/tool/grappling-hook": {
+      "sheet": "objects-03",
+      "column": 5,
+      "row": 6
+    },
+    "object/tool/unicorn-horn": {
+      "sheet": "objects-03",
+      "column": 6,
+      "row": 6
+    },
+    "object/tool/candelabrum": {
+      "sheet": "objects-03",
+      "column": 7,
+      "row": 6
+    },
+    "object/tool/silver-bell": {
+      "sheet": "objects-03",
+      "column": 0,
+      "row": 7
+    },
+    "object/food/tripe-ration": {
+      "sheet": "objects-03",
+      "column": 1,
+      "row": 7
+    },
+    "object/food/corpse": {
+      "sheet": "objects-03",
+      "column": 2,
+      "row": 7
+    },
+    "object/food/egg": {
+      "sheet": "objects-03",
+      "column": 3,
+      "row": 7
+    },
+    "object/food/meatball": {
+      "sheet": "objects-03",
+      "column": 4,
+      "row": 7
+    },
+    "object/food/meat-stick": {
+      "sheet": "objects-03",
+      "column": 5,
+      "row": 7
+    },
+    "object/food/enormous-meatball": {
+      "sheet": "objects-03",
+      "column": 6,
+      "row": 7
+    },
+    "object/food/meat-ring": {
+      "sheet": "objects-03",
+      "column": 7,
+      "row": 7
+    },
+    "object/food/glob-of-gray-ooze": {
+      "sheet": "objects-04",
+      "column": 0,
+      "row": 0
+    },
+    "object/food/glob-of-brown-pudding": {
+      "sheet": "objects-04",
+      "column": 1,
+      "row": 0
+    },
+    "object/food/glob-of-green-slime": {
+      "sheet": "objects-04",
+      "column": 2,
+      "row": 0
+    },
+    "object/food/glob-of-black-pudding": {
+      "sheet": "objects-04",
+      "column": 3,
+      "row": 0
+    },
+    "object/food/kelp-frond": {
+      "sheet": "objects-04",
+      "column": 4,
+      "row": 0
+    },
+    "object/food/eucalyptus-leaf": {
+      "sheet": "objects-04",
+      "column": 5,
+      "row": 0
+    },
+    "object/food/apple": {
+      "sheet": "objects-04",
+      "column": 6,
+      "row": 0
+    },
+    "object/food/orange": {
+      "sheet": "objects-04",
+      "column": 7,
+      "row": 0
+    },
+    "object/food/pear": {
+      "sheet": "objects-04",
+      "column": 0,
+      "row": 1
+    },
+    "object/food/melon": {
+      "sheet": "objects-04",
+      "column": 1,
+      "row": 1
+    },
+    "object/food/banana": {
+      "sheet": "objects-04",
+      "column": 2,
+      "row": 1
+    },
+    "object/food/carrot": {
+      "sheet": "objects-04",
+      "column": 3,
+      "row": 1
+    },
+    "object/food/sprig-of-wolfsbane": {
+      "sheet": "objects-04",
+      "column": 4,
+      "row": 1
+    },
+    "object/food/clove-of-garlic": {
+      "sheet": "objects-04",
+      "column": 5,
+      "row": 1
+    },
+    "object/food/slime-mold": {
+      "sheet": "objects-04",
+      "column": 6,
+      "row": 1
+    },
+    "object/food/lump-of-royal-jelly": {
+      "sheet": "objects-04",
+      "column": 7,
+      "row": 1
+    },
+    "object/food/cream-pie": {
+      "sheet": "objects-04",
+      "column": 0,
+      "row": 2
+    },
+    "object/food/candy-bar": {
+      "sheet": "objects-04",
+      "column": 1,
+      "row": 2
+    },
+    "object/food/fortune-cookie": {
+      "sheet": "objects-04",
+      "column": 2,
+      "row": 2
+    },
+    "object/food/pancake": {
+      "sheet": "objects-04",
+      "column": 3,
+      "row": 2
+    },
+    "object/food/lembas-wafer": {
+      "sheet": "objects-04",
+      "column": 4,
+      "row": 2
+    },
+    "object/food/cram-ration": {
+      "sheet": "objects-04",
+      "column": 5,
+      "row": 2
+    },
+    "object/food/food-ration": {
+      "sheet": "objects-04",
+      "column": 6,
+      "row": 2
+    },
+    "object/food/k-ration": {
+      "sheet": "objects-04",
+      "column": 7,
+      "row": 2
+    },
+    "object/food/c-ration": {
+      "sheet": "objects-04",
+      "column": 0,
+      "row": 3
+    },
+    "object/food/tin": {
+      "sheet": "objects-04",
+      "column": 1,
+      "row": 3
+    },
+    "object/potion/ruby-potion": {
+      "sheet": "objects-04",
+      "column": 2,
+      "row": 3
+    },
+    "object/potion/pink-potion": {
+      "sheet": "objects-04",
+      "column": 3,
+      "row": 3
+    },
+    "object/potion/orange-potion": {
+      "sheet": "objects-04",
+      "column": 4,
+      "row": 3
+    },
+    "object/potion/yellow-potion": {
+      "sheet": "objects-04",
+      "column": 5,
+      "row": 3
+    },
+    "object/potion/emerald-potion": {
+      "sheet": "objects-04",
+      "column": 6,
+      "row": 3
+    },
+    "object/potion/dark-green-potion": {
+      "sheet": "objects-04",
+      "column": 7,
+      "row": 3
+    },
+    "object/potion/cyan-potion": {
+      "sheet": "objects-04",
+      "column": 0,
+      "row": 4
+    },
+    "object/potion/sky-blue-potion": {
+      "sheet": "objects-04",
+      "column": 1,
+      "row": 4
+    },
+    "object/potion/brilliant-blue-potion": {
+      "sheet": "objects-04",
+      "column": 2,
+      "row": 4
+    },
+    "object/potion/magenta-potion": {
+      "sheet": "objects-04",
+      "column": 3,
+      "row": 4
+    },
+    "object/potion/purple-red-potion": {
+      "sheet": "objects-04",
+      "column": 4,
+      "row": 4
+    },
+    "object/potion/puce-potion": {
+      "sheet": "objects-04",
+      "column": 5,
+      "row": 4
+    },
+    "object/potion/milky-potion": {
+      "sheet": "objects-04",
+      "column": 6,
+      "row": 4
+    },
+    "object/potion/swirly-potion": {
+      "sheet": "objects-04",
+      "column": 7,
+      "row": 4
+    },
+    "object/potion/bubbly-potion": {
+      "sheet": "objects-04",
+      "column": 0,
+      "row": 5
+    },
+    "object/potion/smoky-potion": {
+      "sheet": "objects-04",
+      "column": 1,
+      "row": 5
+    },
+    "object/potion/cloudy-potion": {
+      "sheet": "objects-04",
+      "column": 2,
+      "row": 5
+    },
+    "object/potion/effervescent-potion": {
+      "sheet": "objects-04",
+      "column": 3,
+      "row": 5
+    },
+    "object/potion/black-potion": {
+      "sheet": "objects-04",
+      "column": 4,
+      "row": 5
+    },
+    "object/potion/golden-potion": {
+      "sheet": "objects-04",
+      "column": 5,
+      "row": 5
+    },
+    "object/potion/brown-potion": {
+      "sheet": "objects-04",
+      "column": 6,
+      "row": 5
+    },
+    "object/potion/fizzy-potion": {
+      "sheet": "objects-04",
+      "column": 7,
+      "row": 5
+    },
+    "object/potion/dark-potion": {
+      "sheet": "objects-04",
+      "column": 0,
+      "row": 6
+    },
+    "object/potion/white-potion": {
+      "sheet": "objects-04",
+      "column": 1,
+      "row": 6
+    },
+    "object/potion/murky-potion": {
+      "sheet": "objects-04",
+      "column": 2,
+      "row": 6
+    },
+    "object/potion/clear-potion": {
+      "sheet": "objects-04",
+      "column": 3,
+      "row": 6
+    },
+    "object/scroll/scroll-labeled-zelgo-mer": {
+      "sheet": "objects-04",
+      "column": 4,
+      "row": 6
+    },
+    "object/scroll/scroll-labeled-juyed-awk-yacc": {
+      "sheet": "objects-04",
+      "column": 5,
+      "row": 6
+    },
+    "object/scroll/scroll-labeled-nr-9": {
+      "sheet": "objects-04",
+      "column": 6,
+      "row": 6
+    },
+    "object/scroll/scroll-labeled-xixaxa-xoxaxa-xuxaxa": {
+      "sheet": "objects-04",
+      "column": 7,
+      "row": 6
+    },
+    "object/scroll/scroll-labeled-pratyavayah": {
+      "sheet": "objects-04",
+      "column": 0,
+      "row": 7
+    },
+    "object/scroll/scroll-labeled-daiyen-fooels": {
+      "sheet": "objects-04",
+      "column": 1,
+      "row": 7
+    },
+    "object/scroll/scroll-labeled-lep-gex-ven-zea": {
+      "sheet": "objects-04",
+      "column": 2,
+      "row": 7
+    },
+    "object/scroll/scroll-labeled-prirutsenie": {
+      "sheet": "objects-04",
+      "column": 3,
+      "row": 7
+    },
+    "object/scroll/scroll-labeled-elbib-yloh": {
+      "sheet": "objects-04",
+      "column": 4,
+      "row": 7
+    },
+    "object/scroll/scroll-labeled-verr-yed-horre": {
+      "sheet": "objects-04",
+      "column": 5,
+      "row": 7
+    },
+    "object/scroll/scroll-labeled-venzar-borgavve": {
+      "sheet": "objects-04",
+      "column": 6,
+      "row": 7
+    },
+    "object/scroll/scroll-labeled-tharr": {
+      "sheet": "objects-04",
+      "column": 7,
+      "row": 7
+    },
+    "object/scroll/scroll-labeled-yum-yum": {
+      "sheet": "objects-05",
+      "column": 0,
+      "row": 0
+    },
+    "object/scroll/scroll-labeled-kernod-wel": {
+      "sheet": "objects-05",
+      "column": 1,
+      "row": 0
+    },
+    "object/scroll/scroll-labeled-elam-ebow": {
+      "sheet": "objects-05",
+      "column": 2,
+      "row": 0
+    },
+    "object/scroll/scroll-labeled-duam-xnaht": {
+      "sheet": "objects-05",
+      "column": 3,
+      "row": 0
+    },
+    "object/scroll/scroll-labeled-andova-begarin": {
+      "sheet": "objects-05",
+      "column": 4,
+      "row": 0
+    },
+    "object/scroll/scroll-labeled-kirje": {
+      "sheet": "objects-05",
+      "column": 5,
+      "row": 0
+    },
+    "object/scroll/scroll-labeled-ve-forbryderne": {
+      "sheet": "objects-05",
+      "column": 6,
+      "row": 0
+    },
+    "object/scroll/scroll-labeled-hackem-muche": {
+      "sheet": "objects-05",
+      "column": 7,
+      "row": 0
+    },
+    "object/scroll/scroll-labeled-velox-neb": {
+      "sheet": "objects-05",
+      "column": 0,
+      "row": 1
+    },
+    "object/scroll/scroll-labeled-foobie-bletch": {
+      "sheet": "objects-05",
+      "column": 1,
+      "row": 1
+    },
+    "object/scroll/scroll-labeled-temov": {
+      "sheet": "objects-05",
+      "column": 2,
+      "row": 1
+    },
+    "object/scroll/scroll-labeled-garven-deh": {
+      "sheet": "objects-05",
+      "column": 3,
+      "row": 1
+    },
+    "object/scroll/scroll-labeled-read-me": {
+      "sheet": "objects-05",
+      "column": 4,
+      "row": 1
+    },
+    "object/scroll/scroll-labeled-etaoin-shrdlu": {
+      "sheet": "objects-05",
+      "column": 5,
+      "row": 1
+    },
+    "object/scroll/scroll-labeled-lorem-ipsum": {
+      "sheet": "objects-05",
+      "column": 6,
+      "row": 1
+    },
+    "object/scroll/scroll-labeled-fnord": {
+      "sheet": "objects-05",
+      "column": 7,
+      "row": 1
+    },
+    "object/scroll/scroll-labeled-ko-bate": {
+      "sheet": "objects-05",
+      "column": 0,
+      "row": 2
+    },
+    "object/scroll/scroll-labeled-abra-ka-dabra": {
+      "sheet": "objects-05",
+      "column": 1,
+      "row": 2
+    },
+    "object/scroll/scroll-labeled-ashpd-sodalg": {
+      "sheet": "objects-05",
+      "column": 2,
+      "row": 2
+    },
+    "object/scroll/scroll-labeled-zlorfik": {
+      "sheet": "objects-05",
+      "column": 3,
+      "row": 2
+    },
+    "object/scroll/scroll-labeled-gnik-sisi-vle": {
+      "sheet": "objects-05",
+      "column": 4,
+      "row": 2
+    },
+    "object/scroll/scroll-labeled-hapax-legomenon": {
+      "sheet": "objects-05",
+      "column": 5,
+      "row": 2
+    },
+    "object/scroll/scroll-labeled-eiris-sazun-idisi": {
+      "sheet": "objects-05",
+      "column": 6,
+      "row": 2
+    },
+    "object/scroll/scroll-labeled-phol-ende-wodan": {
+      "sheet": "objects-05",
+      "column": 7,
+      "row": 2
+    },
+    "object/scroll/scroll-labeled-ghoti": {
+      "sheet": "objects-05",
+      "column": 0,
+      "row": 3
+    },
+    "object/scroll/scroll-labeled-mapiro-mahama-diromat": {
+      "sheet": "objects-05",
+      "column": 1,
+      "row": 3
+    },
+    "object/scroll/scroll-labeled-vas-corp-bet-mani": {
+      "sheet": "objects-05",
+      "column": 2,
+      "row": 3
+    },
+    "object/scroll/scroll-labeled-xor-ota": {
+      "sheet": "objects-05",
+      "column": 3,
+      "row": 3
+    },
+    "object/scroll/scroll-labeled-strc-prst-skrz-krk": {
+      "sheet": "objects-05",
+      "column": 4,
+      "row": 3
+    },
+    "object/scroll/stamped-scroll": {
+      "sheet": "objects-05",
+      "column": 5,
+      "row": 3
+    },
+    "object/scroll/unlabeled-scroll": {
+      "sheet": "objects-05",
+      "column": 6,
+      "row": 3
+    },
+    "object/spellbook/parchment-spellbook": {
+      "sheet": "objects-05",
+      "column": 7,
+      "row": 3
+    },
+    "object/spellbook/vellum-spellbook": {
+      "sheet": "objects-05",
+      "column": 0,
+      "row": 4
+    },
+    "object/spellbook/ragged-spellbook": {
+      "sheet": "objects-05",
+      "column": 1,
+      "row": 4
+    },
+    "object/spellbook/dog-eared-spellbook": {
+      "sheet": "objects-05",
+      "column": 2,
+      "row": 4
+    },
+    "object/spellbook/mottled-spellbook": {
+      "sheet": "objects-05",
+      "column": 3,
+      "row": 4
+    },
+    "object/spellbook/stained-spellbook": {
+      "sheet": "objects-05",
+      "column": 4,
+      "row": 4
+    },
+    "object/spellbook/cloth-spellbook": {
+      "sheet": "objects-05",
+      "column": 5,
+      "row": 4
+    },
+    "object/spellbook/leathery-spellbook": {
+      "sheet": "objects-05",
+      "column": 6,
+      "row": 4
+    },
+    "object/spellbook/white-spellbook": {
+      "sheet": "objects-05",
+      "column": 7,
+      "row": 4
+    },
+    "object/spellbook/pink-spellbook": {
+      "sheet": "objects-05",
+      "column": 0,
+      "row": 5
+    },
+    "object/spellbook/red-spellbook": {
+      "sheet": "objects-05",
+      "column": 1,
+      "row": 5
+    },
+    "object/spellbook/orange-spellbook": {
+      "sheet": "objects-05",
+      "column": 2,
+      "row": 5
+    },
+    "object/spellbook/yellow-spellbook": {
+      "sheet": "objects-05",
+      "column": 3,
+      "row": 5
+    },
+    "object/spellbook/velvet-spellbook": {
+      "sheet": "objects-05",
+      "column": 4,
+      "row": 5
+    },
+    "object/spellbook/light-green-spellbook": {
+      "sheet": "objects-05",
+      "column": 5,
+      "row": 5
+    },
+    "object/spellbook/dark-green-spellbook": {
+      "sheet": "objects-05",
+      "column": 6,
+      "row": 5
+    },
+    "object/spellbook/turquoise-spellbook": {
+      "sheet": "objects-05",
+      "column": 7,
+      "row": 5
+    },
+    "object/spellbook/cyan-spellbook": {
+      "sheet": "objects-05",
+      "column": 0,
+      "row": 6
+    },
+    "object/spellbook/light-blue-spellbook": {
+      "sheet": "objects-05",
+      "column": 1,
+      "row": 6
+    },
+    "object/spellbook/dark-blue-spellbook": {
+      "sheet": "objects-05",
+      "column": 2,
+      "row": 6
+    },
+    "object/spellbook/indigo-spellbook": {
+      "sheet": "objects-05",
+      "column": 3,
+      "row": 6
+    },
+    "object/spellbook/magenta-spellbook": {
+      "sheet": "objects-05",
+      "column": 4,
+      "row": 6
+    },
+    "object/spellbook/purple-spellbook": {
+      "sheet": "objects-05",
+      "column": 5,
+      "row": 6
+    },
+    "object/spellbook/violet-spellbook": {
+      "sheet": "objects-05",
+      "column": 6,
+      "row": 6
+    },
+    "object/spellbook/tan-spellbook": {
+      "sheet": "objects-05",
+      "column": 7,
+      "row": 6
+    },
+    "object/spellbook/plaid-spellbook": {
+      "sheet": "objects-05",
+      "column": 0,
+      "row": 7
+    },
+    "object/spellbook/light-brown-spellbook": {
+      "sheet": "objects-05",
+      "column": 1,
+      "row": 7
+    },
+    "object/spellbook/dark-brown-spellbook": {
+      "sheet": "objects-05",
+      "column": 2,
+      "row": 7
+    },
+    "object/spellbook/gray-spellbook": {
+      "sheet": "objects-05",
+      "column": 3,
+      "row": 7
+    },
+    "object/spellbook/wrinkled-spellbook": {
+      "sheet": "objects-05",
+      "column": 4,
+      "row": 7
+    },
+    "object/spellbook/dusty-spellbook": {
+      "sheet": "objects-05",
+      "column": 5,
+      "row": 7
+    },
+    "object/spellbook/bronze-spellbook": {
+      "sheet": "objects-05",
+      "column": 6,
+      "row": 7
+    },
+    "object/spellbook/copper-spellbook": {
+      "sheet": "objects-05",
+      "column": 7,
+      "row": 7
+    },
+    "object/spellbook/silver-spellbook": {
+      "sheet": "objects-06",
+      "column": 0,
+      "row": 0
+    },
+    "object/spellbook/gold-spellbook": {
+      "sheet": "objects-06",
+      "column": 1,
+      "row": 0
+    },
+    "object/spellbook/glittering-spellbook": {
+      "sheet": "objects-06",
+      "column": 2,
+      "row": 0
+    },
+    "object/spellbook/shining-spellbook": {
+      "sheet": "objects-06",
+      "column": 3,
+      "row": 0
+    },
+    "object/spellbook/dull-spellbook": {
+      "sheet": "objects-06",
+      "column": 4,
+      "row": 0
+    },
+    "object/spellbook/thin-spellbook": {
+      "sheet": "objects-06",
+      "column": 5,
+      "row": 0
+    },
+    "object/spellbook/thick-spellbook": {
+      "sheet": "objects-06",
+      "column": 6,
+      "row": 0
+    },
+    "object/spellbook/checkered-spellbook": {
+      "sheet": "objects-06",
+      "column": 7,
+      "row": 0
+    },
+    "object/spellbook/plain-spellbook": {
+      "sheet": "objects-06",
+      "column": 0,
+      "row": 1
+    },
+    "object/spellbook/paperback-spellbook": {
+      "sheet": "objects-06",
+      "column": 1,
+      "row": 1
+    },
+    "object/spellbook/papyrus-spellbook": {
+      "sheet": "objects-06",
+      "column": 2,
+      "row": 1
+    },
+    "object/wand/glass-wand": {
+      "sheet": "objects-06",
+      "column": 3,
+      "row": 1
+    },
+    "object/wand/balsa-wand": {
+      "sheet": "objects-06",
+      "column": 4,
+      "row": 1
+    },
+    "object/wand/crystal-wand": {
+      "sheet": "objects-06",
+      "column": 5,
+      "row": 1
+    },
+    "object/wand/maple-wand": {
+      "sheet": "objects-06",
+      "column": 6,
+      "row": 1
+    },
+    "object/wand/pine-wand": {
+      "sheet": "objects-06",
+      "column": 7,
+      "row": 1
+    },
+    "object/wand/redwood-wand": {
+      "sheet": "objects-06",
+      "column": 0,
+      "row": 2
+    },
+    "object/wand/oak-wand": {
+      "sheet": "objects-06",
+      "column": 1,
+      "row": 2
+    },
+    "object/wand/ebony-wand": {
+      "sheet": "objects-06",
+      "column": 2,
+      "row": 2
+    },
+    "object/wand/marble-wand": {
+      "sheet": "objects-06",
+      "column": 3,
+      "row": 2
+    },
+    "object/wand/tin-wand": {
+      "sheet": "objects-06",
+      "column": 4,
+      "row": 2
+    },
+    "object/wand/brass-wand": {
+      "sheet": "objects-06",
+      "column": 5,
+      "row": 2
+    },
+    "object/wand/copper-wand": {
+      "sheet": "objects-06",
+      "column": 6,
+      "row": 2
+    },
+    "object/wand/silver-wand": {
+      "sheet": "objects-06",
+      "column": 7,
+      "row": 2
+    },
+    "object/wand/platinum-wand": {
+      "sheet": "objects-06",
+      "column": 0,
+      "row": 3
+    },
+    "object/wand/iridium-wand": {
+      "sheet": "objects-06",
+      "column": 1,
+      "row": 3
+    },
+    "object/wand/zinc-wand": {
+      "sheet": "objects-06",
+      "column": 2,
+      "row": 3
+    },
+    "object/wand/aluminum-wand": {
+      "sheet": "objects-06",
+      "column": 3,
+      "row": 3
+    },
+    "object/wand/uranium-wand": {
+      "sheet": "objects-06",
+      "column": 4,
+      "row": 3
+    },
+    "object/wand/iron-wand": {
+      "sheet": "objects-06",
+      "column": 5,
+      "row": 3
+    },
+    "object/wand/steel-wand": {
+      "sheet": "objects-06",
+      "column": 6,
+      "row": 3
+    },
+    "object/wand/hexagonal-wand": {
+      "sheet": "objects-06",
+      "column": 7,
+      "row": 3
+    },
+    "object/wand/short-wand": {
+      "sheet": "objects-06",
+      "column": 0,
+      "row": 4
+    },
+    "object/wand/runed-wand": {
+      "sheet": "objects-06",
+      "column": 1,
+      "row": 4
+    },
+    "object/wand/long-wand": {
+      "sheet": "objects-06",
+      "column": 2,
+      "row": 4
+    },
+    "object/wand/curved-wand": {
+      "sheet": "objects-06",
+      "column": 3,
+      "row": 4
+    },
+    "object/wand/forked-wand": {
+      "sheet": "objects-06",
+      "column": 4,
+      "row": 4
+    },
+    "object/wand/spiked-wand": {
+      "sheet": "objects-06",
+      "column": 5,
+      "row": 4
+    },
+    "object/wand/jeweled-wand": {
+      "sheet": "objects-06",
+      "column": 6,
+      "row": 4
+    },
+    "object/coin/gold-piece": {
+      "sheet": "objects-06",
+      "column": 7,
+      "row": 4
+    },
+    "object/gem/white-gem": {
+      "sheet": "objects-06",
+      "column": 0,
+      "row": 5
+    },
+    "object/gem/red-gem": {
+      "sheet": "objects-06",
+      "column": 1,
+      "row": 5
+    },
+    "object/gem/orange-gem": {
+      "sheet": "objects-06",
+      "column": 2,
+      "row": 5
+    },
+    "object/gem/blue-gem": {
+      "sheet": "objects-06",
+      "column": 3,
+      "row": 5
+    },
+    "object/gem/black-gem": {
+      "sheet": "objects-06",
+      "column": 4,
+      "row": 5
+    },
+    "object/gem/green-gem": {
+      "sheet": "objects-06",
+      "column": 5,
+      "row": 5
+    },
+    "object/gem/yellow-gem": {
+      "sheet": "objects-06",
+      "column": 6,
+      "row": 5
+    },
+    "object/gem/yellowish-brown-gem": {
+      "sheet": "objects-06",
+      "column": 7,
+      "row": 5
+    },
+    "object/gem/violet-gem": {
+      "sheet": "objects-06",
+      "column": 0,
+      "row": 6
+    },
+    "object/gem/gray-stone": {
+      "sheet": "objects-06",
+      "column": 1,
+      "row": 6
+    },
+    "object/gem/rock": {
+      "sheet": "objects-06",
+      "column": 2,
+      "row": 6
+    },
+    "object/large-rock/boulder": {
+      "sheet": "objects-06",
+      "column": 3,
+      "row": 6
+    },
+    "object/large-rock/statue": {
+      "sheet": "objects-06",
+      "column": 4,
+      "row": 6
+    },
+    "object/iron-ball/heavy-iron-ball": {
+      "sheet": "objects-06",
+      "column": 5,
+      "row": 6
+    },
+    "object/iron-chain/iron-chain": {
+      "sheet": "objects-06",
+      "column": 6,
+      "row": 6
+    },
+    "object/venom/splash-of-venom": {
+      "sheet": "objects-06",
+      "column": 7,
+      "row": 6
+    }
+  }
+}

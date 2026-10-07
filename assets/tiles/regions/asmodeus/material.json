@@ -1,0 +1,41 @@
+{
+  "license": "CC-BY-4.0",
+  "credit": "NetHack Atlas project",
+  "families": [
+    "lantern",
+    "soot-and-brass"
+  ],
+  "reference": "tools/tileset-preview/fixtures/asmodeus-preview.js",
+  "source": "Original shipped Gehennom masonry, existing family doors and bars, Lantern floors or Soot regional Gehennom floors.",
+  "scope": "Engine-owned Asmodeus context only. Classic and Modern environment art is identical.",
+  "cornerPattern": [
+    "##...........##",
+    ".##.........##.",
+    ".###.......###.",
+    "..###.....###..",
+    "...###...###...",
+    "....#######....",
+    ".....#####.....",
+    "......###......",
+    "......###......",
+    ".......#......."
+  ],
+  "frontPattern": [
+    "##.................##",
+    ".###.............###.",
+    "..###...........###..",
+    "...####.......####...",
+    ".....####...####.....",
+    ".......#######.......",
+    "........#####........",
+    ".........###.........",
+    "..........#.........."
+  ],
+  "sidePattern": [
+    "##.......##",
+    ".###...###.",
+    "..#######..",
+    "....###....",
+    ".....#....."
+  ]
+}

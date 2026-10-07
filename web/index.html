@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Atlas for NetHack</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="titlebar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">A</span>
+          <div><b>ATLAS</b> FOR NETHACK<small>THE DUNGEONS OF DOOM</small></div>
+        </div>
+        <div class="journey">
+          <span class="live-dot"></span
+          ><span id="journey-label">An adventure awaits</span>
+        </div>
+        <div class="toolbar">
+          <button
+            class="quiet-button"
+            id="actions-button"
+            title="Browse and choose an action (⌘K)"
+            disabled
+          >
+            Actions <span>⌘K</span>
+          </button>
+          <button
+            class="icon-button"
+            id="help-button"
+            title="Command reference (?)"
+            aria-label="Command reference"
+          >
+            ?</button
+          ><button
+            class="icon-button"
+            id="settings-button"
+            title="Display settings"
+            aria-label="Display settings"
+          >
+            ⚙</button
+          ><button class="quiet-button" id="save-button" disabled>
+            Save & exit <span>⌘S</span>
+          </button>
+        </div>
+      </header>
+      <main class="workspace">
+        <aside class="character-panel">
+          <div class="section-kicker">YOUR ADVENTURER</div>
+          <div class="portrait" aria-hidden="true">
+            <svg viewBox="0 0 100 100">
+              <path d="M50 9 77 25 84 65 69 83 31 83 16 65 23 25Z" />
+              <path d="m34 36 16-14 16 14-4 21-12 13-12-13Z" />
+              <path d="m34 36 16 7 16-7M50 43v27M29 81l6-20M71 81l-6-20" />
+              <path d="m40 46 5 2m10 0 5-2" /></svg
+            ><span class="portrait-glow"></span>
+          </div>
+          <h1 id="character-name">The unnamed</h1>
+          <div class="character-subtitle" id="character-subtitle">
+            A story yet to be written
+          </div>
+          <div id="adventure-mode" class="adventure-mode" hidden></div>
+          <div class="vitals">
+            <div class="meter-label">
+              <span>Vitality</span><strong id="hp-value">— / —</strong>
+            </div>
+            <div class="meter"><div id="hp-meter"></div></div>
+            <div class="meter-label">
+              <span>Power</span><strong id="power-value">— / —</strong>
+            </div>
+            <div class="meter power"><div id="power-meter"></div></div>
+          </div>
+          <div class="attribute-grid" id="attributes">
+            <div><span>STR</span><b>—</b></div>
+            <div><span>DEX</span><b>—</b></div>
+            <div><span>CON</span><b>—</b></div>
+            <div><span>INT</span><b>—</b></div>
+            <div><span>WIS</span><b>—</b></div>
+            <div><span>CHA</span><b>—</b></div>
+          </div>
+          <div class="character-details">
+            <div><span>Armor class</span><b id="armor-value">—</b></div>
+            <div class="experience-stat">
+              <div class="experience-heading"><span>Experience</span><b id="level-value">—</b></div>
+              <div class="meter experience" id="experience-progress" role="progressbar"
+                aria-label="Progress to next experience level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div id="experience-meter"></div>
+              </div>
+              <div class="experience-heading experience-caption">
+                <b id="experience-value">— / — XP</b><span id="experience-goal"></span>
+              </div>
+            </div>
+            <div><span>Gold</span><b class="gold" id="gold-value">—</b></div>
+            <div><span>Turns</span><b id="turn-value">—</b></div>
+          </div>
+          <div id="conditions" class="conditions"></div>
+          <button class="panel-button" id="inventory-button" disabled>
+            <span>▤ &nbsp; Inventory</span><kbd>i</kbd>
+          </button>
+          <div class="sidebar-footer">
+            <div class="compass">✥</div>
+            <p>Fortune favors<br />the observant.</p>
+            <span
+              >NetHack <span id="engine-version">5.0</span> · native macOS</span
+            >
+          </div>
+        </aside>
+        <section class="central-panel">
+          <div class="map-toolbar">
+            <div class="location">
+              <span class="location-symbol">◇</span>
+              <div>
+                <strong id="location-name">The Dungeons of Doom</strong
+                ><span id="location-detail">Your descent begins here</span>
+              </div>
+            </div>
+            <div class="map-controls">
+              <button
+                id="center-button"
+                title="Center on your character"
+                aria-label="Center on your character"
+              >
+                ⌖</button
+              ><span class="control-divider"></span
+              ><button id="zoom-out" title="Zoom out" aria-label="Zoom out">
+                −</button
+              ><span id="zoom-label">100%</span
+              ><button id="zoom-in" title="Zoom in" aria-label="Zoom in">
+                +
+              </button>
+            </div>
+          </div>
+          <div class="map-container" id="map-container">
+            <canvas
+              id="dungeon"
+              aria-label="Dungeon map. Use arrow keys or click a neighboring tile to move; Y U B N move diagonally; hover over a tile for information."
+              tabindex="0"
+            ></canvas>
+            <div class="map-empty" id="map-empty">
+              <div class="empty-rune">✧</div>
+              <p>Every legend begins with a first step.</p>
+            </div>
+            <div class="map-coordinate" id="coordinate-label">80 × 21</div>
+            <div class="map-hint" id="map-hint">
+              <kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd><span>move</span
+              ><i></i><span>click adjacent · Home/PgUp/End/PgDn diagonals</span>
+            </div>
+          </div>
+          <div id="target-bar" class="direction-bar" hidden>
+            <div class="direction-caption" role="status" aria-live="polite">
+              <strong>Choose a location</strong>
+              <span>Click a tile, or move the cursor with arrow keys and press Enter. Esc cancels selection.</span>
+            </div>
+            <div class="direction-actions">
+              <button type="button" id="target-select">Select</button>
+              <button type="button" id="target-cancel">Cancel</button>
+            </div>
+          </div>
+          <div id="direction-bar" class="direction-bar" hidden>
+            <div class="direction-caption" role="status" aria-live="polite">
+              <strong id="direction-prompt">Choose a direction</strong>
+              <span>Arrow keys · Home/PgUp/End/PgDn diagonals · Esc</span>
+            </div>
+            <div class="direction-actions" aria-label="Choose a direction">
+              <button type="button" data-direction="y" aria-label="Northwest">
+                ↖
+              </button>
+              <button type="button" data-direction="k" aria-label="North">
+                ↑
+              </button>
+              <button type="button" data-direction="u" aria-label="Northeast">
+                ↗
+              </button>
+              <button type="button" data-direction="h" aria-label="West">
+                ←
+              </button>
+              <button
+                type="button"
+                data-direction="."
+                aria-label="Yourself"
+                title="Yourself (.)"
+              >
+                ◎
+              </button>
+              <button type="button" data-direction="l" aria-label="East">
+                →
+              </button>
+              <button type="button" data-direction="b" aria-label="Southwest">
+                ↙
+              </button>
+              <button type="button" data-direction="j" aria-label="South">
+                ↓
+              </button>
+              <button type="button" data-direction="n" aria-label="Southeast">
+                ↘
+              </button>
+              <button
+                type="button"
+                data-direction="&lt;"
+                aria-label="Upward"
+                title="Upward (<)"
+              >
+                &lt;
+              </button>
+              <button
+                type="button"
+                data-direction="&gt;"
+                aria-label="Downward"
+                title="Downward (>)"
+              >
+                &gt;
+              </button>
+              <button
+                type="button"
+                id="direction-cancel"
+                aria-label="Send Escape"
+                title="Escape (NetHack determines the outcome)"
+              >
+                ×
+              </button>
+            </div>
+          </div>
+          <section class="journal">
+            <div class="journal-heading">
+              <div class="section-kicker">ADVENTURE JOURNAL</div>
+              <span id="journal-count">Awaiting your first chapter</span
+              ><button
+                id="clear-log"
+                title="Clear journal display"
+                aria-label="Clear journal display"
+              >
+                ⌫
+              </button>
+            </div>
+            <div id="messages" role="log" aria-live="polite">
+              <div class="journal-empty">
+                The dungeon keeps its secrets. For now.
+              </div>
+            </div>
+          </section>
+        </section>
+        <aside class="inspector-panel">
+          <div class="section-kicker">FIELD NOTES</div>
+          <div class="inspector-top">
+            <span class="eyebrow" id="inspector-kind"
+              >OBSERVE YOUR SURROUNDINGS</span
+            >
+            <div id="inspector-icon" class="inspect-illustration">⌖</div>
+            <h2 id="inspector-title">Look a little closer.</h2>
+            <p id="inspector-description">
+              Move your pointer over the dungeon to learn about the creatures,
+              objects, and terrain around you.
+            </p>
+          </div>
+          <div id="inspector-details"></div>
+          <div class="inspector-tip">
+            <span>✦</span>
+            <p>
+              Information follows what your adventurer can perceive. Some
+              mysteries must be discovered.
+            </p>
+          </div>
+          <div class="quick-actions">
+            <div class="section-kicker">AT YOUR FINGERTIPS</div>
+            <div id="context-actions" aria-label="Contextual actions" hidden></div>
+            <button data-command="," data-action-name="pickup" disabled>
+              <span>Pick up</span><kbd>,</kbd></button
+            ><button data-command="." data-action-name="wait" disabled>
+              <span>Wait a turn</span><kbd>.</kbd></button
+            ><button data-command="s" data-action-name="search" disabled>
+              <span>Search nearby</span><kbd>s</kbd></button
+            ><button data-command="e" data-action-name="eat" disabled>
+              <span>Eat something</span><kbd>e</kbd></button
+            ><button data-command=":" data-action-name="look" disabled>
+              <span>Look here</span><kbd>:</kbd>
+            </button>
+          </div>
+          <div class="engine-state">
+            <span class="live-dot"></span
+            ><span id="engine-state">Ready when you are</span>
+          </div>
+        </aside>
+      </main>
+      <footer class="statusbar">
+        <span id="status-message"
+          >A world of consequence, one turn at a time.</span
+        ><span id="tileset-label">Lantern Classic</span
+        ><span>OFFLINE · YOUR ADVENTURE STAYS ON THIS MAC</span>
+      </footer>
+    </div>
+    <div class="welcome-overlay" id="welcome">
+      <section class="welcome-card">
+        <div class="welcome-art">
+          <div class="arch arch-back"></div>
+          <div class="arch arch-front"></div>
+          <div class="stairs"></div>
+          <div class="welcome-star">✦</div>
+          <div class="welcome-art-caption">DESCEND INTO THE UNKNOWN</div>
+        </div>
+        <div class="welcome-content">
+          <span class="eyebrow">A CLASSIC. A NEW PERSPECTIVE.</span>
+          <h2>One more<br /><em>turn.</em></h2>
+          <p>
+            Enter a living labyrinth of strange creatures, dangerous
+            discoveries, and wonderfully unexpected consequences.
+          </p>
+          <form id="new-game-form">
+            <label for="player-name">YOUR NAME</label
+            ><input
+              id="player-name"
+              maxlength="20"
+              autocomplete="off"
+              placeholder="Adventurer"
+              value="Adventurer"
+            />
+            <div class="character-options">
+              <label
+                >ROLE<select id="player-role">
+                  <option value="random">Let fate decide</option>
+                  <option>Valkyrie</option>
+                  <option>Wizard</option>
+                  <option>Barbarian</option>
+                  <option>Archeologist</option>
+                  <option>Caveman</option>
+                  <option>Healer</option>
+                  <option>Knight</option>
+                  <option>Monk</option>
+                  <option>Priest</option>
+                  <option>Ranger</option>
+                  <option>Rogue</option>
+                  <option>Samurai</option>
+                  <option>Tourist</option>
+                </select></label
+              ><label
+                >RACE<select id="player-race">
+                  <option value="random">Let fate decide</option>
+                  <option>human</option>
+                  <option>elf</option>
+                  <option>dwarf</option>
+                  <option>gnome</option>
+                  <option>orc</option>
+                </select></label
+              >
+            </div>
+            <div class="character-options character-details-options">
+              <label for="player-gender"
+                >SEX
+                <select
+                  id="player-gender"
+                  required
+                  aria-describedby="alignment-help"
+                >
+                  <option value="" disabled>Choose sex…</option>
+                  <option value="random" selected>Let fate decide</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </label>
+              <label for="player-alignment"
+                >ALIGNMENT
+                <select
+                  id="player-alignment"
+                  required
+                  aria-describedby="alignment-help"
+                >
+                  <option value="" disabled>Choose alignment…</option>
+                  <option value="random" selected>Let fate decide</option>
+                  <option value="lawful">Lawful</option>
+                  <option value="neutral">Neutral</option>
+                  <option value="chaotic">Chaotic</option>
+                </select>
+              </label>
+            </div>
+            <p id="alignment-help" class="settings-copy">
+              Available choices follow NetHack’s role and race restrictions.
+            </p>
+            <label for="player-mode">PLAY MODE</label>
+            <select id="player-mode" aria-describedby="mode-help">
+              <option value="standard" selected>Standard</option>
+              <option value="beginner">Beginner</option>
+              <option value="explore">Explore</option>
+            </select>
+            <p id="mode-help" class="mode-help">
+              Your role’s usual supplies. Normal NetHack rules apply.
+            </p>
+            <button type="submit" class="primary-button">
+              Begin your descent <span>↗</span>
+            </button>
+          </form>
+          <div id="saved-game-picker" hidden>
+            <label for="saved-game-select">SAVED ADVENTURE</label
+            ><select id="saved-game-select"></select>
+          </div>
+          <button id="load-button" class="continue-button">
+            Continue saved adventure <span>→</span></button
+          ><small class="welcome-footnote" id="welcome-footnote"
+            >NetHack 5.0 · Fully offline · No account required</small
+          >
+        </div>
+      </section>
+    </div>
+    <dialog id="engine-dialog">
+      <div class="dialog-eyebrow">NETHACK ATLAS</div>
+      <h2 id="dialog-title"></h2>
+      <section id="dialog-context" aria-label="Recent game messages" hidden>
+        <div class="section-kicker">WHAT JUST HAPPENED</div>
+        <div id="dialog-messages"></div>
+      </section>
+      <div id="dialog-text"></div>
+      <form id="dialog-form">
+        <p id="menu-hint" class="menu-hint" hidden></p>
+        <div id="dialog-options"></div>
+        <input id="dialog-input" type="text" autocomplete="off"
+          aria-labelledby="dialog-title" aria-describedby="dialog-messages" hidden />
+        <div class="dialog-actions">
+          <button type="button" class="quiet-button" id="dialog-cancel">
+            Cancel <kbd>esc</kbd></button
+          ><button type="submit" class="primary-button" id="dialog-submit">
+            Continue <span>↵</span>
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="actions-dialog" aria-labelledby="actions-title">
+      <button
+        class="dialog-close"
+        data-close="actions-dialog"
+        aria-label="Close actions"
+      >
+        ×
+      </button>
+      <div class="dialog-eyebrow">THE ADVENTURER’S COMPANION</div>
+      <h2 id="actions-title">What will you do?</h2>
+      <p class="dialog-intro">
+        Browse every available command. Choosing an action may take a turn;
+        browsing does not.
+      </p>
+      <label class="section-kicker" for="action-filter">FIND AN ACTION</label>
+      <input
+        id="action-filter"
+        type="search"
+        placeholder="Type a name, description or shortcut…"
+        autocomplete="off"
+        spellcheck="false"
+        aria-controls="action-results"
+      />
+      <p id="action-count" role="status" aria-live="polite"></p>
+      <div id="action-results" aria-label="Available actions"></div>
+      <p class="help-note">
+        ↑ ↓ to browse · Enter to choose · Esc to close. Prefix commands ask for
+        another key. Shortcuts reflect your current NetHack settings.
+      </p>
+    </dialog>
+    <dialog id="help-dialog">
+      <button
+        class="dialog-close"
+        data-close="help-dialog"
+        aria-label="Close command reference"
+      >
+        ×
+      </button>
+      <div class="dialog-eyebrow">THE ADVENTURER’S COMPANION</div>
+      <h2>A little knowledge.<br />A longer adventure.</h2>
+      <p class="dialog-intro">Every action can take a turn. Take your time.</p>
+      <div class="help-columns">
+        <div>
+          <h3>Move & explore</h3>
+          <dl>
+            <dt>Move</dt>
+            <dd>Arrow keys / hjkl</dd>
+            <dt>Move diagonally</dt>
+            <dd>Y ↖ · U ↗ · B ↙ · N ↘<br />Home / PgUp / End / PgDn</dd>
+            <dt>Run</dt>
+            <dd>Shift + direction</dd>
+            <dt>Wait / search</dt>
+            <dd>. / s</dd>
+            <dt>Up / down stairs</dt>
+            <dd>&lt; / &gt;</dd>
+            <dt>Look at this square</dt>
+            <dd>:</dd>
+            <dt>Examine something</dt>
+            <dd>;</dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Use & survive</h3>
+          <dl>
+            <dt>Inventory / pick up</dt>
+            <dd>i / ,</dd>
+            <dt>Eat / drink / read</dt>
+            <dd>e / q / r</dd>
+            <dt>Apply / zap</dt>
+            <dd>a / z</dd>
+            <dt>Wield / wear</dt>
+            <dd>w / W</dd>
+            <dt>Drop / throw</dt>
+            <dd>d / t</dd>
+            <dt>Kick</dt>
+            <dd>Ctrl+D</dd>
+            <dt>Browse all actions</dt>
+            <dd>Actions / ⌘K</dd>
+            <dt>Extended command</dt>
+            <dd>#</dd>
+            <dt>Save & exit</dt>
+            <dd>⌘S</dd>
+          </dl>
+        </div>
+      </div>
+      <section id="beginner-help" class="beginner-help" hidden>
+        <h3>Your Beginner supply chest</h3>
+        <p>Look for the named, unlocked supply chest nearby. Move onto its square, then choose <strong>Loot container</strong> under At your fingertips, or find <strong>loot</strong> in Actions. Return to the chest’s square whenever you need another supply.</p>
+        <p><strong>Magic whistle:</strong> After taking it, choose Apply (<kbd>a</kbd>) and select the whistle to call your existing pets on the same level. It cannot summon a new pet or bring one from another floor.</p>
+        <p><strong>Food ration:</strong> After taking one, choose Eat (<kbd>e</kbd>) and select it when you need food. Samurai know their rations as <em>gunyoki</em>.</p>
+        <p><strong>Healing potion:</strong> After taking it, choose Quaff (<kbd>q</kbd>) and select it when you need to recover health.</p>
+      </section>
+      <section id="explore-help" class="beginner-help" hidden>
+        <h3>Explore at your own pace</h3>
+        <p>Explore is NetHack’s native, non-scoring discovery mode. You begin with a wand of wishing. Use <strong>Zap</strong> to use it and request an item.</p>
+        <p>If NetHack asks <strong>Die?</strong>, choose <strong>No</strong> to keep playing. You can still choose to end the adventure. Restoring an Explore save also offers to keep the save file.</p>
+        <p>Explore adventures have their own saves and do not enter the high-score list. Normal role supplies apply, without the Beginner supply chest.</p>
+      </section>
+      <p class="help-note">
+        Click a neighboring tile to move one step, including diagonally. Click a
+        neighboring creature to attempt a normal move or attack. Hover for field
+        notes. Scroll to explore the map. Use + and − above the map to adjust
+        the view. NetHack’s full keyboard commands remain available.
+      </p>
+      <button class="primary-button" data-close="help-dialog">
+        Back to the adventure <span>↵</span>
+      </button>
+    </dialog>
+    <dialog id="settings-dialog">
+      <button
+        class="dialog-close"
+        data-close="settings-dialog"
+        aria-label="Close settings"
+      >
+        ×
+      </button>
+      <div class="dialog-eyebrow">MAKE IT YOURS</div>
+      <h2>Your view of the dungeon.</h2>
+      <label class="settings-label" for="tileset-select">TILESET</label
+      ><select id="tileset-select">
+        <option value="lantern">Lantern Classic</option>
+        <option value="official">NetHack Classic</option>
+        <option value="ascii">Typography / ASCII</option>
+      </select>
+      <p class="settings-copy" id="tileset-credit"></p>
+      <p class="settings-copy">
+        Choose a tilesheet made for NetHack 5.0. Older versions use a different
+        tile order and will not display correctly.
+      </p>
+      <div class="character-options import-dimensions">
+        <label
+          >TILE WIDTH<input
+            id="import-tile-width"
+            type="number"
+            min="8"
+            max="256"
+            value="32" /></label
+        ><label
+          >TILE HEIGHT<input
+            id="import-tile-height"
+            type="number"
+            min="8"
+            max="256"
+            value="32"
+        /></label>
+      </div>
+      <p class="settings-copy">
+        Use the tile dimensions supplied with your sheet. For rectangular tiles,
+        enter the width and height separately.
+      </p>
+      <button id="import-tiles-button" class="panel-button">
+        Import a compatible tileset… <span>↗</span>
+      </button>
+      <div id="import-settings" hidden>
+        <input
+          type="file"
+          id="tile-file"
+          accept="image/png,image/webp,image/jpeg,image/bmp"
+        /><label class="settings-label" for="tile-width"
+          >TILE SIZE IN PIXELS</label
+        ><input
+          id="tile-width"
+          type="number"
+          value="32"
+          min="8"
+          max="256"
+        /><button class="panel-button" id="apply-tiles">Use this atlas</button>
+      </div>
+      <div class="settings-switch">
+        <label for="follow-player">Keep adventurer centered</label
+        ><input type="checkbox" id="follow-player" checked />
+      </div>
+      <div class="settings-switch">
+        <label for="show-grid">Subtle map grid</label
+        ><input type="checkbox" id="show-grid" checked />
+      </div>
+      <button class="primary-button" data-close="settings-dialog">
+        Done <span>↵</span>
+      </button>
+    </dialog>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="input.js"></script>
+    <script src="character.js"></script>
+    <script src="tiles.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

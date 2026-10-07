@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleName</key><string>Atlas</string>
+<key>CFBundleDisplayName</key><string>Atlas</string>
+<key>CFBundleIdentifier</key><string>run.nethack.atlas</string>
+<key>CFBundleExecutable</key><string>NetHackAtlas</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleShortVersionString</key><string>1.0.0</string>
+<key>CFBundleVersion</key><string>1</string>
+<key>LSMinimumSystemVersion</key><string>13.0</string>
+<key>NSHighResolutionCapable</key><true/>
+<key>NSSupportsAutomaticGraphicsSwitching</key><true/>
+<key>NSHumanReadableCopyright</key><string>NetHack © 1985-2026 Stichting Mathematisch Centrum and M. Stephenson. Atlas for NetHack contributors.</string>
+<key>CFBundleIconFile</key><string>AppIcon</string>
+</dict></plist>

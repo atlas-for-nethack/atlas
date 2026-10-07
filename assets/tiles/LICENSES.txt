@@ -1,0 +1,44 @@
+Original NetHack Atlas tileset artwork
+Copyright 2026 NetHack Atlas project.
+Current publication grant selected by the owner October 6, 2026.
+License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+Full license: sources/CC-BY-4.0.txt.
+https://creativecommons.org/licenses/by/4.0/
+
+Lantern Classic and Lantern Modern suggested credit:
+Lantern tileset by the NetHack Atlas project, licensed under CC BY 4.0.
+Full grant and scope: lantern/LICENSE.txt.
+
+Soot & Brass Classic and Soot & Brass Modern suggested credit:
+Soot & Brass tileset by the NetHack Atlas project, licensed under CC BY 4.0.
+Full grant and scope: soot-and-brass/LICENSE.txt.
+
+CC BY 4.0 permits use, modification and sharing, including commercially,
+subject to its attribution and other terms. Include the license link and
+indicate changes when sharing modified artwork. Original sources, prompts,
+preparation records and production provenance are retained in each family.
+Only project-original concepts were supplied as artwork references.
+
+The CC BY 4.0 grant includes original regional derivatives in both families:
+Mines, Gehennom, Vlad, Valley/Orcus, Asmodeus, Caveman, Samurai and Astral,
+including shared Classic/Modern architecture and ground. Retained source
+recipes, crops and SHA-256 registries are under regions/. Original procedural
+frost and Plane of Water rim, cap and reflection pixels also use CC BY 4.0.
+Their drawing source is ../../web/tiles.js; selection metadata is manifest.json.
+The pixel grant is separate from application code.
+
+Independently owned artwork preparation, build and drawing tools use MIT
+under the root component grant. Original explanatory documentation uses
+CC BY 4.0. These grants do not change upstream-derived rights. Original
+NetHack level layouts, tile names, appearances, ordering and size metadata
+retain NGPL. In particular, lantern/catalog.json, creature-scale.json and
+upstream size evidence retain their upstream-derived notices and source records.
+
+NetHack Classic (official 5.0 tiles)
+Artwork: NetHack DevTeam and contributing artists.
+License: NetHack General Public License (NGPL).
+Source: vendor/NetHack-5.0.0/win/share/{monsters,objects,other}.txt.
+Full license: sources/NGPL.txt (also supplied with the application).
+Upstream source archive and retrieval instructions: sources/PERMISSIONS.md.
+Format conversion to PNG by this project, September 24, 2026. Nine empty
+scanlines below the last tile row were trimmed. No tile pixels changed.

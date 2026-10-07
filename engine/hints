@@ -1,0 +1,21 @@
+#-PRE
+
+# NetHack Atelier: relocatable native macOS JSON window port.
+PREFIX=.
+HACKDIR=.
+INSTDIR=.
+VARDIR=.
+SHELLDIR=.
+CC=clang
+CFLAGS=-O2 -g -I../include -mmacosx-version-min=13.0 -DSHIM_GRAPHICS -DNOTTYGRAPHICS -DTILES_IN_GLYPHMAP -DDEFAULT_WINDOW_SYS=\"shim\" -DHACKDIR=\".\" -DDLB -DNOMAIL -DNOSHELL
+SYSCFLAGS=-DLUA_USE_POSIX -mmacosx-version-min=13.0
+LINK=$(CC)
+LFLAGS=-mmacosx-version-min=13.0
+WINSRC=$(WINSHIMSRC) tile.c
+WINOBJ=$(WINSHIMOBJ) tile.o
+WINLIB=
+CHOWN=true
+CHGRP=true
+VARDIRPERM=0700
+VARFILEPERM=0600
+GAMEPERM=0755

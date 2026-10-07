@@ -1,0 +1,279 @@
+{
+  "schema": 1,
+  "license": "CC-BY-4.0",
+  "credit": "NetHack Atlas project",
+  "sourceType": "Project-original artwork edited with built-in image generation",
+  "prompts": {
+    "file": "prompts.json",
+    "sha256": "04ab3218f6d42d7fea39b55da0661117609d7cc6bc281c5e117fd75060f5a396"
+  },
+  "sources": {
+    "lantern": {
+      "file": "lantern.png",
+      "sha256": "b19c9f2096a3b3ea6c67c2cf1853461f781a1df9a8abe6d906785ac79eafd8aa",
+      "size": [
+        1632,
+        964
+      ],
+      "reference": "lantern-reference.jpg",
+      "referenceSha256": "106712c693ec51d7e2e6d4a6bce8b2310e66fda6a0c9ee3ecb3e4e14603157b8",
+      "promptKey": "lantern",
+      "pieces": {
+        "north": {
+          "bounds": [
+            148,
+            59,
+            222,
+            145
+          ],
+          "size": [
+            64,
+            71
+          ]
+        },
+        "north-connector": {
+          "bounds": [
+            222,
+            59,
+            296,
+            145
+          ],
+          "size": [
+            64,
+            71
+          ]
+        },
+        "west": {
+          "bounds": [
+            74,
+            149,
+            133,
+            223
+          ],
+          "size": [
+            51,
+            64
+          ]
+        },
+        "east": {
+          "bounds": [
+            1112,
+            592,
+            1171,
+            666
+          ],
+          "size": [
+            51,
+            64
+          ]
+        },
+        "south": {
+          "bounds": [
+            148,
+            723,
+            222,
+            770
+          ],
+          "size": [
+            64,
+            38
+          ]
+        },
+        "northwest": {
+          "bounds": [
+            74,
+            59,
+            133,
+            145
+          ],
+          "size": [
+            51,
+            71
+          ]
+        },
+        "northeast": {
+          "bounds": [
+            1112,
+            436,
+            1171,
+            522
+          ],
+          "size": [
+            51,
+            71
+          ]
+        },
+        "southwest": {
+          "bounds": [
+            74,
+            723,
+            133,
+            770
+          ],
+          "size": [
+            51,
+            38
+          ]
+        },
+        "southeast": {
+          "bounds": [
+            1112,
+            723,
+            1171,
+            770
+          ],
+          "size": [
+            51,
+            38
+          ]
+        },
+        "west-door": {
+          "bounds": [
+            815,
+            416,
+            874,
+            510
+          ],
+          "size": [
+            51,
+            81
+          ]
+        }
+      }
+    },
+    "soot-and-brass": {
+      "file": "soot-and-brass.png",
+      "sha256": "bee875a65d7d661e1bed8796bf4e80e9a5fdd70e7e122bcbdfb4945097df9ce9",
+      "size": [
+        1632,
+        964
+      ],
+      "reference": "soot-and-brass-reference.jpg",
+      "referenceSha256": "bde8f5c0694c76c5d5eb298d167300b1e87dced86edbcc535863ea51d04734bf",
+      "promptKey": "soot",
+      "pieces": {
+        "north": {
+          "bounds": [
+            148,
+            66,
+            222,
+            152
+          ],
+          "size": [
+            64,
+            71
+          ]
+        },
+        "north-connector": {
+          "bounds": [
+            222,
+            66,
+            296,
+            152
+          ],
+          "size": [
+            64,
+            71
+          ]
+        },
+        "west": {
+          "bounds": [
+            74,
+            149,
+            133,
+            223
+          ],
+          "size": [
+            51,
+            64
+          ]
+        },
+        "east": {
+          "bounds": [
+            1112,
+            592,
+            1171,
+            666
+          ],
+          "size": [
+            51,
+            64
+          ]
+        },
+        "south": {
+          "bounds": [
+            148,
+            723,
+            222,
+            770
+          ],
+          "size": [
+            64,
+            38
+          ]
+        },
+        "northwest": {
+          "bounds": [
+            74,
+            66,
+            133,
+            152
+          ],
+          "size": [
+            51,
+            71
+          ]
+        },
+        "northeast": {
+          "bounds": [
+            1112,
+            436,
+            1171,
+            522
+          ],
+          "size": [
+            51,
+            71
+          ]
+        },
+        "southwest": {
+          "bounds": [
+            74,
+            723,
+            133,
+            770
+          ],
+          "size": [
+            51,
+            38
+          ]
+        },
+        "southeast": {
+          "bounds": [
+            1112,
+            723,
+            1171,
+            770
+          ],
+          "size": [
+            51,
+            38
+          ]
+        },
+        "west-door": {
+          "bounds": [
+            815,
+            416,
+            874,
+            510
+          ],
+          "size": [
+            51,
+            81
+          ]
+        }
+      }
+    }
+  },
+  "scope": "Approved Samurai wall and gate pixels assembled at existing family geometry. Floors, objects, bars and creature sizes are unchanged."
+}

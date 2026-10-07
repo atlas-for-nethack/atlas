@@ -1,0 +1,316 @@
+{
+  "monster/000-giant-ant": {
+    "file": "production-sources/reference-ant.png",
+    "sha256": "8da9a2ae51c1e08621ecc43179a57e5e241ad19730761682918f92366c27f84f",
+    "origin": "approved-reference-extract",
+    "source": "production-sources/reference-concept.png",
+    "sourceSha256": "1b1386b43003fd3b46715c7f47d1002def8540eb99718614b405ae6eb0e43ce4",
+    "sourceCrop": [
+      55,
+      362,
+      182,
+      474
+    ]
+  },
+  "monster/016-little-dog": {
+    "file": "production-sources/reference-dog.png",
+    "sha256": "8fdcea3f9582ed3c263797e4d1c9e6d1b3db1d8224269fe2347ffe5941bde29d",
+    "origin": "approved-reference-extract",
+    "source": "production-sources/reference-concept.png",
+    "sourceSha256": "1b1386b43003fd3b46715c7f47d1002def8540eb99718614b405ae6eb0e43ce4",
+    "sourceCrop": [
+      253,
+      163,
+      371,
+      271
+    ]
+  },
+  "monster/072-goblin": {
+    "file": "production-sources/reference-goblin.png",
+    "sha256": "038c93b9c8842722b874b79698bae38fa33d60598d6b236d709a58428b95c627",
+    "origin": "approved-reference-extract",
+    "source": "production-sources/reference-concept.png",
+    "sourceSha256": "1b1386b43003fd3b46715c7f47d1002def8540eb99718614b405ae6eb0e43ce4",
+    "sourceCrop": [
+      451,
+      154,
+      565,
+      273
+    ]
+  },
+  "monster/342-knight": {
+    "file": "production-sources/reference-hero.png",
+    "sha256": "58d27d6612519fa780f5dc837d2185dd024039b0e03c35d21d7880baa80bce39",
+    "origin": "approved-reference-extract",
+    "source": "production-sources/reference-concept.png",
+    "sourceSha256": "1b1386b43003fd3b46715c7f47d1002def8540eb99718614b405ae6eb0e43ce4",
+    "sourceCrop": [
+      70,
+      148,
+      171,
+      269
+    ]
+  },
+  "object/potion/ruby-potion": {
+    "file": "production-sources/reference-potion.png",
+    "sha256": "79f273d117f81fdc67f489a204aec098edf1ccec72048e32a2304c5503c01e92",
+    "origin": "approved-reference-extract",
+    "source": "production-sources/reference-concept.png",
+    "sourceSha256": "1b1386b43003fd3b46715c7f47d1002def8540eb99718614b405ae6eb0e43ce4",
+    "sourceCrop": [
+      281,
+      362,
+      347,
+      454
+    ]
+  },
+  "object/scroll/scroll-labeled-zelgo-mer": {
+    "file": "production-sources/reference-scroll.png",
+    "sha256": "cd39ebffb1c4c8fd9953601d614520f0bddce27279513ff973d053c48cb0bb7e",
+    "origin": "approved-reference-extract",
+    "source": "production-sources/reference-concept.png",
+    "sourceSha256": "1b1386b43003fd3b46715c7f47d1002def8540eb99718614b405ae6eb0e43ce4",
+    "sourceCrop": [
+      462,
+      363,
+      561,
+      454
+    ]
+  },
+  "object/tool/chest": {
+    "file": "production-sources/reference-chest.png",
+    "sha256": "2b0126ef699fc780618577212f294998b565c23692e8bca62777b49e9c2004a1",
+    "origin": "approved-reference-extract",
+    "source": "production-sources/reference-concept.png",
+    "sourceSha256": "1b1386b43003fd3b46715c7f47d1002def8540eb99718614b405ae6eb0e43ce4",
+    "sourceCrop": [
+      69,
+      563,
+      174,
+      670
+    ]
+  },
+  "terrain/staircase-down": {
+    "file": "production-sources/reference-stairs.png",
+    "sha256": "23d90ad58e8a226f89ecfadd151ffd128209fc01f5656b0708fd9abdca815253",
+    "origin": "approved-reference-extract",
+    "source": "production-sources/reference-concept.png",
+    "sourceSha256": "1b1386b43003fd3b46715c7f47d1002def8540eb99718614b405ae6eb0e43ce4",
+    "sourceCrop": [
+      261,
+      558,
+      373,
+      675
+    ]
+  },
+  "terrain/fountain": {
+    "file": "production-sources/reference-fountain.png",
+    "sha256": "ae74576eb90078478c08e0fd11a3e90d7de7462645897ecfc45a71d77ac253c0",
+    "origin": "approved-reference-extract",
+    "source": "production-sources/reference-concept.png",
+    "sourceSha256": "1b1386b43003fd3b46715c7f47d1002def8540eb99718614b405ae6eb0e43ce4",
+    "sourceCrop": [
+      451,
+      541,
+      573,
+      680
+    ]
+  },
+  "monster/338-archeologist": {
+    "file": "production-sources/338-archeologist.png",
+    "sha256": "47f995596146032e83d64d1343b0ec5a3936caf0b9c509d88c9d63c979990828",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/339-barbarian": {
+    "file": "production-sources/339-barbarian.png",
+    "sha256": "5bd5c3701da9ebd0ab2372fc8266bff3dc5fd7ce2276578ad64cf9e5c0ccceaf",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/340-cave-dweller": {
+    "file": "production-sources/340-cave-dweller.png",
+    "sha256": "a4d9ddd0bb07876c16d4315305b88f098d6a2a53234f5f88e4739423c5fcdecb",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/341-healer": {
+    "file": "production-sources/341-healer.png",
+    "sha256": "f418237a8f7790672f3761ed6497e50208a44023bb2d2d19382737601f1d2f4a",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/343-monk": {
+    "file": "production-sources/343-monk.png",
+    "sha256": "7424e542c8f043b1f73d4c32fa62bc1814652027b048e8414d55502c489bd4d0",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/344-cleric": {
+    "file": "production-sources/344-cleric.png",
+    "sha256": "0469b7ef13e092d734fb54deb6dffeae32b619ef55cc024415f67c948bd8bae6",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/345-ranger": {
+    "file": "production-sources/345-ranger.png",
+    "sha256": "48489026bca73c0831bd7eef6414b09f605bbe737a8eaa289f59f6f0bb23ddfa",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/346-rogue": {
+    "file": "production-sources/346-rogue.png",
+    "sha256": "c1513c320dfe720e7a5f4c77cce32fca2698d6eac33acc1b3ae3d0c5e70eb589",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/347-samurai": {
+    "file": "production-sources/347-samurai.png",
+    "sha256": "22c4428d9073b55c327081db91b6a1b8bdbcd6116cbed40d23f9352e61ac567e",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/348-tourist": {
+    "file": "production-sources/348-tourist.png",
+    "sha256": "384f841ef834623e15064cb6cc4116c31b3ed4eb9ecc7c3960f1ee9af50dd741",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/349-valkyrie": {
+    "file": "production-sources/349-valkyrie.png",
+    "sha256": "0d9ad569de88b221089033cf82c5e66cca14f344a826c9df0b61459848ca0b3f",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/350-wizard": {
+    "file": "production-sources/350-wizard.png",
+    "sha256": "ebe83a3f97e7f4f0dc680f609ad4c9e29fa5f98bca1e0a0128df6e85b6ffef14",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/034-kitten": {
+    "file": "production-sources/034-kitten.png",
+    "sha256": "47087cf5e969848104544c60421c58d0dfd301cc6ffdd0d66e1d0b383d1dc052",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/019-large-dog": {
+    "file": "production-sources/019-large-dog.png",
+    "sha256": "8936c1e7dcb9f6a6fac507d7979b2eec1a6e14658e996fe510e02e57bffd7a60",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/091-giant-rat": {
+    "file": "production-sources/091-giant-rat.png",
+    "sha256": "f725e54c16cbda1fba78530ef11080ba37dbfa47b5b0fe1a471501807deb6f8d",
+    "origin": "original-ai-generated",
+    "source": "production-sources/roles-pets-sheet.png"
+  },
+  "monster/105-black-unicorn": {
+    "file": "production-sources/105-black-unicorn.png",
+    "sha256": "fe66eb2f509bfec9717f08eef153a1d79b232af3216d69169c88c6baeb411644",
+    "origin": "original-ai-generated",
+    "source": "production-sources/monster-repairs-sheet.png"
+  },
+  "monster/114-baby-long-worm": {
+    "file": "production-sources/114-baby-long-worm.png",
+    "sha256": "60c61edbb806ac952627fed452a391215780e3e688b173556e2414937a932338",
+    "origin": "original-ai-generated",
+    "source": "production-sources/monster-repairs-sheet.png"
+  },
+  "monster/115-baby-purple-worm": {
+    "file": "production-sources/115-baby-purple-worm.png",
+    "sha256": "65b99f0a8e5c3671e2b109c37eab462d285ec155607bafcd91f2fefe8b1d4dc6",
+    "origin": "original-ai-generated",
+    "source": "production-sources/monster-repairs-sheet.png"
+  },
+  "monster/116-long-worm": {
+    "file": "production-sources/116-long-worm.png",
+    "sha256": "a1a5fdc67f4e4d6ea30904384987204db51994f9edbcb582be8fa1238aadecf6",
+    "origin": "original-ai-generated",
+    "source": "production-sources/monster-repairs-sheet.png"
+  },
+  "monster/117-purple-worm": {
+    "file": "production-sources/117-purple-worm.png",
+    "sha256": "1c06b75e36bf7ef62da5dffaae6f53efeef293e7551a8ff86699027907f2b1bb",
+    "origin": "original-ai-generated",
+    "source": "production-sources/monster-repairs-sheet.png"
+  },
+  "monster/119-xan": {
+    "file": "production-sources/119-xan.png",
+    "sha256": "883d96a5e9dc3112d0aa3d69866c938024ce58a1b99e7ea48e5a191b59009b79",
+    "origin": "original-ai-generated",
+    "source": "production-sources/monster-repairs-sheet.png"
+  },
+  "terrain/branch-staircase-up": {
+    "file": "production-sources/branch-stairs/branch-up.png",
+    "sha256": "35bef4675a0c3cc1e5f7fbacffb6c8452dcd4445a573da1acd33c5ce15b4a7d3",
+    "origin": "original-ai-generated",
+    "source": "production-sources/branch-stairs/branch-up-source-v2.png",
+    "approved": "2026-09-24"
+  },
+  "terrain/arrow-trap": {
+    "file": "production-sources/transparent-fixtures/arrow-trap.png",
+    "sha256": "f1523a59d89e6105ddf4d42d53cb1aabe47877304c713c9471061331a6cc4ff0",
+    "origin": "original-ai-generated-background-extraction",
+    "source": "production-sources/transparent-fixtures/arrow-trap-source.png",
+    "approved": "2026-09-28",
+    "approval": "Owner approved transparent arrow and same treatment for every failed audit sprite"
+  },
+  "terrain/dart-trap": {
+    "file": "production-sources/transparent-fixtures/dart-trap.png",
+    "sha256": "4f9316ad5ef70d17447caa992cd41cdf86dc234b504a2c49844c232e45677780",
+    "origin": "original-ai-generated-background-extraction",
+    "source": "production-sources/transparent-fixtures/dart-trap-source.png",
+    "approved": "2026-09-28",
+    "approval": "Owner approved transparent arrow and same treatment for every failed audit sprite"
+  },
+  "terrain/falling-rock-trap": {
+    "file": "production-sources/transparent-fixtures/falling-rock-trap.png",
+    "sha256": "1666570a648c5d1e3a64ac52ca53be0c84a057e6b7e3019f8db8aad8b1e4909a",
+    "origin": "original-ai-generated-background-extraction",
+    "source": "production-sources/transparent-fixtures/falling-rock-trap-source.png",
+    "approved": "2026-09-28",
+    "approval": "Owner approved transparent arrow and same treatment for every failed audit sprite"
+  },
+  "terrain/rust-trap": {
+    "file": "production-sources/transparent-fixtures/rust-trap.png",
+    "sha256": "6a39fd9b9327c9f178fade3cc7c1eb7c296a4855649074aca8187beb80b93a06",
+    "origin": "original-ai-generated-background-extraction",
+    "source": "production-sources/transparent-fixtures/rust-trap-source.png",
+    "approved": "2026-09-28",
+    "approval": "Owner approved transparent arrow and same treatment for every failed audit sprite"
+  },
+  "object/weapon/bow": {
+    "file": "production-sources/transparent-fixtures/bow.png",
+    "sha256": "0e73198dd1ffe74725af0605ab3c40caeb52ab30536c8343337cbf03687426c3",
+    "origin": "original-ai-generated-background-extraction",
+    "source": "production-sources/transparent-fixtures/bow-source.png",
+    "approved": "2026-09-28",
+    "approval": "Owner approved transparent arrow and same treatment for every failed audit sprite"
+  },
+  "object/weapon/runed-bow": {
+    "file": "production-sources/transparent-fixtures/runed-bow.png",
+    "sha256": "059ac31455284c5b9132b0c0ab5b0456133fedb03d696a85931c88f220ace9e2",
+    "origin": "original-ai-generated-background-extraction",
+    "source": "production-sources/transparent-fixtures/runed-bow-source.png",
+    "approved": "2026-09-28",
+    "approval": "Owner approved transparent arrow and same treatment for every failed audit sprite"
+  },
+  "object/weapon/crude-bow": {
+    "file": "production-sources/transparent-fixtures/crude-bow.png",
+    "sha256": "86202c6b7a136d376197a70607a857629a29dfc07f2c1c2749801ad9ee5bebc6",
+    "origin": "original-ai-generated-background-extraction",
+    "source": "production-sources/transparent-fixtures/crude-bow-source.png",
+    "approved": "2026-09-28",
+    "approval": "Owner approved transparent arrow and same treatment for every failed audit sprite"
+  },
+  "object/weapon/long-bow": {
+    "file": "production-sources/transparent-fixtures/long-bow.png",
+    "sha256": "3b535e3040a94af6558f43557aa3a55d0280a5b370a26750f3aad3fccdd5ab7e",
+    "origin": "original-ai-generated-background-extraction",
+    "source": "production-sources/transparent-fixtures/long-bow-source.png",
+    "approved": "2026-09-28",
+    "approval": "Owner approved transparent arrow and same treatment for every failed audit sprite"
+  }
+}

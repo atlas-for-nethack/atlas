@@ -1,0 +1,34 @@
+Soot & Brass tileset artwork
+Copyright 2026 NetHack Atlas project.
+Current publication grant selected by the owner October 6, 2026.
+
+Original Soot & Brass artwork, including its Classic and Modern editions, is
+licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+The full license is reproduced in ../sources/CC-BY-4.0.txt and available at:
+https://creativecommons.org/licenses/by/4.0/
+
+Suggested credit:
+Soot & Brass tileset by the NetHack Atlas project, licensed under CC BY 4.0.
+Include the license link and indicate changes when sharing modified artwork.
+CC BY 4.0 permits use, modification and sharing, including commercially,
+subject to its attribution and other terms, including its warranty provisions.
+
+Scope: original pixels in ../soot-and-brass-classic.png and
+../soot-and-brass-modern.png, retained original source images and reference artwork identified by this family's source/provenance
+records, and artwork derived from those images by project preparation/assembly
+tools. This includes regional materials, architecture, procedural frost, and
+the Plane of Water rim, cap and reflection pixels drawn for this family.
+Procedural drawing definitions are retained in ../../../web/tiles.js; the pixel
+grant is separate from that MIT-licensed code.
+
+NetHack-derived names, appearances and canonical ordering in
+../lantern/catalog.json, and upstream-derived creature-size metadata, retain
+NGPL. NetHack Classic pixels, engine code, its modifications and code executed
+inside NetHack retain their own NGPL notices. This artwork grant does not
+relicense those materials.
+
+Independently owned artwork preparation/build/drawing code uses MIT under the
+project's root component grants. Original explanatory documentation uses
+CC BY 4.0. The full NGPL text remains in ../sources/NGPL.txt for upstream-derived
+material. README.md, prompts, sources and provenance retain source evidence;
+dated older license choices are historical evidence.

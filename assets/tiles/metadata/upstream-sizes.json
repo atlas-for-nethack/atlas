@@ -1,0 +1,3159 @@
+{
+  "source": "vendor/NetHack-5.0.0/include/monsters.h",
+  "sha256": "c63db922770c96a9956d221f364ba4368a9f81f81c8d64ed28251a0506d4a906",
+  "conditional_policy": "Enabled all #if 0 blocks, CHARON and MAIL_STRUCTURES for canonical artwork coverage only. No engine files or gameplay changed.",
+  "monsters": [
+    {
+      "symbol": "GIANT_ANT",
+      "name": "giant ant",
+      "class": "S_ANT",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "KILLER_BEE",
+      "name": "killer bee",
+      "class": "S_ANT",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_FLY | M1_NOHANDS | M1_POIS",
+      "flags2": "M2_HOSTILE | M2_FEMALE"
+    },
+    {
+      "symbol": "SOLDIER_ANT",
+      "name": "soldier ant",
+      "class": "S_ANT",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_OVIPAROUS | M1_POIS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "FIRE_ANT",
+      "name": "fire ant",
+      "class": "S_ANT",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "GIANT_BEETLE",
+      "name": "giant beetle",
+      "class": "S_ANT",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_POIS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "QUEEN_BEE",
+      "name": "queen bee",
+      "class": "S_ANT",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_FLY | M1_NOHANDS | M1_OVIPAROUS | M1_POIS",
+      "flags2": "M2_HOSTILE | M2_FEMALE | M2_PRINCE"
+    },
+    {
+      "symbol": "ACID_BLOB",
+      "name": "acid blob",
+      "class": "S_BLOB",
+      "size": "MZ_TINY",
+      "flags1": "M1_BREATHLESS | M1_AMORPHOUS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_ACID",
+      "flags2": "M2_WANDER | M2_NEUTER"
+    },
+    {
+      "symbol": "QUIVERING_BLOB",
+      "name": "quivering blob",
+      "class": "S_BLOB",
+      "size": "MZ_SMALL",
+      "flags1": "M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS",
+      "flags2": "M2_WANDER | M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "GELATINOUS_CUBE",
+      "name": "gelatinous cube",
+      "class": "S_BLOB",
+      "size": "MZ_LARGE",
+      "flags1": "M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_OMNIVORE | M1_ACID",
+      "flags2": "M2_WANDER | M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "CHICKATRICE",
+      "name": "chickatrice",
+      "class": "S_COCKATRICE",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_OMNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "COCKATRICE",
+      "name": "cockatrice",
+      "class": "S_COCKATRICE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_OMNIVORE | M1_OVIPAROUS",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "PYROLISK",
+      "name": "pyrolisk",
+      "class": "S_COCKATRICE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_OMNIVORE | M1_OVIPAROUS",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "JACKAL",
+      "name": "jackal",
+      "class": "S_DOG",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "FOX",
+      "name": "fox",
+      "class": "S_DOG",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "COYOTE",
+      "name": "coyote",
+      "class": "S_DOG",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "WEREJACKAL",
+      "name": "werejackal",
+      "class": "S_DOG",
+      "size": "MZ_SMALL",
+      "flags1": "M1_NOHANDS | M1_POIS | M1_REGEN | M1_CARNIVORE",
+      "flags2": "M2_NOPOLY | M2_WERE | M2_HOSTILE"
+    },
+    {
+      "symbol": "LITTLE_DOG",
+      "name": "little dog",
+      "class": "S_DOG",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_DOMESTIC"
+    },
+    {
+      "symbol": "DINGO",
+      "name": "dingo",
+      "class": "S_DOG",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "DOG",
+      "name": "dog",
+      "class": "S_DOG",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_DOMESTIC"
+    },
+    {
+      "symbol": "LARGE_DOG",
+      "name": "large dog",
+      "class": "S_DOG",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_STRONG | M2_DOMESTIC"
+    },
+    {
+      "symbol": "WOLF",
+      "name": "wolf",
+      "class": "S_DOG",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "WEREWOLF",
+      "name": "werewolf",
+      "class": "S_DOG",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_NOHANDS | M1_POIS | M1_REGEN | M1_CARNIVORE",
+      "flags2": "M2_NOPOLY | M2_WERE | M2_HOSTILE"
+    },
+    {
+      "symbol": "WINTER_WOLF_CUB",
+      "name": "winter wolf cub",
+      "class": "S_DOG",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "WARG",
+      "name": "warg",
+      "class": "S_DOG",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "WINTER_WOLF",
+      "name": "winter wolf",
+      "class": "S_DOG",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "HELL_HOUND_PUP",
+      "name": "hell hound pup",
+      "class": "S_DOG",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "HELL_HOUND",
+      "name": "hell hound",
+      "class": "S_DOG",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "CERBERUS",
+      "name": "Cerberus",
+      "class": "S_DOG",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_NOPOLY | M2_HOSTILE | M2_STRONG | M2_PNAME | M2_MALE"
+    },
+    {
+      "symbol": "GAS_SPORE",
+      "name": "gas spore",
+      "class": "S_EYE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "FLOATING_EYE",
+      "name": "floating eye",
+      "class": "S_EYE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_FLY | M1_AMPHIBIOUS | M1_NOLIMBS | M1_NOHEAD | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "FREEZING_SPHERE",
+      "name": "freezing sphere",
+      "class": "S_EYE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "FLAMING_SPHERE",
+      "name": "flaming sphere",
+      "class": "S_EYE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "SHOCKING_SPHERE",
+      "name": "shocking sphere",
+      "class": "S_EYE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "BEHOLDER",
+      "name": "beholder",
+      "class": "S_EYE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS",
+      "flags2": "M2_NOPOLY | M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "KITTEN",
+      "name": "kitten",
+      "class": "S_FELINE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_WANDER | M2_DOMESTIC"
+    },
+    {
+      "symbol": "HOUSECAT",
+      "name": "housecat",
+      "class": "S_FELINE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_DOMESTIC"
+    },
+    {
+      "symbol": "JAGUAR",
+      "name": "jaguar",
+      "class": "S_FELINE",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "LYNX",
+      "name": "lynx",
+      "class": "S_FELINE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "PANTHER",
+      "name": "panther",
+      "class": "S_FELINE",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "LARGE_CAT",
+      "name": "large cat",
+      "class": "S_FELINE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_STRONG | M2_DOMESTIC"
+    },
+    {
+      "symbol": "TIGER",
+      "name": "tiger",
+      "class": "S_FELINE",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "DISPLACER_BEAST",
+      "name": "displacer beast",
+      "class": "S_FELINE",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_NASTY"
+    },
+    {
+      "symbol": "GREMLIN",
+      "name": "gremlin",
+      "class": "S_GREMLIN",
+      "size": "MZ_SMALL",
+      "flags1": "M1_SWIM | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_STALK"
+    },
+    {
+      "symbol": "GARGOYLE",
+      "name": "gargoyle",
+      "class": "S_GREMLIN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_THICK_HIDE | M1_BREATHLESS",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "WINGED_GARGOYLE",
+      "name": "winged gargoyle",
+      "class": "S_GREMLIN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_HUMANOID | M1_THICK_HIDE | M1_BREATHLESS | M1_OVIPAROUS",
+      "flags2": "M2_LORD | M2_HOSTILE | M2_STRONG | M2_MAGIC"
+    },
+    {
+      "symbol": "HOBBIT",
+      "name": "hobbit",
+      "class": "S_HUMANOID",
+      "size": "MZ_SMALL",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_COLLECT"
+    },
+    {
+      "symbol": "DWARF",
+      "name": "dwarf",
+      "class": "S_HUMANOID",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_TUNNEL | M1_NEEDPICK | M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_DWARF | M2_STRONG | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "BUGBEAR",
+      "name": "bugbear",
+      "class": "S_HUMANOID",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "DWARF_LEADER",
+      "name": "dwarf leader",
+      "class": "S_HUMANOID",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_TUNNEL | M1_NEEDPICK | M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_DWARF | M2_STRONG | M2_LORD | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "DWARF_RULER",
+      "name": "dwarf ruler",
+      "class": "S_HUMANOID",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_TUNNEL | M1_NEEDPICK | M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_DWARF | M2_STRONG | M2_PRINCE | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "MIND_FLAYER",
+      "name": "mind flayer",
+      "class": "S_HUMANOID",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_FLY | M1_SEE_INVIS | M1_OMNIVORE",
+      "flags2": "M2_HOSTILE | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "MASTER_MIND_FLAYER",
+      "name": "master mind flayer",
+      "class": "S_HUMANOID",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_FLY | M1_SEE_INVIS | M1_OMNIVORE",
+      "flags2": "M2_HOSTILE | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "MANES",
+      "name": "manes",
+      "class": "S_IMP",
+      "size": "MZ_SMALL",
+      "flags1": "M1_POIS",
+      "flags2": "M2_HOSTILE | M2_STALK"
+    },
+    {
+      "symbol": "HOMUNCULUS",
+      "name": "homunculus",
+      "class": "S_IMP",
+      "size": "MZ_TINY",
+      "flags1": "M1_FLY | M1_POIS",
+      "flags2": "M2_STALK"
+    },
+    {
+      "symbol": "IMP",
+      "name": "imp",
+      "class": "S_IMP",
+      "size": "MZ_TINY",
+      "flags1": "M1_REGEN",
+      "flags2": "M2_WANDER | M2_STALK"
+    },
+    {
+      "symbol": "LEMURE",
+      "name": "lemure",
+      "class": "S_IMP",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_POIS | M1_REGEN",
+      "flags2": "M2_HOSTILE | M2_WANDER | M2_STALK | M2_NEUTER"
+    },
+    {
+      "symbol": "QUASIT",
+      "name": "quasit",
+      "class": "S_IMP",
+      "size": "MZ_SMALL",
+      "flags1": "M1_REGEN",
+      "flags2": "M2_STALK"
+    },
+    {
+      "symbol": "TENGU",
+      "name": "tengu",
+      "class": "S_IMP",
+      "size": "MZ_SMALL",
+      "flags1": "M1_TPORT | M1_TPORT_CNTRL",
+      "flags2": "M2_STALK"
+    },
+    {
+      "symbol": "BLUE_JELLY",
+      "name": "blue jelly",
+      "class": "S_JELLY",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_BREATHLESS | M1_AMORPHOUS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "SPOTTED_JELLY",
+      "name": "spotted jelly",
+      "class": "S_JELLY",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_BREATHLESS | M1_AMORPHOUS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_ACID | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "OCHRE_JELLY",
+      "name": "ochre jelly",
+      "class": "S_JELLY",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_BREATHLESS | M1_AMORPHOUS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_ACID | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "KOBOLD",
+      "name": "kobold",
+      "class": "S_KOBOLD",
+      "size": "MZ_SMALL",
+      "flags1": "M1_HUMANOID | M1_POIS | M1_OMNIVORE",
+      "flags2": "M2_HOSTILE | M2_COLLECT"
+    },
+    {
+      "symbol": "LARGE_KOBOLD",
+      "name": "large kobold",
+      "class": "S_KOBOLD",
+      "size": "MZ_SMALL",
+      "flags1": "M1_HUMANOID | M1_POIS | M1_OMNIVORE",
+      "flags2": "M2_HOSTILE | M2_COLLECT"
+    },
+    {
+      "symbol": "KOBOLD_LEADER",
+      "name": "kobold leader",
+      "class": "S_KOBOLD",
+      "size": "MZ_SMALL",
+      "flags1": "M1_HUMANOID | M1_POIS | M1_OMNIVORE",
+      "flags2": "M2_HOSTILE | M2_LORD | M2_COLLECT"
+    },
+    {
+      "symbol": "KOBOLD_SHAMAN",
+      "name": "kobold shaman",
+      "class": "S_KOBOLD",
+      "size": "MZ_SMALL",
+      "flags1": "M1_HUMANOID | M1_POIS | M1_OMNIVORE",
+      "flags2": "M2_HOSTILE | M2_MAGIC"
+    },
+    {
+      "symbol": "LEPRECHAUN",
+      "name": "leprechaun",
+      "class": "S_LEPRECHAUN",
+      "size": "MZ_TINY",
+      "flags1": "M1_HUMANOID | M1_TPORT",
+      "flags2": "M2_HOSTILE | M2_GREEDY"
+    },
+    {
+      "symbol": "SMALL_MIMIC",
+      "name": "small mimic",
+      "class": "S_MIMIC",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_BREATHLESS | M1_AMORPHOUS | M1_HIDE | M1_ANIMAL | M1_NOEYES | M1_NOHEAD | M1_NOLIMBS | M1_THICK_HIDE | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "LARGE_MIMIC",
+      "name": "large mimic",
+      "class": "S_MIMIC",
+      "size": "MZ_LARGE",
+      "flags1": "M1_CLING | M1_BREATHLESS | M1_AMORPHOUS | M1_HIDE | M1_ANIMAL | M1_NOEYES | M1_NOHEAD | M1_NOLIMBS | M1_THICK_HIDE | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "GIANT_MIMIC",
+      "name": "giant mimic",
+      "class": "S_MIMIC",
+      "size": "MZ_LARGE",
+      "flags1": "M1_CLING | M1_BREATHLESS | M1_AMORPHOUS | M1_HIDE | M1_ANIMAL | M1_NOEYES | M1_NOHEAD | M1_NOLIMBS | M1_THICK_HIDE | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "WOOD_NYMPH",
+      "name": "wood nymph",
+      "class": "S_NYMPH",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_TPORT",
+      "flags2": "M2_HOSTILE | M2_FEMALE | M2_COLLECT"
+    },
+    {
+      "symbol": "WATER_NYMPH",
+      "name": "water nymph",
+      "class": "S_NYMPH",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_TPORT | M1_SWIM",
+      "flags2": "M2_HOSTILE | M2_FEMALE | M2_COLLECT"
+    },
+    {
+      "symbol": "MOUNTAIN_NYMPH",
+      "name": "mountain nymph",
+      "class": "S_NYMPH",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_TPORT",
+      "flags2": "M2_HOSTILE | M2_FEMALE | M2_COLLECT"
+    },
+    {
+      "symbol": "GOBLIN",
+      "name": "goblin",
+      "class": "S_ORC",
+      "size": "MZ_SMALL",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_ORC | M2_COLLECT"
+    },
+    {
+      "symbol": "HOBGOBLIN",
+      "name": "hobgoblin",
+      "class": "S_ORC",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_ORC | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "ORC",
+      "name": "orc",
+      "class": "S_ORC",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_ORC | M2_STRONG | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "HILL_ORC",
+      "name": "hill orc",
+      "class": "S_ORC",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_ORC | M2_STRONG | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "MORDOR_ORC",
+      "name": "Mordor orc",
+      "class": "S_ORC",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_ORC | M2_STRONG | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "URUK_HAI",
+      "name": "Uruk-hai",
+      "class": "S_ORC",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_ORC | M2_STRONG | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "ORC_SHAMAN",
+      "name": "orc shaman",
+      "class": "S_ORC",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_ORC | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "ORC_CAPTAIN",
+      "name": "orc-captain",
+      "class": "S_ORC",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_ORC | M2_STRONG | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "ROCK_PIERCER",
+      "name": "rock piercer",
+      "class": "S_PIERCER",
+      "size": "MZ_SMALL",
+      "flags1": "M1_CLING | M1_HIDE | M1_ANIMAL | M1_NOEYES | M1_NOLIMBS | M1_CARNIVORE | M1_NOTAKE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "IRON_PIERCER",
+      "name": "iron piercer",
+      "class": "S_PIERCER",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_CLING | M1_HIDE | M1_ANIMAL | M1_NOEYES | M1_NOLIMBS | M1_CARNIVORE | M1_NOTAKE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "GLASS_PIERCER",
+      "name": "glass piercer",
+      "class": "S_PIERCER",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_CLING | M1_HIDE | M1_ANIMAL | M1_NOEYES | M1_NOLIMBS | M1_CARNIVORE | M1_NOTAKE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "ROTHE",
+      "name": "rothe",
+      "class": "S_QUADRUPED",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_OMNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "MUMAK",
+      "name": "mumak",
+      "class": "S_QUADRUPED",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_THICK_HIDE | M1_NOHANDS | M1_HERBIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "LEOCROTTA",
+      "name": "leocrotta",
+      "class": "S_QUADRUPED",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_OMNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "WUMPUS",
+      "name": "wumpus",
+      "class": "S_QUADRUPED",
+      "size": "MZ_LARGE",
+      "flags1": "M1_CLING | M1_ANIMAL | M1_NOHANDS | M1_OMNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "TITANOTHERE",
+      "name": "titanothere",
+      "class": "S_QUADRUPED",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_THICK_HIDE | M1_NOHANDS | M1_HERBIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "BALUCHITHERIUM",
+      "name": "baluchitherium",
+      "class": "S_QUADRUPED",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_THICK_HIDE | M1_NOHANDS | M1_HERBIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "MASTODON",
+      "name": "mastodon",
+      "class": "S_QUADRUPED",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_THICK_HIDE | M1_NOHANDS | M1_HERBIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "SEWER_RAT",
+      "name": "sewer rat",
+      "class": "S_RODENT",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "GIANT_RAT",
+      "name": "giant rat",
+      "class": "S_RODENT",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "RABID_RAT",
+      "name": "rabid rat",
+      "class": "S_RODENT",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_POIS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "WERERAT",
+      "name": "wererat",
+      "class": "S_RODENT",
+      "size": "MZ_TINY",
+      "flags1": "M1_NOHANDS | M1_POIS | M1_REGEN | M1_CARNIVORE",
+      "flags2": "M2_NOPOLY | M2_WERE | M2_HOSTILE"
+    },
+    {
+      "symbol": "ROCK_MOLE",
+      "name": "rock mole",
+      "class": "S_RODENT",
+      "size": "MZ_SMALL",
+      "flags1": "M1_TUNNEL | M1_ANIMAL | M1_NOHANDS | M1_METALLIVORE",
+      "flags2": "M2_HOSTILE | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "WOODCHUCK",
+      "name": "woodchuck",
+      "class": "S_RODENT",
+      "size": "MZ_SMALL",
+      "flags1": "M1_TUNNEL | M1_ANIMAL | M1_NOHANDS | M1_SWIM | M1_HERBIVORE",
+      "flags2": "M2_WANDER | M2_HOSTILE"
+    },
+    {
+      "symbol": "CAVE_SPIDER",
+      "name": "cave spider",
+      "class": "S_SPIDER",
+      "size": "MZ_TINY",
+      "flags1": "M1_CONCEAL | M1_ANIMAL | M1_NOHANDS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "CENTIPEDE",
+      "name": "centipede",
+      "class": "S_SPIDER",
+      "size": "MZ_TINY",
+      "flags1": "M1_CONCEAL | M1_ANIMAL | M1_NOHANDS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "GIANT_SPIDER",
+      "name": "giant spider",
+      "class": "S_SPIDER",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_OVIPAROUS | M1_POIS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "SCORPION",
+      "name": "scorpion",
+      "class": "S_SPIDER",
+      "size": "MZ_SMALL",
+      "flags1": "M1_CONCEAL | M1_ANIMAL | M1_NOHANDS | M1_OVIPAROUS | M1_POIS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "LURKER_ABOVE",
+      "name": "lurker above",
+      "class": "S_TRAPPER",
+      "size": "MZ_HUGE",
+      "flags1": "M1_HIDE | M1_FLY | M1_ANIMAL | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STALK | M2_STRONG"
+    },
+    {
+      "symbol": "TRAPPER",
+      "name": "trapper",
+      "class": "S_TRAPPER",
+      "size": "MZ_HUGE",
+      "flags1": "M1_HIDE | M1_ANIMAL | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STALK | M2_STRONG"
+    },
+    {
+      "symbol": "PONY",
+      "name": "pony",
+      "class": "S_UNICORN",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_HERBIVORE",
+      "flags2": "M2_WANDER | M2_STRONG | M2_DOMESTIC"
+    },
+    {
+      "symbol": "WHITE_UNICORN",
+      "name": "white unicorn",
+      "class": "S_UNICORN",
+      "size": "MZ_LARGE",
+      "flags1": "M1_NOHANDS | M1_HERBIVORE",
+      "flags2": "M2_WANDER | M2_STRONG | M2_JEWELS"
+    },
+    {
+      "symbol": "GRAY_UNICORN",
+      "name": "gray unicorn",
+      "class": "S_UNICORN",
+      "size": "MZ_LARGE",
+      "flags1": "M1_NOHANDS | M1_HERBIVORE",
+      "flags2": "M2_WANDER | M2_STRONG | M2_JEWELS"
+    },
+    {
+      "symbol": "BLACK_UNICORN",
+      "name": "black unicorn",
+      "class": "S_UNICORN",
+      "size": "MZ_LARGE",
+      "flags1": "M1_NOHANDS | M1_HERBIVORE",
+      "flags2": "M2_WANDER | M2_STRONG | M2_JEWELS"
+    },
+    {
+      "symbol": "HORSE",
+      "name": "horse",
+      "class": "S_UNICORN",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_HERBIVORE",
+      "flags2": "M2_WANDER | M2_STRONG | M2_DOMESTIC"
+    },
+    {
+      "symbol": "WARHORSE",
+      "name": "warhorse",
+      "class": "S_UNICORN",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_HERBIVORE",
+      "flags2": "M2_WANDER | M2_STRONG | M2_DOMESTIC"
+    },
+    {
+      "symbol": "FOG_CLOUD",
+      "name": "fog cloud",
+      "class": "S_VORTEX",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_AMORPHOUS | M1_UNSOLID",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "DUST_VORTEX",
+      "name": "dust vortex",
+      "class": "S_VORTEX",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "ICE_VORTEX",
+      "name": "ice vortex",
+      "class": "S_VORTEX",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "ENERGY_VORTEX",
+      "name": "energy vortex",
+      "class": "S_VORTEX",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_UNSOLID",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "STEAM_VORTEX",
+      "name": "steam vortex",
+      "class": "S_VORTEX",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_UNSOLID",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "FIRE_VORTEX",
+      "name": "fire vortex",
+      "class": "S_VORTEX",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_UNSOLID",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "BABY_LONG_WORM",
+      "name": "baby long worm",
+      "class": "S_WORM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_SLITHY | M1_NOLIMBS | M1_CARNIVORE | M1_NOTAKE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "BABY_PURPLE_WORM",
+      "name": "baby purple worm",
+      "class": "S_WORM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_SLITHY | M1_NOLIMBS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "LONG_WORM",
+      "name": "long worm",
+      "class": "S_WORM",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_ANIMAL | M1_SLITHY | M1_NOLIMBS | M1_OVIPAROUS | M1_CARNIVORE | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY"
+    },
+    {
+      "symbol": "PURPLE_WORM",
+      "name": "purple worm",
+      "class": "S_WORM",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_ANIMAL | M1_SLITHY | M1_NOLIMBS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY"
+    },
+    {
+      "symbol": "GRID_BUG",
+      "name": "grid bug",
+      "class": "S_XAN",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_NOHANDS",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "XAN",
+      "name": "xan",
+      "class": "S_XAN",
+      "size": "MZ_TINY",
+      "flags1": "M1_FLY | M1_ANIMAL | M1_NOHANDS | M1_POIS",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "YELLOW_LIGHT",
+      "name": "yellow light",
+      "class": "S_LIGHT",
+      "size": "MZ_SMALL",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_AMORPHOUS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_UNSOLID | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "BLACK_LIGHT",
+      "name": "black light",
+      "class": "S_LIGHT",
+      "size": "MZ_SMALL",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_AMORPHOUS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_UNSOLID | M1_SEE_INVIS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "ZRUTY",
+      "name": "zruty",
+      "class": "S_ZRUTY",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "COUATL",
+      "name": "couatl",
+      "class": "S_ANGEL",
+      "size": "MZ_LARGE",
+      "flags1": "M1_FLY | M1_NOHANDS | M1_SLITHY | M1_POIS",
+      "flags2": "M2_MINION | M2_STALK | M2_STRONG | M2_NASTY"
+    },
+    {
+      "symbol": "ALEAX",
+      "name": "Aleax",
+      "class": "S_ANGEL",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_SEE_INVIS",
+      "flags2": "M2_MINION | M2_STALK | M2_NASTY | M2_COLLECT"
+    },
+    {
+      "symbol": "ANGEL",
+      "name": "Angel",
+      "class": "S_ANGEL",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_HUMANOID | M1_SEE_INVIS",
+      "flags2": "M2_NOPOLY | M2_MINION | M2_STALK | M2_STRONG | M2_NASTY | M2_COLLECT"
+    },
+    {
+      "symbol": "KI_RIN",
+      "name": "ki-rin",
+      "class": "S_ANGEL",
+      "size": "MZ_LARGE",
+      "flags1": "M1_FLY | M1_NOHANDS | M1_SEE_INVIS",
+      "flags2": "M2_NOPOLY | M2_MINION | M2_STALK | M2_STRONG | M2_NASTY | M2_LORD"
+    },
+    {
+      "symbol": "ARCHON",
+      "name": "Archon",
+      "class": "S_ANGEL",
+      "size": "MZ_LARGE",
+      "flags1": "M1_FLY | M1_HUMANOID | M1_SEE_INVIS | M1_REGEN",
+      "flags2": "M2_NOPOLY | M2_MINION | M2_STALK | M2_STRONG | M2_NASTY | M2_LORD | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "BAT",
+      "name": "bat",
+      "class": "S_BAT",
+      "size": "MZ_TINY",
+      "flags1": "M1_FLY | M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_WANDER"
+    },
+    {
+      "symbol": "GIANT_BAT",
+      "name": "giant bat",
+      "class": "S_BAT",
+      "size": "MZ_SMALL",
+      "flags1": "M1_FLY | M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_WANDER | M2_HOSTILE"
+    },
+    {
+      "symbol": "RAVEN",
+      "name": "raven",
+      "class": "S_BAT",
+      "size": "MZ_SMALL",
+      "flags1": "M1_FLY | M1_ANIMAL | M1_NOHANDS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_WANDER | M2_HOSTILE"
+    },
+    {
+      "symbol": "VAMPIRE_BAT",
+      "name": "vampire bat",
+      "class": "S_BAT",
+      "size": "MZ_SMALL",
+      "flags1": "M1_FLY | M1_ANIMAL | M1_NOHANDS | M1_POIS | M1_REGEN | M1_OMNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "PLAINS_CENTAUR",
+      "name": "plains centaur",
+      "class": "S_CENTAUR",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_STRONG | M2_GREEDY | M2_COLLECT"
+    },
+    {
+      "symbol": "FOREST_CENTAUR",
+      "name": "forest centaur",
+      "class": "S_CENTAUR",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_STRONG | M2_GREEDY | M2_COLLECT"
+    },
+    {
+      "symbol": "MOUNTAIN_CENTAUR",
+      "name": "mountain centaur",
+      "class": "S_CENTAUR",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_STRONG | M2_GREEDY | M2_COLLECT"
+    },
+    {
+      "symbol": "BABY_GRAY_DRAGON",
+      "name": "baby gray dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "BABY_GOLD_DRAGON",
+      "name": "baby gold dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "BABY_SILVER_DRAGON",
+      "name": "baby silver dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "BABY_SHIMMERING_DRAGON",
+      "name": "baby shimmering dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "BABY_RED_DRAGON",
+      "name": "baby red dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "BABY_WHITE_DRAGON",
+      "name": "baby white dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "BABY_ORANGE_DRAGON",
+      "name": "baby orange dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "BABY_BLACK_DRAGON",
+      "name": "baby black dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "BABY_BLUE_DRAGON",
+      "name": "baby blue dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "BABY_GREEN_DRAGON",
+      "name": "baby green dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE | M1_POIS",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "BABY_YELLOW_DRAGON",
+      "name": "baby yellow dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE | M1_ACID",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "GRAY_DRAGON",
+      "name": "gray dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_SEE_INVIS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "GOLD_DRAGON",
+      "name": "gold dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_SEE_INVIS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "SILVER_DRAGON",
+      "name": "silver dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_SEE_INVIS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "SHIMMERING_DRAGON",
+      "name": "shimmering dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_SEE_INVIS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "RED_DRAGON",
+      "name": "red dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_SEE_INVIS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "WHITE_DRAGON",
+      "name": "white dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_SEE_INVIS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "ORANGE_DRAGON",
+      "name": "orange dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_SEE_INVIS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "BLACK_DRAGON",
+      "name": "black dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_SEE_INVIS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "BLUE_DRAGON",
+      "name": "blue dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_SEE_INVIS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "GREEN_DRAGON",
+      "name": "green dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_SEE_INVIS | M1_OVIPAROUS | M1_CARNIVORE | M1_POIS",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "YELLOW_DRAGON",
+      "name": "yellow dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_SEE_INVIS | M1_OVIPAROUS | M1_CARNIVORE | M1_ACID",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "STALKER",
+      "name": "stalker",
+      "class": "S_ELEMENTAL",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_FLY | M1_SEE_INVIS",
+      "flags2": "M2_WANDER | M2_STALK | M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "AIR_ELEMENTAL",
+      "name": "air elemental",
+      "class": "S_ELEMENTAL",
+      "size": "MZ_HUGE",
+      "flags1": "M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_BREATHLESS | M1_UNSOLID | M1_FLY",
+      "flags2": "M2_STRONG | M2_NEUTER"
+    },
+    {
+      "symbol": "FIRE_ELEMENTAL",
+      "name": "fire elemental",
+      "class": "S_ELEMENTAL",
+      "size": "MZ_HUGE",
+      "flags1": "M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_BREATHLESS | M1_UNSOLID | M1_FLY | M1_NOTAKE",
+      "flags2": "M2_STRONG | M2_NEUTER"
+    },
+    {
+      "symbol": "EARTH_ELEMENTAL",
+      "name": "earth elemental",
+      "class": "S_ELEMENTAL",
+      "size": "MZ_HUGE",
+      "flags1": "M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_BREATHLESS | M1_WALLWALK | M1_THICK_HIDE",
+      "flags2": "M2_STRONG | M2_NEUTER"
+    },
+    {
+      "symbol": "WATER_ELEMENTAL",
+      "name": "water elemental",
+      "class": "S_ELEMENTAL",
+      "size": "MZ_HUGE",
+      "flags1": "M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_BREATHLESS | M1_UNSOLID | M1_AMPHIBIOUS | M1_SWIM",
+      "flags2": "M2_STRONG | M2_NEUTER"
+    },
+    {
+      "symbol": "LICHEN",
+      "name": "lichen",
+      "class": "S_FUNGUS",
+      "size": "MZ_SMALL",
+      "flags1": "M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "BROWN_MOLD",
+      "name": "brown mold",
+      "class": "S_FUNGUS",
+      "size": "MZ_SMALL",
+      "flags1": "M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "YELLOW_MOLD",
+      "name": "yellow mold",
+      "class": "S_FUNGUS",
+      "size": "MZ_SMALL",
+      "flags1": "M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_POIS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "GREEN_MOLD",
+      "name": "green mold",
+      "class": "S_FUNGUS",
+      "size": "MZ_SMALL",
+      "flags1": "M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_ACID | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "RED_MOLD",
+      "name": "red mold",
+      "class": "S_FUNGUS",
+      "size": "MZ_SMALL",
+      "flags1": "M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "SHRIEKER",
+      "name": "shrieker",
+      "class": "S_FUNGUS",
+      "size": "MZ_SMALL",
+      "flags1": "M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "VIOLET_FUNGUS",
+      "name": "violet fungus",
+      "class": "S_FUNGUS",
+      "size": "MZ_SMALL",
+      "flags1": "M1_BREATHLESS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "GNOME",
+      "name": "gnome",
+      "class": "S_GNOME",
+      "size": "MZ_SMALL",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_GNOME | M2_COLLECT"
+    },
+    {
+      "symbol": "GNOME_LEADER",
+      "name": "gnome leader",
+      "class": "S_GNOME",
+      "size": "MZ_SMALL",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_GNOME | M2_LORD | M2_COLLECT"
+    },
+    {
+      "symbol": "GNOMISH_WIZARD",
+      "name": "gnomish wizard",
+      "class": "S_GNOME",
+      "size": "MZ_SMALL",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_GNOME | M2_MAGIC"
+    },
+    {
+      "symbol": "GNOME_RULER",
+      "name": "gnome ruler",
+      "class": "S_GNOME",
+      "size": "MZ_SMALL",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_GNOME | M2_PRINCE | M2_COLLECT"
+    },
+    {
+      "symbol": "GIANT",
+      "name": "giant",
+      "class": "S_GIANT",
+      "size": "MZ_HUGE",
+      "flags1": "M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_GIANT | M2_STRONG | M2_ROCKTHROW | M2_NASTY | M2_COLLECT | M2_JEWELS"
+    },
+    {
+      "symbol": "STONE_GIANT",
+      "name": "stone giant",
+      "class": "S_GIANT",
+      "size": "MZ_HUGE",
+      "flags1": "M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_GIANT | M2_STRONG | M2_ROCKTHROW | M2_NASTY | M2_COLLECT | M2_JEWELS"
+    },
+    {
+      "symbol": "HILL_GIANT",
+      "name": "hill giant",
+      "class": "S_GIANT",
+      "size": "MZ_HUGE",
+      "flags1": "M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_GIANT | M2_STRONG | M2_ROCKTHROW | M2_NASTY | M2_COLLECT | M2_JEWELS"
+    },
+    {
+      "symbol": "FIRE_GIANT",
+      "name": "fire giant",
+      "class": "S_GIANT",
+      "size": "MZ_HUGE",
+      "flags1": "M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_GIANT | M2_STRONG | M2_ROCKTHROW | M2_NASTY | M2_COLLECT | M2_JEWELS"
+    },
+    {
+      "symbol": "FROST_GIANT",
+      "name": "frost giant",
+      "class": "S_GIANT",
+      "size": "MZ_HUGE",
+      "flags1": "M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_GIANT | M2_STRONG | M2_ROCKTHROW | M2_NASTY | M2_COLLECT | M2_JEWELS"
+    },
+    {
+      "symbol": "ETTIN",
+      "name": "ettin",
+      "class": "S_GIANT",
+      "size": "MZ_HUGE",
+      "flags1": "M1_ANIMAL | M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_COLLECT"
+    },
+    {
+      "symbol": "STORM_GIANT",
+      "name": "storm giant",
+      "class": "S_GIANT",
+      "size": "MZ_HUGE",
+      "flags1": "M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_GIANT | M2_STRONG | M2_ROCKTHROW | M2_NASTY | M2_COLLECT | M2_JEWELS"
+    },
+    {
+      "symbol": "TITAN",
+      "name": "titan",
+      "class": "S_GIANT",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_STRONG | M2_ROCKTHROW | M2_NASTY | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "MINOTAUR",
+      "name": "minotaur",
+      "class": "S_GIANT",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY"
+    },
+    {
+      "symbol": "JABBERWOCK",
+      "name": "jabberwock",
+      "class": "S_JABBERWOCK",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_FLY | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_COLLECT"
+    },
+    {
+      "symbol": "VORPAL_JABBERWOCK",
+      "name": "vorpal jabberwock",
+      "class": "S_JABBERWOCK",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_FLY | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY | M2_COLLECT"
+    },
+    {
+      "symbol": "KEYSTONE_KOP",
+      "name": "Keystone Kop",
+      "class": "S_KOP",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID",
+      "flags2": "M2_HUMAN | M2_WANDER | M2_HOSTILE | M2_MALE | M2_COLLECT"
+    },
+    {
+      "symbol": "KOP_SERGEANT",
+      "name": "Kop Sergeant",
+      "class": "S_KOP",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID",
+      "flags2": "M2_HUMAN | M2_WANDER | M2_HOSTILE | M2_STRONG | M2_MALE | M2_COLLECT"
+    },
+    {
+      "symbol": "KOP_LIEUTENANT",
+      "name": "Kop Lieutenant",
+      "class": "S_KOP",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID",
+      "flags2": "M2_HUMAN | M2_WANDER | M2_HOSTILE | M2_STRONG | M2_MALE | M2_COLLECT"
+    },
+    {
+      "symbol": "KOP_KAPTAIN",
+      "name": "Kop Kaptain",
+      "class": "S_KOP",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID",
+      "flags2": "M2_HUMAN | M2_WANDER | M2_HOSTILE | M2_STRONG | M2_MALE | M2_COLLECT"
+    },
+    {
+      "symbol": "LICH",
+      "name": "lich",
+      "class": "S_LICH",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_HUMANOID | M1_POIS | M1_REGEN",
+      "flags2": "M2_UNDEAD | M2_HOSTILE | M2_MAGIC"
+    },
+    {
+      "symbol": "DEMILICH",
+      "name": "demilich",
+      "class": "S_LICH",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_HUMANOID | M1_POIS | M1_REGEN",
+      "flags2": "M2_UNDEAD | M2_HOSTILE | M2_MAGIC"
+    },
+    {
+      "symbol": "MASTER_LICH",
+      "name": "master lich",
+      "class": "S_LICH",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_HUMANOID | M1_POIS | M1_REGEN",
+      "flags2": "M2_UNDEAD | M2_HOSTILE | M2_MAGIC"
+    },
+    {
+      "symbol": "ARCH_LICH",
+      "name": "arch-lich",
+      "class": "S_LICH",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_HUMANOID | M1_POIS | M1_REGEN",
+      "flags2": "M2_UNDEAD | M2_HOSTILE | M2_MAGIC"
+    },
+    {
+      "symbol": "KOBOLD_MUMMY",
+      "name": "kobold mummy",
+      "class": "S_MUMMY",
+      "size": "MZ_SMALL",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_UNDEAD | M2_HOSTILE"
+    },
+    {
+      "symbol": "GNOME_MUMMY",
+      "name": "gnome mummy",
+      "class": "S_MUMMY",
+      "size": "MZ_SMALL",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_UNDEAD | M2_HOSTILE | M2_GNOME"
+    },
+    {
+      "symbol": "ORC_MUMMY",
+      "name": "orc mummy",
+      "class": "S_MUMMY",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_UNDEAD | M2_HOSTILE | M2_STRONG | M2_ORC | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "DWARF_MUMMY",
+      "name": "dwarf mummy",
+      "class": "S_MUMMY",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_UNDEAD | M2_HOSTILE | M2_DWARF | M2_GREEDY | M2_JEWELS"
+    },
+    {
+      "symbol": "ELF_MUMMY",
+      "name": "elf mummy",
+      "class": "S_MUMMY",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_UNDEAD | M2_HOSTILE | M2_ELF"
+    },
+    {
+      "symbol": "HUMAN_MUMMY",
+      "name": "human mummy",
+      "class": "S_MUMMY",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_UNDEAD | M2_HOSTILE"
+    },
+    {
+      "symbol": "ETTIN_MUMMY",
+      "name": "ettin mummy",
+      "class": "S_MUMMY",
+      "size": "MZ_HUGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_UNDEAD | M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "GIANT_MUMMY",
+      "name": "giant mummy",
+      "class": "S_MUMMY",
+      "size": "MZ_HUGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_UNDEAD | M2_HOSTILE | M2_GIANT | M2_STRONG | M2_JEWELS"
+    },
+    {
+      "symbol": "RED_NAGA_HATCHLING",
+      "name": "red naga hatchling",
+      "class": "S_NAGA",
+      "size": "MZ_LARGE",
+      "flags1": "M1_NOLIMBS | M1_SLITHY | M1_THICK_HIDE | M1_NOTAKE | M1_OMNIVORE",
+      "flags2": "M2_STRONG"
+    },
+    {
+      "symbol": "BLACK_NAGA_HATCHLING",
+      "name": "black naga hatchling",
+      "class": "S_NAGA",
+      "size": "MZ_LARGE",
+      "flags1": "M1_NOLIMBS | M1_SLITHY | M1_THICK_HIDE | M1_ACID | M1_NOTAKE | M1_CARNIVORE",
+      "flags2": "M2_STRONG"
+    },
+    {
+      "symbol": "GOLDEN_NAGA_HATCHLING",
+      "name": "golden naga hatchling",
+      "class": "S_NAGA",
+      "size": "MZ_LARGE",
+      "flags1": "M1_NOLIMBS | M1_SLITHY | M1_THICK_HIDE | M1_NOTAKE | M1_OMNIVORE",
+      "flags2": "M2_STRONG"
+    },
+    {
+      "symbol": "GUARDIAN_NAGA_HATCHLING",
+      "name": "guardian naga hatchling",
+      "class": "S_NAGA",
+      "size": "MZ_LARGE",
+      "flags1": "M1_NOLIMBS | M1_SLITHY | M1_THICK_HIDE | M1_NOTAKE | M1_OMNIVORE",
+      "flags2": "M2_STRONG"
+    },
+    {
+      "symbol": "RED_NAGA",
+      "name": "red naga",
+      "class": "S_NAGA",
+      "size": "MZ_HUGE",
+      "flags1": "M1_NOLIMBS | M1_SLITHY | M1_THICK_HIDE | M1_OVIPAROUS | M1_NOTAKE | M1_OMNIVORE",
+      "flags2": "M2_STRONG"
+    },
+    {
+      "symbol": "BLACK_NAGA",
+      "name": "black naga",
+      "class": "S_NAGA",
+      "size": "MZ_HUGE",
+      "flags1": "M1_NOLIMBS | M1_SLITHY | M1_THICK_HIDE | M1_OVIPAROUS | M1_ACID | M1_NOTAKE | M1_CARNIVORE",
+      "flags2": "M2_STRONG"
+    },
+    {
+      "symbol": "GOLDEN_NAGA",
+      "name": "golden naga",
+      "class": "S_NAGA",
+      "size": "MZ_HUGE",
+      "flags1": "M1_NOLIMBS | M1_SLITHY | M1_THICK_HIDE | M1_OVIPAROUS | M1_NOTAKE | M1_OMNIVORE",
+      "flags2": "M2_STRONG"
+    },
+    {
+      "symbol": "GUARDIAN_NAGA",
+      "name": "guardian naga",
+      "class": "S_NAGA",
+      "size": "MZ_HUGE",
+      "flags1": "M1_NOLIMBS | M1_SLITHY | M1_THICK_HIDE | M1_OVIPAROUS | M1_POIS | M1_NOTAKE | M1_OMNIVORE",
+      "flags2": "M2_STRONG"
+    },
+    {
+      "symbol": "OGRE",
+      "name": "ogre",
+      "class": "S_OGRE",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_STRONG | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "OGRE_LEADER",
+      "name": "ogre leader",
+      "class": "S_OGRE",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_STRONG | M2_LORD | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "OGRE_TYRANT",
+      "name": "ogre tyrant",
+      "class": "S_OGRE",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_STRONG | M2_PRINCE | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "GRAY_OOZE",
+      "name": "gray ooze",
+      "class": "S_PUDDING",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_BREATHLESS | M1_AMORPHOUS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_OMNIVORE | M1_ACID",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "BROWN_PUDDING",
+      "name": "brown pudding",
+      "class": "S_PUDDING",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_BREATHLESS | M1_AMORPHOUS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_OMNIVORE | M1_ACID",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "GREEN_SLIME",
+      "name": "green slime",
+      "class": "S_PUDDING",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_AMORPHOUS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_OMNIVORE | M1_ACID | M1_POIS",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "BLACK_PUDDING",
+      "name": "black pudding",
+      "class": "S_PUDDING",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_AMORPHOUS | M1_NOEYES | M1_NOLIMBS | M1_NOHEAD | M1_MINDLESS | M1_OMNIVORE | M1_ACID",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "QUANTUM_MECHANIC",
+      "name": "quantum mechanic",
+      "class": "S_QUANTMECH",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE | M1_POIS | M1_TPORT",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "GENETIC_ENGINEER",
+      "name": "genetic engineer",
+      "class": "S_QUANTMECH",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE | M1_POIS | M1_TPORT",
+      "flags2": "M2_HOSTILE | M2_NASTY"
+    },
+    {
+      "symbol": "RUST_MONSTER",
+      "name": "rust monster",
+      "class": "S_RUSTMONST",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_SWIM | M1_ANIMAL | M1_NOHANDS | M1_METALLIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "DISENCHANTER",
+      "name": "disenchanter",
+      "class": "S_RUSTMONST",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "GARTER_SNAKE",
+      "name": "garter snake",
+      "class": "S_SNAKE",
+      "size": "MZ_TINY",
+      "flags1": "M1_SWIM | M1_CONCEAL | M1_NOLIMBS | M1_ANIMAL | M1_SLITHY | M1_OVIPAROUS | M1_CARNIVORE | M1_NOTAKE",
+      "flags2": "0"
+    },
+    {
+      "symbol": "SNAKE",
+      "name": "snake",
+      "class": "S_SNAKE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_SWIM | M1_CONCEAL | M1_NOLIMBS | M1_ANIMAL | M1_SLITHY | M1_POIS | M1_OVIPAROUS | M1_CARNIVORE | M1_NOTAKE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "WATER_MOCCASIN",
+      "name": "water moccasin",
+      "class": "S_SNAKE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_SWIM | M1_CONCEAL | M1_NOLIMBS | M1_ANIMAL | M1_SLITHY | M1_POIS | M1_CARNIVORE | M1_OVIPAROUS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "PYTHON",
+      "name": "python",
+      "class": "S_SNAKE",
+      "size": "MZ_LARGE",
+      "flags1": "M1_SWIM | M1_NOLIMBS | M1_ANIMAL | M1_SLITHY | M1_CARNIVORE | M1_OVIPAROUS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "PIT_VIPER",
+      "name": "pit viper",
+      "class": "S_SNAKE",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_SWIM | M1_CONCEAL | M1_NOLIMBS | M1_ANIMAL | M1_SLITHY | M1_POIS | M1_CARNIVORE | M1_OVIPAROUS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "COBRA",
+      "name": "cobra",
+      "class": "S_SNAKE",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_SWIM | M1_CONCEAL | M1_NOLIMBS | M1_ANIMAL | M1_SLITHY | M1_POIS | M1_CARNIVORE | M1_OVIPAROUS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "TROLL",
+      "name": "troll",
+      "class": "S_TROLL",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_REGEN | M1_CARNIVORE",
+      "flags2": "M2_STRONG | M2_STALK | M2_HOSTILE"
+    },
+    {
+      "symbol": "ICE_TROLL",
+      "name": "ice troll",
+      "class": "S_TROLL",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_REGEN | M1_CARNIVORE",
+      "flags2": "M2_STRONG | M2_STALK | M2_HOSTILE"
+    },
+    {
+      "symbol": "ROCK_TROLL",
+      "name": "rock troll",
+      "class": "S_TROLL",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_REGEN | M1_CARNIVORE",
+      "flags2": "M2_STRONG | M2_STALK | M2_HOSTILE | M2_COLLECT"
+    },
+    {
+      "symbol": "WATER_TROLL",
+      "name": "water troll",
+      "class": "S_TROLL",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_REGEN | M1_CARNIVORE | M1_SWIM",
+      "flags2": "M2_STRONG | M2_STALK | M2_HOSTILE"
+    },
+    {
+      "symbol": "OLOG_HAI",
+      "name": "Olog-hai",
+      "class": "S_TROLL",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_REGEN | M1_CARNIVORE",
+      "flags2": "M2_STRONG | M2_STALK | M2_HOSTILE | M2_COLLECT"
+    },
+    {
+      "symbol": "UMBER_HULK",
+      "name": "umber hulk",
+      "class": "S_UMBER",
+      "size": "MZ_LARGE",
+      "flags1": "M1_TUNNEL | M1_CARNIVORE",
+      "flags2": "M2_STRONG"
+    },
+    {
+      "symbol": "VAMPIRE",
+      "name": "vampire",
+      "class": "S_VAMPIRE",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_HUMANOID | M1_POIS | M1_REGEN",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE | M2_STRONG | M2_NASTY | M2_SHAPESHIFTER"
+    },
+    {
+      "symbol": "VAMPIRE_LEADER",
+      "name": "vampire leader",
+      "class": "S_VAMPIRE",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_HUMANOID | M1_POIS | M1_REGEN",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE | M2_STRONG | M2_NASTY | M2_LORD | M2_SHAPESHIFTER"
+    },
+    {
+      "symbol": "VAMPIRE_MAGE",
+      "name": "vampire mage",
+      "class": "S_VAMPIRE",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_HUMANOID | M1_POIS | M1_REGEN",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE | M2_STRONG | M2_NASTY | M2_LORD | M2_MALE | M2_MAGIC | M2_SHAPESHIFTER"
+    },
+    {
+      "symbol": "VLAD_THE_IMPALER",
+      "name": "Vlad the Impaler",
+      "class": "S_VAMPIRE",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_HUMANOID | M1_POIS | M1_REGEN",
+      "flags2": "M2_NOPOLY | M2_UNDEAD | M2_STALK | M2_HOSTILE | M2_PNAME | M2_STRONG | M2_NASTY | M2_PRINCE | M2_MALE | M2_SHAPESHIFTER"
+    },
+    {
+      "symbol": "BARROW_WIGHT",
+      "name": "barrow wight",
+      "class": "S_WRAITH",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_HUMANOID",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE | M2_COLLECT"
+    },
+    {
+      "symbol": "WRAITH",
+      "name": "wraith",
+      "class": "S_WRAITH",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_FLY | M1_HUMANOID | M1_UNSOLID",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE"
+    },
+    {
+      "symbol": "NAZGUL",
+      "name": "Nazgul",
+      "class": "S_WRAITH",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_HUMANOID | M1_SEE_INVIS",
+      "flags2": "M2_NOPOLY | M2_UNDEAD | M2_STALK | M2_STRONG | M2_HOSTILE | M2_MALE | M2_COLLECT"
+    },
+    {
+      "symbol": "XORN",
+      "name": "xorn",
+      "class": "S_XORN",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_BREATHLESS | M1_WALLWALK | M1_THICK_HIDE | M1_METALLIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "MONKEY",
+      "name": "monkey",
+      "class": "S_YETI",
+      "size": "MZ_SMALL",
+      "flags1": "M1_ANIMAL | M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "0"
+    },
+    {
+      "symbol": "APE",
+      "name": "ape",
+      "class": "S_YETI",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_STRONG"
+    },
+    {
+      "symbol": "OWLBEAR",
+      "name": "owlbear",
+      "class": "S_YETI",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_NASTY"
+    },
+    {
+      "symbol": "YETI",
+      "name": "yeti",
+      "class": "S_YETI",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "CARNIVOROUS_APE",
+      "name": "carnivorous ape",
+      "class": "S_YETI",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_HUMANOID | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "SASQUATCH",
+      "name": "sasquatch",
+      "class": "S_YETI",
+      "size": "MZ_LARGE",
+      "flags1": "M1_ANIMAL | M1_HUMANOID | M1_SEE_INVIS | M1_OMNIVORE",
+      "flags2": "M2_STRONG"
+    },
+    {
+      "symbol": "KOBOLD_ZOMBIE",
+      "name": "kobold zombie",
+      "class": "S_ZOMBIE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE"
+    },
+    {
+      "symbol": "GNOME_ZOMBIE",
+      "name": "gnome zombie",
+      "class": "S_ZOMBIE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE | M2_GNOME"
+    },
+    {
+      "symbol": "ORC_ZOMBIE",
+      "name": "orc zombie",
+      "class": "S_ZOMBIE",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE | M2_ORC"
+    },
+    {
+      "symbol": "DWARF_ZOMBIE",
+      "name": "dwarf zombie",
+      "class": "S_ZOMBIE",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE | M2_DWARF"
+    },
+    {
+      "symbol": "ELF_ZOMBIE",
+      "name": "elf zombie",
+      "class": "S_ZOMBIE",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE | M2_ELF"
+    },
+    {
+      "symbol": "HUMAN_ZOMBIE",
+      "name": "human zombie",
+      "class": "S_ZOMBIE",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE"
+    },
+    {
+      "symbol": "ETTIN_ZOMBIE",
+      "name": "ettin zombie",
+      "class": "S_ZOMBIE",
+      "size": "MZ_HUGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "GHOUL",
+      "name": "ghoul",
+      "class": "S_ZOMBIE",
+      "size": "MZ_SMALL",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_POIS | M1_OMNIVORE",
+      "flags2": "M2_UNDEAD | M2_WANDER | M2_HOSTILE"
+    },
+    {
+      "symbol": "GIANT_ZOMBIE",
+      "name": "giant zombie",
+      "class": "S_ZOMBIE",
+      "size": "MZ_HUGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID",
+      "flags2": "M2_UNDEAD | M2_STALK | M2_HOSTILE | M2_GIANT | M2_STRONG"
+    },
+    {
+      "symbol": "SKELETON",
+      "name": "skeleton",
+      "class": "S_ZOMBIE",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_THICK_HIDE",
+      "flags2": "M2_UNDEAD | M2_WANDER | M2_HOSTILE | M2_STRONG | M2_COLLECT | M2_NASTY"
+    },
+    {
+      "symbol": "STRAW_GOLEM",
+      "name": "straw golem",
+      "class": "S_GOLEM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "PAPER_GOLEM",
+      "name": "paper golem",
+      "class": "S_GOLEM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "ROPE_GOLEM",
+      "name": "rope golem",
+      "class": "S_GOLEM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "GOLD_GOLEM",
+      "name": "gold golem",
+      "class": "S_GOLEM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_THICK_HIDE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "LEATHER_GOLEM",
+      "name": "leather golem",
+      "class": "S_GOLEM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "WOOD_GOLEM",
+      "name": "wood golem",
+      "class": "S_GOLEM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_THICK_HIDE",
+      "flags2": "M2_HOSTILE | M2_NEUTER"
+    },
+    {
+      "symbol": "FLESH_GOLEM",
+      "name": "flesh golem",
+      "class": "S_GOLEM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "CLAY_GOLEM",
+      "name": "clay golem",
+      "class": "S_GOLEM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_THICK_HIDE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "STONE_GOLEM",
+      "name": "stone golem",
+      "class": "S_GOLEM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_THICK_HIDE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "GLASS_GOLEM",
+      "name": "glass golem",
+      "class": "S_GOLEM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_THICK_HIDE",
+      "flags2": "M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "IRON_GOLEM",
+      "name": "iron golem",
+      "class": "S_GOLEM",
+      "size": "MZ_LARGE",
+      "flags1": "M1_BREATHLESS | M1_MINDLESS | M1_HUMANOID | M1_THICK_HIDE | M1_POIS",
+      "flags2": "M2_HOSTILE | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "HUMAN",
+      "name": "human",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "HUMAN_WERERAT",
+      "name": "wererat",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_POIS | M1_REGEN | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_WERE | M2_HOSTILE | M2_HUMAN | M2_COLLECT"
+    },
+    {
+      "symbol": "HUMAN_WEREJACKAL",
+      "name": "werejackal",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_POIS | M1_REGEN | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_WERE | M2_HOSTILE | M2_HUMAN | M2_COLLECT"
+    },
+    {
+      "symbol": "HUMAN_WEREWOLF",
+      "name": "werewolf",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_POIS | M1_REGEN | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_WERE | M2_HOSTILE | M2_HUMAN | M2_COLLECT"
+    },
+    {
+      "symbol": "ELF",
+      "name": "elf",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE | M1_SEE_INVIS",
+      "flags2": "M2_NOPOLY | M2_ELF | M2_COLLECT"
+    },
+    {
+      "symbol": "WOODLAND_ELF",
+      "name": "Woodland-elf",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE | M1_SEE_INVIS",
+      "flags2": "M2_ELF | M2_COLLECT"
+    },
+    {
+      "symbol": "GREEN_ELF",
+      "name": "Green-elf",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE | M1_SEE_INVIS",
+      "flags2": "M2_ELF | M2_COLLECT"
+    },
+    {
+      "symbol": "GREY_ELF",
+      "name": "Grey-elf",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE | M1_SEE_INVIS",
+      "flags2": "M2_ELF | M2_COLLECT"
+    },
+    {
+      "symbol": "ELF_NOBLE",
+      "name": "elf-noble",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE | M1_SEE_INVIS",
+      "flags2": "M2_ELF | M2_STRONG | M2_LORD | M2_COLLECT"
+    },
+    {
+      "symbol": "ELVEN_MONARCH",
+      "name": "elven monarch",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE | M1_SEE_INVIS",
+      "flags2": "M2_ELF | M2_STRONG | M2_PRINCE | M2_COLLECT"
+    },
+    {
+      "symbol": "DOPPELGANGER",
+      "name": "doppelganger",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_HOSTILE | M2_STRONG | M2_COLLECT | M2_SHAPESHIFTER"
+    },
+    {
+      "symbol": "SHOPKEEPER",
+      "name": "shopkeeper",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "GUARD",
+      "name": "guard",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_MERC | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "PRISONER",
+      "name": "prisoner",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "ORACLE",
+      "name": "Oracle",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_FEMALE"
+    },
+    {
+      "symbol": "ALIGNED_CLERIC",
+      "name": "aligned cleric",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_LORD | M2_PEACEFUL | M2_COLLECT"
+    },
+    {
+      "symbol": "HIGH_CLERIC",
+      "name": "high cleric",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_SEE_INVIS | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_MINION | M2_PRINCE | M2_NASTY | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "SOLDIER",
+      "name": "soldier",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_MERC | M2_STALK | M2_HOSTILE | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "SERGEANT",
+      "name": "sergeant",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_MERC | M2_STALK | M2_HOSTILE | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "NURSE",
+      "name": "nurse",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_HOSTILE"
+    },
+    {
+      "symbol": "LIEUTENANT",
+      "name": "lieutenant",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_MERC | M2_STALK | M2_HOSTILE | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "CAPTAIN",
+      "name": "captain",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_MERC | M2_STALK | M2_HOSTILE | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "WATCHMAN",
+      "name": "watchman",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_MERC | M2_STALK | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "WATCH_CAPTAIN",
+      "name": "watch captain",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_MERC | M2_STALK | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "MEDUSA",
+      "name": "Medusa",
+      "class": "S_HUMAN",
+      "size": "MZ_LARGE",
+      "flags1": "M1_FLY | M1_SWIM | M1_AMPHIBIOUS | M1_HUMANOID | M1_POIS | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HOSTILE | M2_STRONG | M2_PNAME | M2_FEMALE"
+    },
+    {
+      "symbol": "WIZARD_OF_YENDOR",
+      "name": "Wizard of Yendor",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_HUMANOID | M1_REGEN | M1_SEE_INVIS | M1_TPORT | M1_TPORT_CNTRL | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_HOSTILE | M2_STRONG | M2_NASTY | M2_PRINCE | M2_MALE | M2_MAGIC"
+    },
+    {
+      "symbol": "CROESUS",
+      "name": "Croesus",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_SEE_INVIS | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STALK | M2_HOSTILE | M2_STRONG | M2_NASTY | M2_PNAME | M2_PRINCE | M2_MALE | M2_GREEDY | M2_JEWELS | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "CHARON",
+      "name": "Charon",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_BREATHLESS | M1_SEE_INVIS | M1_HUMANOID",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_PNAME | M2_MALE | M2_GREEDY | M2_COLLECT"
+    },
+    {
+      "symbol": "GHOST",
+      "name": "ghost",
+      "class": "S_GHOST",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_WALLWALK | M1_HUMANOID | M1_UNSOLID",
+      "flags2": "M2_NOPOLY | M2_UNDEAD | M2_STALK | M2_HOSTILE"
+    },
+    {
+      "symbol": "SHADE",
+      "name": "shade",
+      "class": "S_GHOST",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_BREATHLESS | M1_WALLWALK | M1_HUMANOID | M1_UNSOLID | M1_SEE_INVIS",
+      "flags2": "M2_NOPOLY | M2_UNDEAD | M2_WANDER | M2_STALK | M2_HOSTILE | M2_NASTY"
+    },
+    {
+      "symbol": "WATER_DEMON",
+      "name": "water demon",
+      "class": "S_DEMON",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_POIS | M1_SWIM",
+      "flags2": "M2_NOPOLY | M2_DEMON | M2_STALK | M2_HOSTILE | M2_NASTY | M2_COLLECT"
+    },
+    {
+      "symbol": "AMOROUS_DEMON",
+      "name": "amorous demon",
+      "class": "S_DEMON",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_FLY | M1_POIS",
+      "flags2": "M2_DEMON | M2_STALK | M2_HOSTILE | M2_NASTY"
+    },
+    {
+      "symbol": "HORNED_DEVIL",
+      "name": "horned devil",
+      "class": "S_DEMON",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_POIS | M1_THICK_HIDE",
+      "flags2": "M2_DEMON | M2_STALK | M2_HOSTILE | M2_NASTY"
+    },
+    {
+      "symbol": "ERINYS",
+      "name": "erinys",
+      "class": "S_DEMON",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_POIS",
+      "flags2": "M2_NOPOLY | M2_DEMON | M2_STALK | M2_STRONG | M2_NASTY | M2_FEMALE | M2_COLLECT"
+    },
+    {
+      "symbol": "BARBED_DEVIL",
+      "name": "barbed devil",
+      "class": "S_DEMON",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_POIS | M1_THICK_HIDE",
+      "flags2": "M2_DEMON | M2_STALK | M2_HOSTILE | M2_NASTY"
+    },
+    {
+      "symbol": "MARILITH",
+      "name": "marilith",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_SLITHY | M1_SEE_INVIS | M1_POIS",
+      "flags2": "M2_DEMON | M2_STALK | M2_HOSTILE | M2_NASTY | M2_FEMALE | M2_COLLECT"
+    },
+    {
+      "symbol": "VROCK",
+      "name": "vrock",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_POIS",
+      "flags2": "M2_DEMON | M2_STALK | M2_HOSTILE | M2_NASTY"
+    },
+    {
+      "symbol": "HEZROU",
+      "name": "hezrou",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_POIS",
+      "flags2": "M2_DEMON | M2_STALK | M2_HOSTILE | M2_NASTY"
+    },
+    {
+      "symbol": "BONE_DEVIL",
+      "name": "bone devil",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_POIS",
+      "flags2": "M2_DEMON | M2_STALK | M2_HOSTILE | M2_NASTY | M2_COLLECT"
+    },
+    {
+      "symbol": "ICE_DEVIL",
+      "name": "ice devil",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_SEE_INVIS | M1_POIS",
+      "flags2": "M2_DEMON | M2_STALK | M2_HOSTILE | M2_NASTY"
+    },
+    {
+      "symbol": "NALFESHNEE",
+      "name": "nalfeshnee",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_HUMANOID | M1_POIS",
+      "flags2": "M2_DEMON | M2_STALK | M2_HOSTILE | M2_NASTY"
+    },
+    {
+      "symbol": "PIT_FIEND",
+      "name": "pit fiend",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_SEE_INVIS | M1_POIS",
+      "flags2": "M2_DEMON | M2_STALK | M2_HOSTILE | M2_NASTY | M2_COLLECT"
+    },
+    {
+      "symbol": "SANDESTIN",
+      "name": "sandestin",
+      "class": "S_DEMON",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID",
+      "flags2": "M2_NOPOLY | M2_STALK | M2_STRONG | M2_COLLECT | M2_SHAPESHIFTER"
+    },
+    {
+      "symbol": "BALROG",
+      "name": "balrog",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_FLY | M1_SEE_INVIS | M1_POIS",
+      "flags2": "M2_DEMON | M2_STALK | M2_HOSTILE | M2_STRONG | M2_NASTY | M2_COLLECT"
+    },
+    {
+      "symbol": "JUIBLEX",
+      "name": "Juiblex",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_AMPHIBIOUS | M1_AMORPHOUS | M1_NOHEAD | M1_FLY | M1_SEE_INVIS | M1_ACID | M1_POIS",
+      "flags2": "M2_NOPOLY | M2_DEMON | M2_STALK | M2_HOSTILE | M2_PNAME | M2_NASTY | M2_LORD | M2_MALE"
+    },
+    {
+      "symbol": "YEENOGHU",
+      "name": "Yeenoghu",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_FLY | M1_SEE_INVIS | M1_POIS",
+      "flags2": "M2_NOPOLY | M2_DEMON | M2_STALK | M2_HOSTILE | M2_PNAME | M2_NASTY | M2_LORD | M2_MALE | M2_COLLECT"
+    },
+    {
+      "symbol": "ORCUS",
+      "name": "Orcus",
+      "class": "S_DEMON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_SEE_INVIS | M1_POIS",
+      "flags2": "M2_NOPOLY | M2_DEMON | M2_STALK | M2_HOSTILE | M2_PNAME | M2_NASTY | M2_PRINCE | M2_MALE | M2_COLLECT"
+    },
+    {
+      "symbol": "GERYON",
+      "name": "Geryon",
+      "class": "S_DEMON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_SEE_INVIS | M1_POIS | M1_SLITHY",
+      "flags2": "M2_NOPOLY | M2_DEMON | M2_STALK | M2_HOSTILE | M2_PNAME | M2_NASTY | M2_PRINCE | M2_MALE"
+    },
+    {
+      "symbol": "DISPATER",
+      "name": "Dispater",
+      "class": "S_DEMON",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_SEE_INVIS | M1_POIS | M1_HUMANOID",
+      "flags2": "M2_NOPOLY | M2_DEMON | M2_STALK | M2_HOSTILE | M2_PNAME | M2_NASTY | M2_PRINCE | M2_MALE | M2_COLLECT"
+    },
+    {
+      "symbol": "BAALZEBUB",
+      "name": "Baalzebub",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_FLY | M1_SEE_INVIS | M1_POIS",
+      "flags2": "M2_NOPOLY | M2_DEMON | M2_STALK | M2_HOSTILE | M2_PNAME | M2_NASTY | M2_PRINCE | M2_MALE"
+    },
+    {
+      "symbol": "ASMODEUS",
+      "name": "Asmodeus",
+      "class": "S_DEMON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_SEE_INVIS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_NOPOLY | M2_DEMON | M2_STALK | M2_HOSTILE | M2_PNAME | M2_STRONG | M2_NASTY | M2_PRINCE | M2_MALE"
+    },
+    {
+      "symbol": "DEMOGORGON",
+      "name": "Demogorgon",
+      "class": "S_DEMON",
+      "size": "MZ_HUGE",
+      "flags1": "M1_FLY | M1_SEE_INVIS | M1_NOHANDS | M1_POIS",
+      "flags2": "M2_NOPOLY | M2_DEMON | M2_STALK | M2_HOSTILE | M2_PNAME | M2_NASTY | M2_PRINCE | M2_MALE"
+    },
+    {
+      "symbol": "DEATH",
+      "name": "Death",
+      "class": "S_DEMON",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_HUMANOID | M1_REGEN | M1_SEE_INVIS | M1_TPORT_CNTRL",
+      "flags2": "M2_NOPOLY | M2_STALK | M2_HOSTILE | M2_PNAME | M2_STRONG | M2_NASTY"
+    },
+    {
+      "symbol": "PESTILENCE",
+      "name": "Pestilence",
+      "class": "S_DEMON",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_HUMANOID | M1_REGEN | M1_SEE_INVIS | M1_TPORT_CNTRL",
+      "flags2": "M2_NOPOLY | M2_STALK | M2_HOSTILE | M2_PNAME | M2_STRONG | M2_NASTY"
+    },
+    {
+      "symbol": "FAMINE",
+      "name": "Famine",
+      "class": "S_DEMON",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_HUMANOID | M1_REGEN | M1_SEE_INVIS | M1_TPORT_CNTRL",
+      "flags2": "M2_NOPOLY | M2_STALK | M2_HOSTILE | M2_PNAME | M2_STRONG | M2_NASTY"
+    },
+    {
+      "symbol": "MAIL_DAEMON",
+      "name": "mail daemon",
+      "class": "S_DEMON",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_FLY | M1_SWIM | M1_BREATHLESS | M1_SEE_INVIS | M1_HUMANOID | M1_POIS",
+      "flags2": "M2_NOPOLY | M2_STALK | M2_PEACEFUL"
+    },
+    {
+      "symbol": "DJINNI",
+      "name": "djinni",
+      "class": "S_DEMON",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_FLY | M1_POIS",
+      "flags2": "M2_NOPOLY | M2_STALK | M2_COLLECT"
+    },
+    {
+      "symbol": "JELLYFISH",
+      "name": "jellyfish",
+      "class": "S_EEL",
+      "size": "MZ_SMALL",
+      "flags1": "M1_SWIM | M1_AMPHIBIOUS | M1_NOLIMBS | M1_NOHEAD | M1_NOTAKE | M1_POIS",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "PIRANHA",
+      "name": "piranha",
+      "class": "S_EEL",
+      "size": "MZ_SMALL",
+      "flags1": "M1_SWIM | M1_AMPHIBIOUS | M1_ANIMAL | M1_NOLIMBS | M1_CARNIVORE | M1_OVIPAROUS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "SHARK",
+      "name": "shark",
+      "class": "S_EEL",
+      "size": "MZ_LARGE",
+      "flags1": "M1_SWIM | M1_AMPHIBIOUS | M1_ANIMAL | M1_NOLIMBS | M1_CARNIVORE | M1_OVIPAROUS | M1_THICK_HIDE | M1_NOTAKE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "GIANT_EEL",
+      "name": "giant eel",
+      "class": "S_EEL",
+      "size": "MZ_HUGE",
+      "flags1": "M1_SWIM | M1_AMPHIBIOUS | M1_ANIMAL | M1_SLITHY | M1_NOLIMBS | M1_CARNIVORE | M1_OVIPAROUS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "ELECTRIC_EEL",
+      "name": "electric eel",
+      "class": "S_EEL",
+      "size": "MZ_HUGE",
+      "flags1": "M1_SWIM | M1_AMPHIBIOUS | M1_ANIMAL | M1_SLITHY | M1_NOLIMBS | M1_CARNIVORE | M1_OVIPAROUS | M1_NOTAKE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "KRAKEN",
+      "name": "kraken",
+      "class": "S_EEL",
+      "size": "MZ_HUGE",
+      "flags1": "M1_SWIM | M1_AMPHIBIOUS | M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_NOPOLY | M2_HOSTILE | M2_STRONG"
+    },
+    {
+      "symbol": "NEWT",
+      "name": "newt",
+      "class": "S_LIZARD",
+      "size": "MZ_TINY",
+      "flags1": "M1_SWIM | M1_AMPHIBIOUS | M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "GECKO",
+      "name": "gecko",
+      "class": "S_LIZARD",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "IGUANA",
+      "name": "iguana",
+      "class": "S_LIZARD",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "BABY_CROCODILE",
+      "name": "baby crocodile",
+      "class": "S_LIZARD",
+      "size": "MZ_MEDIUM",
+      "flags1": "M1_SWIM | M1_AMPHIBIOUS | M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "LIZARD",
+      "name": "lizard",
+      "class": "S_LIZARD",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_HOSTILE"
+    },
+    {
+      "symbol": "CHAMELEON",
+      "name": "chameleon",
+      "class": "S_LIZARD",
+      "size": "MZ_TINY",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_CARNIVORE",
+      "flags2": "M2_NOPOLY | M2_HOSTILE | M2_SHAPESHIFTER"
+    },
+    {
+      "symbol": "CROCODILE",
+      "name": "crocodile",
+      "class": "S_LIZARD",
+      "size": "MZ_LARGE",
+      "flags1": "M1_SWIM | M1_AMPHIBIOUS | M1_ANIMAL | M1_THICK_HIDE | M1_NOHANDS | M1_OVIPAROUS | M1_CARNIVORE",
+      "flags2": "M2_STRONG | M2_HOSTILE"
+    },
+    {
+      "symbol": "SALAMANDER",
+      "name": "salamander",
+      "class": "S_LIZARD",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_SLITHY | M1_THICK_HIDE | M1_POIS",
+      "flags2": "M2_STALK | M2_HOSTILE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "LONG_WORM_TAIL",
+      "name": "long worm tail",
+      "class": "S_WORM_TAIL",
+      "size": "0",
+      "flags1": "0L",
+      "flags2": "M2_NOPOLY"
+    },
+    {
+      "symbol": "ARCHEOLOGIST",
+      "name": "archeologist",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_TUNNEL | M1_NEEDPICK | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "BARBARIAN",
+      "name": "barbarian",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "CAVE_DWELLER",
+      "name": "cave dweller",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "HEALER",
+      "name": "healer",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "KNIGHT",
+      "name": "knight",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "MONK",
+      "name": "monk",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_HERBIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "CLERIC",
+      "name": "cleric",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "RANGER",
+      "name": "ranger",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "ROGUE",
+      "name": "rogue",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_GREEDY | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "SAMURAI",
+      "name": "samurai",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "TOURIST",
+      "name": "tourist",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "VALKYRIE",
+      "name": "valkyrie",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_FEMALE | M2_COLLECT"
+    },
+    {
+      "symbol": "WIZARD",
+      "name": "wizard",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "LORD_CARNARVON",
+      "name": "Lord Carnarvon",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_TUNNEL | M1_NEEDPICK | M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PNAME | M2_PEACEFUL | M2_STRONG | M2_MALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "PELIAS",
+      "name": "Pelias",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PNAME | M2_PEACEFUL | M2_STRONG | M2_MALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "SHAMAN_KARNOV",
+      "name": "Shaman Karnov",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PNAME | M2_PEACEFUL | M2_STRONG | M2_MALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "EARENDIL",
+      "name": "Earendil",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_SEE_INVIS | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_ELF | M2_HUMAN | M2_PNAME | M2_PEACEFUL | M2_STRONG | M2_MALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "ELWING",
+      "name": "Elwing",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_SEE_INVIS | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_ELF | M2_HUMAN | M2_PNAME | M2_PEACEFUL | M2_STRONG | M2_FEMALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "HIPPOCRATES",
+      "name": "Hippocrates",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PNAME | M2_PEACEFUL | M2_STRONG | M2_MALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "KING_ARTHUR",
+      "name": "King Arthur",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PNAME | M2_PEACEFUL | M2_STRONG | M2_MALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "GRAND_MASTER",
+      "name": "Grand Master",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_SEE_INVIS | M1_HERBIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_MALE | M2_NASTY | M2_MAGIC"
+    },
+    {
+      "symbol": "ARCH_PRIEST",
+      "name": "Arch Priest",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_SEE_INVIS | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_MALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "ORION",
+      "name": "Orion",
+      "class": "S_HUMAN",
+      "size": "MZ_HUGE",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE | M1_SEE_INVIS | M1_SWIM | M1_AMPHIBIOUS",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PNAME | M2_PEACEFUL | M2_STRONG | M2_MALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "MASTER_OF_THIEVES",
+      "name": "Master of Thieves",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_MALE | M2_GREEDY | M2_JEWELS | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "LORD_SATO",
+      "name": "Lord Sato",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PNAME | M2_PEACEFUL | M2_STRONG | M2_MALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "TWOFLOWER",
+      "name": "Twoflower",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PNAME | M2_PEACEFUL | M2_STRONG | M2_MALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "NORN",
+      "name": "Norn",
+      "class": "S_HUMAN",
+      "size": "MZ_HUGE",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_FEMALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "NEFERET_THE_GREEN",
+      "name": "Neferet the Green",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_FEMALE | M2_PNAME | M2_PEACEFUL | M2_STRONG | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "MINION_OF_HUHETOTL",
+      "name": "Minion of Huhetotl",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_FLY | M1_SEE_INVIS | M1_POIS",
+      "flags2": "M2_NOPOLY | M2_DEMON | M2_STALK | M2_HOSTILE | M2_STRONG | M2_NASTY | M2_COLLECT"
+    },
+    {
+      "symbol": "THOTH_AMON",
+      "name": "Thoth Amon",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PNAME | M2_STRONG | M2_MALE | M2_STALK | M2_HOSTILE | M2_NASTY | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "CHROMATIC_DRAGON",
+      "name": "Chromatic Dragon",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE | M1_SEE_INVIS | M1_POIS",
+      "flags2": "M2_NOPOLY | M2_HOSTILE | M2_FEMALE | M2_STALK | M2_STRONG | M2_NASTY | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "GOBLIN_KING",
+      "name": "Goblin King",
+      "class": "S_ORC",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_ORC | M2_HOSTILE | M2_STRONG | M2_STALK | M2_NASTY | M2_MALE | M2_GREEDY | M2_JEWELS | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "CYCLOPS",
+      "name": "Cyclops",
+      "class": "S_GIANT",
+      "size": "MZ_HUGE",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_GIANT | M2_STRONG | M2_ROCKTHROW | M2_STALK | M2_HOSTILE | M2_NASTY | M2_MALE | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "IXOTH",
+      "name": "Ixoth",
+      "class": "S_DRAGON",
+      "size": "MZ_GIGANTIC",
+      "flags1": "M1_FLY | M1_THICK_HIDE | M1_NOHANDS | M1_CARNIVORE | M1_SEE_INVIS",
+      "flags2": "M2_NOPOLY | M2_MALE | M2_PNAME | M2_HOSTILE | M2_STRONG | M2_NASTY | M2_STALK | M2_GREEDY | M2_JEWELS | M2_MAGIC"
+    },
+    {
+      "symbol": "MASTER_KAEN",
+      "name": "Master Kaen",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_HERBIVORE | M1_SEE_INVIS",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_MALE | M2_PNAME | M2_HOSTILE | M2_STRONG | M2_NASTY | M2_STALK | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "NALZOK",
+      "name": "Nalzok",
+      "class": "S_DEMON",
+      "size": "MZ_LARGE",
+      "flags1": "M1_FLY | M1_SEE_INVIS | M1_POIS",
+      "flags2": "M2_NOPOLY | M2_DEMON | M2_MALE | M2_PNAME | M2_HOSTILE | M2_STRONG | M2_STALK | M2_NASTY | M2_COLLECT"
+    },
+    {
+      "symbol": "SCORPIUS",
+      "name": "Scorpius",
+      "class": "S_SPIDER",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_ANIMAL | M1_NOHANDS | M1_OVIPAROUS | M1_POIS | M1_CARNIVORE",
+      "flags2": "M2_NOPOLY | M2_MALE | M2_PNAME | M2_HOSTILE | M2_STRONG | M2_STALK | M2_NASTY | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "MASTER_ASSASSIN",
+      "name": "Master Assassin",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_MALE | M2_HOSTILE | M2_STALK | M2_NASTY | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "ASHIKAGA_TAKAUJI",
+      "name": "Ashikaga Takauji",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PNAME | M2_HOSTILE | M2_STRONG | M2_STALK | M2_NASTY | M2_MALE | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "LORD_SURTUR",
+      "name": "Lord Surtur",
+      "class": "S_GIANT",
+      "size": "MZ_HUGE",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_GIANT | M2_MALE | M2_PNAME | M2_HOSTILE | M2_STALK | M2_STRONG | M2_NASTY | M2_ROCKTHROW | M2_JEWELS | M2_COLLECT"
+    },
+    {
+      "symbol": "DARK_ONE",
+      "name": "Dark One",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_STRONG | M2_HOSTILE | M2_STALK | M2_NASTY | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "STUDENT",
+      "name": "student",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_TUNNEL | M1_NEEDPICK | M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "CHIEFTAIN",
+      "name": "chieftain",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "NEANDERTHAL",
+      "name": "neanderthal",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "HIGH_ELF",
+      "name": "High-elf",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_SEE_INVIS | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_ELF | M2_PEACEFUL | M2_COLLECT"
+    },
+    {
+      "symbol": "ATTENDANT",
+      "name": "attendant",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "PAGE",
+      "name": "page",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "ABBOT",
+      "name": "abbot",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_HERBIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "ACOLYTE",
+      "name": "acolyte",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "HUNTER",
+      "name": "hunter",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_SEE_INVIS | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "THUG",
+      "name": "thug",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_GREEDY | M2_COLLECT"
+    },
+    {
+      "symbol": "NINJA",
+      "name": "ninja",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_HOSTILE | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "ROSHI",
+      "name": "roshi",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT"
+    },
+    {
+      "symbol": "GUIDE",
+      "name": "guide",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT | M2_MAGIC"
+    },
+    {
+      "symbol": "WARRIOR",
+      "name": "warrior",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT | M2_FEMALE"
+    },
+    {
+      "symbol": "APPRENTICE",
+      "name": "apprentice",
+      "class": "S_HUMAN",
+      "size": "MZ_HUMAN",
+      "flags1": "M1_HUMANOID | M1_OMNIVORE",
+      "flags2": "M2_NOPOLY | M2_HUMAN | M2_PEACEFUL | M2_STRONG | M2_COLLECT | M2_MAGIC"
+    }
+  ]
+}

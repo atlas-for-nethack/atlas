@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "lantern-modern",
+  "name": "Lantern Modern",
+  "engineVersion": "5.0.0",
+  "output": "lantern-modern.png",
+  "provenance": "lantern/modern-provenance.json",
+  "license": "CC-BY-4.0",
+  "credit": "NetHack Atlas project",
+  "licenseFile": "assets/tiles/lantern/LICENSE.txt",
+  "description": "Shared Lantern stonework and oak doors with seven-tier creature sizing.",
+  "version": "0.3 / NetHack 5.0.0",
+  "source": {
+    "kind": "prepared",
+    "provider": "lantern",
+    "creatureSizing": "stature"
+  }
+}

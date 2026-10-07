@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "description": "Independent original-source digests. Compare canonical artwork against these values; regeneration must not update this oracle.",
+  "prompts": {
+    "file": "prompts.json",
+    "sha256": "747fdf78b6f6c88d970e876ab32847fe701cb176317971505dcf5ff280afd997"
+  },
+  "sources": {
+    "lantern-normal": {
+      "file": "lantern-normal.png",
+      "sha256": "111eca75948fd978fd0ffc109f0a95d9997d514b4032d42075f57fc03888d87f",
+      "referenceSha256": "c64e1eeb76ff3396d199eea3f694c6f21b7f93b253c22cb7d5ec6b3ffcd8d3e5"
+    },
+    "lantern-goal": {
+      "file": "lantern-goal.png",
+      "sha256": "6760e7b47d4e5b65cbdd9d9fc2f760d3bae32106e77321dfa480351d517d26be",
+      "referenceSha256": "111eca75948fd978fd0ffc109f0a95d9997d514b4032d42075f57fc03888d87f"
+    },
+    "soot-and-brass-normal": {
+      "file": "soot-and-brass-normal.png",
+      "sha256": "b2137b22e43d41fc4b4ff85fc377e50bbd717780d1bc6dbc3554c8845a1a98be",
+      "referenceSha256": "0ab18f838a50ccf2eeee5c4e11b07297e062e83e64b2653a763d151ee2c1a1d9"
+    },
+    "soot-and-brass-goal": {
+      "file": "soot-and-brass-goal.png",
+      "sha256": "a2e18f1ed25fec818a7141deead21a32ec7853c5affb7c86bb93aa259752ed57",
+      "referenceSha256": "b2137b22e43d41fc4b4ff85fc377e50bbd717780d1bc6dbc3554c8845a1a98be"
+    }
+  }
+}

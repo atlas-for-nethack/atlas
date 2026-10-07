@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "source": "source.png",
+  "sourceSha256": "9152df44da9c1ca1bfc1e6df9c04b33f3b167bdd06a100d8da26ad902a37538d",
+  "method": "Explicit retained source crops, nearest-neighbor fitting to the established Soot and Brass wall geometry; alpha cleanup <=8 and >=240. Sources unchanged.",
+  "pieces": {
+    "north": {
+      "file": "source.png",
+      "bounds": [
+        570,
+        105,
+        666,
+        211
+      ]
+    },
+    "west": {
+      "file": "source.png",
+      "bounds": [
+        255,
+        211,
+        331,
+        307
+      ]
+    },
+    "east": {
+      "file": "source.png",
+      "bounds": [
+        1211,
+        211,
+        1287,
+        307
+      ]
+    },
+    "south": {
+      "file": "source.png",
+      "bounds": [
+        431,
+        578,
+        527,
+        635
+      ]
+    },
+    "northwest": {
+      "file": "source.png",
+      "bounds": [
+        255,
+        105,
+        331,
+        211
+      ]
+    },
+    "northeast": {
+      "file": "source.png",
+      "bounds": [
+        1211,
+        105,
+        1287,
+        211
+      ]
+    },
+    "southwest": {
+      "file": "source.png",
+      "bounds": [
+        255,
+        578,
+        331,
+        635
+      ]
+    },
+    "southeast": {
+      "file": "source.png",
+      "bounds": [
+        1211,
+        578,
+        1287,
+        635
+      ]
+    },
+    "front-door": {
+      "file": "front-doors.png",
+      "bounds": [
+        75,
+        91,
+        704,
+        904
+      ]
+    },
+    "front-open": {
+      "file": "front-doors.png",
+      "bounds": [
+        835,
+        91,
+        1464,
+        904
+      ]
+    },
+    "west-door": {
+      "file": "source.png",
+      "bounds": [
+        255,
+        316,
+        331,
+        438
+      ]
+    },
+    "north-connector": {
+      "file": "source.png",
+      "bounds": [
+        666,
+        105,
+        762,
+        211
+      ]
+    },
+    "open-side-leaf": {
+      "file": "source.png",
+      "bounds": [
+        1261,
+        326,
+        1282,
+        432
+      ]
+    }
+  },
+  "artworkLicense": "CC-BY-4.0",
+  "credit": "NetHack Atlas project",
+  "sources": {
+    "source.png": "9152df44da9c1ca1bfc1e6df9c04b33f3b167bdd06a100d8da26ad902a37538d",
+    "front-doors.png": "cecd400b4909688c6d375fa431e8247ff4ff9d436297cab5da92ae93f651f327"
+  }
+}

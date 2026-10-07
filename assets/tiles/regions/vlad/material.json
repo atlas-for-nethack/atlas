@@ -1,0 +1,9 @@
+{
+  "license": "CC-BY-4.0",
+  "credit": "NetHack Atlas project",
+  "families": ["lantern", "soot-and-brass"],
+  "architectureBrightness": 0.8,
+  "floorBrightness": 0.88,
+  "source": "Exact existing family atlas pixels, including all directional wall, door and bar frames and alternates. No generated redraw.",
+  "scope": "Engine-owned Vlad material context only. Classic and Modern use identical environment art."
+}

@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "license": "CC-BY-4.0",
+  "credit": "NetHack Atlas project",
+  "tool": "built-in image_gen",
+  "sources": [
+    {
+      "name": "arrow-trap",
+      "art_key": "terrain/arrow-trap",
+      "slots": [
+        1325
+      ],
+      "source": "arrow-trap-source.png",
+      "sourceSha256": "2e65c1c8f35926e9a793f0838dd1b555ce887798d60af6b010f2052a4789e580",
+      "file": "arrow-trap.png",
+      "sha256": "f1523a59d89e6105ddf4d42d53cb1aabe47877304c713c9471061331a6cc4ff0",
+      "sourceCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "assembly": "declared source crop resized to 64x64 with nearest-neighbor; generated alpha retained"
+    },
+    {
+      "name": "dart-trap",
+      "art_key": "terrain/dart-trap",
+      "slots": [
+        1326
+      ],
+      "source": "dart-trap-source.png",
+      "sourceSha256": "b29ab672316ff2aff8f0b3cad4ec832af74b8b41e63a9780341a2229ac12791c",
+      "file": "dart-trap.png",
+      "sha256": "4f9316ad5ef70d17447caa992cd41cdf86dc234b504a2c49844c232e45677780",
+      "sourceCrop": [
+        140,
+        140,
+        1114,
+        1114
+      ],
+      "assembly": "declared source crop resized to 64x64 with nearest-neighbor; generated alpha retained"
+    },
+    {
+      "name": "falling-rock-trap",
+      "art_key": "terrain/falling-rock-trap",
+      "slots": [
+        1327
+      ],
+      "source": "falling-rock-trap-source.png",
+      "sourceSha256": "eb2336803d3683a0ab2f5b96e50757df901c57f94af4830a70068afa861c35e4",
+      "file": "falling-rock-trap.png",
+      "sha256": "1666570a648c5d1e3a64ac52ca53be0c84a057e6b7e3019f8db8aad8b1e4909a",
+      "sourceCrop": [
+        219,
+        219,
+        1035,
+        1035
+      ],
+      "assembly": "declared source crop resized to 64x64 with nearest-neighbor; generated alpha retained"
+    },
+    {
+      "name": "rust-trap",
+      "art_key": "terrain/rust-trap",
+      "slots": [
+        1333
+      ],
+      "source": "rust-trap-source.png",
+      "sourceSha256": "1227fcc603abaaa19c19b7fb926507b97fab13f972749fcecb7621a99cd9f7e2",
+      "file": "rust-trap.png",
+      "sha256": "6a39fd9b9327c9f178fade3cc7c1eb7c296a4855649074aca8187beb80b93a06",
+      "sourceCrop": [
+        128,
+        128,
+        1126,
+        1126
+      ],
+      "assembly": "declared source crop resized to 64x64 with nearest-neighbor; generated alpha retained"
+    },
+    {
+      "name": "bow",
+      "art_key": "object/weapon/bow",
+      "slots": [
+        872
+      ],
+      "source": "bow-source.png",
+      "sourceSha256": "307384892703463783cee6474fb5736ddd0535d09c824bd211344affd41bca9b",
+      "file": "bow.png",
+      "sha256": "0e73198dd1ffe74725af0605ab3c40caeb52ab30536c8343337cbf03687426c3",
+      "sourceCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "assembly": "declared source crop resized to 64x64 with nearest-neighbor; generated alpha retained"
+    },
+    {
+      "name": "runed-bow",
+      "art_key": "object/weapon/runed-bow",
+      "slots": [
+        873
+      ],
+      "source": "runed-bow-source.png",
+      "sourceSha256": "05e7e43e55dcf892c6c8c9985b5da1c6ed9e47a8a839b77b8146e6a48b70816a",
+      "file": "runed-bow.png",
+      "sha256": "059ac31455284c5b9132b0c0ab5b0456133fedb03d696a85931c88f220ace9e2",
+      "sourceCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "assembly": "declared source crop resized to 64x64 with nearest-neighbor; generated alpha retained"
+    },
+    {
+      "name": "crude-bow",
+      "art_key": "object/weapon/crude-bow",
+      "slots": [
+        874
+      ],
+      "source": "crude-bow-source.png",
+      "sourceSha256": "57debddda9b0fe84b41ffb0c3e4c50f653931c063c0728fe990e090fbbc7d1b3",
+      "file": "crude-bow.png",
+      "sha256": "86202c6b7a136d376197a70607a857629a29dfc07f2c1c2749801ad9ee5bebc6",
+      "sourceCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "assembly": "declared source crop resized to 64x64 with nearest-neighbor; generated alpha retained"
+    },
+    {
+      "name": "long-bow",
+      "art_key": "object/weapon/long-bow",
+      "slots": [
+        875
+      ],
+      "source": "long-bow-source.png",
+      "sourceSha256": "3a105c6263929927d9c90ea22fc04db9fc9d2ed9c70f76d9a5258edcb8d3a2fa",
+      "file": "long-bow.png",
+      "sha256": "3b535e3040a94af6558f43557aa3a55d0280a5b370a26750f3aad3fccdd5ab7e",
+      "sourceCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "assembly": "declared source crop resized to 64x64 with nearest-neighbor; generated alpha retained"
+    }
+  ]
+}

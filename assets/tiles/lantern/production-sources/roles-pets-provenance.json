@@ -1,0 +1,621 @@
+{
+  "source": "roles-pets-sheet.png",
+  "sourceSha256": "ffad940a24b904ede84d939f770e26b42088b22b575086f8d89b648dde5d3ea2",
+  "columns": 4,
+  "rows": 4,
+  "grid": "normalized",
+  "prompt": "ROLE-PROMPTS.md",
+  "cleanupScriptSha256": "229d75743dcf232ca5f6aae1f764dfe9777ad1ebc4e65138f6b7f85276ff47a1",
+  "sprites": [
+    {
+      "key": "monster/338-archeologist",
+      "sourceCrop": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "subjectBounds": [
+        80,
+        78,
+        271,
+        305
+      ],
+      "size": [
+        50,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/338-archeologist",
+        "version": 1,
+        "width": 314,
+        "height": 314,
+        "backgroundAnchor": [
+          24,
+          35,
+          33
+        ],
+        "removedOpaquePixels": 72020,
+        "transparentPixels": 72020,
+        "visiblePixels": 26576,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 9,
+        "warnings": []
+      },
+      "file": "production-sources/338-archeologist.png",
+      "used": true
+    },
+    {
+      "key": "monster/339-barbarian",
+      "sourceCrop": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "subjectBounds": [
+        63,
+        76,
+        266,
+        305
+      ],
+      "size": [
+        53,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/339-barbarian",
+        "version": 1,
+        "width": 313,
+        "height": 314,
+        "backgroundAnchor": [
+          24,
+          35,
+          33
+        ],
+        "removedOpaquePixels": 68142,
+        "transparentPixels": 68142,
+        "visiblePixels": 30140,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 13,
+        "warnings": []
+      },
+      "file": "production-sources/339-barbarian.png",
+      "used": true
+    },
+    {
+      "key": "monster/340-cave-dweller",
+      "sourceCrop": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "subjectBounds": [
+        65,
+        94,
+        259,
+        305
+      ],
+      "size": [
+        55,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/340-cave-dweller",
+        "version": 1,
+        "width": 313,
+        "height": 314,
+        "backgroundAnchor": [
+          24,
+          35,
+          33
+        ],
+        "removedOpaquePixels": 72260,
+        "transparentPixels": 72260,
+        "visiblePixels": 26022,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 140,
+        "warnings": []
+      },
+      "file": "production-sources/340-cave-dweller.png",
+      "used": true
+    },
+    {
+      "key": "monster/341-healer",
+      "sourceCrop": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "subjectBounds": [
+        73,
+        85,
+        250,
+        305
+      ],
+      "size": [
+        48,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/341-healer",
+        "version": 1,
+        "width": 314,
+        "height": 314,
+        "backgroundAnchor": [
+          24,
+          35,
+          33
+        ],
+        "removedOpaquePixels": 70659,
+        "transparentPixels": 70659,
+        "visiblePixels": 27937,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 489,
+        "warnings": [
+          "enclosed-background-colored-pixels-retained"
+        ]
+      },
+      "file": "production-sources/341-healer.png",
+      "used": true
+    },
+    {
+      "key": "monster/342-knight",
+      "sourceCrop": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "subjectBounds": [
+        64,
+        59,
+        258,
+        287
+      ],
+      "size": [
+        51,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/342-knight",
+        "version": 1,
+        "width": 314,
+        "height": 313,
+        "backgroundAnchor": [
+          24,
+          35,
+          33
+        ],
+        "removedOpaquePixels": 69872,
+        "transparentPixels": 69872,
+        "visiblePixels": 28410,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 4,
+        "warnings": []
+      },
+      "file": "production-sources/342-knight.png",
+      "used": false
+    },
+    {
+      "key": "monster/343-monk",
+      "sourceCrop": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "subjectBounds": [
+        68,
+        71,
+        249,
+        287
+      ],
+      "size": [
+        50,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/343-monk",
+        "version": 1,
+        "width": 313,
+        "height": 313,
+        "backgroundAnchor": [
+          24,
+          35,
+          33
+        ],
+        "removedOpaquePixels": 73312,
+        "transparentPixels": 73312,
+        "visiblePixels": 24657,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 1,
+        "warnings": []
+      },
+      "file": "production-sources/343-monk.png",
+      "used": true
+    },
+    {
+      "key": "monster/344-cleric",
+      "sourceCrop": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "subjectBounds": [
+        69,
+        64,
+        266,
+        287
+      ],
+      "size": [
+        53,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/344-cleric",
+        "version": 1,
+        "width": 313,
+        "height": 313,
+        "backgroundAnchor": [
+          24,
+          35,
+          33
+        ],
+        "removedOpaquePixels": 70914,
+        "transparentPixels": 70914,
+        "visiblePixels": 27055,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 5,
+        "warnings": []
+      },
+      "file": "production-sources/344-cleric.png",
+      "used": true
+    },
+    {
+      "key": "monster/345-ranger",
+      "sourceCrop": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "subjectBounds": [
+        61,
+        71,
+        243,
+        287
+      ],
+      "size": [
+        51,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/345-ranger",
+        "version": 1,
+        "width": 314,
+        "height": 313,
+        "backgroundAnchor": [
+          24,
+          35,
+          33
+        ],
+        "removedOpaquePixels": 70815,
+        "transparentPixels": 70815,
+        "visiblePixels": 27467,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 203,
+        "warnings": []
+      },
+      "file": "production-sources/345-ranger.png",
+      "used": true
+    },
+    {
+      "key": "monster/346-rogue",
+      "sourceCrop": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "subjectBounds": [
+        70,
+        52,
+        253,
+        278
+      ],
+      "size": [
+        49,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/346-rogue",
+        "version": 1,
+        "width": 314,
+        "height": 313,
+        "backgroundAnchor": [
+          24,
+          35,
+          33
+        ],
+        "removedOpaquePixels": 71254,
+        "transparentPixels": 71254,
+        "visiblePixels": 27028,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 45,
+        "warnings": []
+      },
+      "file": "production-sources/346-rogue.png",
+      "used": true
+    },
+    {
+      "key": "monster/347-samurai",
+      "sourceCrop": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "subjectBounds": [
+        54,
+        36,
+        261,
+        278
+      ],
+      "size": [
+        51,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/347-samurai",
+        "version": 1,
+        "width": 313,
+        "height": 313,
+        "backgroundAnchor": [
+          24,
+          35,
+          33
+        ],
+        "removedOpaquePixels": 67132,
+        "transparentPixels": 67132,
+        "visiblePixels": 30837,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 44,
+        "warnings": []
+      },
+      "file": "production-sources/347-samurai.png",
+      "used": true
+    },
+    {
+      "key": "monster/348-tourist",
+      "sourceCrop": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "subjectBounds": [
+        64,
+        48,
+        216,
+        278
+      ],
+      "size": [
+        40,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/348-tourist",
+        "version": 1,
+        "width": 313,
+        "height": 313,
+        "backgroundAnchor": [
+          24,
+          35,
+          33
+        ],
+        "removedOpaquePixels": 73589,
+        "transparentPixels": 73589,
+        "visiblePixels": 24380,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 18,
+        "warnings": []
+      },
+      "file": "production-sources/348-tourist.png",
+      "used": true
+    },
+    {
+      "key": "monster/349-valkyrie",
+      "sourceCrop": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "subjectBounds": [
+        48,
+        27,
+        243,
+        278
+      ],
+      "size": [
+        47,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/349-valkyrie",
+        "version": 1,
+        "width": 314,
+        "height": 313,
+        "backgroundAnchor": [
+          24,
+          35,
+          33
+        ],
+        "removedOpaquePixels": 66307,
+        "transparentPixels": 66307,
+        "visiblePixels": 31975,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 3,
+        "warnings": []
+      },
+      "file": "production-sources/349-valkyrie.png",
+      "used": true
+    },
+    {
+      "key": "monster/350-wizard",
+      "sourceCrop": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "subjectBounds": [
+        83,
+        12,
+        263,
+        244
+      ],
+      "size": [
+        47,
+        60
+      ],
+      "cleanup": {
+        "key": "monster/350-wizard",
+        "version": 1,
+        "width": 314,
+        "height": 314,
+        "backgroundAnchor": [
+          24,
+          35,
+          34
+        ],
+        "removedOpaquePixels": 70662,
+        "transparentPixels": 70662,
+        "visiblePixels": 27934,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 162,
+        "warnings": []
+      },
+      "file": "production-sources/350-wizard.png",
+      "used": true
+    },
+    {
+      "key": "monster/034-kitten",
+      "sourceCrop": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "subjectBounds": [
+        81,
+        104,
+        233,
+        244
+      ],
+      "size": [
+        36,
+        33
+      ],
+      "cleanup": {
+        "key": "monster/034-kitten",
+        "version": 1,
+        "width": 313,
+        "height": 314,
+        "backgroundAnchor": [
+          24,
+          35,
+          34
+        ],
+        "removedOpaquePixels": 83853,
+        "transparentPixels": 83853,
+        "visiblePixels": 14429,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 0,
+        "warnings": []
+      },
+      "file": "production-sources/034-kitten.png",
+      "used": true
+    },
+    {
+      "key": "monster/019-large-dog",
+      "sourceCrop": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "subjectBounds": [
+        49,
+        57,
+        260,
+        244
+      ],
+      "size": [
+        56,
+        50
+      ],
+      "cleanup": {
+        "key": "monster/019-large-dog",
+        "version": 1,
+        "width": 313,
+        "height": 314,
+        "backgroundAnchor": [
+          24,
+          35,
+          34
+        ],
+        "removedOpaquePixels": 73720,
+        "transparentPixels": 73720,
+        "visiblePixels": 24562,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 25,
+        "warnings": []
+      },
+      "file": "production-sources/019-large-dog.png",
+      "used": true
+    },
+    {
+      "key": "monster/091-giant-rat",
+      "sourceCrop": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "subjectBounds": [
+        53,
+        118,
+        256,
+        244
+      ],
+      "size": [
+        44,
+        27
+      ],
+      "cleanup": {
+        "key": "monster/091-giant-rat",
+        "version": 1,
+        "width": 314,
+        "height": 314,
+        "backgroundAnchor": [
+          24,
+          35,
+          34
+        ],
+        "removedOpaquePixels": 82794,
+        "transparentPixels": 82794,
+        "visiblePixels": 15802,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 2,
+        "warnings": []
+      },
+      "file": "production-sources/091-giant-rat.png",
+      "used": true
+    }
+  ]
+}

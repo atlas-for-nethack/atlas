@@ -1,0 +1,300 @@
+{
+  "source": "assets/tiles/lantern/production-sources/reference-concept.png",
+  "sourceSha256": "1b1386b43003fd3b46715c7f47d1002def8540eb99718614b405ae6eb0e43ce4",
+  "method": "crop; fixed-anchor edge-connected alpha removal; nearest-neighbor resize; unchanged RGB",
+  "cellSize": [
+    64,
+    64
+  ],
+  "subjects": [
+    {
+      "name": "hero",
+      "sourceCrop": [
+        70,
+        148,
+        171,
+        269
+      ],
+      "maxSize": [
+        56,
+        60
+      ],
+      "renderedSize": [
+        48,
+        60
+      ],
+      "borderAnchor": [
+        31,
+        34,
+        35
+      ],
+      "subjectBoundsInCrop": [
+        7,
+        7,
+        95,
+        118
+      ],
+      "removedBackgroundPixels": 5472,
+      "sha256": "58d27d6612519fa780f5dc837d2185dd024039b0e03c35d21d7880baa80bce39",
+      "productionFile": "reference-hero.png"
+    },
+    {
+      "name": "dog",
+      "sourceCrop": [
+        253,
+        163,
+        371,
+        271
+      ],
+      "maxSize": [
+        52,
+        48
+      ],
+      "renderedSize": [
+        52,
+        48
+      ],
+      "borderAnchor": [
+        31,
+        34,
+        36
+      ],
+      "subjectBoundsInCrop": [
+        9,
+        9,
+        108,
+        101
+      ],
+      "removedBackgroundPixels": 7217,
+      "sha256": "8fdcea3f9582ed3c263797e4d1c9e6d1b3db1d8224269fe2347ffe5941bde29d",
+      "productionFile": "reference-dog.png"
+    },
+    {
+      "name": "goblin",
+      "sourceCrop": [
+        451,
+        154,
+        565,
+        273
+      ],
+      "maxSize": [
+        56,
+        58
+      ],
+      "renderedSize": [
+        51,
+        58
+      ],
+      "borderAnchor": [
+        31,
+        34,
+        36
+      ],
+      "subjectBoundsInCrop": [
+        18,
+        10,
+        106,
+        110
+      ],
+      "removedBackgroundPixels": 7931,
+      "sha256": "038c93b9c8842722b874b79698bae38fa33d60598d6b236d709a58428b95c627",
+      "productionFile": "reference-goblin.png"
+    },
+    {
+      "name": "ant",
+      "sourceCrop": [
+        55,
+        362,
+        182,
+        474
+      ],
+      "maxSize": [
+        50,
+        44
+      ],
+      "renderedSize": [
+        50,
+        40
+      ],
+      "borderAnchor": [
+        31,
+        34,
+        36
+      ],
+      "subjectBoundsInCrop": [
+        10,
+        8,
+        120,
+        96
+      ],
+      "removedBackgroundPixels": 8343,
+      "sha256": "8da9a2ae51c1e08621ecc43179a57e5e241ad19730761682918f92366c27f84f",
+      "productionFile": "reference-ant.png"
+    },
+    {
+      "name": "potion",
+      "sourceCrop": [
+        281,
+        362,
+        347,
+        454
+      ],
+      "maxSize": [
+        28,
+        36
+      ],
+      "renderedSize": [
+        24,
+        36
+      ],
+      "borderAnchor": [
+        31,
+        34,
+        36
+      ],
+      "subjectBoundsInCrop": [
+        7,
+        7,
+        58,
+        85
+      ],
+      "removedBackgroundPixels": 3220,
+      "sha256": "79f273d117f81fdc67f489a204aec098edf1ccec72048e32a2304c5503c01e92",
+      "productionFile": "reference-potion.png"
+    },
+    {
+      "name": "scroll",
+      "sourceCrop": [
+        462,
+        363,
+        561,
+        454
+      ],
+      "maxSize": [
+        38,
+        38
+      ],
+      "renderedSize": [
+        38,
+        38
+      ],
+      "borderAnchor": [
+        32,
+        35,
+        36
+      ],
+      "subjectBoundsInCrop": [
+        7,
+        10,
+        86,
+        88
+      ],
+      "removedBackgroundPixels": 5765,
+      "sha256": "cd39ebffb1c4c8fd9953601d614520f0bddce27279513ff973d053c48cb0bb7e",
+      "productionFile": "reference-scroll.png"
+    },
+    {
+      "name": "chest",
+      "sourceCrop": [
+        69,
+        563,
+        174,
+        670
+      ],
+      "maxSize": [
+        50,
+        50
+      ],
+      "renderedSize": [
+        49,
+        50
+      ],
+      "borderAnchor": [
+        31,
+        34,
+        36
+      ],
+      "subjectBoundsInCrop": [
+        5,
+        8,
+        96,
+        100
+      ],
+      "removedBackgroundPixels": 3260,
+      "sha256": "2b0126ef699fc780618577212f294998b565c23692e8bca62777b49e9c2004a1",
+      "productionFile": "reference-chest.png"
+    },
+    {
+      "name": "stairs",
+      "sourceCrop": [
+        261,
+        558,
+        373,
+        675
+      ],
+      "maxSize": [
+        60,
+        60
+      ],
+      "renderedSize": [
+        60,
+        57
+      ],
+      "borderAnchor": [
+        32,
+        35,
+        37
+      ],
+      "subjectBoundsInCrop": [
+        7,
+        9,
+        104,
+        101
+      ],
+      "removedBackgroundPixels": 4269,
+      "sha256": "23d90ad58e8a226f89ecfadd151ffd128209fc01f5656b0708fd9abdca815253",
+      "productionFile": "reference-stairs.png"
+    },
+    {
+      "name": "fountain",
+      "sourceCrop": [
+        451,
+        541,
+        573,
+        680
+      ],
+      "maxSize": [
+        60,
+        60
+      ],
+      "renderedSize": [
+        49,
+        60
+      ],
+      "borderAnchor": [
+        31,
+        34,
+        36
+      ],
+      "subjectBoundsInCrop": [
+        9,
+        8,
+        110,
+        132
+      ],
+      "removedBackgroundPixels": 8642,
+      "sha256": "ae74576eb90078478c08e0fd11a3e90d7de7462645897ecfc45a71d77ac253c0",
+      "productionFile": "reference-fountain.png"
+    }
+  ],
+  "note": "Retained original concept and exact source crop, extraction and output digest for each production subject.",
+  "reviewFloor": {
+    "file": "reference-floor.png",
+    "sha256": "d0bc618a84b1f6275677266f795fa8b6bdeac10276b3c4fd5ad5f13e180f5a3d",
+    "note": "Bundled reference-floor image supplied by production integration for self-contained reviews; distinct from the original pilot floor-card crop."
+  },
+  "prompt": {
+    "file": "REFERENCE-PROMPTS.md",
+    "sha256": "7eb391baa46240b5937f8270eaa0db4e8b70decfacb53d776eb0525b3850b973"
+  }
+}

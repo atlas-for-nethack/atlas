@@ -1,0 +1,17 @@
+{
+  "source": "sources/terrain-01.png",
+  "sourceSha256": "8f105d44b3c2f50c29c2668a84a17a4ee934c16f14a268a9c7c970e4041577a3",
+  "sourceRectangle": [
+    208,
+    361,
+    216,
+    425
+  ],
+  "file": "production-sources/iron-bars-metal.png",
+  "sha256": "ea7dccc56c87bbc2ef663dc55b6adaa772e9509416c6d4d5d66e49db451eb934",
+  "method": "Exact crop of original iron-bar metal, no background or stone frame retained; nearest-neighbor size adaptation when assembled",
+  "size": [
+    8,
+    64
+  ]
+}

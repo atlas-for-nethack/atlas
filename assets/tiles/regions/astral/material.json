@@ -1,0 +1,41 @@
+{
+  "license": "CC-BY-4.0",
+  "credit": "NetHack Atlas project",
+  "families": [
+    "lantern",
+    "soot-and-brass"
+  ],
+  "source": "Shipped original-family Sokoban light-stone walls (1504..1514), matching directional wall variants and alternates, original family doors and canonical lit/dark/engraved floors. No concept-art redraw.",
+  "scope": "Engine-owned Astral context only. Appended architecture and ordinary floors; original pixels and existing materials retained. Classic and Modern environment art is identical. No alignment symbols or altar recoloring.",
+  "stoneLift": 14,
+  "metalLift": 12,
+  "floorMedianKernel": 3,
+  "floorContrast": 0.65,
+  "floorLift": 68,
+  "floorJointThreshold": 22,
+  "floorJointLift": 28,
+  "palette": {
+    "lantern": {
+      "stoneBias": [
+        5,
+        3,
+        -1
+      ]
+    },
+    "soot-and-brass": {
+      "stoneBias": [
+        1,
+        3,
+        3
+      ]
+    }
+  },
+  "floorJointWidth": 1,
+  "engravingBounds": [
+    8,
+    8,
+    52,
+    56
+  ],
+  "engravingContrast": 0.65
+}

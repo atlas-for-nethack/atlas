@@ -1,0 +1,32 @@
+{
+  "status": "approved September 24, 2026; integrated as branch staircase up",
+  "origin": "original-ai-generated",
+  "tool": "image_gen",
+  "source": "branch-up-source-v2.png",
+  "sourceSha256": "3ad9a8b87cb794454a5ff94524379f5eb74e6f6905a571c042eba7f7b4e60261",
+  "upReference": {
+    "file": "regular-up-reference.png",
+    "sha256": "b9e59160a80e7bf7ee3182bc022902dddffd2f30f9b5ac4723b1302de98b6aec"
+  },
+  "prompt": "PROMPTS.md",
+  "alphaCleanup": "alpha <= 2 becomes 0",
+  "cropBounds": [
+    270,
+    130,
+    984,
+    1127
+  ],
+  "renderedSize": [
+    43,
+    60
+  ],
+  "tileSize": [
+    64,
+    64
+  ],
+  "resampling": "nearest neighbor, no RGB repainting",
+  "output": "branch-up.png",
+  "outputSha256": "35bef4675a0c3cc1e5f7fbacffb6c8452dcd4445a573da1acd33c5ce15b4a7d3",
+  "artworkLicense": "CC-BY-4.0",
+  "artworkCredit": "NetHack Atlas project"
+}

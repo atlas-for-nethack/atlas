@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "engineVersion": "5.0.0",
+  "recipe": {
+    "file": "assets/tiles/recipes/official.json",
+    "sha256": "6f27d051e1c7ed95d70ebb3300215f8a408852b76aca41f61370d96cb24331b3"
+  },
+  "compiler": {
+    "file": "assets/tiles/compiler.py",
+    "sha256": "e31bcb98abf892bfbf30080cac794bc957607288cb5874c08c632eb4b055976a"
+  },
+  "packer": {
+    "file": "assets/tiles/packing.py",
+    "sha256": "725fcd14c80725bfb5039c80bf8b611e47eb91c22655f743d5dc290a283a2e71"
+  },
+  "inputs": [
+    {
+      "file": "assets/tiles/sources/NGPL.txt",
+      "sha256": "93a3ae2cb8dee482daddfaebe53bcffe5b114b603def19b4dca21621cbc5a747"
+    },
+    {
+      "file": "scripts/package.py",
+      "sha256": "7257a515016dd2ff54717df965e8fec286f71e5e0c863a298e84052c24f59c19"
+    },
+    {
+      "file": "vendor/NetHack-5.0.0/dat/nhtiles.bmp",
+      "sha256": "709adc50ee1bb83badef8f04833e470430d028467b968537520683f793f5c81b"
+    }
+  ],
+  "sourceEvidence": {
+    "sourceKind": "atlas"
+  },
+  "output": {
+    "file": "official.png",
+    "sha256": "f1e9cfebf6c6bdbbdcc1f62df6b530955974f21b96135f28bb5d97c328eb2770",
+    "width": 640,
+    "height": 928
+  },
+  "artworkLicense": "NGPL",
+  "artworkCredit": "NetHack DevTeam and contributing artists"
+}

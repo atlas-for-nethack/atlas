@@ -1,0 +1,15 @@
+{
+  "license": "CC-BY-4.0",
+  "credit": "NetHack Atlas project",
+  "tool": "built-in image generation",
+  "sources": {
+    "lantern": {
+      "file": "lantern.png",
+      "sha256": "c0be410e192456290798e5c7adf783eabc3c75ad32af2410179f33bf9c4a1670"
+    },
+    "soot-and-brass": {
+      "file": "soot-and-brass.png",
+      "sha256": "abc9be7ee8ae2f1467022569fffe17ca7c60e150deec97974d5dbc19eb839aa0"
+    }
+  }
+}

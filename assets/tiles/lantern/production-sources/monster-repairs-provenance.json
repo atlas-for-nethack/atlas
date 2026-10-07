@@ -1,0 +1,235 @@
+{
+  "source": "monster-repairs-sheet.png",
+  "sourceSha256": "b06d27185e8d843886a6412c683e50c4d6aeaa356e98431f0215d3c18af8d28a",
+  "columns": 3,
+  "rows": 2,
+  "grid": "normalized",
+  "prompt": "REPAIR-PROMPTS.md",
+  "cleanupScriptSha256": "229d75743dcf232ca5f6aae1f764dfe9777ad1ebc4e65138f6b7f85276ff47a1",
+  "sprites": [
+    {
+      "key": "monster/105-black-unicorn",
+      "sourceCrop": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "subjectBounds": [
+        75,
+        101,
+        451,
+        410
+      ],
+      "size": [
+        56,
+        46
+      ],
+      "cleanup": {
+        "key": "monster/105-black-unicorn",
+        "version": 1,
+        "width": 512,
+        "height": 512,
+        "backgroundAnchor": [
+          21,
+          31,
+          29
+        ],
+        "removedOpaquePixels": 202264,
+        "transparentPixels": 202264,
+        "visiblePixels": 59880,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 1723,
+        "warnings": [
+          "enclosed-background-colored-pixels-retained"
+        ]
+      },
+      "file": "105-black-unicorn.png"
+    },
+    {
+      "key": "monster/114-baby-long-worm",
+      "sourceCrop": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "subjectBounds": [
+        150,
+        261,
+        360,
+        380
+      ],
+      "size": [
+        32,
+        18
+      ],
+      "cleanup": {
+        "key": "monster/114-baby-long-worm",
+        "version": 1,
+        "width": 512,
+        "height": 512,
+        "backgroundAnchor": [
+          21,
+          31,
+          29
+        ],
+        "removedOpaquePixels": 246685,
+        "transparentPixels": 246685,
+        "visiblePixels": 15459,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 3,
+        "warnings": []
+      },
+      "file": "114-baby-long-worm.png"
+    },
+    {
+      "key": "monster/115-baby-purple-worm",
+      "sourceCrop": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "subjectBounds": [
+        150,
+        261,
+        355,
+        380
+      ],
+      "size": [
+        32,
+        19
+      ],
+      "cleanup": {
+        "key": "monster/115-baby-purple-worm",
+        "version": 1,
+        "width": 512,
+        "height": 512,
+        "backgroundAnchor": [
+          21,
+          31,
+          29
+        ],
+        "removedOpaquePixels": 247205,
+        "transparentPixels": 247205,
+        "visiblePixels": 14939,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 0,
+        "warnings": []
+      },
+      "file": "115-baby-purple-worm.png"
+    },
+    {
+      "key": "monster/116-long-worm",
+      "sourceCrop": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "subjectBounds": [
+        66,
+        68,
+        451,
+        414
+      ],
+      "size": [
+        56,
+        50
+      ],
+      "cleanup": {
+        "key": "monster/116-long-worm",
+        "version": 1,
+        "width": 512,
+        "height": 512,
+        "backgroundAnchor": [
+          21,
+          31,
+          29
+        ],
+        "removedOpaquePixels": 184046,
+        "transparentPixels": 184046,
+        "visiblePixels": 78098,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 0,
+        "warnings": []
+      },
+      "file": "116-long-worm.png"
+    },
+    {
+      "key": "monster/117-purple-worm",
+      "sourceCrop": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "subjectBounds": [
+        69,
+        46,
+        442,
+        414
+      ],
+      "size": [
+        56,
+        55
+      ],
+      "cleanup": {
+        "key": "monster/117-purple-worm",
+        "version": 1,
+        "width": 512,
+        "height": 512,
+        "backgroundAnchor": [
+          21,
+          31,
+          29
+        ],
+        "removedOpaquePixels": 174709,
+        "transparentPixels": 174709,
+        "visiblePixels": 87435,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 68,
+        "warnings": []
+      },
+      "file": "117-purple-worm.png"
+    },
+    {
+      "key": "monster/119-xan",
+      "sourceCrop": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "subjectBounds": [
+        120,
+        128,
+        441,
+        385
+      ],
+      "size": [
+        44,
+        35
+      ],
+      "cleanup": {
+        "key": "monster/119-xan",
+        "version": 1,
+        "width": 512,
+        "height": 512,
+        "backgroundAnchor": [
+          21,
+          31,
+          29
+        ],
+        "removedOpaquePixels": 216292,
+        "transparentPixels": 216292,
+        "visiblePixels": 45852,
+        "opaqueBorderPixels": 0,
+        "enclosedCandidatePixels": 466,
+        "warnings": []
+      },
+      "file": "119-xan.png"
+    }
+  ]
+}

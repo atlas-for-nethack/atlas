@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "soot-and-brass",
+  "name": "Soot & Brass Modern",
+  "engineVersion": "5.0.0",
+  "output": "soot-and-brass-modern.png",
+  "provenance": "soot-and-brass/modern-provenance.json",
+  "license": "CC-BY-4.0",
+  "credit": "NetHack Atlas project",
+  "licenseFile": "assets/tiles/soot-and-brass/LICENSE.txt",
+  "description": "Raised soot-dark masonry, tarnished brass and towering dungeon creatures.",
+  "version": "0.1 / NetHack 5.0.0",
+  "source": {
+    "kind": "prepared",
+    "provider": "soot-and-brass",
+    "creatureSizing": "stature"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "generator": "Built-in image_gen",
+  "date": "2026-09-24",
+  "promptRecord": "../TERRAIN-PROMPTS.md",
+  "sourcePixels": "Original Soot & Brass artwork. No Lantern or upstream image pixels.",
+  "sources": [
+    {
+      "file": "terrain/fixtures-source.png",
+      "sha256": "35a7ad6d9f680c5e4557f7e5c8d9ffb5beeb49ba8ca9d7293a446a583c3b7ff6",
+      "columns": 6,
+      "rows": 6
+    },
+    {
+      "file": "terrain/traps-source.png",
+      "sha256": "1e1c96dd682803433542149658fba04418bc9b2a61fc0e8d2ef9974301f6a20e",
+      "columns": 5,
+      "rows": 5
+    },
+    {
+      "file": "terrain/effects-source.png",
+      "sha256": "374fdcb0571cb71e514a17aaa1f05312ca918a5326f388cd1054b4911350afe7",
+      "columns": 4,
+      "rows": 4
+    },
+    {
+      "file": "terrain/approved-odd-company-source.png",
+      "sha256": "819c1614688afd6ff17921a9836f399d523c12646c1ff7f4a7330fc68c5479bb",
+      "purpose": "Original approved reference floor cell, exact crop [606,291,704,384]"
+    },
+    {
+      "file": "terrain/approved-first-concept-source.png",
+      "sha256": "ef8ba5a2d6deb9f95ebefe1caf9b6c481de0a45c0142f5249522de396fa50765",
+      "purpose": "Original approved raised front door source, exact crop recorded in architecture-crops.json"
+    }
+  ]
+}

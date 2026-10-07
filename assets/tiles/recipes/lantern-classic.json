@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "lantern",
+  "name": "Lantern Classic",
+  "engineVersion": "5.0.0",
+  "output": "lantern-classic.png",
+  "provenance": "lantern/classic-provenance.json",
+  "license": "CC-BY-4.0",
+  "credit": "NetHack Atlas project",
+  "licenseFile": "assets/tiles/lantern/LICENSE.txt",
+  "description": "Original NetHack Atlas artwork with layered terrain and connected walls.",
+  "version": "0.3 / NetHack 5.0.0",
+  "source": {
+    "kind": "prepared",
+    "provider": "lantern",
+    "creatureSizing": "grid"
+  }
+}

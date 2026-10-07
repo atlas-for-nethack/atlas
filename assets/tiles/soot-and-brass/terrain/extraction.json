@@ -1,0 +1,989 @@
+{
+  "method": "Whole-sheet 8-connected alpha>32 components; nearest primary silhouette; original alpha retained within two-pixel component margins.",
+  "fixtures": {
+    "sourceSha256": "35a7ad6d9f680c5e4557f7e5c8d9ffb5beeb49ba8ca9d7293a446a583c3b7ff6",
+    "cells": {
+      "2": {
+        "file": "extracted/fixtures-02.png",
+        "sha256": "ead5afcedcdcc3b99b3c458762adbc535f3e8bb97f3f6f4e98ea5fea24ab13da",
+        "sourceBounds": [
+          442,
+          28,
+          614,
+          196
+        ],
+        "primaryBounds": [
+          444,
+          30,
+          612,
+          194
+        ]
+      },
+      "0": {
+        "file": "extracted/fixtures-00.png",
+        "sha256": "0d1a4dd4063d93205c9a812f2ed4730afeb2316419f9b2f35ea2ec6c3ead942e",
+        "sourceBounds": [
+          30,
+          29,
+          201,
+          195
+        ],
+        "primaryBounds": [
+          32,
+          31,
+          199,
+          193
+        ]
+      },
+      "1": {
+        "file": "extracted/fixtures-01.png",
+        "sha256": "fec2f0aefc1483507b61aa15c6681f08c8aa66d404ab3c1ca56a3f1f327cf8eb",
+        "sourceBounds": [
+          230,
+          29,
+          403,
+          196
+        ],
+        "primaryBounds": [
+          232,
+          31,
+          401,
+          194
+        ]
+      },
+      "3": {
+        "file": "extracted/fixtures-03.png",
+        "sha256": "ee401deb15ec37acdb36ea50c218c566ad41758256508a25cefd0debd3aa4c58",
+        "sourceBounds": [
+          641,
+          30,
+          814,
+          196
+        ],
+        "primaryBounds": [
+          643,
+          32,
+          812,
+          194
+        ]
+      },
+      "4": {
+        "file": "extracted/fixtures-04.png",
+        "sha256": "e16ba2dd9bee47cf641777ec955a2cb68fbdd6e230dc8fc8821c06876c824531",
+        "sourceBounds": [
+          848,
+          30,
+          1023,
+          196
+        ],
+        "primaryBounds": [
+          850,
+          32,
+          1021,
+          194
+        ]
+      },
+      "5": {
+        "file": "extracted/fixtures-05.png",
+        "sha256": "14e6993453f980e65a7d891ed0c27dffae03a0e1f45f852fcdd5f6cf996db70b",
+        "sourceBounds": [
+          1052,
+          30,
+          1226,
+          198
+        ],
+        "primaryBounds": [
+          1054,
+          32,
+          1224,
+          196
+        ]
+      },
+      "10": {
+        "file": "extracted/fixtures-10.png",
+        "sha256": "edaac1a9504d63dd25de874c17d5bc9060a40f15434cc816153e0434d940b691",
+        "sourceBounds": [
+          836,
+          209,
+          1008,
+          408
+        ],
+        "primaryBounds": [
+          838,
+          211,
+          1006,
+          406
+        ]
+      },
+      "11": {
+        "file": "extracted/fixtures-11.png",
+        "sha256": "ffdb68807f215aacebc955e13560aae8b869743fdaaf196c55ff067473ef0262",
+        "sourceBounds": [
+          1058,
+          209,
+          1222,
+          396
+        ],
+        "primaryBounds": [
+          1060,
+          211,
+          1220,
+          394
+        ]
+      },
+      "8": {
+        "file": "extracted/fixtures-08.png",
+        "sha256": "d3b85eea9df157d885919531f429307446c299ec13cb7b17c8ae80dd36fe2381",
+        "sourceBounds": [
+          453,
+          215,
+          579,
+          394
+        ],
+        "primaryBounds": [
+          455,
+          217,
+          577,
+          392
+        ]
+      },
+      "6": {
+        "file": "extracted/fixtures-06.png",
+        "sha256": "3aeb80c32ef3640682c59d24038e9fe287796ab957b0c1c4e1a66836f8146a5d",
+        "sourceBounds": [
+          28,
+          218,
+          200,
+          394
+        ],
+        "primaryBounds": [
+          30,
+          220,
+          198,
+          392
+        ]
+      },
+      "7": {
+        "file": "extracted/fixtures-07.png",
+        "sha256": "2724837d148dcdfbb284dcee6daa1878f03a7f3cf814fb095874221906206636",
+        "sourceBounds": [
+          239,
+          234,
+          400,
+          393
+        ],
+        "primaryBounds": [
+          241,
+          236,
+          398,
+          391
+        ]
+      },
+      "9": {
+        "file": "extracted/fixtures-09.png",
+        "sha256": "4eb68c26dd318537b3ab081c52e9fe397a5345036a75fa992056181b7e341f73",
+        "sourceBounds": [
+          648,
+          245,
+          797,
+          391
+        ],
+        "primaryBounds": [
+          650,
+          247,
+          795,
+          389
+        ]
+      },
+      "12": {
+        "file": "extracted/fixtures-12.png",
+        "sha256": "4fe6cf263254a1e96e418a8167dd5bbe0da9a94b21cfa40180df09ae19e77ee9",
+        "sourceBounds": [
+          33,
+          403,
+          193,
+          610
+        ],
+        "primaryBounds": [
+          35,
+          405,
+          191,
+          608
+        ]
+      },
+      "13": {
+        "file": "extracted/fixtures-13.png",
+        "sha256": "07931c7107c23967afbae89f3a159d4543a16c5afffe2426b015bc276b4d6225",
+        "sourceBounds": [
+          229,
+          422,
+          403,
+          604
+        ],
+        "primaryBounds": [
+          231,
+          424,
+          401,
+          602
+        ]
+      },
+      "14": {
+        "file": "extracted/fixtures-14.png",
+        "sha256": "24f758f430e135d6883b827efcf68cf5aec8656bfe8f3a2402344f0366e8352b",
+        "sourceBounds": [
+          435,
+          458,
+          600,
+          601
+        ],
+        "primaryBounds": [
+          437,
+          460,
+          598,
+          599
+        ]
+      },
+      "15": {
+        "file": "extracted/fixtures-15.png",
+        "sha256": "c8f9f4458a08bc0b63f98d6e973950708b4e98ea17f1b0b5d2ea3f04f13b91b3",
+        "sourceBounds": [
+          640,
+          458,
+          809,
+          601
+        ],
+        "primaryBounds": [
+          642,
+          460,
+          807,
+          599
+        ]
+      },
+      "16": {
+        "file": "extracted/fixtures-16.png",
+        "sha256": "80e1751b70c9b3bd48a49d70ef4d5f73586cd6fa7c476b72c77657bebaec65c1",
+        "sourceBounds": [
+          847,
+          459,
+          1017,
+          601
+        ],
+        "primaryBounds": [
+          849,
+          461,
+          1015,
+          599
+        ]
+      },
+      "17": {
+        "file": "extracted/fixtures-17.png",
+        "sha256": "82ebce18c7d1aa6609c34243072bd37095f22eab532ce765dae0f8f0edcc91ed",
+        "sourceBounds": [
+          1055,
+          459,
+          1222,
+          601
+        ],
+        "primaryBounds": [
+          1057,
+          461,
+          1220,
+          599
+        ]
+      },
+      "22": {
+        "file": "extracted/fixtures-22.png",
+        "sha256": "9997478241a1f59e1ecc6f06d768582751b65eaa4e56204e8fbf04458d5fab83",
+        "sourceBounds": [
+          851,
+          612,
+          1021,
+          809
+        ],
+        "primaryBounds": [
+          853,
+          614,
+          1019,
+          807
+        ]
+      },
+      "23": {
+        "file": "extracted/fixtures-23.png",
+        "sha256": "55d30dd5305b819640d45f3980557ac0b6cfd8d5269d50964582d3b98d126c0f",
+        "sourceBounds": [
+          1065,
+          617,
+          1216,
+          818
+        ],
+        "primaryBounds": [
+          1067,
+          619,
+          1214,
+          816
+        ]
+      },
+      "19": {
+        "file": "extracted/fixtures-19.png",
+        "sha256": "e43d0db330f3e22777946904b95cc5a019b51a0d36df66018f216379bcbe10c7",
+        "sourceBounds": [
+          230,
+          624,
+          395,
+          813
+        ],
+        "primaryBounds": [
+          232,
+          626,
+          393,
+          811
+        ]
+      },
+      "20": {
+        "file": "extracted/fixtures-20.png",
+        "sha256": "10cd3c6eba8cfdde47825130c3227a3dc79c03658bb5c5e435fb4e6d5413836b",
+        "sourceBounds": [
+          422,
+          636,
+          611,
+          809
+        ],
+        "primaryBounds": [
+          424,
+          638,
+          609,
+          807
+        ]
+      },
+      "18": {
+        "file": "extracted/fixtures-18.png",
+        "sha256": "03afd8d6c629c33b4d3fb632d1c953db207a8d923eb4a42e9bc550eb9e9b9d34",
+        "sourceBounds": [
+          32,
+          655,
+          201,
+          802
+        ],
+        "primaryBounds": [
+          34,
+          657,
+          199,
+          800
+        ]
+      },
+      "21": {
+        "file": "extracted/fixtures-21.png",
+        "sha256": "861949065b8ead1cd6dcd77175c50313ac4361bbfae763ee26c757697bc66751",
+        "sourceBounds": [
+          632,
+          674,
+          825,
+          805
+        ],
+        "primaryBounds": [
+          634,
+          676,
+          823,
+          803
+        ]
+      },
+      "29": {
+        "file": "extracted/fixtures-29.png",
+        "sha256": "34651c2540da298a5ba94e681b3b92e836751e44ee01e269ce669cc130c7fcad",
+        "sourceBounds": [
+          1054,
+          824,
+          1225,
+          1007
+        ],
+        "primaryBounds": [
+          1056,
+          826,
+          1223,
+          1005
+        ]
+      },
+      "24": {
+        "file": "extracted/fixtures-24.png",
+        "sha256": "eb43a034fb40f405c333038951e0bb86596c1602c04380ad17402ffd3805ebb3",
+        "sourceBounds": [
+          28,
+          825,
+          209,
+          1007
+        ],
+        "primaryBounds": [
+          30,
+          827,
+          207,
+          1005
+        ]
+      },
+      "27": {
+        "file": "extracted/fixtures-27.png",
+        "sha256": "6b0fa73d22c01a27acbe94f09b5b9d0ea0058d2e81014eb63b84a7ada7620276",
+        "sourceBounds": [
+          632,
+          829,
+          818,
+          1014
+        ],
+        "primaryBounds": [
+          634,
+          831,
+          816,
+          1012
+        ]
+      },
+      "26": {
+        "file": "extracted/fixtures-26.png",
+        "sha256": "6b68c1f1036938ac556c4f8ba2365eabba8916bce7bcb5ded57306a73b5c4455",
+        "sourceBounds": [
+          425,
+          832,
+          607,
+          1013
+        ],
+        "primaryBounds": [
+          427,
+          834,
+          605,
+          1011
+        ]
+      },
+      "25": {
+        "file": "extracted/fixtures-25.png",
+        "sha256": "9a995d64706e0eababa7d9e75e8a2cc076a1ef68fc4fba03c2d505967df917a7",
+        "sourceBounds": [
+          245,
+          842,
+          384,
+          999
+        ],
+        "primaryBounds": [
+          297,
+          844,
+          353,
+          948
+        ]
+      },
+      "28": {
+        "file": "extracted/fixtures-28.png",
+        "sha256": "15d6a4fb2135b350bda3487cedb55afbd5356bc0ec9cc5dabd9fd0d6de0fdb7e",
+        "sourceBounds": [
+          841,
+          876,
+          1030,
+          999
+        ],
+        "primaryBounds": [
+          843,
+          878,
+          1028,
+          997
+        ]
+      },
+      "31": {
+        "file": "extracted/fixtures-31.png",
+        "sha256": "9e2ca144828e6890ac4a2fd279abd5bf9259d5baf3468726df82db9efa5f3601",
+        "sourceBounds": [
+          237,
+          1027,
+          404,
+          1201
+        ],
+        "primaryBounds": [
+          239,
+          1029,
+          402,
+          1199
+        ]
+      },
+      "32": {
+        "file": "extracted/fixtures-32.png",
+        "sha256": "00e3f664303689857815684c7fa2a6bfac2053d0199b1bb0858d3a999b1637ba",
+        "sourceBounds": [
+          451,
+          1027,
+          582,
+          1206
+        ],
+        "primaryBounds": [
+          453,
+          1029,
+          580,
+          1204
+        ]
+      },
+      "33": {
+        "file": "extracted/fixtures-33.png",
+        "sha256": "9b6df80552a5c93313d07f5aea35b008f7cd6b03238f3698c5dd80dc37ec5e3f",
+        "sourceBounds": [
+          695,
+          1027,
+          756,
+          1209
+        ],
+        "primaryBounds": [
+          697,
+          1029,
+          754,
+          1207
+        ]
+      },
+      "30": {
+        "file": "extracted/fixtures-30.png",
+        "sha256": "76ad3c059bf80234e7e65179d51a7550c14c8139e8f79dd626f0d3dad5389942",
+        "sourceBounds": [
+          28,
+          1028,
+          208,
+          1206
+        ],
+        "primaryBounds": [
+          30,
+          1030,
+          206,
+          1204
+        ]
+      },
+      "34": {
+        "file": "extracted/fixtures-34.png",
+        "sha256": "ae35cc39e5cf2edd58086a3bf35a63c2466d8e1f7e9cf2cf661845a99711edbe",
+        "sourceBounds": [
+          842,
+          1032,
+          1012,
+          1204
+        ],
+        "primaryBounds": [
+          844,
+          1034,
+          1010,
+          1202
+        ]
+      },
+      "35": {
+        "file": "extracted/fixtures-35.png",
+        "sha256": "d8db90584d14e075c0907e708af5600314ac463016ec65c5d847919ba67a4d82",
+        "sourceBounds": [
+          1041,
+          1047,
+          1227,
+          1197
+        ],
+        "primaryBounds": [
+          1043,
+          1049,
+          1225,
+          1195
+        ]
+      }
+    }
+  },
+  "traps": {
+    "sourceSha256": "1e1c96dd682803433542149658fba04418bc9b2a61fc0e8d2ef9974301f6a20e",
+    "cells": {
+      "2": {
+        "file": "extracted/traps-02.png",
+        "sha256": "01731ab18dbade486e9294477fb279beeda0b3bf1a88466ab98e19261f28ba27",
+        "sourceBounds": [
+          538,
+          13,
+          709,
+          243
+        ],
+        "primaryBounds": [
+          540,
+          15,
+          707,
+          241
+        ]
+      },
+      "0": {
+        "file": "extracted/traps-00.png",
+        "sha256": "3bacd76e8925afe7661b8779e2c811d609d8e9deba1859948b9df8d68924c54d",
+        "sourceBounds": [
+          15,
+          31,
+          246,
+          243
+        ],
+        "primaryBounds": [
+          17,
+          33,
+          244,
+          241
+        ]
+      },
+      "4": {
+        "file": "extracted/traps-04.png",
+        "sha256": "113787b03bbad0a4271569f199e70732fc8e2dfd1a4ddca25b3a11482ef0bfee",
+        "sourceBounds": [
+          1015,
+          64,
+          1242,
+          234
+        ],
+        "primaryBounds": [
+          1017,
+          66,
+          1240,
+          232
+        ]
+      },
+      "1": {
+        "file": "extracted/traps-01.png",
+        "sha256": "286db352578e5f126618b81a3fcef9cfde6914afd18d5256ab9829f6809c3672",
+        "sourceBounds": [
+          297,
+          71,
+          483,
+          243
+        ],
+        "primaryBounds": [
+          299,
+          73,
+          481,
+          241
+        ]
+      },
+      "3": {
+        "file": "extracted/traps-03.png",
+        "sha256": "4cf79090c53234cafb63fb7190204a2a910df9451d79e341bbfd2a34ab6293e2",
+        "sourceBounds": [
+          767,
+          89,
+          987,
+          234
+        ],
+        "primaryBounds": [
+          769,
+          91,
+          985,
+          232
+        ]
+      },
+      "6": {
+        "file": "extracted/traps-06.png",
+        "sha256": "59e10924aff528bdc31426921d0212944a347d3e845169a475a6ede3794004b8",
+        "sourceBounds": [
+          271,
+          266,
+          485,
+          482
+        ],
+        "primaryBounds": [
+          273,
+          268,
+          483,
+          480
+        ]
+      },
+      "8": {
+        "file": "extracted/traps-08.png",
+        "sha256": "d865052526a15aeeb49e0d6414531d7b4f1f326306eb800de2b18d7c3536c598",
+        "sourceBounds": [
+          764,
+          274,
+          995,
+          483
+        ],
+        "primaryBounds": [
+          780,
+          276,
+          980,
+          481
+        ]
+      },
+      "7": {
+        "file": "extracted/traps-07.png",
+        "sha256": "4cfaaf4d2065f82f2836246cb78380be9f61e6fd702520e8ef88b2e3d0e56fec",
+        "sourceBounds": [
+          527,
+          291,
+          747,
+          454
+        ],
+        "primaryBounds": [
+          529,
+          293,
+          745,
+          452
+        ]
+      },
+      "5": {
+        "file": "extracted/traps-05.png",
+        "sha256": "842585a08c9180f5dc3fa117d88c675ff522897f8dabce38ba4fa517c4d6b06a",
+        "sourceBounds": [
+          32,
+          308,
+          226,
+          466
+        ],
+        "primaryBounds": [
+          34,
+          310,
+          224,
+          464
+        ]
+      },
+      "9": {
+        "file": "extracted/traps-09.png",
+        "sha256": "28880f5b8628413724e4fbebb20e180cec3e4118216d2e9f678bd963f9c8887a",
+        "sourceBounds": [
+          1026,
+          320,
+          1244,
+          434
+        ],
+        "primaryBounds": [
+          1028,
+          322,
+          1242,
+          432
+        ]
+      },
+      "10": {
+        "file": "extracted/traps-10.png",
+        "sha256": "c96d6385c171febd3d6edd12954dfc688f77ac95fddf7eec841c4db17bb3de8b",
+        "sourceBounds": [
+          21,
+          508,
+          237,
+          711
+        ],
+        "primaryBounds": [
+          23,
+          510,
+          235,
+          709
+        ]
+      },
+      "11": {
+        "file": "extracted/traps-11.png",
+        "sha256": "97777578a0922e2c5369a7f75913fe7163599eae2cef43f6b2e53b6f5ccda8ce",
+        "sourceBounds": [
+          266,
+          508,
+          492,
+          714
+        ],
+        "primaryBounds": [
+          268,
+          510,
+          490,
+          712
+        ]
+      },
+      "12": {
+        "file": "extracted/traps-12.png",
+        "sha256": "f40b1169d8455a51b32b3915b68f286bcb59ab51e899a68343149659f3c56566",
+        "sourceBounds": [
+          520,
+          514,
+          737,
+          714
+        ],
+        "primaryBounds": [
+          522,
+          516,
+          735,
+          712
+        ]
+      },
+      "14": {
+        "file": "extracted/traps-14.png",
+        "sha256": "e7788b8980fb3b2a9bab483d5ab612aaa27d2dcbdf9a87a9dc33fa9d5593018d",
+        "sourceBounds": [
+          1018,
+          515,
+          1236,
+          713
+        ],
+        "primaryBounds": [
+          1020,
+          517,
+          1234,
+          711
+        ]
+      },
+      "13": {
+        "file": "extracted/traps-13.png",
+        "sha256": "cd2e0dcc651ea8cb399b88a9d4365e068aa19161be2d62b535ee65fe5eefb1c5",
+        "sourceBounds": [
+          773,
+          522,
+          988,
+          709
+        ],
+        "primaryBounds": [
+          775,
+          524,
+          986,
+          707
+        ]
+      },
+      "16": {
+        "file": "extracted/traps-16.png",
+        "sha256": "ef917f58d3db853fdbfad684ab69bff235d137b85be81914e511b64c780a0a53",
+        "sourceBounds": [
+          271,
+          725,
+          493,
+          959
+        ],
+        "primaryBounds": [
+          273,
+          727,
+          491,
+          957
+        ]
+      },
+      "18": {
+        "file": "extracted/traps-18.png",
+        "sha256": "79f8c12717307956d2446cc67039c25b260c425b61d87c9c66ad7e8603f8744e",
+        "sourceBounds": [
+          786,
+          738,
+          970,
+          953
+        ],
+        "primaryBounds": [
+          788,
+          740,
+          968,
+          951
+        ]
+      },
+      "19": {
+        "file": "extracted/traps-19.png",
+        "sha256": "8f39caa797ecb433656b325187592263830b22718a7f199112e8f6d78ebde88c",
+        "sourceBounds": [
+          1013,
+          740,
+          1242,
+          958
+        ],
+        "primaryBounds": [
+          1015,
+          742,
+          1240,
+          956
+        ]
+      },
+      "17": {
+        "file": "extracted/traps-17.png",
+        "sha256": "d7656f690adf1be3d0e40f20b673e233d606d36f14401577258b92244552ba16",
+        "sourceBounds": [
+          520,
+          745,
+          744,
+          957
+        ],
+        "primaryBounds": [
+          522,
+          747,
+          742,
+          955
+        ]
+      },
+      "15": {
+        "file": "extracted/traps-15.png",
+        "sha256": "bdde7b7bb7de53bd573f4b5ee9471d5ff8b9de2494056b61984783be3bbd2c6a",
+        "sourceBounds": [
+          14,
+          746,
+          245,
+          960
+        ],
+        "primaryBounds": [
+          16,
+          748,
+          243,
+          958
+        ]
+      },
+      "24": {
+        "file": "extracted/traps-24.png",
+        "sha256": "5b4142c0e518d7c770df02d3d48a8b67aa05e881da227fab804660cc629b68d3",
+        "sourceBounds": [
+          1015,
+          965,
+          1237,
+          1212
+        ],
+        "primaryBounds": [
+          1017,
+          967,
+          1235,
+          1210
+        ]
+      },
+      "20": {
+        "file": "extracted/traps-20.png",
+        "sha256": "7c94dcbd2525bb2005ec72b7d7f1b15b2ec1260aa2a1db191ff84fd304dfb6d6",
+        "sourceBounds": [
+          15,
+          972,
+          240,
+          1211
+        ],
+        "primaryBounds": [
+          17,
+          974,
+          238,
+          1209
+        ]
+      },
+      "21": {
+        "file": "extracted/traps-21.png",
+        "sha256": "84e339def23fb52ea823f1b2a01fbdaca392426d4dd923975f1ab76bf7904da1",
+        "sourceBounds": [
+          267,
+          989,
+          486,
+          1206
+        ],
+        "primaryBounds": [
+          269,
+          991,
+          484,
+          1204
+        ]
+      },
+      "23": {
+        "file": "extracted/traps-23.png",
+        "sha256": "78a09a03b35b557be954f52183d3086723daf0e20460511ab5ff879b049d63ec",
+        "sourceBounds": [
+          772,
+          994,
+          980,
+          1204
+        ],
+        "primaryBounds": [
+          774,
+          996,
+          978,
+          1202
+        ]
+      },
+      "22": {
+        "file": "extracted/traps-22.png",
+        "sha256": "fcf73c8ec1c2b45e0db11a2542d854a17b79841f2ec52ba09095778e183f58cb",
+        "sourceBounds": [
+          496,
+          1013,
+          759,
+          1185
+        ],
+        "primaryBounds": [
+          539,
+          1015,
+          717,
+          1183
+        ]
+      }
+    }
+  }
+}

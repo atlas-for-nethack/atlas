@@ -1,0 +1,2044 @@
+{
+  "sheets": [
+    {
+      "id": "monsters-00",
+      "file": "sources/monsters-00.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "2297720ac22d366390732941260aba0646789e01c27605cb4905b32347e63aa9",
+      "prompt_file": "MONSTER-PROMPTS.md"
+    },
+    {
+      "id": "monsters-01",
+      "file": "sources/monsters-01.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "4d6327dec5f411993ef2d661eb7a7f164a9016392e139f3e8e366dbe3b9a512a",
+      "prompt_file": "MONSTER-PROMPTS.md"
+    },
+    {
+      "id": "monsters-02",
+      "file": "sources/monsters-02.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "27e579fbc42cfc86f28e97700309a83d9ad7da07c5388ea71e9d5bf3ddad422e",
+      "prompt_file": "MONSTER-PROMPTS.md"
+    },
+    {
+      "id": "monsters-03",
+      "file": "sources/monsters-03.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "22a0fae3391d0ab2ba3106346238a3b9f8aa78815b751ea1501e188cb5414c8b",
+      "prompt_file": "MONSTER-PROMPTS.md"
+    },
+    {
+      "id": "monsters-04",
+      "file": "sources/monsters-04.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "42c4b1790bbb0a6dbf1808a6a7be39099a80b04a17d37c36442a36947c204f19",
+      "prompt_file": "MONSTER-PROMPTS.md"
+    },
+    {
+      "id": "monsters-05",
+      "file": "sources/monsters-05.png",
+      "columns": 8,
+      "rows": 8,
+      "grid": "normalized",
+      "sha256": "af8522782a04a3d243dce6636727d1e960615ab40148d1020f51cc9ff9d019a6",
+      "prompt_file": "MONSTER-PROMPTS.md"
+    },
+    {
+      "id": "monsters-06",
+      "file": "sources/monsters-06.png",
+      "columns": 4,
+      "rows": 4,
+      "grid": "normalized",
+      "sha256": "c207e6e6cdf2c98e8dde6e6948d569f3f3ac7508460d24380ea3240511107a78",
+      "prompt_file": "MONSTER-PROMPTS.md"
+    }
+  ],
+  "art": {
+    "monster/000-giant-ant": {
+      "sheet": "monsters-00",
+      "column": 0,
+      "row": 0
+    },
+    "monster/001-killer-bee": {
+      "sheet": "monsters-00",
+      "column": 1,
+      "row": 0
+    },
+    "monster/002-soldier-ant": {
+      "sheet": "monsters-00",
+      "column": 2,
+      "row": 0
+    },
+    "monster/003-fire-ant": {
+      "sheet": "monsters-00",
+      "column": 3,
+      "row": 0
+    },
+    "monster/004-giant-beetle": {
+      "sheet": "monsters-00",
+      "column": 4,
+      "row": 0
+    },
+    "monster/005-queen-bee": {
+      "sheet": "monsters-00",
+      "column": 5,
+      "row": 0
+    },
+    "monster/006-acid-blob": {
+      "sheet": "monsters-00",
+      "column": 6,
+      "row": 0
+    },
+    "monster/007-quivering-blob": {
+      "sheet": "monsters-00",
+      "column": 7,
+      "row": 0
+    },
+    "monster/008-gelatinous-cube": {
+      "sheet": "monsters-00",
+      "column": 0,
+      "row": 1
+    },
+    "monster/009-chickatrice": {
+      "sheet": "monsters-00",
+      "column": 1,
+      "row": 1
+    },
+    "monster/010-cockatrice": {
+      "sheet": "monsters-00",
+      "column": 2,
+      "row": 1
+    },
+    "monster/011-pyrolisk": {
+      "sheet": "monsters-00",
+      "column": 3,
+      "row": 1
+    },
+    "monster/012-jackal": {
+      "sheet": "monsters-00",
+      "column": 4,
+      "row": 1
+    },
+    "monster/013-fox": {
+      "sheet": "monsters-00",
+      "column": 5,
+      "row": 1
+    },
+    "monster/014-coyote": {
+      "sheet": "monsters-00",
+      "column": 6,
+      "row": 1
+    },
+    "monster/015-werejackal-animal-form": {
+      "sheet": "monsters-00",
+      "column": 7,
+      "row": 1
+    },
+    "monster/016-little-dog": {
+      "sheet": "monsters-00",
+      "column": 0,
+      "row": 2
+    },
+    "monster/017-dingo": {
+      "sheet": "monsters-00",
+      "column": 1,
+      "row": 2
+    },
+    "monster/018-dog": {
+      "sheet": "monsters-00",
+      "column": 2,
+      "row": 2
+    },
+    "monster/019-large-dog": {
+      "sheet": "monsters-00",
+      "column": 3,
+      "row": 2
+    },
+    "monster/020-wolf": {
+      "sheet": "monsters-00",
+      "column": 4,
+      "row": 2
+    },
+    "monster/021-werewolf-animal-form": {
+      "sheet": "monsters-00",
+      "column": 5,
+      "row": 2
+    },
+    "monster/022-winter-wolf-cub": {
+      "sheet": "monsters-00",
+      "column": 6,
+      "row": 2
+    },
+    "monster/023-warg": {
+      "sheet": "monsters-00",
+      "column": 7,
+      "row": 2
+    },
+    "monster/024-winter-wolf": {
+      "sheet": "monsters-00",
+      "column": 0,
+      "row": 3
+    },
+    "monster/025-hell-hound-pup": {
+      "sheet": "monsters-00",
+      "column": 1,
+      "row": 3
+    },
+    "monster/026-hell-hound": {
+      "sheet": "monsters-00",
+      "column": 2,
+      "row": 3
+    },
+    "monster/027-cerberus": {
+      "sheet": "monsters-00",
+      "column": 3,
+      "row": 3
+    },
+    "monster/028-gas-spore": {
+      "sheet": "monsters-00",
+      "column": 4,
+      "row": 3
+    },
+    "monster/029-floating-eye": {
+      "sheet": "monsters-00",
+      "column": 5,
+      "row": 3
+    },
+    "monster/030-freezing-sphere": {
+      "sheet": "monsters-00",
+      "column": 6,
+      "row": 3
+    },
+    "monster/031-flaming-sphere": {
+      "sheet": "monsters-00",
+      "column": 7,
+      "row": 3
+    },
+    "monster/032-shocking-sphere": {
+      "sheet": "monsters-00",
+      "column": 0,
+      "row": 4
+    },
+    "monster/033-beholder": {
+      "sheet": "monsters-00",
+      "column": 1,
+      "row": 4
+    },
+    "monster/034-kitten": {
+      "sheet": "monsters-00",
+      "column": 2,
+      "row": 4
+    },
+    "monster/035-housecat": {
+      "sheet": "monsters-00",
+      "column": 3,
+      "row": 4
+    },
+    "monster/036-jaguar": {
+      "sheet": "monsters-00",
+      "column": 4,
+      "row": 4
+    },
+    "monster/037-lynx": {
+      "sheet": "monsters-00",
+      "column": 5,
+      "row": 4
+    },
+    "monster/038-panther": {
+      "sheet": "monsters-00",
+      "column": 6,
+      "row": 4
+    },
+    "monster/039-large-cat": {
+      "sheet": "monsters-00",
+      "column": 7,
+      "row": 4
+    },
+    "monster/040-tiger": {
+      "sheet": "monsters-00",
+      "column": 0,
+      "row": 5
+    },
+    "monster/041-displacer-beast": {
+      "sheet": "monsters-00",
+      "column": 1,
+      "row": 5
+    },
+    "monster/042-gremlin": {
+      "sheet": "monsters-00",
+      "column": 2,
+      "row": 5
+    },
+    "monster/043-gargoyle": {
+      "sheet": "monsters-00",
+      "column": 3,
+      "row": 5
+    },
+    "monster/044-winged-gargoyle": {
+      "sheet": "monsters-00",
+      "column": 4,
+      "row": 5
+    },
+    "monster/045-hobbit": {
+      "sheet": "monsters-00",
+      "column": 5,
+      "row": 5
+    },
+    "monster/046-dwarf": {
+      "sheet": "monsters-00",
+      "column": 6,
+      "row": 5
+    },
+    "monster/047-bugbear": {
+      "sheet": "monsters-00",
+      "column": 7,
+      "row": 5
+    },
+    "monster/048-dwarf-leader": {
+      "sheet": "monsters-00",
+      "column": 0,
+      "row": 6
+    },
+    "monster/049-dwarf-ruler": {
+      "sheet": "monsters-00",
+      "column": 1,
+      "row": 6
+    },
+    "monster/050-mind-flayer": {
+      "sheet": "monsters-00",
+      "column": 2,
+      "row": 6
+    },
+    "monster/051-master-mind-flayer": {
+      "sheet": "monsters-00",
+      "column": 3,
+      "row": 6
+    },
+    "monster/052-manes": {
+      "sheet": "monsters-00",
+      "column": 4,
+      "row": 6
+    },
+    "monster/053-homunculus": {
+      "sheet": "monsters-00",
+      "column": 5,
+      "row": 6
+    },
+    "monster/054-imp": {
+      "sheet": "monsters-00",
+      "column": 6,
+      "row": 6
+    },
+    "monster/055-lemure": {
+      "sheet": "monsters-00",
+      "column": 7,
+      "row": 6
+    },
+    "monster/056-quasit": {
+      "sheet": "monsters-00",
+      "column": 0,
+      "row": 7
+    },
+    "monster/057-tengu": {
+      "sheet": "monsters-00",
+      "column": 1,
+      "row": 7
+    },
+    "monster/058-blue-jelly": {
+      "sheet": "monsters-00",
+      "column": 2,
+      "row": 7
+    },
+    "monster/059-spotted-jelly": {
+      "sheet": "monsters-00",
+      "column": 3,
+      "row": 7
+    },
+    "monster/060-ochre-jelly": {
+      "sheet": "monsters-00",
+      "column": 4,
+      "row": 7
+    },
+    "monster/061-kobold": {
+      "sheet": "monsters-00",
+      "column": 5,
+      "row": 7
+    },
+    "monster/062-large-kobold": {
+      "sheet": "monsters-00",
+      "column": 6,
+      "row": 7
+    },
+    "monster/063-kobold-leader": {
+      "sheet": "monsters-00",
+      "column": 7,
+      "row": 7
+    },
+    "monster/064-kobold-shaman": {
+      "sheet": "monsters-01",
+      "column": 0,
+      "row": 0
+    },
+    "monster/065-leprechaun": {
+      "sheet": "monsters-01",
+      "column": 1,
+      "row": 0
+    },
+    "monster/066-small-mimic": {
+      "sheet": "monsters-01",
+      "column": 2,
+      "row": 0
+    },
+    "monster/067-large-mimic": {
+      "sheet": "monsters-01",
+      "column": 3,
+      "row": 0
+    },
+    "monster/068-giant-mimic": {
+      "sheet": "monsters-01",
+      "column": 4,
+      "row": 0
+    },
+    "monster/069-wood-nymph": {
+      "sheet": "monsters-01",
+      "column": 5,
+      "row": 0
+    },
+    "monster/070-water-nymph": {
+      "sheet": "monsters-01",
+      "column": 6,
+      "row": 0
+    },
+    "monster/071-mountain-nymph": {
+      "sheet": "monsters-01",
+      "column": 7,
+      "row": 0
+    },
+    "monster/072-goblin": {
+      "sheet": "monsters-01",
+      "column": 0,
+      "row": 1
+    },
+    "monster/073-hobgoblin": {
+      "sheet": "monsters-01",
+      "column": 1,
+      "row": 1
+    },
+    "monster/074-orc": {
+      "sheet": "monsters-01",
+      "column": 2,
+      "row": 1
+    },
+    "monster/075-hill-orc": {
+      "sheet": "monsters-01",
+      "column": 3,
+      "row": 1
+    },
+    "monster/076-mordor-orc": {
+      "sheet": "monsters-01",
+      "column": 4,
+      "row": 1
+    },
+    "monster/077-uruk-hai": {
+      "sheet": "monsters-01",
+      "column": 5,
+      "row": 1
+    },
+    "monster/078-orc-shaman": {
+      "sheet": "monsters-01",
+      "column": 6,
+      "row": 1
+    },
+    "monster/079-orc-captain": {
+      "sheet": "monsters-01",
+      "column": 7,
+      "row": 1
+    },
+    "monster/080-rock-piercer": {
+      "sheet": "monsters-01",
+      "column": 0,
+      "row": 2
+    },
+    "monster/081-iron-piercer": {
+      "sheet": "monsters-01",
+      "column": 1,
+      "row": 2
+    },
+    "monster/082-glass-piercer": {
+      "sheet": "monsters-01",
+      "column": 2,
+      "row": 2
+    },
+    "monster/083-rothe": {
+      "sheet": "monsters-01",
+      "column": 3,
+      "row": 2
+    },
+    "monster/084-mumak": {
+      "sheet": "monsters-01",
+      "column": 4,
+      "row": 2
+    },
+    "monster/085-leocrotta": {
+      "sheet": "monsters-01",
+      "column": 5,
+      "row": 2
+    },
+    "monster/086-wumpus": {
+      "sheet": "monsters-01",
+      "column": 6,
+      "row": 2
+    },
+    "monster/087-titanothere": {
+      "sheet": "monsters-01",
+      "column": 7,
+      "row": 2
+    },
+    "monster/088-baluchitherium": {
+      "sheet": "monsters-01",
+      "column": 0,
+      "row": 3
+    },
+    "monster/089-mastodon": {
+      "sheet": "monsters-01",
+      "column": 1,
+      "row": 3
+    },
+    "monster/090-sewer-rat": {
+      "sheet": "monsters-01",
+      "column": 2,
+      "row": 3
+    },
+    "monster/091-giant-rat": {
+      "sheet": "monsters-01",
+      "column": 3,
+      "row": 3
+    },
+    "monster/092-rabid-rat": {
+      "sheet": "monsters-01",
+      "column": 4,
+      "row": 3
+    },
+    "monster/093-wererat-animal-form": {
+      "sheet": "monsters-01",
+      "column": 5,
+      "row": 3
+    },
+    "monster/094-rock-mole": {
+      "sheet": "monsters-01",
+      "column": 6,
+      "row": 3
+    },
+    "monster/095-woodchuck": {
+      "sheet": "monsters-01",
+      "column": 7,
+      "row": 3
+    },
+    "monster/096-cave-spider": {
+      "sheet": "monsters-01",
+      "column": 0,
+      "row": 4
+    },
+    "monster/097-centipede": {
+      "sheet": "monsters-01",
+      "column": 1,
+      "row": 4
+    },
+    "monster/098-giant-spider": {
+      "sheet": "monsters-01",
+      "column": 2,
+      "row": 4
+    },
+    "monster/099-scorpion": {
+      "sheet": "monsters-01",
+      "column": 3,
+      "row": 4
+    },
+    "monster/100-lurker-above": {
+      "sheet": "monsters-01",
+      "column": 4,
+      "row": 4
+    },
+    "monster/101-trapper": {
+      "sheet": "monsters-01",
+      "column": 5,
+      "row": 4
+    },
+    "monster/102-pony": {
+      "sheet": "monsters-01",
+      "column": 6,
+      "row": 4
+    },
+    "monster/103-white-unicorn": {
+      "sheet": "monsters-01",
+      "column": 7,
+      "row": 4
+    },
+    "monster/104-gray-unicorn": {
+      "sheet": "monsters-01",
+      "column": 0,
+      "row": 5
+    },
+    "monster/105-black-unicorn": {
+      "sheet": "monsters-01",
+      "column": 1,
+      "row": 5
+    },
+    "monster/106-horse": {
+      "sheet": "monsters-01",
+      "column": 2,
+      "row": 5
+    },
+    "monster/107-warhorse": {
+      "sheet": "monsters-01",
+      "column": 3,
+      "row": 5
+    },
+    "monster/108-fog-cloud": {
+      "sheet": "monsters-01",
+      "column": 4,
+      "row": 5
+    },
+    "monster/109-dust-vortex": {
+      "sheet": "monsters-01",
+      "column": 5,
+      "row": 5
+    },
+    "monster/110-ice-vortex": {
+      "sheet": "monsters-01",
+      "column": 6,
+      "row": 5
+    },
+    "monster/111-energy-vortex": {
+      "sheet": "monsters-01",
+      "column": 7,
+      "row": 5
+    },
+    "monster/112-steam-vortex": {
+      "sheet": "monsters-01",
+      "column": 0,
+      "row": 6
+    },
+    "monster/113-fire-vortex": {
+      "sheet": "monsters-01",
+      "column": 1,
+      "row": 6
+    },
+    "monster/114-baby-long-worm": {
+      "sheet": "monsters-01",
+      "column": 2,
+      "row": 6
+    },
+    "monster/115-baby-purple-worm": {
+      "sheet": "monsters-01",
+      "column": 3,
+      "row": 6
+    },
+    "monster/116-long-worm": {
+      "sheet": "monsters-01",
+      "column": 4,
+      "row": 6
+    },
+    "monster/117-purple-worm": {
+      "sheet": "monsters-01",
+      "column": 5,
+      "row": 6
+    },
+    "monster/118-grid-bug": {
+      "sheet": "monsters-01",
+      "column": 6,
+      "row": 6
+    },
+    "monster/119-xan": {
+      "sheet": "monsters-01",
+      "column": 7,
+      "row": 6
+    },
+    "monster/120-yellow-light": {
+      "sheet": "monsters-01",
+      "column": 0,
+      "row": 7
+    },
+    "monster/121-black-light": {
+      "sheet": "monsters-01",
+      "column": 1,
+      "row": 7
+    },
+    "monster/122-zruty": {
+      "sheet": "monsters-01",
+      "column": 2,
+      "row": 7
+    },
+    "monster/123-couatl": {
+      "sheet": "monsters-01",
+      "column": 3,
+      "row": 7
+    },
+    "monster/124-aleax": {
+      "sheet": "monsters-01",
+      "column": 4,
+      "row": 7
+    },
+    "monster/125-angel": {
+      "sheet": "monsters-01",
+      "column": 5,
+      "row": 7
+    },
+    "monster/126-ki-rin": {
+      "sheet": "monsters-01",
+      "column": 6,
+      "row": 7
+    },
+    "monster/127-archon": {
+      "sheet": "monsters-01",
+      "column": 7,
+      "row": 7
+    },
+    "monster/128-bat": {
+      "sheet": "monsters-02",
+      "column": 0,
+      "row": 0
+    },
+    "monster/129-giant-bat": {
+      "sheet": "monsters-02",
+      "column": 1,
+      "row": 0
+    },
+    "monster/130-raven": {
+      "sheet": "monsters-02",
+      "column": 2,
+      "row": 0
+    },
+    "monster/131-vampire-bat": {
+      "sheet": "monsters-02",
+      "column": 3,
+      "row": 0
+    },
+    "monster/132-plains-centaur": {
+      "sheet": "monsters-02",
+      "column": 4,
+      "row": 0
+    },
+    "monster/133-forest-centaur": {
+      "sheet": "monsters-02",
+      "column": 5,
+      "row": 0
+    },
+    "monster/134-mountain-centaur": {
+      "sheet": "monsters-02",
+      "column": 6,
+      "row": 0
+    },
+    "monster/135-baby-gray-dragon": {
+      "sheet": "monsters-02",
+      "column": 7,
+      "row": 0
+    },
+    "monster/136-baby-gold-dragon": {
+      "sheet": "monsters-02",
+      "column": 0,
+      "row": 1
+    },
+    "monster/137-baby-silver-dragon": {
+      "sheet": "monsters-02",
+      "column": 1,
+      "row": 1
+    },
+    "monster/138-baby-shimmering-dragon": {
+      "sheet": "monsters-02",
+      "column": 2,
+      "row": 1
+    },
+    "monster/139-baby-red-dragon": {
+      "sheet": "monsters-02",
+      "column": 3,
+      "row": 1
+    },
+    "monster/140-baby-white-dragon": {
+      "sheet": "monsters-02",
+      "column": 4,
+      "row": 1
+    },
+    "monster/141-baby-orange-dragon": {
+      "sheet": "monsters-02",
+      "column": 5,
+      "row": 1
+    },
+    "monster/142-baby-black-dragon": {
+      "sheet": "monsters-02",
+      "column": 6,
+      "row": 1
+    },
+    "monster/143-baby-blue-dragon": {
+      "sheet": "monsters-02",
+      "column": 7,
+      "row": 1
+    },
+    "monster/144-baby-green-dragon": {
+      "sheet": "monsters-02",
+      "column": 0,
+      "row": 2
+    },
+    "monster/145-baby-yellow-dragon": {
+      "sheet": "monsters-02",
+      "column": 1,
+      "row": 2
+    },
+    "monster/146-gray-dragon": {
+      "sheet": "monsters-02",
+      "column": 2,
+      "row": 2
+    },
+    "monster/147-gold-dragon": {
+      "sheet": "monsters-02",
+      "column": 3,
+      "row": 2
+    },
+    "monster/148-silver-dragon": {
+      "sheet": "monsters-02",
+      "column": 4,
+      "row": 2
+    },
+    "monster/149-shimmering-dragon": {
+      "sheet": "monsters-02",
+      "column": 5,
+      "row": 2
+    },
+    "monster/150-red-dragon": {
+      "sheet": "monsters-02",
+      "column": 6,
+      "row": 2
+    },
+    "monster/151-white-dragon": {
+      "sheet": "monsters-02",
+      "column": 7,
+      "row": 2
+    },
+    "monster/152-orange-dragon": {
+      "sheet": "monsters-02",
+      "column": 0,
+      "row": 3
+    },
+    "monster/153-black-dragon": {
+      "sheet": "monsters-02",
+      "column": 1,
+      "row": 3
+    },
+    "monster/154-blue-dragon": {
+      "sheet": "monsters-02",
+      "column": 2,
+      "row": 3
+    },
+    "monster/155-green-dragon": {
+      "sheet": "monsters-02",
+      "column": 3,
+      "row": 3
+    },
+    "monster/156-yellow-dragon": {
+      "sheet": "monsters-02",
+      "column": 4,
+      "row": 3
+    },
+    "monster/157-stalker": {
+      "sheet": "monsters-02",
+      "column": 5,
+      "row": 3
+    },
+    "monster/158-air-elemental": {
+      "sheet": "monsters-02",
+      "column": 6,
+      "row": 3
+    },
+    "monster/159-fire-elemental": {
+      "sheet": "monsters-02",
+      "column": 7,
+      "row": 3
+    },
+    "monster/160-earth-elemental": {
+      "sheet": "monsters-02",
+      "column": 0,
+      "row": 4
+    },
+    "monster/161-water-elemental": {
+      "sheet": "monsters-02",
+      "column": 1,
+      "row": 4
+    },
+    "monster/162-lichen": {
+      "sheet": "monsters-02",
+      "column": 2,
+      "row": 4
+    },
+    "monster/163-brown-mold": {
+      "sheet": "monsters-02",
+      "column": 3,
+      "row": 4
+    },
+    "monster/164-yellow-mold": {
+      "sheet": "monsters-02",
+      "column": 4,
+      "row": 4
+    },
+    "monster/165-green-mold": {
+      "sheet": "monsters-02",
+      "column": 5,
+      "row": 4
+    },
+    "monster/166-red-mold": {
+      "sheet": "monsters-02",
+      "column": 6,
+      "row": 4
+    },
+    "monster/167-shrieker": {
+      "sheet": "monsters-02",
+      "column": 7,
+      "row": 4
+    },
+    "monster/168-violet-fungus": {
+      "sheet": "monsters-02",
+      "column": 0,
+      "row": 5
+    },
+    "monster/169-gnome": {
+      "sheet": "monsters-02",
+      "column": 1,
+      "row": 5
+    },
+    "monster/170-gnome-leader": {
+      "sheet": "monsters-02",
+      "column": 2,
+      "row": 5
+    },
+    "monster/171-gnomish-wizard": {
+      "sheet": "monsters-02",
+      "column": 3,
+      "row": 5
+    },
+    "monster/172-gnome-ruler": {
+      "sheet": "monsters-02",
+      "column": 4,
+      "row": 5
+    },
+    "monster/173-giant": {
+      "sheet": "monsters-02",
+      "column": 5,
+      "row": 5
+    },
+    "monster/174-stone-giant": {
+      "sheet": "monsters-02",
+      "column": 6,
+      "row": 5
+    },
+    "monster/175-hill-giant": {
+      "sheet": "monsters-02",
+      "column": 7,
+      "row": 5
+    },
+    "monster/176-fire-giant": {
+      "sheet": "monsters-02",
+      "column": 0,
+      "row": 6
+    },
+    "monster/177-frost-giant": {
+      "sheet": "monsters-02",
+      "column": 1,
+      "row": 6
+    },
+    "monster/178-ettin": {
+      "sheet": "monsters-02",
+      "column": 2,
+      "row": 6
+    },
+    "monster/179-storm-giant": {
+      "sheet": "monsters-02",
+      "column": 3,
+      "row": 6
+    },
+    "monster/180-titan": {
+      "sheet": "monsters-02",
+      "column": 4,
+      "row": 6
+    },
+    "monster/181-minotaur": {
+      "sheet": "monsters-02",
+      "column": 5,
+      "row": 6
+    },
+    "monster/182-jabberwock": {
+      "sheet": "monsters-02",
+      "column": 6,
+      "row": 6
+    },
+    "monster/183-vorpal-jabberwock": {
+      "sheet": "monsters-02",
+      "column": 7,
+      "row": 6
+    },
+    "monster/184-keystone-kop": {
+      "sheet": "monsters-02",
+      "column": 0,
+      "row": 7
+    },
+    "monster/185-kop-sergeant": {
+      "sheet": "monsters-02",
+      "column": 1,
+      "row": 7
+    },
+    "monster/186-kop-lieutenant": {
+      "sheet": "monsters-02",
+      "column": 2,
+      "row": 7
+    },
+    "monster/187-kop-kaptain": {
+      "sheet": "monsters-02",
+      "column": 3,
+      "row": 7
+    },
+    "monster/188-lich": {
+      "sheet": "monsters-02",
+      "column": 4,
+      "row": 7
+    },
+    "monster/189-demilich": {
+      "sheet": "monsters-02",
+      "column": 5,
+      "row": 7
+    },
+    "monster/190-master-lich": {
+      "sheet": "monsters-02",
+      "column": 6,
+      "row": 7
+    },
+    "monster/191-arch-lich": {
+      "sheet": "monsters-02",
+      "column": 7,
+      "row": 7
+    },
+    "monster/192-kobold-mummy": {
+      "sheet": "monsters-03",
+      "column": 0,
+      "row": 0
+    },
+    "monster/193-gnome-mummy": {
+      "sheet": "monsters-03",
+      "column": 1,
+      "row": 0
+    },
+    "monster/194-orc-mummy": {
+      "sheet": "monsters-03",
+      "column": 2,
+      "row": 0
+    },
+    "monster/195-dwarf-mummy": {
+      "sheet": "monsters-03",
+      "column": 3,
+      "row": 0
+    },
+    "monster/196-elf-mummy": {
+      "sheet": "monsters-03",
+      "column": 4,
+      "row": 0
+    },
+    "monster/197-human-mummy": {
+      "sheet": "monsters-03",
+      "column": 5,
+      "row": 0
+    },
+    "monster/198-ettin-mummy": {
+      "sheet": "monsters-03",
+      "column": 6,
+      "row": 0
+    },
+    "monster/199-giant-mummy": {
+      "sheet": "monsters-03",
+      "column": 7,
+      "row": 0
+    },
+    "monster/200-red-naga-hatchling": {
+      "sheet": "monsters-03",
+      "column": 0,
+      "row": 1
+    },
+    "monster/201-black-naga-hatchling": {
+      "sheet": "monsters-03",
+      "column": 1,
+      "row": 1
+    },
+    "monster/202-golden-naga-hatchling": {
+      "sheet": "monsters-03",
+      "column": 2,
+      "row": 1
+    },
+    "monster/203-guardian-naga-hatchling": {
+      "sheet": "monsters-03",
+      "column": 3,
+      "row": 1
+    },
+    "monster/204-red-naga": {
+      "sheet": "monsters-03",
+      "column": 4,
+      "row": 1
+    },
+    "monster/205-black-naga": {
+      "sheet": "monsters-03",
+      "column": 5,
+      "row": 1
+    },
+    "monster/206-golden-naga": {
+      "sheet": "monsters-03",
+      "column": 6,
+      "row": 1
+    },
+    "monster/207-guardian-naga": {
+      "sheet": "monsters-03",
+      "column": 7,
+      "row": 1
+    },
+    "monster/208-ogre": {
+      "sheet": "monsters-03",
+      "column": 0,
+      "row": 2
+    },
+    "monster/209-ogre-leader": {
+      "sheet": "monsters-03",
+      "column": 1,
+      "row": 2
+    },
+    "monster/210-ogre-tyrant": {
+      "sheet": "monsters-03",
+      "column": 2,
+      "row": 2
+    },
+    "monster/211-gray-ooze": {
+      "sheet": "monsters-03",
+      "column": 3,
+      "row": 2
+    },
+    "monster/212-brown-pudding": {
+      "sheet": "monsters-03",
+      "column": 4,
+      "row": 2
+    },
+    "monster/213-green-slime": {
+      "sheet": "monsters-03",
+      "column": 5,
+      "row": 2
+    },
+    "monster/214-black-pudding": {
+      "sheet": "monsters-03",
+      "column": 6,
+      "row": 2
+    },
+    "monster/215-quantum-mechanic": {
+      "sheet": "monsters-03",
+      "column": 7,
+      "row": 2
+    },
+    "monster/216-genetic-engineer": {
+      "sheet": "monsters-03",
+      "column": 0,
+      "row": 3
+    },
+    "monster/217-rust-monster": {
+      "sheet": "monsters-03",
+      "column": 1,
+      "row": 3
+    },
+    "monster/218-disenchanter": {
+      "sheet": "monsters-03",
+      "column": 2,
+      "row": 3
+    },
+    "monster/219-garter-snake": {
+      "sheet": "monsters-03",
+      "column": 3,
+      "row": 3
+    },
+    "monster/220-snake": {
+      "sheet": "monsters-03",
+      "column": 4,
+      "row": 3
+    },
+    "monster/221-water-moccasin": {
+      "sheet": "monsters-03",
+      "column": 5,
+      "row": 3
+    },
+    "monster/222-python": {
+      "sheet": "monsters-03",
+      "column": 6,
+      "row": 3
+    },
+    "monster/223-pit-viper": {
+      "sheet": "monsters-03",
+      "column": 7,
+      "row": 3
+    },
+    "monster/224-cobra": {
+      "sheet": "monsters-03",
+      "column": 0,
+      "row": 4
+    },
+    "monster/225-troll": {
+      "sheet": "monsters-03",
+      "column": 1,
+      "row": 4
+    },
+    "monster/226-ice-troll": {
+      "sheet": "monsters-03",
+      "column": 2,
+      "row": 4
+    },
+    "monster/227-rock-troll": {
+      "sheet": "monsters-03",
+      "column": 3,
+      "row": 4
+    },
+    "monster/228-water-troll": {
+      "sheet": "monsters-03",
+      "column": 4,
+      "row": 4
+    },
+    "monster/229-olog-hai": {
+      "sheet": "monsters-03",
+      "column": 5,
+      "row": 4
+    },
+    "monster/230-umber-hulk": {
+      "sheet": "monsters-03",
+      "column": 6,
+      "row": 4
+    },
+    "monster/231-vampire": {
+      "sheet": "monsters-03",
+      "column": 7,
+      "row": 4
+    },
+    "monster/232-vampire-leader": {
+      "sheet": "monsters-03",
+      "column": 0,
+      "row": 5
+    },
+    "monster/233-vampire-mage": {
+      "sheet": "monsters-03",
+      "column": 1,
+      "row": 5
+    },
+    "monster/234-vlad-the-impaler": {
+      "sheet": "monsters-03",
+      "column": 2,
+      "row": 5
+    },
+    "monster/235-barrow-wight": {
+      "sheet": "monsters-03",
+      "column": 3,
+      "row": 5
+    },
+    "monster/236-wraith": {
+      "sheet": "monsters-03",
+      "column": 4,
+      "row": 5
+    },
+    "monster/237-nazgul": {
+      "sheet": "monsters-03",
+      "column": 5,
+      "row": 5
+    },
+    "monster/238-xorn": {
+      "sheet": "monsters-03",
+      "column": 6,
+      "row": 5
+    },
+    "monster/239-monkey": {
+      "sheet": "monsters-03",
+      "column": 7,
+      "row": 5
+    },
+    "monster/240-ape": {
+      "sheet": "monsters-03",
+      "column": 0,
+      "row": 6
+    },
+    "monster/241-owlbear": {
+      "sheet": "monsters-03",
+      "column": 1,
+      "row": 6
+    },
+    "monster/242-yeti": {
+      "sheet": "monsters-03",
+      "column": 2,
+      "row": 6
+    },
+    "monster/243-carnivorous-ape": {
+      "sheet": "monsters-03",
+      "column": 3,
+      "row": 6
+    },
+    "monster/244-sasquatch": {
+      "sheet": "monsters-03",
+      "column": 4,
+      "row": 6
+    },
+    "monster/245-kobold-zombie": {
+      "sheet": "monsters-03",
+      "column": 5,
+      "row": 6
+    },
+    "monster/246-gnome-zombie": {
+      "sheet": "monsters-03",
+      "column": 6,
+      "row": 6
+    },
+    "monster/247-orc-zombie": {
+      "sheet": "monsters-03",
+      "column": 7,
+      "row": 6
+    },
+    "monster/248-dwarf-zombie": {
+      "sheet": "monsters-03",
+      "column": 0,
+      "row": 7
+    },
+    "monster/249-elf-zombie": {
+      "sheet": "monsters-03",
+      "column": 1,
+      "row": 7
+    },
+    "monster/250-human-zombie": {
+      "sheet": "monsters-03",
+      "column": 2,
+      "row": 7
+    },
+    "monster/251-ettin-zombie": {
+      "sheet": "monsters-03",
+      "column": 3,
+      "row": 7
+    },
+    "monster/252-ghoul": {
+      "sheet": "monsters-03",
+      "column": 4,
+      "row": 7
+    },
+    "monster/253-giant-zombie": {
+      "sheet": "monsters-03",
+      "column": 5,
+      "row": 7
+    },
+    "monster/254-skeleton": {
+      "sheet": "monsters-03",
+      "column": 6,
+      "row": 7
+    },
+    "monster/255-straw-golem": {
+      "sheet": "monsters-03",
+      "column": 7,
+      "row": 7
+    },
+    "monster/256-paper-golem": {
+      "sheet": "monsters-04",
+      "column": 0,
+      "row": 0
+    },
+    "monster/257-rope-golem": {
+      "sheet": "monsters-04",
+      "column": 1,
+      "row": 0
+    },
+    "monster/258-gold-golem": {
+      "sheet": "monsters-04",
+      "column": 2,
+      "row": 0
+    },
+    "monster/259-leather-golem": {
+      "sheet": "monsters-04",
+      "column": 3,
+      "row": 0
+    },
+    "monster/260-wood-golem": {
+      "sheet": "monsters-04",
+      "column": 4,
+      "row": 0
+    },
+    "monster/261-flesh-golem": {
+      "sheet": "monsters-04",
+      "column": 5,
+      "row": 0
+    },
+    "monster/262-clay-golem": {
+      "sheet": "monsters-04",
+      "column": 6,
+      "row": 0
+    },
+    "monster/263-stone-golem": {
+      "sheet": "monsters-04",
+      "column": 7,
+      "row": 0
+    },
+    "monster/264-glass-golem": {
+      "sheet": "monsters-04",
+      "column": 0,
+      "row": 1
+    },
+    "monster/265-iron-golem": {
+      "sheet": "monsters-04",
+      "column": 1,
+      "row": 1
+    },
+    "monster/266-human": {
+      "sheet": "monsters-04",
+      "column": 2,
+      "row": 1
+    },
+    "monster/267-wererat-human-form": {
+      "sheet": "monsters-04",
+      "column": 2,
+      "row": 1
+    },
+    "monster/268-werejackal-human-form": {
+      "sheet": "monsters-04",
+      "column": 2,
+      "row": 1
+    },
+    "monster/269-werewolf-human-form": {
+      "sheet": "monsters-04",
+      "column": 2,
+      "row": 1
+    },
+    "monster/270-elf": {
+      "sheet": "monsters-04",
+      "column": 6,
+      "row": 1
+    },
+    "monster/271-woodland-elf": {
+      "sheet": "monsters-04",
+      "column": 7,
+      "row": 1
+    },
+    "monster/272-green-elf": {
+      "sheet": "monsters-04",
+      "column": 0,
+      "row": 2
+    },
+    "monster/273-grey-elf": {
+      "sheet": "monsters-04",
+      "column": 1,
+      "row": 2
+    },
+    "monster/274-elf-noble": {
+      "sheet": "monsters-04",
+      "column": 2,
+      "row": 2
+    },
+    "monster/275-elven-monarch": {
+      "sheet": "monsters-04",
+      "column": 3,
+      "row": 2
+    },
+    "monster/276-doppelganger": {
+      "sheet": "monsters-04",
+      "column": 4,
+      "row": 2
+    },
+    "monster/277-shopkeeper": {
+      "sheet": "monsters-04",
+      "column": 5,
+      "row": 2
+    },
+    "monster/278-guard": {
+      "sheet": "monsters-04",
+      "column": 6,
+      "row": 2
+    },
+    "monster/279-prisoner": {
+      "sheet": "monsters-04",
+      "column": 7,
+      "row": 2
+    },
+    "monster/280-oracle": {
+      "sheet": "monsters-04",
+      "column": 0,
+      "row": 3
+    },
+    "monster/281-aligned-cleric": {
+      "sheet": "monsters-04",
+      "column": 1,
+      "row": 3
+    },
+    "monster/282-high-cleric": {
+      "sheet": "monsters-04",
+      "column": 2,
+      "row": 3
+    },
+    "monster/283-soldier": {
+      "sheet": "monsters-04",
+      "column": 3,
+      "row": 3
+    },
+    "monster/284-sergeant": {
+      "sheet": "monsters-04",
+      "column": 4,
+      "row": 3
+    },
+    "monster/285-nurse": {
+      "sheet": "monsters-04",
+      "column": 5,
+      "row": 3
+    },
+    "monster/286-lieutenant": {
+      "sheet": "monsters-04",
+      "column": 6,
+      "row": 3
+    },
+    "monster/287-captain": {
+      "sheet": "monsters-04",
+      "column": 7,
+      "row": 3
+    },
+    "monster/288-watchman": {
+      "sheet": "monsters-04",
+      "column": 0,
+      "row": 4
+    },
+    "monster/289-watch-captain": {
+      "sheet": "monsters-04",
+      "column": 1,
+      "row": 4
+    },
+    "monster/290-medusa": {
+      "sheet": "monsters-04",
+      "column": 2,
+      "row": 4
+    },
+    "monster/291-wizard-of-yendor": {
+      "sheet": "monsters-04",
+      "column": 3,
+      "row": 4
+    },
+    "monster/292-croesus": {
+      "sheet": "monsters-04",
+      "column": 4,
+      "row": 4
+    },
+    "monster/293-charon": {
+      "sheet": "monsters-04",
+      "column": 5,
+      "row": 4
+    },
+    "monster/294-ghost": {
+      "sheet": "monsters-04",
+      "column": 6,
+      "row": 4
+    },
+    "monster/295-shade": {
+      "sheet": "monsters-04",
+      "column": 7,
+      "row": 4
+    },
+    "monster/296-water-demon": {
+      "sheet": "monsters-04",
+      "column": 0,
+      "row": 5
+    },
+    "monster/297-amorous-demon": {
+      "sheet": "monsters-04",
+      "column": 1,
+      "row": 5
+    },
+    "monster/298-horned-devil": {
+      "sheet": "monsters-04",
+      "column": 2,
+      "row": 5
+    },
+    "monster/299-erinys": {
+      "sheet": "monsters-04",
+      "column": 3,
+      "row": 5
+    },
+    "monster/300-barbed-devil": {
+      "sheet": "monsters-04",
+      "column": 4,
+      "row": 5
+    },
+    "monster/301-marilith": {
+      "sheet": "monsters-04",
+      "column": 5,
+      "row": 5
+    },
+    "monster/302-vrock": {
+      "sheet": "monsters-04",
+      "column": 6,
+      "row": 5
+    },
+    "monster/303-hezrou": {
+      "sheet": "monsters-04",
+      "column": 7,
+      "row": 5
+    },
+    "monster/304-bone-devil": {
+      "sheet": "monsters-04",
+      "column": 0,
+      "row": 6
+    },
+    "monster/305-ice-devil": {
+      "sheet": "monsters-04",
+      "column": 1,
+      "row": 6
+    },
+    "monster/306-nalfeshnee": {
+      "sheet": "monsters-04",
+      "column": 2,
+      "row": 6
+    },
+    "monster/307-pit-fiend": {
+      "sheet": "monsters-04",
+      "column": 3,
+      "row": 6
+    },
+    "monster/308-sandestin": {
+      "sheet": "monsters-04",
+      "column": 4,
+      "row": 6
+    },
+    "monster/309-balrog": {
+      "sheet": "monsters-04",
+      "column": 5,
+      "row": 6
+    },
+    "monster/310-juiblex": {
+      "sheet": "monsters-04",
+      "column": 6,
+      "row": 6
+    },
+    "monster/311-yeenoghu": {
+      "sheet": "monsters-04",
+      "column": 7,
+      "row": 6
+    },
+    "monster/312-orcus": {
+      "sheet": "monsters-04",
+      "column": 0,
+      "row": 7
+    },
+    "monster/313-geryon": {
+      "sheet": "monsters-04",
+      "column": 1,
+      "row": 7
+    },
+    "monster/314-dispater": {
+      "sheet": "monsters-04",
+      "column": 2,
+      "row": 7
+    },
+    "monster/315-baalzebub": {
+      "sheet": "monsters-04",
+      "column": 3,
+      "row": 7
+    },
+    "monster/316-asmodeus": {
+      "sheet": "monsters-04",
+      "column": 4,
+      "row": 7
+    },
+    "monster/317-demogorgon": {
+      "sheet": "monsters-04",
+      "column": 5,
+      "row": 7
+    },
+    "monster/318-death": {
+      "sheet": "monsters-04",
+      "column": 6,
+      "row": 7
+    },
+    "monster/319-pestilence": {
+      "sheet": "monsters-04",
+      "column": 7,
+      "row": 7
+    },
+    "monster/320-famine": {
+      "sheet": "monsters-05",
+      "column": 0,
+      "row": 0
+    },
+    "monster/321-mail-daemon": {
+      "sheet": "monsters-05",
+      "column": 1,
+      "row": 0
+    },
+    "monster/322-djinni": {
+      "sheet": "monsters-05",
+      "column": 2,
+      "row": 0
+    },
+    "monster/323-jellyfish": {
+      "sheet": "monsters-05",
+      "column": 3,
+      "row": 0
+    },
+    "monster/324-piranha": {
+      "sheet": "monsters-05",
+      "column": 4,
+      "row": 0
+    },
+    "monster/325-shark": {
+      "sheet": "monsters-05",
+      "column": 5,
+      "row": 0
+    },
+    "monster/326-giant-eel": {
+      "sheet": "monsters-05",
+      "column": 6,
+      "row": 0
+    },
+    "monster/327-electric-eel": {
+      "sheet": "monsters-05",
+      "column": 7,
+      "row": 0
+    },
+    "monster/328-kraken": {
+      "sheet": "monsters-05",
+      "column": 0,
+      "row": 1
+    },
+    "monster/329-newt": {
+      "sheet": "monsters-05",
+      "column": 1,
+      "row": 1
+    },
+    "monster/330-gecko": {
+      "sheet": "monsters-05",
+      "column": 2,
+      "row": 1
+    },
+    "monster/331-iguana": {
+      "sheet": "monsters-05",
+      "column": 3,
+      "row": 1
+    },
+    "monster/332-baby-crocodile": {
+      "sheet": "monsters-05",
+      "column": 4,
+      "row": 1
+    },
+    "monster/333-lizard": {
+      "sheet": "monsters-05",
+      "column": 5,
+      "row": 1
+    },
+    "monster/334-chameleon": {
+      "sheet": "monsters-05",
+      "column": 6,
+      "row": 1
+    },
+    "monster/335-crocodile": {
+      "sheet": "monsters-05",
+      "column": 7,
+      "row": 1
+    },
+    "monster/336-salamander": {
+      "sheet": "monsters-05",
+      "column": 0,
+      "row": 2
+    },
+    "monster/337-long-worm-tail": {
+      "sheet": "monsters-05",
+      "column": 1,
+      "row": 2
+    },
+    "monster/338-archeologist": {
+      "sheet": "monsters-05",
+      "column": 2,
+      "row": 2
+    },
+    "monster/339-barbarian": {
+      "sheet": "monsters-05",
+      "column": 3,
+      "row": 2
+    },
+    "monster/340-cave-dweller": {
+      "sheet": "monsters-05",
+      "column": 4,
+      "row": 2
+    },
+    "monster/341-healer": {
+      "sheet": "monsters-05",
+      "column": 5,
+      "row": 2
+    },
+    "monster/342-knight": {
+      "sheet": "monsters-05",
+      "column": 6,
+      "row": 2
+    },
+    "monster/343-monk": {
+      "sheet": "monsters-05",
+      "column": 7,
+      "row": 2
+    },
+    "monster/344-cleric": {
+      "sheet": "monsters-05",
+      "column": 0,
+      "row": 3
+    },
+    "monster/345-ranger": {
+      "sheet": "monsters-05",
+      "column": 1,
+      "row": 3
+    },
+    "monster/346-rogue": {
+      "sheet": "monsters-05",
+      "column": 2,
+      "row": 3
+    },
+    "monster/347-samurai": {
+      "sheet": "monsters-05",
+      "column": 3,
+      "row": 3
+    },
+    "monster/348-tourist": {
+      "sheet": "monsters-05",
+      "column": 4,
+      "row": 3
+    },
+    "monster/349-valkyrie": {
+      "sheet": "monsters-05",
+      "column": 5,
+      "row": 3
+    },
+    "monster/350-wizard": {
+      "sheet": "monsters-05",
+      "column": 6,
+      "row": 3
+    },
+    "monster/351-lord-carnarvon": {
+      "sheet": "monsters-05",
+      "column": 7,
+      "row": 3
+    },
+    "monster/352-pelias": {
+      "sheet": "monsters-05",
+      "column": 0,
+      "row": 4
+    },
+    "monster/353-shaman-karnov": {
+      "sheet": "monsters-05",
+      "column": 1,
+      "row": 4
+    },
+    "monster/354-earendil": {
+      "sheet": "monsters-05",
+      "column": 2,
+      "row": 4
+    },
+    "monster/355-elwing": {
+      "sheet": "monsters-05",
+      "column": 3,
+      "row": 4
+    },
+    "monster/356-hippocrates": {
+      "sheet": "monsters-05",
+      "column": 4,
+      "row": 4
+    },
+    "monster/357-king-arthur": {
+      "sheet": "monsters-05",
+      "column": 5,
+      "row": 4
+    },
+    "monster/358-grand-master": {
+      "sheet": "monsters-05",
+      "column": 6,
+      "row": 4
+    },
+    "monster/359-arch-priest": {
+      "sheet": "monsters-05",
+      "column": 7,
+      "row": 4
+    },
+    "monster/360-orion": {
+      "sheet": "monsters-05",
+      "column": 0,
+      "row": 5
+    },
+    "monster/361-master-of-thieves": {
+      "sheet": "monsters-05",
+      "column": 1,
+      "row": 5
+    },
+    "monster/362-lord-sato": {
+      "sheet": "monsters-05",
+      "column": 2,
+      "row": 5
+    },
+    "monster/363-twoflower": {
+      "sheet": "monsters-05",
+      "column": 3,
+      "row": 5
+    },
+    "monster/364-norn": {
+      "sheet": "monsters-05",
+      "column": 4,
+      "row": 5
+    },
+    "monster/365-neferet-the-green": {
+      "sheet": "monsters-05",
+      "column": 5,
+      "row": 5
+    },
+    "monster/366-minion-of-huhetotl": {
+      "sheet": "monsters-05",
+      "column": 6,
+      "row": 5
+    },
+    "monster/367-thoth-amon": {
+      "sheet": "monsters-05",
+      "column": 7,
+      "row": 5
+    },
+    "monster/368-chromatic-dragon": {
+      "sheet": "monsters-05",
+      "column": 0,
+      "row": 6
+    },
+    "monster/369-goblin-king": {
+      "sheet": "monsters-05",
+      "column": 1,
+      "row": 6
+    },
+    "monster/370-cyclops": {
+      "sheet": "monsters-05",
+      "column": 2,
+      "row": 6
+    },
+    "monster/371-ixoth": {
+      "sheet": "monsters-05",
+      "column": 3,
+      "row": 6
+    },
+    "monster/372-master-kaen": {
+      "sheet": "monsters-05",
+      "column": 4,
+      "row": 6
+    },
+    "monster/373-nalzok": {
+      "sheet": "monsters-05",
+      "column": 5,
+      "row": 6
+    },
+    "monster/374-scorpius": {
+      "sheet": "monsters-05",
+      "column": 6,
+      "row": 6
+    },
+    "monster/375-master-assassin": {
+      "sheet": "monsters-05",
+      "column": 7,
+      "row": 6
+    },
+    "monster/376-ashikaga-takauji": {
+      "sheet": "monsters-05",
+      "column": 0,
+      "row": 7
+    },
+    "monster/377-lord-surtur": {
+      "sheet": "monsters-05",
+      "column": 1,
+      "row": 7
+    },
+    "monster/378-dark-one": {
+      "sheet": "monsters-05",
+      "column": 2,
+      "row": 7
+    },
+    "monster/379-student": {
+      "sheet": "monsters-05",
+      "column": 3,
+      "row": 7
+    },
+    "monster/380-chieftain": {
+      "sheet": "monsters-05",
+      "column": 4,
+      "row": 7
+    },
+    "monster/381-neanderthal": {
+      "sheet": "monsters-05",
+      "column": 5,
+      "row": 7
+    },
+    "monster/382-high-elf": {
+      "sheet": "monsters-05",
+      "column": 6,
+      "row": 7
+    },
+    "monster/383-attendant": {
+      "sheet": "monsters-05",
+      "column": 7,
+      "row": 7
+    },
+    "monster/384-page": {
+      "sheet": "monsters-06",
+      "column": 0,
+      "row": 0
+    },
+    "monster/385-abbot": {
+      "sheet": "monsters-06",
+      "column": 1,
+      "row": 0
+    },
+    "monster/386-acolyte": {
+      "sheet": "monsters-06",
+      "column": 2,
+      "row": 0
+    },
+    "monster/387-hunter": {
+      "sheet": "monsters-06",
+      "column": 3,
+      "row": 0
+    },
+    "monster/388-thug": {
+      "sheet": "monsters-06",
+      "column": 0,
+      "row": 1
+    },
+    "monster/389-ninja": {
+      "sheet": "monsters-06",
+      "column": 1,
+      "row": 1
+    },
+    "monster/390-roshi": {
+      "sheet": "monsters-06",
+      "column": 2,
+      "row": 1
+    },
+    "monster/391-guide": {
+      "sheet": "monsters-06",
+      "column": 3,
+      "row": 1
+    },
+    "monster/392-warrior": {
+      "sheet": "monsters-06",
+      "column": 0,
+      "row": 2
+    },
+    "monster/393-apprentice": {
+      "sheet": "monsters-06",
+      "column": 1,
+      "row": 2
+    },
+    "monster/394-invisible-monster": {
+      "sheet": "monsters-06",
+      "column": 2,
+      "row": 2
+    }
+  }
+}
