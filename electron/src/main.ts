@@ -1,4 +1,4 @@
-// The Electron host for Windows. It does the jobs of native/App.swift: it
+// The Electron host for Windows and Linux. It does the jobs of native/App.swift: it
 // starts the engine, relays the bridge and saves on quit. NetHack owns the game.
 import { app, BrowserWindow, ipcMain, Menu, net, protocol, session, shell } from "electron";
 import { spawn, type ChildProcess } from "node:child_process";
@@ -9,6 +9,7 @@ import { pathToFileURL } from "node:url";
 type Body = Record<string, unknown>;
 
 const env = process.env;
+const windows = process.platform === "win32";
 const selfTest = process.argv.includes("--self-test");
 // ponytail: development checkout layout; packaging (Phase 3) moves resources.
 const root = path.resolve(__dirname, "..", "..");
@@ -74,14 +75,30 @@ function sameFile(a: string, b: string) {
 
 // Windows reads its paths only from a portable sysconf beside the executable,
 // so each mode folder holds an engine copy, refreshed when it differs (ADR 0002).
+// Linux follows the Mac: the engine runs from the runtime and the mode folder
+// gets only its data, a save folder and empty score files. As on Windows, game
+// data is refreshed when it differs; sysconf and symbols are copied once.
 function prepareModeFolder(mode: string) {
   const directory = modeDir(mode);
-  fs.mkdirSync(directory, { recursive: true });
-  for (const name of fs.readdirSync(runtime)) {
-    const from = path.join(runtime, name), to = path.join(directory, name);
-    if (name.startsWith(".") || name.endsWith(".nethackrc") || !fs.statSync(from).isFile()) continue;
-    const playerOwned = ["sysconf", "symbols", "record", "logfile", "xlogfile", "perm"].includes(name);
-    if (playerOwned ? !fs.existsSync(to) : !sameFile(from, to)) fs.copyFileSync(from, to);
+  fs.mkdirSync(directory, { recursive: true, mode: 0o700 });
+  if (windows) {
+    for (const name of fs.readdirSync(runtime)) {
+      const from = path.join(runtime, name), to = path.join(directory, name);
+      if (name.startsWith(".") || name.endsWith(".nethackrc") || !fs.statSync(from).isFile()) continue;
+      const playerOwned = ["sysconf", "symbols", "record", "logfile", "xlogfile", "perm"].includes(name);
+      if (playerOwned ? !fs.existsSync(to) : !sameFile(from, to)) fs.copyFileSync(from, to);
+    }
+  } else {
+    for (const name of ["nhdat", "license", "symbols", "sysconf"]) {
+      const from = path.join(runtime, name), to = path.join(directory, name);
+      const playerOwned = name === "symbols" || name === "sysconf";
+      if (playerOwned ? !fs.existsSync(to) : !sameFile(from, to)) fs.copyFileSync(from, to);
+    }
+    fs.mkdirSync(path.join(directory, "save"), { recursive: true });
+    for (const name of ["record", "logfile", "xlogfile", "perm"]) {
+      const to = path.join(directory, name);
+      if (!fs.existsSync(to)) fs.writeFileSync(to, "", { mode: 0o600 });
+    }
   }
   if (mode === "explore") {
     // Authorize upstream discovery mode only in its own mode folder (ADR 0001).
@@ -93,24 +110,34 @@ function prepareModeFolder(mode: string) {
   }
 }
 
+// Windows saves are NAME.NetHack-saved-game in the mode folder. Linux saves are
+// save/<uid>NAME with an optional suffix, as on the Mac.
 function savedPlayers(mode: string): string[] {
-  const directory = modeDir(mode);
+  const directory = windows ? modeDir(mode) : path.join(modeDir(mode), "save");
+  const prefix = windows ? "" : String(process.getuid!());
   let names: string[];
   try {
-    names = fs.readdirSync(directory).filter((name) => name.endsWith(SAVE_SUFFIX));
+    names = fs.readdirSync(directory).filter((name) =>
+      windows ? name.endsWith(SAVE_SUFFIX) : name.startsWith(prefix));
   } catch {
     return [];
   }
   return names
     .flatMap((name) => {
       try {
-        return [{ name, time: fs.statSync(path.join(directory, name)).mtimeMs }];
+        const stat = fs.statSync(path.join(directory, name));
+        return stat.isFile() ? [{ name, time: stat.mtimeMs }] : [];
       } catch {
         return [];
       }
     })
     .sort((a, b) => b.time - a.time)
-    .map(({ name }) => name.slice(0, -SAVE_SUFFIX.length))
+    .map(({ name }) => {
+      let player = name.slice(prefix.length);
+      for (const suffix of [".gz", ".Z", SAVE_SUFFIX, ".svh"])
+        if (player.endsWith(suffix)) player = player.slice(0, -suffix.length);
+      return player;
+    })
     .filter(Boolean);
 }
 const savedGames = () => MODES.flatMap((mode) => savedPlayers(mode).map((name) => ({ name, mode })));
@@ -225,9 +252,8 @@ function launch(options: Body, restoring: boolean) {
   const mode = typeof options.mode === "string" ? options.mode : "standard";
   if (!MODES.includes(mode))
     return send({ type: "error", text: "Choose Standard, Beginner, Explore or Pauper for this adventure." });
-  // ponytail: Windows only; Linux uses the Mac launch variables when it arrives.
-  if (process.platform !== "win32")
-    return send({ type: "error", text: "This version of Atlas starts the game on Windows only." });
+  if (!windows && process.platform !== "linux")
+    return send({ type: "error", text: "This version of Atlas starts the game on Windows and Linux only." });
   const available = savedPlayers(mode);
   if (restoring && available.length === 0)
     return send({ type: "error", text: "There is no saved adventure to continue." });
@@ -248,32 +274,45 @@ function launch(options: Body, restoring: boolean) {
   const gameOptions = ["color", "hilite_pet", "!autopickup", "time", "!news", "force_invmenu", "menustyle:full"];
   if (selfTest && ["0", "1", "3"].includes(env.ATLAS_TEST_NUMBER_PAD ?? ""))
     gameOptions.push(`number_pad:${env.ATLAS_TEST_NUMBER_PAD}`);
+  const args = ["-u", playerName];
+  if (!windows) args.push("-@");
+  if (mode === "explore") args.push("-X");
   if (!restoring) {
-    // Windows reads neither -p, -r nor -@, so every facet is an option.
-    gameOptions.push(`role:${letters(options.role) ?? "random"}`, `race:${letters(options.race) ?? "random"}`);
+    // Windows reads neither -p, -r nor -@, so every facet is an option there.
+    if (windows)
+      gameOptions.push(`role:${letters(options.role) ?? "random"}`, `race:${letters(options.race) ?? "random"}`);
+    else
+      for (const [field, flag] of [["role", "-p"], ["race", "-r"]]) {
+        const value = letters(options[field]);
+        if (value) args.push(flag, value);
+      }
     if (mode === "pauper") gameOptions.push("pauper");
     if (mode !== "pauper" && options.nudist === true) gameOptions.push("nudist");
     if (options.blind === true) gameOptions.push("blind");
     if (options.deaf === true) gameOptions.push("deaf");
     if (options.noStartingPet === true) gameOptions.push("pettype:none");
-    for (const [field, option] of [["gender", "gender"], ["alignment", "align"]])
-      gameOptions.push(`${option}:${letters(options[field]) ?? "random"}`);
+    // Linux omits an unchosen facet, as on the Mac; -@ picks it at random.
+    for (const [field, option] of [["gender", "gender"], ["alignment", "align"]]) {
+      const value = letters(options[field]) ?? (windows ? "random" : null);
+      if (value) gameOptions.push(`${option}:${value}`);
+    }
   }
   try {
     prepareModeFolder(mode);
-    fs.writeFileSync(path.join(directory, OPTIONS_FILE), `OPTIONS=${gameOptions.join(",")}\n`);
+    if (windows) fs.writeFileSync(path.join(directory, OPTIONS_FILE), `OPTIONS=${gameOptions.join(",")}\n`);
   } catch (error) {
     return send({ type: "error", text: `Could not prepare the game: ${(error as Error).message}` });
   }
-  const args = ["-u", playerName];
-  if (mode === "explore") args.push("-X");
   pending = Buffer.alloc(0);
   stderrTail = "";
   closing = false;
-  const child = spawn(path.join(directory, "nethack.exe"), args, {
+  const child = spawn(windows ? path.join(directory, "nethack.exe") : path.join(runtime, "nethack"), args, {
     cwd: directory,
-    // A relative name: Windows keeps option file names under 128 characters.
-    env: { ...env, NETHACKOPTIONS: "@" + OPTIONS_FILE, ATLAS_PLAY_MODE: mode, TERM: "dumb" },
+    env: windows
+      // A relative name: Windows keeps option file names under 128 characters.
+      ? { ...env, NETHACKOPTIONS: "@" + OPTIONS_FILE, ATLAS_PLAY_MODE: mode, TERM: "dumb" }
+      : { ...env, NETHACKDIR: directory, HACKDIR: directory, HOME: directory,
+          NETHACKOPTIONS: gameOptions.join(","), ATLAS_PLAY_MODE: mode, TERM: "dumb" },
     windowsHide: true,
   });
   engine = child;

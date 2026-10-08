@@ -173,6 +173,29 @@ front. In a manual run with the default data folder, the user started a
 character with every facet set to Random and played. Closing the window
 during the game saved it and showed no error dialog.
 
+Later on 2026-10-08, the engine and the Electron host ran natively on an Arch
+Linux x64 laptop (glibc 2.44, Wayland desktop session, Node 26.10.0).
+`ENGINE_ARCH=native ./scripts/build-engine.sh` built the engine. The first
+attempt failed when two parallel `make` jobs wrote the Lua library at once
+(`lzio.o: file truncated`); the second attempt passed unchanged.
+`test-engine.py`, `test-actions.py`, `test-context.py`, `test-item-menus.py`,
+`test-explore.py`, `test-engine-fork.py` and `test-character-rules.py` passed.
+In ten more `test-actions.py` runs, two failed the check that a named wait
+takes exactly one turn, the same check that failed once under WSL.
+`python3 scripts/test-electron.py` passed for a female and a male character,
+with the Linux launch described in [the protocol](protocol.md). The final quit
+saved to `save/<uid>AtlasSmoke`. `~/nethack`, `~/.nethackrc` and
+`~/.config/NetHack Atlas` did not exist before or after the runs. A self-test
+run against a mode folder holding a stale `nhdat` and an edited `symbols`
+replaced the `nhdat`, kept the edit and passed. The game and action-list
+screenshots were inspected. One self-test run each in Beginner,
+Explore and Pauper saved in that mode's own `save/` folder and restored. Their
+save-picker check failed only because no same-name save existed in a second
+mode, as `test-native.py` prepares; Electron coverage of the modes belongs to
+issue #6. The Electron self-test ran on Arch, not under WSL. Nobody tested a
+packaged Linux app, X11, other distributions, checkpoint recovery in the
+Electron host, or Linux ARM64.
+
 On 2026-10-08, the README clarification for issue #2 was checked against the
 pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,
 chat replies, hearing-dependent item use and hearing-message handling.

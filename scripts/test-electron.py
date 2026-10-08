@@ -22,6 +22,19 @@ WINDOWS = os.name == 'nt'
 REAL_FOLDERS = [Path(os.environ[name]) / 'NetHack' for name in ['USERPROFILE', 'LOCALAPPDATA']
                 if WINDOWS and name in os.environ] + ([Path('C:/ProgramData/NetHack')] if WINDOWS else [])
 already_present = {folder for folder in REAL_FOLDERS if folder.exists()}
+# On Linux the host sets HOME to the mode folder, so the player's own files stay untouched.
+REAL_FILES = [] if WINDOWS else [Path.home() / 'nethack', Path.home() / '.nethackrc']
+
+
+def fingerprint(path):
+    if not path.exists():
+        return None
+    if path.is_dir():
+        return sorted((str(item.relative_to(path)), item.stat().st_mtime_ns) for item in path.rglob('*'))
+    return path.stat().st_mtime_ns, path.read_bytes()
+
+
+real_before = {path: fingerprint(path) for path in REAL_FILES}
 
 subprocess.run(['npm', 'run', 'build'], cwd=HOST, check=True, shell=WINDOWS)
 run = Path(tempfile.mkdtemp(prefix='electron-', dir=OUT))
@@ -51,8 +64,11 @@ required = {'boot', 'alignment', 'sex', 'actions-prefix', 'actions-filter', 'act
 assert required <= phases, f'Missing phases: {required - phases}'
 for name in ['game.png', 'read.png', 'context.png', 'actions.png', 'direction.png']:
     assert (run / name).is_file(), f'Missing screenshot: {name}'
-assert any((run / 'game').glob('*.NetHack-saved-game')), 'Final quit did not save the restored game'
+saves = (run / 'game').glob('*.NetHack-saved-game' if WINDOWS else f'save/{os.getuid()}*')
+assert any(saves), 'Final quit did not save the restored game'
 for folder in REAL_FOLDERS:
     assert folder in already_present or not folder.exists(), f'The test created a real NetHack folder: {folder}'
+for path in REAL_FILES:
+    assert fingerprint(path) == real_before[path], f'The test changed the player\'s real {path}'
 print('PASS: Electron host start, map, inventory, inspection, save, restore and quit.')
 print(f'Evidence and screenshot: {run}')

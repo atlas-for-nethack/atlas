@@ -412,7 +412,21 @@ runtime folder are different:
   beside the digits. The command catalog reports the bindings that the engine
   really uses.
 
-## Verification
+### Linux engine launch
+
+The Electron host launches the Linux engine like the Mac host. The engine runs
+from the runtime folder; it is not copied.
+
+- Set `cwd`, `HOME`, `NETHACKDIR` and `HACKDIR` to the mode folder. Its data
+  folder is `~/.config/NetHack Atlas/5.0`.
+- Copy `nhdat` and `license` into the mode folder when they differ from the
+  runtime, and `symbols` and `sysconf` when missing. Create `save/`, `record`,
+  `logfile`, `xlogfile` and `perm` there.
+- Launch `nethack -u NAME -@`, plus `-X` for Explore. For a new game, add
+  `-p ROLE` and `-r RACE` for chosen facets. Set plain comma-separated
+  `NETHACKOPTIONS`.
+- Saves are `save/<uid>NAME` in the mode folder, as on the Mac.
+
 
 Run `python3 scripts/test-engine.py`. This uses the bundled game engine and data in a temporary runtime, tests new game, actual movement, turn-free hover (including unexplored cells), inventory, manual save, exact turn/position restoration, automatic save from inventory and direction prompts, stdin EOF save, and SIGKILL checkpoint recovery. It writes `.artifacts/game-events.json` containing an actual playable game's rendering events for frontend visual QA. The Intel slice is built and its Mach-O architecture/deployment target checked; executing Intel gameplay still requires an Intel Mac or Rosetta and was not tested on this host.
 
