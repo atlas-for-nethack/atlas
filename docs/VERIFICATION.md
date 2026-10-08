@@ -222,6 +222,16 @@ to 120 seconds for the longer mode checks. One Beginner run failed because the
 random map had no empty floor next to the hero. Two later Beginner runs passed.
 `--quit-timeout` passed again. Nobody ran the new checks on Linux yet.
 
+On 2026-10-08, for issue #6, `python3 scripts/test-electron.py --mode MODE`
+passed on Arch Linux x86_64 (kernel 7.2.8, Electron 44.7.0, Wayland session)
+for Standard, Beginner, Explore and Pauper, each on the first run. The engine
+was the existing native build from the issue #9 Linux launch, unchanged since.
+After each run, the appended-to `nhdat` matched the bundled engine, the
+AtlasKeep save was unchanged, the other three mode folders were unchanged, and
+only the Explore folder's sysconf set `EXPLORERS`. The Pauper restore
+screenshot was inspected. `--quit-timeout` is Windows-only and was not run.
+Nobody tested a packaged Linux app, X11, other distributions or Linux ARM64.
+
 On 2026-10-08, the README clarification for issue #2 was checked against the
 pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,
 chat replies, hearing-dependent item use and hearing-message handling.
