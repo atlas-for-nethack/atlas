@@ -1,0 +1,19 @@
+# Engine-free checks for the fork. Engine and app tests still run locally.
+name: Checks
+on: [push, pull_request]
+jobs:
+  web-and-electron:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 24
+      - name: Build the Electron host
+        working-directory: electron
+        run: |
+          npm ci --ignore-scripts
+          npm run build
+      - name: Interface tests
+        shell: bash
+        run: for test in web/*.test.js; do node "$test"; done

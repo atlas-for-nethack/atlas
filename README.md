@@ -150,6 +150,7 @@ python3 scripts/test-recovery.py
 node web/input.test.js
 python3 scripts/test-native.py --gender female
 python3 scripts/test-native.py --gender male
+python3 scripts/test-electron.py
 python3 scripts/test-native.py --mode beginner
 python3 scripts/test-native.py --mode explore
 python3 scripts/test-native.py --mode pauper
@@ -163,7 +164,7 @@ python3 scripts/test-targeting.py --native
 python3 scripts/verify-bundle.py
 ```
 
-The native test requires a normal logged-in Mac desktop session. It creates disposable saves inside `.artifacts/` and exercises the actual packaged app. Engine tests cover movement, inspection without consuming a turn, inventory, save/restore, quit during prompts, parent disconnect, and crash recovery. See [verification notes](docs/VERIFICATION.md) for scope and remaining limitations.
+The native test requires a normal logged-in Mac desktop session. The Electron test runs the same self-test against the Electron host on Windows after `npm install` in `electron/`. It creates disposable saves inside `.artifacts/` and exercises the actual packaged app. Engine tests cover movement, inspection without consuming a turn, inventory, save/restore, quit during prompts, parent disconnect, and crash recovery. See [verification notes](docs/VERIFICATION.md) for scope and remaining limitations.
 
 ## Repository hygiene
 
@@ -172,6 +173,7 @@ Contributor and coding-agent guidance lives in [AGENTS.md](AGENTS.md). Commit so
 ## Implementation
 
 - `native/`: Cocoa application, offline WebKit renderer, process bridge, save directory, menus, and tileset import.
+- `electron/`: Electron host for Windows and Linux, process bridge and save directory.
 - `web/`: dependency-free game UI and tile canvas.
 - `engine/`: custom NetHack window port and runtime output.
 - `scripts/`: reproducible engine/application builds and verification.
