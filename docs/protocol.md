@@ -396,8 +396,8 @@ runtime folder are different:
 - Launch `nethack.exe -u NAME`. Add `-X` for Explore. Upstream Windows does not
   read `-p`, `-r` or `-@`.
 - Write the options to `atlas.nethackrc` in the runtime folder as one
-  `OPTIONS=` line. Include `role:` and `race:`, and use `random` for a facet
-  that the player did not choose. Then set `NETHACKOPTIONS=@atlas.nethackrc`.
+  `OPTIONS=` line. For a new game, include `role:`, `race:`, `gender:` and
+  `align:`, and use `random` for a facet that the player did not choose. Then set `NETHACKOPTIONS=@atlas.nethackrc`.
   Windows reads the options twice. Option parsing writes into the
   environment value, so a plain `NETHACKOPTIONS` list keeps only its first
   option. The file name must be shorter than 128 characters, so use the

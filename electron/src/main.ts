@@ -256,10 +256,8 @@ function launch(options: Body, restoring: boolean) {
     if (options.blind === true) gameOptions.push("blind");
     if (options.deaf === true) gameOptions.push("deaf");
     if (options.noStartingPet === true) gameOptions.push("pettype:none");
-    for (const [field, option] of [["gender", "gender"], ["alignment", "align"]]) {
-      const value = letters(options[field]);
-      if (value) gameOptions.push(`${option}:${value}`);
-    }
+    for (const [field, option] of [["gender", "gender"], ["alignment", "align"]])
+      gameOptions.push(`${option}:${letters(options[field]) ?? "random"}`);
   }
   try {
     prepareModeFolder(mode);
