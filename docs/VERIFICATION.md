@@ -140,6 +140,18 @@ build path is not meant to change, but nobody rebuilt or tested it.
   Windows. `test-engine-fork.py` also checks that the Windows patch is exact,
   safe to apply twice, and applies to both files or neither.
 
+Later on 2026-10-08, the Windows patch of `windmain.c` got one more edit, so
+the Windows engine honors `EXPLORERS` in `sysconf` (ADR 0001). The rebuilt
+Windows x64 engine passed `test-explore.py`. That test now also checks that,
+without `EXPLORERS`, a game started in Explore mode and the `#exploremode`
+command both stay in normal play. With `EXPLORERS=*`, the Explore restore,
+checkpoint recovery and death checks passed on Windows. `test-engine.py`,
+`test-actions.py`, `test-context.py`, `test-item-menus.py` and
+`test-engine-fork.py` passed again, and the fork audit passed with 4
+modifications. `test-beginner.py` does not run on Windows yet because it
+expects a `save` folder. The Linux and macOS engines were not rebuilt for this
+edit, because it changes only a Windows file.
+
 Nobody built Windows ARM64 or Linux ARM64. Nobody tested Electron gameplay,
 Windows releases other than Windows 11, or a complete campaign.
 

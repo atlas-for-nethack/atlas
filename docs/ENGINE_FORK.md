@@ -30,7 +30,7 @@ to the disposable `vendor/NetHack-5.0.0/` tree by the build scripts.
 | --- | --- | --- | --- |
 | `src/allmain.c` | Add a `SHIM_GRAPHICS`-guarded call to `atlas_beginner_kit()` during new-game initialization, before the first recovery checkpoint. This enables optional Beginner starting supplies. | [`engine/apply-beginner-patch.py`](../engine/apply-beginner-patch.py), implementation in [`engine/winatelier.c`](../engine/winatelier.c) | Hook introduced 2026-09-24; dated notice added 2026-09-29. |
 | `win/shim/winshim.c` | Replace the upstream shim with the Atlas JSON window port, connecting the real engine to the local app. This is a window-port replacement, not a replacement of NetHack gameplay. | [`engine/winatelier.c`](../engine/winatelier.c) | Replacement introduced 2026-09-24; regional presentation support added 2026-09-28 and extended 2026-09-29; Earth level presentation context added 2026-09-30; named Mines, Valley of the Dead, Samurai Quest and Medusa presentation contexts extended 2026-10-01; Juiblex dry-ground, Baalzebub Gehennom presentation contexts, perceived lowered-drawbridge ground stage-specific Quest material reuse and remembered exterior-ground classification, Medusa shore reuse, additional Quest stage routing, tree-bordered Garden ground, finished Minetown interiors and exact Valley reuse on Orcus-town added 2026-10-02; Plane of Fire ground reuse added 2026-10-05; Astral sanctuary presentation context added 2026-10-06; upstream notices retained explicitly 2026-09-29. |
-| `sys/windows/windmain.c` | Windows builds only. When the shim is the only window port, use the build's `DEFAULT_WINDOW_SYS` for the default window system. Upstream assumes the Windows GUI or console tty port, and the file does not compile without one of them. | [`engine/apply-windows-patch.py`](../engine/apply-windows-patch.py) | Introduced 2026-10-08. |
+| `sys/windows/windmain.c` | Windows builds only. When the shim is the only window port, use the build's `DEFAULT_WINDOW_SYS` for the default window system. Upstream assumes the Windows GUI or console tty port, and the file does not compile without one of them. Also allow Explore mode only when `EXPLORERS=*` is in `sysconf`, as on macOS and Linux. Upstream Windows allows Explore mode in every game. Windows has no user names to match, so a list of names refuses Explore mode. | [`engine/apply-windows-patch.py`](../engine/apply-windows-patch.py) | Introduced 2026-10-08; Explore authorization added 2026-10-08 (ADR 0001). |
 | `sys/windows/windsys.c` | Windows builds only. Read the portable `sysconf` by its full path on every startup pass. Upstream adds the earlier `sysconf` folder to the start of the full path on the second pass. The file is then not found, and the game uses the player's own NetHack folders. | [`engine/apply-windows-patch.py`](../engine/apply-windows-patch.py) | Introduced 2026-10-08. |
 
 Both modified files carry prominent dated Atlas change notices and retain the
@@ -53,8 +53,9 @@ Windows builds. It accepts only the pristine or the patched upstream text.
 The replacement port also adds two Windows-only items behind `#ifdef _WIN32`.
 It sets binary mode on standard input and output. It also supplies empty
 versions of three console entry points that the Windows startup code calls.
-The gameplay code, the save format and the macOS and Linux builds do not
-change.
+The save format and the macOS and Linux builds do not change. The
+Explore authorization fix changes one gameplay rule on Windows only: it makes
+Windows match the macOS rule ([ADR 0001](adr/0001-windows-explore-only-in-explore-mode.md)).
 
 ### Deliberate gameplay customization: Beginner supplies
 

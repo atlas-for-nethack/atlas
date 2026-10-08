@@ -64,8 +64,8 @@ with tempfile.TemporaryDirectory(prefix='atlas-fork-') as temporary:
         text = saved.decode()
         applied = windows.apply_text(name, text)
         assert windows.apply_text(name, applied) == applied, 'Windows patch is not idempotent'
-        for invalid in (text.replace('Copyright (c)', 'Removed copyright', 1),
-                        text.replace(windows.PATCHES[name]['edits'][0][0], '', 1)):
+        for invalid in [text.replace('Copyright (c)', 'Removed copyright', 1)] + [
+                text.replace(original, '', 1) for original, _ in windows.PATCHES[name]['edits']]:
             try:
                 windows.apply_text(name, invalid)
             except ValueError:

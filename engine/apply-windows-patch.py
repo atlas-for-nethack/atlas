@@ -25,6 +25,8 @@ PATCHES = {
 /* Modified by the NetHack Atlas project:
  * 2026-10-08: default to the build's DEFAULT_WINDOW_SYS when only the shim
  *             window port is compiled, instead of assuming GUI or tty.
+ * 2026-10-08: allow explore mode only when sysconf EXPLORERS is "*",
+ *             instead of for every game.
 """ + NOTICE_END,
         'edits': [
             ("""#elif defined(TTY_GRAPHICS)
@@ -41,6 +43,11 @@ PATCHES = {
 #else
         windowtype = "tty";
 #endif"""),
+            ("""    return TRUE; /* no restrictions on explore mode */""", """    /* Atlas: honor sysconf EXPLORERS; Windows has no user names to match */
+    if (sysopt.explorers && sysopt.explorers[0] == '*')
+        return TRUE;
+    iflags.explore_error_flag = TRUE; /* not allowed into explore mode */
+    return FALSE;"""),
         ],
     },
     'sys/windows/windsys.c': {
