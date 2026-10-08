@@ -117,3 +117,17 @@ Keep release applications, ZIP archives and checksums outside Git history. They 
 For project-original Modern tilesets, use the shared seven-tier creature catalog in `assets/tiles/creature-scale.json` and `creature_scale.py`: Tiny, Small, Standard, Large, Very Large, Huge, Massive. Every creature has one assigned tier across all Modern artwork. Preserve aspect ratio without width caps reducing tier height. Classic creatures remain one square; do not impose this policy on third-party tilesets.
 
 Within each original artwork family, Classic and Modern must share identical walls, doors, floors, objects, and architectural rendering. Only creature/statue display sizing differs between editions.
+
+## Agent skills
+
+### Issue tracker
+
+Work is tracked in GitHub Issues on the fork `lukethan/atlas`, not upstream. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five default triage labels, each named after its role (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one root `CONTEXT.md` plus `docs/adr/`. See `docs/agents/domain.md`.
