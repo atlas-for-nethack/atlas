@@ -79,7 +79,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKSc
         dataDirectory = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
           .appendingPathComponent("NetHack Atlas/5.0", isDirectory: true)
       }
-      for mode in ["standard", "beginner", "explore"] {
+      for mode in ["standard", "beginner", "explore", "pauper"] {
         let directory = gameDirectory(for: mode)
         try prepareGameDirectory(at: directory, mode: mode)
         let recoveries = Recovery.recoverInterruptedGames(
@@ -143,6 +143,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKSc
     switch mode {
     case "beginner": return dataDirectory.appendingPathComponent("Beginner", isDirectory: true)
     case "explore": return dataDirectory.appendingPathComponent("Explore", isDirectory: true)
+    case "pauper": return dataDirectory.appendingPathComponent("Pauper", isDirectory: true)
     default: return dataDirectory
     }
   }
@@ -229,7 +230,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKSc
     }
   }
   var savedGames: [[String: String]] {
-    ["standard", "beginner", "explore"].flatMap { mode in
+    ["standard", "beginner", "explore", "pauper"].flatMap { mode in
       savedPlayers(in: mode).map { ["name": $0, "mode": mode] }
     }
   }
@@ -241,6 +242,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKSc
       "selfTest": selfTest, "savedGames": savedGames, "playtest": playtestSummary as Any? ?? NSNull(),
       "testGender": selfTest ? (ProcessInfo.processInfo.environment["ATLAS_TEST_GENDER"] ?? "female") : "",
       "testMode": selfTest ? (ProcessInfo.processInfo.environment["ATLAS_TEST_MODE"] ?? "standard") : "",
+      "testNudist": selfTest && ProcessInfo.processInfo.environment["ATLAS_TEST_NUDIST"] == "1",
+      "testBlind": selfTest && ProcessInfo.processInfo.environment["ATLAS_TEST_BLIND"] == "1",
+      "testDeaf": selfTest && ProcessInfo.processInfo.environment["ATLAS_TEST_DEAF"] == "1",
+      "testNoStartingPet": selfTest && ProcessInfo.processInfo.environment["ATLAS_TEST_NO_STARTING_PET"] == "1",
       "testScenario": selfTest ? (ProcessInfo.processInfo.environment["ATLAS_TEST_SCENARIO"] ?? "") : "",
       "testRoomBounds": selfTest ? (ProcessInfo.processInfo.environment["ATLAS_TEST_ROOM_BOUNDS"] ?? "") : "",
       "testTerrainTiles": selfTest ? (ProcessInfo.processInfo.environment["ATLAS_TEST_TERRAIN_TILES"] ?? "[]") : "[]",
@@ -299,6 +304,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKSc
       let snapshotNames = ["room-shape": "room-shape.png", "oracle-minor-prompt": "oracle-minor.png", "oracle-major-prompt": "oracle-major.png", "oracle-reading": "oracle-reading.png",
                            "court-beneath": "court-beneath.png", "yn-default-focus": "yn-default.png", "direction-bar": "direction.png", "actions-filter": "actions.png",
                            "explore-creation": "explore-creation.png", "explore-help": "explore-help.png",
+                           "pauper-creation": "pauper-creation.png", "pauper-help": "pauper-help.png",
+                           "nudist-creation": "nudist-creation.png", "starting-conditions": "starting-conditions.png",
                            "context-underfoot": "context.png", "read-selection": "read.png",
                            "beginner-creation": "beginner-creation.png", "beginner-help": "beginner-help.png",
                            "beginner-chest-visible": "beginner-chest.png",
@@ -386,8 +393,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKSc
       return
     }
     let mode = options["mode"] as? String ?? "standard"
-    guard ["standard", "beginner", "explore"].contains(mode) else {
-      send(["type": "error", "text": "Choose Standard, Beginner or Explore for this adventure."])
+    guard ["standard", "beginner", "explore", "pauper"].contains(mode) else {
+      send(["type": "error", "text": "Choose Standard, Beginner, Explore or Pauper for this adventure."])
       return
     }
     playtestRestoring = playtestRun != nil && restoring
@@ -450,6 +457,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKSc
       gameOptions.append("number_pad:\(keypad)")
     }
     if !restoring {
+      if mode == "pauper" { gameOptions.append("pauper") }
+      if mode != "pauper" && options["nudist"] as? Bool == true {
+        gameOptions.append("nudist")
+      }
+      if options["blind"] as? Bool == true { gameOptions.append("blind") }
+      if options["deaf"] as? Bool == true { gameOptions.append("deaf") }
+      if options["noStartingPet"] as? Bool == true { gameOptions.append("pettype:none") }
       for (field, option) in [("gender", "gender"), ("alignment", "align")] {
         if let value = options[field] as? String, !value.isEmpty, value.lowercased() != "random",
           value.allSatisfy({ $0.isLetter })

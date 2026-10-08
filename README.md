@@ -46,6 +46,12 @@ Atlas includes an optional **Beginner** start. Choose it during character creati
 
 **Explore** selects NetHack’s native non-scoring discovery mode. It starts with the engine’s wand of wishing and lets you decline death when asked. It uses normal role supplies without the Beginner chest. Explore saves and recovery live separately in `5.0/Explore/`; games do not enter the high-score list. Choose the mode before creating a character; continuing a save preserves that adventure’s mode.
 
+**Pauper** starts you with no items or spells and no trained weapon or spell skills. It follows normal death and scoring rules, with saves and recovery in `5.0/Pauper/`. Pauper has neither the Beginner chest nor Explore’s wand. A saved Pauper adventure keeps its mode when continued.
+
+New **Standard**, **Beginner**, and **Explore** characters can choose a Nudist start. NetHack omits their starting armor and tracks the nudist conduct; wearing armor later ends it. Pauper already implies Nudist.
+
+Every mode can begin **Blind from birth**, **Deaf from birth**, or with **No starting pet**. Blind and Deaf are permanent starting conditions. Blindness hides unexplored surroundings, including the nearby Beginner chest until you find it through ordinary play. No starting pet removes only the initial companion; you can tame creatures later. Starting conditions do not change existing saves.
+
 Naming and other modal prompts include **What just happened**, showing the engine’s recent action messages before you answer. Scroll, potion and spellbook effects remain readable while the dialog covers the journal.
 
 Use the arrow keys to move; **y u b n** move diagonally. **i** opens inventory, **s** searches, **comma** picks up items, **period** waits, and **< / >** use stairs. Hover over the map to inspect what your character knows. Click any adjacent tile to move one step, including diagonally. Open **Actions** or press **⌘K** for the complete command list, with live filtering by name, description or shortcut. **At your fingertips** suggests actions for known features underfoot and nearby, including stairs, fountains, containers and creatures. Original NetHack keys remain available.
@@ -57,6 +63,8 @@ To name a pet, choose **Name pet**, then **a monster**, and click your pet on th
 Use **Save** or **⌘S** to save and return to the title screen. Quit also requests a save. Saves, bones, and scores live in `~/Library/Application Support/NetHack Atlas/5.0/`. The Game menu can open that folder.
 
 Beginner adventures keep their saves, bones and scores in the separate `5.0/Beginner/` folder. Saved adventures show their mode, and continuing one preserves that mode. Existing Standard saves stay in their original location. Supplies are created only for a new Beginner adventure, never replenished on save, restore or recovery.
+
+Explore and Pauper adventures likewise use separate `5.0/Explore/` and `5.0/Pauper/` folders.
 
 ## Build from source
 
@@ -119,6 +127,7 @@ python3 scripts/test-character-rules.py
 python3 scripts/test-engine.py
 python3 scripts/test-beginner.py
 python3 scripts/test-explore.py
+python3 scripts/test-starting-options.py
 python3 scripts/test-actions.py
 python3 scripts/test-context.py
 python3 scripts/test-item-menus.py
@@ -131,6 +140,12 @@ python3 scripts/test-native.py --gender female
 python3 scripts/test-native.py --gender male
 python3 scripts/test-native.py --mode beginner
 python3 scripts/test-native.py --mode explore
+python3 scripts/test-native.py --mode pauper
+python3 scripts/test-native.py --mode standard --nudist
+python3 scripts/test-native.py --mode beginner --nudist
+python3 scripts/test-native.py --mode explore --nudist
+python3 scripts/test-native.py --mode beginner --blind --deaf
+python3 scripts/test-native.py --mode standard --deaf --no-starting-pet
 python3 scripts/test-prompt-messages.py --native
 python3 scripts/test-targeting.py --native
 python3 scripts/verify-bundle.py

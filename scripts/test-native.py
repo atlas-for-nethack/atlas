@@ -14,12 +14,18 @@ import tempfile
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--gender', choices=['male', 'female'], default='female')
-parser.add_argument('--mode', choices=['standard', 'beginner', 'explore'], default='standard')
+parser.add_argument('--mode', choices=['standard', 'beginner', 'explore', 'pauper'], default='standard')
+parser.add_argument('--nudist', action='store_true', help='Select the Nudist start')
+parser.add_argument('--blind', action='store_true', help='Start blind')
+parser.add_argument('--deaf', action='store_true', help='Start deaf')
+parser.add_argument('--no-starting-pet', action='store_true', help='Start without a pet')
 parser.add_argument('--tileset', help='Exercise this bundled/imported atlas in the isolated test')
 parser.add_argument('--number-pad', choices=['0', '1', '3'], default='0')
 parser.add_argument('--rebind-save', action='store_true', help='Bind literal S to wait; host Save must still save')
 parser.add_argument('--persisted-tileset', type=Path, help='Copy a supplied custom manifest into this disposable run')
 args = parser.parse_args()
+if args.nudist and args.mode == 'pauper':
+    parser.error('Pauper already includes Nudist')
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / '.artifacts'
 OUT.mkdir(exist_ok=True)
@@ -27,6 +33,10 @@ run = Path(tempfile.mkdtemp(prefix='native-', dir=OUT))
 report = run / 'diagnostics.jsonl'
 env = {key: value for key, value in os.environ.items() if not key.startswith('ATLAS_TEST_')}
 env.update(ATLAS_TEST_GENDER=args.gender, ATLAS_TEST_MODE=args.mode,
+           ATLAS_TEST_NUDIST='1' if args.nudist else '0',
+           ATLAS_TEST_BLIND='1' if args.blind else '0',
+           ATLAS_TEST_DEAF='1' if args.deaf else '0',
+           ATLAS_TEST_NO_STARTING_PET='1' if args.no_starting_pet else '0',
            ATLAS_TEST_NUMBER_PAD=args.number_pad,
            ATLAS_DATA_DIR=str(run / 'game'),
            ATLAS_DIAGNOSTICS=str(report), ATLAS_SNAPSHOT=str(run / 'game.png'))
@@ -40,7 +50,7 @@ if args.persisted_tileset:
     shutil.copyfile(args.persisted_tileset, persisted_file)
     persisted_digest = hashlib.sha256(persisted_file.read_bytes()).hexdigest()
 if args.rebind_save:
-    directory = run / 'game' / {'standard': '', 'beginner': 'Beginner', 'explore': 'Explore'}[args.mode]
+    directory = run / 'game' / {'standard': '', 'beginner': 'Beginner', 'explore': 'Explore', 'pauper': 'Pauper'}[args.mode]
     directory.mkdir(parents=True, exist_ok=True)
     (directory / '.nethackrc').write_text('BINDINGS=S:wait\n')
 standard_files = {}
@@ -49,14 +59,15 @@ if args.mode != 'standard':
     spec = importlib.util.spec_from_file_location('engine_test', ROOT / 'scripts/test-engine.py')
     engine_test = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(engine_test)
-    for protected_mode in (['standard', 'beginner'] if args.mode == 'explore' else ['standard']):
-        directory = run / 'game'
-        if protected_mode == 'beginner':
-            directory = directory / 'Beginner'
+    for protected_mode in [mode for mode in ['standard', 'beginner', 'explore', 'pauper'] if mode != args.mode]:
+        directory = run / 'game' / {'standard': '', 'beginner': 'Beginner', 'explore': 'Explore', 'pauper': 'Pauper'}[protected_mode]
         directory.mkdir(parents=True, exist_ok=True)
         (directory / 'save').mkdir()
         for name in ['nhdat', 'license', 'symbols', 'sysconf']:
             shutil.copy2(engine_test.RUNTIME / name, directory / name)
+        if protected_mode == 'explore':
+            config = directory / 'sysconf'
+            config.write_text(config.read_text().rstrip('\n') + '\nEXPLORERS=*\n')
         for name in ['perm', 'record', 'logfile', 'xlogfile']:
             (directory / name).touch()
         previous_environment = dict(os.environ)
@@ -84,33 +95,69 @@ assert code == 0, f'Native application exited {code}; see {run}'
 events = [json.loads(line) for line in report.read_text().splitlines()]
 assert all(event.get('ok') is True for event in events), events
 phases = {e['phase'] for e in events}
-required = {'boot', 'alignment', 'sex', 'actions-prefix', 'actions-filter', 'actions-cancel', 'context-underfoot', 'read-selection', 'read-cancel', 'mouse-movement', 'mouse-distance', 'direction-bar', 'direction-arrow', 'direction-cancel', 'render', 'inventory', 'arrow-movement', 'hover', 'wait', 'save', 'restore', 'complete'}
-required.add('save-picker')
-required.add('experience-status')
-required |= {'yn-default-focus', 'yn-default-enter', 'yn-focused-enter'}
+required = {'boot', 'alignment', 'sex', 'actions-prefix', 'actions-filter', 'actions-cancel', 'context-underfoot', 'mouse-movement', 'mouse-distance', 'direction-bar', 'direction-arrow', 'direction-cancel', 'render', 'inventory', 'arrow-movement', 'hover', 'wait', 'save', 'restore', 'complete'}
+if args.blind:
+    required = {'boot', 'starting-conditions', 'blind-status', 'blind-perception',
+                'blind-save', 'blind-restore', 'save-picker', 'complete'}
+if args.mode != 'pauper' and not args.blind:
+    required |= {'read-selection', 'read-cancel'}
+if not args.blind:
+    required.add('save-picker')
+    required.add('experience-status')
+    required |= {'yn-default-focus', 'yn-default-enter', 'yn-focused-enter'}
 if args.mode == 'beginner':
-    required |= {'beginner-creation', 'beginner-help', 'beginner-chest',
-                 'beginner-chest-visible', 'beginner-loot-action', 'beginner-chest-contents'}
-    for name in ['beginner-creation.png', 'beginner-help.png', 'beginner-chest.png']:
+    required.add('beginner-creation')
+    if not args.blind:
+        required |= {'beginner-help', 'beginner-chest', 'beginner-chest-visible',
+                     'beginner-loot-action', 'beginner-chest-contents'}
+    for name in (['beginner-creation.png'] if args.blind else
+                 ['beginner-creation.png', 'beginner-help.png', 'beginner-chest.png']):
         assert (run / name).is_file(), f'Missing Beginner screenshot: {name}'
 if args.mode == 'explore':
-    required |= {'explore-creation', 'explore-help', 'explore-inventory', 'explore-restore-choice'}
-    for name in ['explore-creation.png', 'explore-help.png']:
+    required.add('explore-creation')
+    if not args.blind:
+        required |= {'explore-help', 'explore-inventory', 'explore-restore-choice'}
+    for name in (['explore-creation.png'] if args.blind else
+                 ['explore-creation.png', 'explore-help.png']):
         assert (run / name).is_file(), name
+if args.mode == 'pauper':
+    required.add('pauper-creation')
+    if not args.blind:
+        required |= {'pauper-help', 'pauper-inventory'}
+    for name in (['pauper-creation.png'] if args.blind else
+                 ['pauper-creation.png', 'pauper-help.png']):
+        assert (run / name).is_file(), name
+if args.nudist:
+    required.add('nudist-creation')
+    if not args.blind:
+        required.add('nudist-inventory')
+    assert (run / 'nudist-creation.png').is_file(), 'Missing Nudist creation screenshot'
+if args.blind or args.deaf or args.no_starting_pet:
+    required.add('starting-conditions')
+    assert (run / 'starting-conditions.png').is_file(), 'Missing starting-conditions screenshot'
+if args.deaf and not args.blind:
+    required.add('deaf-status')
+if args.no_starting_pet and not args.blind:
+    required.add('no-starting-pet')
 assert required <= phases, f'Missing phases: {required - phases}'
 if args.tileset:
     rendered = next(event for event in events if event['phase'] == 'render')
     assert f'atlas {args.tileset} loaded;' in rendered.get('detail', ''), rendered
-assert (run / 'read.png').is_file(), 'No readable item-selection screenshot'
-assert (run / 'context.png').is_file(), 'No contextual-action screenshot'
-assert (run / 'actions.png').is_file(), 'No action picker screenshot'
-assert (run / 'direction.png').is_file(), 'No direction prompt screenshot'
+if args.mode != 'pauper' and not args.blind:
+    assert (run / 'read.png').is_file(), 'No readable item-selection screenshot'
+if not args.blind:
+    assert (run / 'context.png').is_file(), 'No contextual-action screenshot'
+    assert (run / 'actions.png').is_file(), 'No action picker screenshot'
+    assert (run / 'direction.png').is_file(), 'No direction prompt screenshot'
 assert (run / 'game.png').is_file(), 'No rendered native screenshot'
-save_folder = run / 'game' / {'standard': 'save', 'beginner': 'Beginner/save', 'explore': 'Explore/save'}[args.mode]
+save_folder = run / 'game' / {'standard': 'save', 'beginner': 'Beginner/save', 'explore': 'Explore/save', 'pauper': 'Pauper/save'}[args.mode]
 assert any(save_folder.iterdir()), 'Final application quit did not preserve the restored game'
 for file, digest in standard_files.items():
     assert hashlib.sha256(file.read_bytes()).hexdigest() == digest, f'Other-mode data changed: {file}'
 if persisted_file:
     assert hashlib.sha256(persisted_file.read_bytes()).hexdigest() == persisted_digest, 'Startup changed the supplied import file'
-print('PASS: native Cocoa/WebKit start, map, inventory, inspection, save, restore and quit.')
+if args.blind:
+    print('PASS: native Cocoa/WebKit Blind start, perception, conditions, save and restore.')
+else:
+    print('PASS: native Cocoa/WebKit start, map, inventory, inspection, save, restore and quit.')
 print(f'Evidence and screenshot: {run}')
