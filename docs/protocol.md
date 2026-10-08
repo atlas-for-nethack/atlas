@@ -27,8 +27,24 @@ with one event or an array of events.
 
 With `window.atlasHost`, the interface uses Ctrl+K for the action list and
 Ctrl+S for save and exit, and its labels show Ctrl. With the Mac handler,
-these shortcuts use Command. NetHack binds neither Ctrl+K nor Ctrl+S. The
+these shortcuts use Command. A browser preview without a host uses Command on
+a Mac and Ctrl elsewhere. NetHack binds neither Ctrl+K nor Ctrl+S. The
 interface sends every other Ctrl key to the engine as a control character.
+
+The Electron host in `electron/` loads the interface from the `atlas://app/`
+scheme. That scheme serves only `web/` and `assets/`, with a content security
+policy that allows only the same origin and `data:` and `blob:` images. The window uses
+context isolation and a sandboxed renderer. The host blocks navigation, new
+windows and permission requests. The main process accepts only the 13 Mac
+actions (`ready`, `diagnostic`, `start`, `load`, `key`, `command`, `input`,
+`position`, `menu`, `inspect`, `save`, `importTileset` and `showSaveFolder`)
+with the Mac limits, and only from the main frame of that page. It delivers
+events in batches through `window.receiveNative`. The data folder is
+`NetHack Atlas/5.0` under the per-user application data folder, and
+`ATLAS_DATA_DIR` replaces it. With `ATLAS_DATA_DIR`, the browser profile and
+the single-instance lock move to a sibling folder that ends in `-electron`.
+`--self-test` reads the same `ATLAS_TEST_` variables, `ATLAS_DIAGNOSTICS` and
+`ATLAS_SNAPSHOT` as the Mac host and uses non-persistent web storage.
 
 ## Host → engine
 
@@ -391,8 +407,8 @@ runtime folder are different:
   `NAME.NetHack-saved-game` in the same folder. Run `recover.exe NAME` from
   the runtime folder.
 - Upstream Windows allows debug mode only for a player named `wizard`, and
-  ignores `WIZARDS`. It allows Explore mode in every runtime, and ignores
-  `EXPLORERS`. With `number_pad` on, the letter direction keys stay bound
+  ignores `WIZARDS`. The Atlas Windows patch allows Explore mode only when
+  `sysconf` contains `EXPLORERS=*` (ADR 0001). With `number_pad` on, the letter direction keys stay bound
   beside the digits. The command catalog reports the bindings that the engine
   really uses.
 

@@ -152,8 +152,21 @@ modifications. `test-beginner.py` does not run on Windows yet because it
 expects a `save` folder. The Linux and macOS engines were not rebuilt for this
 edit, because it changes only a Windows file.
 
-Nobody built Windows ARM64 or Linux ARM64. Nobody tested Electron gameplay,
-Windows releases other than Windows 11, or a complete campaign.
+Nobody built Windows ARM64 or Linux ARM64. Nobody tested Windows releases
+other than Windows 11, or a complete campaign.
+
+Later on 2026-10-08, the Electron host in `electron/` (Electron 44.7.0,
+TypeScript 7.0.2) played a Standard game on Windows 11 x64.
+`python scripts/test-electron.py` passed for a female and a male character.
+The test builds the host with `npm run build` and starts it with `--self-test`
+and an isolated data folder under `.artifacts/`. The same interface self-test
+as the Mac native test created a character, moved, inspected, used the action
+list and direction bar, read, saved and restored. The final quit saved the
+game. The action list screenshot was inspected and shows Ctrl labels. The
+per-user and ProgramData NetHack folders did not exist after the runs.
+`node web/app.test.js` and `node web/input.test.js` passed. Nobody tested
+Beginner, Explore or Pauper in the Electron host, checkpoint recovery,
+tileset import, the 8-second quit timeout, a second launch, or Linux.
 
 On 2026-10-08, the README clarification for issue #2 was checked against the
 pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,

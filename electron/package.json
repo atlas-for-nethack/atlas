@@ -1,0 +1,16 @@
+{
+  "name": "atlas-for-nethack",
+  "productName": "Atlas for NetHack",
+  "private": true,
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "tsc -p . && electron .",
+    "postinstall": "install-electron"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.4",
+    "electron": "44.7.0",
+    "typescript": "7.0.2"
+  }
+}

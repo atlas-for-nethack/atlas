@@ -12,3 +12,7 @@ __pycache__/
 
 # Checksum-pinned upstream downloads and disposable build trees
 /vendor/
+
+# Electron host dependencies and compiled output
+/electron/node_modules/
+/electron/dist/
