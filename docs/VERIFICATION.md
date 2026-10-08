@@ -117,6 +117,32 @@ contents and creates a checksum. Build/release outputs belong outside Git.
 
 ## Evidence and limits
 
+On 2026-10-08, the `electron-port` branch built the engine for two more
+platforms. No Electron host, packaged app or Mac build was tested. The macOS
+build path is not meant to change, but nobody rebuilt or tested it.
+
+- Linux x64: `scripts/build-engine.sh` built the engine under WSL 2 Ubuntu
+  26.04. The binary links only libc and libm. It needs glibc 2.42 or later, so
+  it does not run on older distributions yet. `test-engine.py`,
+  `test-actions.py`, `test-context.py`, `test-item-menus.py` and
+  `test-engine-fork.py` passed against the real engine. One of five
+  `test-actions.py` runs failed its "wait takes one turn" check on a random
+  game. Four more runs passed. `test-character-rules.py` needs Node and
+  `test-recovery.py` compiles the Swift helper, so neither ran.
+- Windows x64: Git Bash and llvm-mingw 20260908 (UCRT) built the engine on an
+  AMD64 computer with Windows 11. The binary links only Windows system DLLs,
+  including the Universal CRT. The same five suites passed. These suites test a
+  new game, movement, save and exact restore. They also test the save after
+  stdin closes and checkpoint recovery with `recover.exe`. `--showpaths` and the test runs kept
+  every file in the isolated runtime. After the runs, the per-user and
+  ProgramData NetHack folders did not exist.
+- The fork audit passed with 2 documented modifications on Linux and 4 on
+  Windows. `test-engine-fork.py` also checks that the Windows patch is exact,
+  safe to apply twice, and applies to both files or neither.
+
+Nobody built Windows ARM64 or Linux ARM64. Nobody tested Electron gameplay,
+Windows releases other than Windows 11, or a complete campaign.
+
 On 2026-10-08, the README clarification for issue #2 was checked against the
 pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,
 chat replies, hearing-dependent item use and hearing-message handling.

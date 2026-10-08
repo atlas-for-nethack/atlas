@@ -352,6 +352,35 @@ Set `HOME` to the app's writable data directory to isolate user configuration. K
 
 Most output is JSON, but upstream fatal startup errors may be plain text on stdout; surface such lines as diagnostics. An engine exit before receiving `hello` is a launch failure. `exit` is an engine window-port notification; the child process termination remains authoritative.
 
+### Windows engine launch
+
+The JSON events and input commands are the same on Windows. The launch and the
+runtime folder are different:
+
+- Upstream Windows NetHack ignores `HOME`, `NETHACKDIR` and `HACKDIR`. Each
+  runtime folder holds its own `nethack.exe` and `recover.exe`. Its `sysconf`
+  contains `PORTABLE_DEVICE_PATHS=1`, which keeps every file in that folder.
+  Startup also needs `sysconf.template`, `symbols.template`,
+  `nethackrc.template`, `Guidebook.txt`, `opthelp` and `nhdat500` there.
+- Launch `nethack.exe -u NAME`. Add `-X` for Explore. Upstream Windows does not
+  read `-p`, `-r` or `-@`.
+- Write the options to `atlas.nethackrc` in the runtime folder as one
+  `OPTIONS=` line. Include `role:` and `race:`, and use `random` for a facet
+  that the player did not choose. Then set `NETHACKOPTIONS=@atlas.nethackrc`.
+  Windows reads the options twice. Option parsing writes into the
+  environment value, so a plain `NETHACKOPTIONS` list keeps only its first
+  option. The file name must be shorter than 128 characters, so use the
+  relative name.
+- The checkpoint is `NAME.0` in the runtime folder, with no user ID prefix.
+  Its first four bytes hold the Windows process ID. The save is
+  `NAME.NetHack-saved-game` in the same folder. Run `recover.exe NAME` from
+  the runtime folder.
+- Upstream Windows allows debug mode only for a player named `wizard`, and
+  ignores `WIZARDS`. It allows Explore mode in every runtime, and ignores
+  `EXPLORERS`. With `number_pad` on, the letter direction keys stay bound
+  beside the digits. The command catalog reports the bindings that the engine
+  really uses.
+
 ## Verification
 
 Run `python3 scripts/test-engine.py`. This uses the bundled game engine and data in a temporary runtime, tests new game, actual movement, turn-free hover (including unexplored cells), inventory, manual save, exact turn/position restoration, automatic save from inventory and direction prompts, stdin EOF save, and SIGKILL checkpoint recovery. It writes `.artifacts/game-events.json` containing an actual playable game's rendering events for frontend visual QA. The Intel slice is built and its Mach-O architecture/deployment target checked; executing Intel gameplay still requires an Intel Mac or Rosetta and was not tested on this host.

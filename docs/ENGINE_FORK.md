@@ -15,6 +15,9 @@ Inventory maintained October 6, 2026; source audit counts checked October 6, 202
 - SHA-256: `2959b7886aac76185b90aea0c9f80d14343f604de0ae96b3dd2a760f7ab3bde9`.
 - Of **1,265 original regular files**, **1,263 remain byte-for-byte unchanged**
   and **2 are modified**. None are missing.
+- Windows builds modify **2 more** Windows startup files, so a Windows build tree
+  has **1,261 unchanged** and **4 modified** files. macOS and Linux build trees
+  do not contain these 2 changes. Updated October 8, 2026.
 - One additional maintained build hint is installed. Generated build files and
   executables are not counted as original files or maintained gameplay patches.
 
@@ -27,6 +30,8 @@ to the disposable `vendor/NetHack-5.0.0/` tree by the build scripts.
 | --- | --- | --- | --- |
 | `src/allmain.c` | Add a `SHIM_GRAPHICS`-guarded call to `atlas_beginner_kit()` during new-game initialization, before the first recovery checkpoint. This enables optional Beginner starting supplies. | [`engine/apply-beginner-patch.py`](../engine/apply-beginner-patch.py), implementation in [`engine/winatelier.c`](../engine/winatelier.c) | Hook introduced 2026-09-24; dated notice added 2026-09-29. |
 | `win/shim/winshim.c` | Replace the upstream shim with the Atlas JSON window port, connecting the real engine to the local app. This is a window-port replacement, not a replacement of NetHack gameplay. | [`engine/winatelier.c`](../engine/winatelier.c) | Replacement introduced 2026-09-24; regional presentation support added 2026-09-28 and extended 2026-09-29; Earth level presentation context added 2026-09-30; named Mines, Valley of the Dead, Samurai Quest and Medusa presentation contexts extended 2026-10-01; Juiblex dry-ground, Baalzebub Gehennom presentation contexts, perceived lowered-drawbridge ground stage-specific Quest material reuse and remembered exterior-ground classification, Medusa shore reuse, additional Quest stage routing, tree-bordered Garden ground, finished Minetown interiors and exact Valley reuse on Orcus-town added 2026-10-02; Plane of Fire ground reuse added 2026-10-05; Astral sanctuary presentation context added 2026-10-06; upstream notices retained explicitly 2026-09-29. |
+| `sys/windows/windmain.c` | Windows builds only. When the shim is the only window port, use the build's `DEFAULT_WINDOW_SYS` for the default window system. Upstream assumes the Windows GUI or console tty port, and the file does not compile without one of them. | [`engine/apply-windows-patch.py`](../engine/apply-windows-patch.py) | Introduced 2026-10-08. |
+| `sys/windows/windsys.c` | Windows builds only. Read the portable `sysconf` by its full path on every startup pass. Upstream adds the earlier `sysconf` folder to the start of the full path on the second pass. The file is then not found, and the game uses the player's own NetHack folders. | [`engine/apply-windows-patch.py`](../engine/apply-windows-patch.py) | Introduced 2026-10-08. |
 
 Both modified files carry prominent dated Atlas change notices and retain the
 original upstream copyright and redistribution notices. Port behavior is
@@ -39,6 +44,17 @@ It preserves valid UTF-8 when serializing JSON strings and replaces each malform
 byte with U+FFFD. Upstream commands, naming rules, mixed-glyph processing and
 save format are unchanged. This extends the existing `win/shim/winshim.c`
 replacement and its dated notice; the modified-file inventory remains two files.
+
+October 8, 2026: Windows builds use the upstream Windows startup files with
+two small fixes. These fixes are in `sys/windows/windmain.c` and
+`sys/windows/windsys.c`, and the table above describes them. Each file has a
+dated Atlas notice. `engine/apply-windows-patch.py` applies the fixes only in
+Windows builds. It accepts only the pristine or the patched upstream text.
+The replacement port also adds two Windows-only items behind `#ifdef _WIN32`.
+It sets binary mode on standard input and output. It also supplies empty
+versions of three console entry points that the Windows startup code calls.
+The gameplay code, the save format and the macOS and Linux builds do not
+change.
 
 ### Deliberate gameplay customization: Beginner supplies
 
@@ -122,6 +138,15 @@ and sets relocatable paths and a macOS 13 deployment target. These are build
 choices, not edits to the original configuration headers. The packaged private
 system configuration comes from [`engine/sysconf`](../engine/sysconf).
 
+Linux builds install the same hint. `scripts/build-engine.sh` gives `make` the
+same build choices, without the macOS deployment flags. Windows builds use
+the upstream `sys/windows/GNUmakefile` and the maintained fragment
+[`engine/windows.mk`](../engine/windows.mk). Upstream makes the generators,
+game data, static Lua and `recover.exe`. The fragment links the game with the
+Atlas port in place of the console tty port. The Windows runtime `sysconf` is
+`engine/sysconf` plus `PORTABLE_DEVICE_PATHS=1`. This setting keeps every
+file beside the executable.
+
 Lua 5.4.8 is a separate checksum-pinned dependency under its MIT license, not an
 upstream NetHack patch. Native and cross-compilation support is maintained in
 [`scripts/build-engine.sh`](../scripts/build-engine.sh) and
@@ -169,6 +194,11 @@ with these files under `Contents/Resources/Source/`:
 | `engine-fork-audit.json` | File hashes and classified changes measured when the source payload was packaged. |
 | `atlas-source.tar.gz` | Maintained port, patch helper, build scripts, documentation and application source. |
 | `lua-5.4.8.tar.gz` | Complete source for the static Lua dependency. |
+
+A Windows distribution must also put the patched `sys/windows/windmain.c` and
+`sys/windows/windsys.c` in its modifications archive. It must include
+`engine/apply-windows-patch.py` and `engine/windows.mk` too. As of October 8,
+2026, the packaging scripts do not make a Windows distribution.
 
 The patch helper, port, hints and system configuration also accompany the
 archives as individual files. [SOURCE.md](SOURCE.md) gives reconstruction steps.

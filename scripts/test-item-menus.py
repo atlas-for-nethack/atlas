@@ -16,6 +16,8 @@ spec.loader.exec_module(context_test)
 actions = context_test.actions
 FULL = ',force_invmenu,menustyle:full'
 BASE_OPTIONS = actions.OPTIONS + ',playmode:debug,pettype:none'
+# Upstream Windows authorizes debug mode by the player name alone, not sysconf.
+WIZARD = 'wizard' if actions.engine_test.WINDOWS else 'AtlasItemMenus'
 
 
 class Fixture(context_test.Fixture):
@@ -24,7 +26,7 @@ class Fixture(context_test.Fixture):
         actions.prepare(directory)
         config = self.directory / 'sysconf'
         config.write_text(config.read_text().replace('WIZARDS=', 'WIZARDS=*'))
-        self.game = actions.Game(directory, name='AtlasItemMenus', options=BASE_OPTIONS + menus)
+        self.game = actions.Game(directory, name=WIZARD, options=BASE_OPTIONS + menus)
         self.game.start()
         self.load()
 
@@ -131,7 +133,7 @@ def main():
             fixture.walk(fixture.find('('))
             saved_turn, saved_position = game.turn, game.cursor
             game.finish(automatic=True)
-            fixture.game = game = actions.Game(directory, name='AtlasItemMenus', options=BASE_OPTIONS + FULL)
+            fixture.game = game = actions.Game(directory, name=WIZARD, options=BASE_OPTIONS + FULL)
             game.start()
             assert game.turn == saved_turn and game.cursor == saved_position
             assert any('Restoring save' in e.get('text', '') for e in game.events)

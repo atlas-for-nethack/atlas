@@ -66,4 +66,4 @@ if __name__ == '__main__':
     except ValueError as error:
         raise SystemExit(f"Refusing to patch {source}: {error}") from error
     if result != text:
-        source.write_text(result)
+        source.write_text(result, newline='\n')

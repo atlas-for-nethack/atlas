@@ -3,7 +3,6 @@
 import collections
 import importlib.util
 import pathlib
-import shutil
 import tempfile
 
 spec = importlib.util.spec_from_file_location('engine_test', pathlib.Path(__file__).with_name('test-engine.py'))
@@ -13,12 +12,7 @@ Game, RUNTIME, OPTIONS = engine_test.Game, engine_test.RUNTIME, engine_test.OPTI
 
 
 def prepare(directory):
-    target = pathlib.Path(directory)
-    for name in ['nhdat', 'license', 'symbols', 'sysconf']:
-        shutil.copy2(RUNTIME / name, target / name)
-    for name in ['perm', 'record', 'logfile', 'xlogfile']:
-        (target / name).touch()
-    (target / 'save').mkdir()
+    engine_test.prepare_runtime(pathlib.Path(directory))
 
 
 def named(game, name):
@@ -118,7 +112,9 @@ def main():
             game.start()
             commands = catalog(game)
             assert '7' in commands['movenorthwest']['keys'], commands['movenorthwest']
-            assert 'y' not in commands['movenorthwest']['keys']
+            if not engine_test.WINDOWS:
+                # Upstream Windows keeps the letter keys bound beside the keypad.
+                assert 'y' not in commands['movenorthwest']['keys']
             assert named(game, 'inventory')['kind'] in ('menu', 'text')
             game.finish(automatic=True)
         finally:
