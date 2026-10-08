@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exercise native NetHack 5.0 Pauper and Nudist starts in isolated runtimes."""
+"""Exercise NetHack 5.0 starting conditions in isolated runtimes."""
 from contextlib import contextmanager
 import importlib.util
 from pathlib import Path
@@ -15,6 +15,8 @@ engine = beginner.engine_test
 
 @contextmanager
 def game_at(directory, name, role='Wizard', mode='standard', extra=''):
+    if mode == 'explore':
+        extra += ',playmode:explore'
     game = engine.Game(directory, role=role, name=name,
                        options=beginner.OPTIONS + ',align:neutral' + extra,
                        mode=mode)
@@ -25,6 +27,13 @@ def game_at(directory, name, role='Wizard', mode='standard', extra=''):
         if game.process.poll() is None:
             game.process.kill()
             game.process.wait(timeout=5)
+
+
+def prepare(directory, mode):
+    beginner.prepare(directory)
+    if mode == 'explore':
+        config = directory / 'sysconf'
+        config.write_text(config.read_text() + '\nEXPLORERS=*\n')
 
 
 def inventory(game):
@@ -42,7 +51,7 @@ def inventory(game):
 def check_pauper():
     with tempfile.TemporaryDirectory(prefix='atlas-pauper-') as temporary:
         directory = Path(temporary)
-        beginner.prepare(directory)
+        prepare(directory, 'pauper')
         with game_at(directory, 'PauperSmoke', mode='pauper', extra=',pauper') as game:
             assert inventory(game) == []
             spells = game.command('Z')
@@ -85,7 +94,7 @@ def check_pauper():
 def check_nudist(mode):
     with tempfile.TemporaryDirectory(prefix=f'atlas-{mode}-nudist-') as temporary:
         directory = Path(temporary)
-        beginner.prepare(directory)
+        prepare(directory, mode)
         with game_at(directory, 'NudistSmoke', role='Valkyrie', mode=mode, extra=',nudist') as game:
             items = inventory(game)
             assert any('spear' in item for item in items), items
@@ -104,7 +113,47 @@ def check_nudist(mode):
     print(f'PASS: {mode.title()} Nudist starts without armor and retains equipment on restore')
 
 
+def check_blind_deaf(mode):
+    with tempfile.TemporaryDirectory(prefix=f'atlas-{mode}-blind-deaf-') as temporary:
+        directory = Path(temporary)
+        prepare(directory, mode)
+        with game_at(directory, 'BlindDeafSmoke', mode=mode, extra=',blind,deaf') as game:
+            assert int(game.status[22]) & 18 == 18, game.status[22]
+            assert len([cell for cell in game.cells.values() if cell['char'] != ' ']) <= 1
+            game.send('command conduct')
+            conduct = game.wait_input()
+            text = ' '.join(row['text'] for row in conduct.get('items', [])) + ' '.join(conduct.get('lines', []))
+            assert 'blind from birth' in text and 'deaf from birth' in text, text
+            game.send('menu' if conduct['kind'] == 'menu' else 'key 32')
+            assert game.wait_input().get('command')
+            position, turn = game.cursor, game.turn
+            game.finish(automatic=True)
+        with game_at(directory, 'BlindDeafSmoke', mode=mode) as game:
+            assert game.cursor == position and game.turn == turn
+            assert int(game.status[22]) & 18 == 18, game.status[22]
+            game.finish(automatic=True)
+    print(f'PASS: {mode.title()} Blind and Deaf conditions, perception, conduct and restore')
+
+
+def check_no_starting_pet(mode):
+    with tempfile.TemporaryDirectory(prefix=f'atlas-{mode}-petless-') as temporary:
+        directory = Path(temporary)
+        prepare(directory, mode)
+        with game_at(directory, 'PetlessSmoke', mode=mode, extra=',pettype:none') as game:
+            assert not any(cell.get('pet') for cell in game.cells.values()), 'Starting pet was displayed'
+            position, turn = game.cursor, game.turn
+            game.finish(automatic=True)
+        with game_at(directory, 'PetlessSmoke', mode=mode) as game:
+            assert game.cursor == position and game.turn == turn
+            assert not any(cell.get('pet') for cell in game.cells.values()), 'Pet appeared on restore'
+            game.finish(automatic=True)
+    print(f'PASS: {mode.title()} starts and restores without an initial pet')
+
+
 if __name__ == '__main__':
     check_pauper()
-    for mode in ('standard', 'beginner'):
+    for mode in ('standard', 'beginner', 'explore'):
         check_nudist(mode)
+    for mode in ('standard', 'beginner', 'explore', 'pauper'):
+        check_blind_deaf(mode)
+        check_no_starting_pet(mode)

@@ -48,7 +48,9 @@ Atlas includes an optional **Beginner** start. Choose it during character creati
 
 **Pauper** starts you with no items or spells and no trained weapon or spell skills. It follows normal death and scoring rules, with saves and recovery in `5.0/Pauper/`. Pauper has neither the Beginner chest nor Explore’s wand. A saved Pauper adventure keeps its mode when continued.
 
-New **Standard** and **Beginner** characters can also choose a Nudist start. NetHack omits their starting armor and tracks the nudist conduct; wearing armor later ends it. The choice does not change existing saves. Pauper already implies nudist.
+New **Standard**, **Beginner**, and **Explore** characters can choose a Nudist start. NetHack omits their starting armor and tracks the nudist conduct; wearing armor later ends it. Pauper already implies Nudist.
+
+Every mode can begin **Blind from birth**, **Deaf from birth**, or with **No starting pet**. Blind and Deaf are permanent starting conditions. Blindness hides unexplored surroundings, including the nearby Beginner chest until you find it through ordinary play. No starting pet removes only the initial companion; you can tame creatures later. Starting conditions do not change existing saves.
 
 Naming and other modal prompts include **What just happened**, showing the engine’s recent action messages before you answer. Scroll, potion and spellbook effects remain readable while the dialog covers the journal.
 
@@ -141,6 +143,9 @@ python3 scripts/test-native.py --mode explore
 python3 scripts/test-native.py --mode pauper
 python3 scripts/test-native.py --mode standard --nudist
 python3 scripts/test-native.py --mode beginner --nudist
+python3 scripts/test-native.py --mode explore --nudist
+python3 scripts/test-native.py --mode beginner --blind --deaf
+python3 scripts/test-native.py --mode standard --deaf --no-starting-pet
 python3 scripts/test-prompt-messages.py --native
 python3 scripts/test-targeting.py --native
 python3 scripts/verify-bundle.py

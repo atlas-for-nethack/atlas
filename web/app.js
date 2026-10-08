@@ -432,7 +432,35 @@
         event.prompt || "command=" + event.command
       );
       if (event.kind === "key" && event.command) {
+        if (smoke.blind && smoke.stage === "start") {
+          const bits = Number(stat("condition"));
+          smokeCheck("blind-status", !!(bits & 2) &&
+            $("conditions").textContent.includes("Blind") &&
+            (smoke.deaf ? !!(bits & 16) && $("conditions").textContent.includes("Deaf") : true),
+            `Engine condition mask ${bits}; displayed ${$("conditions").textContent}`);
+          smokeCheck("blind-perception",
+            [...state.cells.values()].filter(cell => cell.char !== " ").length <= 1,
+            "Only the hero square is displayed at a blind start");
+          smoke.stage = "blindSave";
+          setTimeout(() => $("save-button").click(), 100);
+          return;
+        }
+        if (smoke.blind && smoke.stage === "blindRestore") {
+          const bits = Number(stat("condition"));
+          smokeCheck("blind-restore", !!(bits & 2) &&
+            (smoke.deaf ? !!(bits & 16) : true) && state.mode === smoke.mode,
+            `Saved conditions and ${smoke.mode} mode survived restore`);
+          smoke.stage = "complete";
+          setTimeout(() => diagnostic("complete", !smoke.failed,
+            "Blind starting conditions passed through native save and restore"), 100);
+          return;
+        }
         if (smoke.stage === "start") {
+          if (smoke.deaf) smokeCheck("deaf-status", !!(Number(stat("condition")) & 16) &&
+            $("conditions").textContent.includes("Deaf"), "Engine reports Deaf from birth");
+          if (smoke.noStartingPet) smokeCheck("no-starting-pet",
+            ![...state.cells.values()].some(cell => cell.pet),
+            "No pet appears on the initial engine map");
           smokeCheck("experience-status", state.experience?.level === 1 &&
             state.experience.points === 0 && state.experience.next === 20 &&
             $("experience-value").textContent === "0 / 20 XP" &&
@@ -826,6 +854,25 @@
           key(" ");
         }, 100);
       }
+    }
+    if (
+      event.type === "exit" &&
+      event.code !== undefined &&
+      smoke.stage === "blindSave"
+    ) {
+      smokeCheck("blind-save", event.hasSave === true && event.code === 0,
+        "Native save completed for blind character");
+      smoke.stage = "blindRestore";
+      setTimeout(() => {
+        const picker = $("saved-game-select");
+        const index = [...picker.options].findIndex(option =>
+          option.value === "AtlasSmoke" && option.dataset.mode === smoke.mode);
+        smokeCheck("save-picker", index >= 0, "Blind save is listed by its mode");
+        if (index >= 0) {
+          picker.selectedIndex = index;
+          $("load-button").click();
+        }
+      }, 250);
     }
     if (
       event.type === "exit" &&
@@ -2061,6 +2108,9 @@
           smoke.gender = event.testGender || "female";
           smoke.mode = ["beginner", "explore", "pauper"].includes(event.testMode) ? event.testMode : "standard";
           smoke.nudist = !!event.testNudist;
+          smoke.blind = !!event.testBlind;
+          smoke.deaf = !!event.testDeaf;
+          smoke.noStartingPet = !!event.testNoStartingPet;
           diagnostic(
             "boot",
             true,
@@ -2076,6 +2126,16 @@
             $("player-mode").value = smoke.mode;
             updateModeHelp();
             $("player-nudist").checked = smoke.nudist;
+            $("player-blind").checked = smoke.blind;
+            $("player-deaf").checked = smoke.deaf;
+            $("player-no-pet").checked = smoke.noStartingPet;
+            updateModeHelp();
+            if (smoke.blind || smoke.deaf || smoke.noStartingPet)
+              smokeCheck("starting-conditions",
+                $("player-blind").checked === smoke.blind &&
+                $("player-deaf").checked === smoke.deaf &&
+                $("player-no-pet").checked === smoke.noStartingPet,
+                "Requested starting conditions appear in the creation form");
             if (smoke.nudist) smokeCheck("nudist-creation",
               !$('nudist-option').hidden && !$('player-nudist').disabled &&
               $('player-nudist').checked,
@@ -2277,8 +2337,13 @@
   }
   function updateModeHelp() {
     const mode = $("player-mode").value;
-    $("nudist-option").hidden = !["standard", "beginner"].includes(mode);
+    $("nudist-option").hidden = mode === "pauper";
     $("player-nudist").disabled = $("nudist-option").hidden;
+    $("starting-help").textContent = mode === "beginner" && $("player-blind").checked
+      ? "Blindness hides the nearby Beginner chest until you find it. You can tame a pet later."
+      : mode === "pauper"
+      ? "Pauper includes Nudist. Blind and Deaf persist. You can tame a pet later."
+      : "Nudist omits starting armor. Blind and Deaf persist. You can tame a pet later.";
     $("mode-help").textContent = mode === "explore"
       ? "NetHack’s non-scoring discovery mode. Start with a wand of wishing and choose whether to accept death. Separate saves; no Beginner supply chest."
       : mode === "pauper"
@@ -2292,6 +2357,7 @@
   });
   updateCharacterChoices();
   $("player-mode").addEventListener("change", updateModeHelp);
+  $("player-blind").addEventListener("change", updateModeHelp);
   updateModeHelp();
   $("new-game-form").addEventListener("submit", (event) => {
     event.preventDefault();
@@ -2315,6 +2381,9 @@
       alignment: $("player-alignment").value,
       mode: $("player-mode").value,
       nudist: !$('player-nudist').disabled && $('player-nudist').checked,
+      blind: $("player-blind").checked,
+      deaf: $("player-deaf").checked,
+      noStartingPet: $("player-no-pet").checked,
     });
   });
   $("load-button").onclick = () => {

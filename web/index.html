@@ -386,10 +386,13 @@
             <p id="mode-help" class="mode-help">
               Your role’s usual supplies. Normal NetHack rules apply.
             </p>
-            <div id="nudist-option" class="starting-option">
-              <label for="player-nudist"><input type="checkbox" id="player-nudist" /> Nudist start</label>
-              <p>Begin without your role’s starting armor. Wearing armor later ends the nudist conduct.</p>
+            <div class="starting-options" role="group" aria-label="Starting conditions">
+              <label id="nudist-option" class="starting-option" for="player-nudist"><input type="checkbox" id="player-nudist" /> Nudist start</label>
+              <label class="starting-option" for="player-blind"><input type="checkbox" id="player-blind" /> Blind from birth</label>
+              <label class="starting-option" for="player-deaf"><input type="checkbox" id="player-deaf" /> Deaf from birth</label>
+              <label class="starting-option" for="player-no-pet"><input type="checkbox" id="player-no-pet" /> No starting pet</label>
             </div>
+            <p id="starting-help" class="starting-help">Nudist omits starting armor. Blind and Deaf persist. You can tame a pet later.</p>
             <button type="submit" class="primary-button">
               Begin your descent <span>↗</span>
             </button>

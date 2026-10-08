@@ -54,6 +54,10 @@ python3 scripts/test-native.py --mode explore
 python3 scripts/test-native.py --mode pauper
 python3 scripts/test-native.py --mode standard --nudist
 python3 scripts/test-native.py --mode beginner --nudist
+python3 scripts/test-native.py --mode explore --nudist
+python3 scripts/test-native.py --mode beginner --blind --deaf
+python3 scripts/test-native.py --mode standard --deaf --no-starting-pet
+python3 scripts/test-native.py --mode pauper --deaf --no-starting-pet
 python3 scripts/test-prompt-messages.py --native
 python3 scripts/test-targeting.py --native
 ```
@@ -112,6 +116,18 @@ contents and creates a checksum. Build/release outputs belong outside Git.
 [Source reconstruction](SOURCE.md) describes rebuilding from a distributed app.
 
 ## Evidence and limits
+
+On 2026-10-08, the same feature branch added Blind, Deaf and No starting pet
+to every mode, and Nudist to Explore. `scripts/test-starting-options.py` passed
+against the real NetHack 5.0 engine for all four Blind/Deaf and no-pet starts,
+their save/restore state, and Explore Nudist. The combined Blind/Deaf runs
+checked the engine's condition flags, birth conduct and limited perceived map.
+The focused JavaScript tests, existing Beginner, Explore and mode-isolation
+checks, and a Universal 2 app build with bundle verification passed. Isolated
+native app runs passed for Standard and Pauper Deaf/no-pet,
+Beginner Blind/Deaf, and Explore Nudist; they covered creation, relevant engine
+state and save/restore. Creation and Blind gameplay screenshots were visually
+inspected. No Intel gameplay or complete campaign was tested.
 
 On 2026-10-08, the Pauper and Nudist branch passed `scripts/build-app.sh`
 with Universal 2 bundle, source, license and local-signature verification.

@@ -243,6 +243,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKSc
       "testGender": selfTest ? (ProcessInfo.processInfo.environment["ATLAS_TEST_GENDER"] ?? "female") : "",
       "testMode": selfTest ? (ProcessInfo.processInfo.environment["ATLAS_TEST_MODE"] ?? "standard") : "",
       "testNudist": selfTest && ProcessInfo.processInfo.environment["ATLAS_TEST_NUDIST"] == "1",
+      "testBlind": selfTest && ProcessInfo.processInfo.environment["ATLAS_TEST_BLIND"] == "1",
+      "testDeaf": selfTest && ProcessInfo.processInfo.environment["ATLAS_TEST_DEAF"] == "1",
+      "testNoStartingPet": selfTest && ProcessInfo.processInfo.environment["ATLAS_TEST_NO_STARTING_PET"] == "1",
       "testScenario": selfTest ? (ProcessInfo.processInfo.environment["ATLAS_TEST_SCENARIO"] ?? "") : "",
       "testRoomBounds": selfTest ? (ProcessInfo.processInfo.environment["ATLAS_TEST_ROOM_BOUNDS"] ?? "") : "",
       "testTerrainTiles": selfTest ? (ProcessInfo.processInfo.environment["ATLAS_TEST_TERRAIN_TILES"] ?? "[]") : "[]",
@@ -302,7 +305,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKSc
                            "court-beneath": "court-beneath.png", "yn-default-focus": "yn-default.png", "direction-bar": "direction.png", "actions-filter": "actions.png",
                            "explore-creation": "explore-creation.png", "explore-help": "explore-help.png",
                            "pauper-creation": "pauper-creation.png", "pauper-help": "pauper-help.png",
-                           "nudist-creation": "nudist-creation.png",
+                           "nudist-creation": "nudist-creation.png", "starting-conditions": "starting-conditions.png",
                            "context-underfoot": "context.png", "read-selection": "read.png",
                            "beginner-creation": "beginner-creation.png", "beginner-help": "beginner-help.png",
                            "beginner-chest-visible": "beginner-chest.png",
@@ -455,9 +458,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKSc
     }
     if !restoring {
       if mode == "pauper" { gameOptions.append("pauper") }
-      if (mode == "standard" || mode == "beginner") && options["nudist"] as? Bool == true {
+      if mode != "pauper" && options["nudist"] as? Bool == true {
         gameOptions.append("nudist")
       }
+      if options["blind"] as? Bool == true { gameOptions.append("blind") }
+      if options["deaf"] as? Bool == true { gameOptions.append("deaf") }
+      if options["noStartingPet"] as? Bool == true { gameOptions.append("pettype:none") }
       for (field, option) in [("gender", "gender"), ("alignment", "align")] {
         if let value = options[field] as? String, !value.isEmpty, value.lowercased() != "random",
           value.allSatisfy({ $0.isLetter })
