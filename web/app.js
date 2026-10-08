@@ -149,6 +149,10 @@
     );
   }
   function smokeContinueAfterChest() {
+    if (smoke.mode === "pauper") {
+      smokeMove();
+      return;
+    }
     smoke.beforeRead = smokeSnapshot();
     smoke.stage = "readSelection";
     setTimeout(() => key("r"), 100);
@@ -436,7 +440,7 @@
             $("experience-progress").getAttribute("aria-valuenow") === "0",
             "Live level-one hero displays 0 / 20 XP and an empty progress bar");
           smoke.stage = "attributes";
-          if (smoke.mode === "beginner" || smoke.mode === "explore") {
+          if (["beginner", "explore", "pauper"].includes(smoke.mode)) {
             $("help-button").click();
             if (smoke.mode === "explore") $("explore-help").scrollIntoView({ block: "center" });
             if (smoke.mode === "explore") smokeCheck("explore-help",
@@ -446,6 +450,12 @@
               state.messages.some((text) => text.includes("non-scoring explore")) &&
               !state.commands.some((command) => command.name === "wizwish"),
               "Explore guide and badge match native discovery mode without wizard commands");
+            else if (smoke.mode === "pauper") smokeCheck("pauper-help",
+              state.mode === "pauper" &&
+              $("adventure-mode").textContent === "Pauper start" &&
+              $("help-dialog").open && !$("pauper-help").hidden &&
+              $("pauper-help").textContent.includes("without items"),
+              "Pauper badge and in-game starting rules are visible");
             else smokeCheck("beginner-help",
               state.mode === "beginner" &&
               $("adventure-mode").textContent === "Beginner start" &&
@@ -545,6 +555,14 @@
             }, 200);
           };
           checkAtlas();
+        } else if (smoke.stage === "inventory" && smoke.mode === "pauper") {
+          smokeCheck("inventory", state.mode === "pauper",
+            "Pauper inventory command returned to gameplay");
+          smokeCheck("pauper-inventory",
+            state.messages.some((text) => text.includes("Not carrying anything.")),
+            "The live engine reports an empty starting inventory");
+          smoke.stage = "inventoryClosed";
+          smokeContinueAfterChest();
         } else if (smoke.stage === "inventoryClosed") {
           if (smoke.mode === "beginner") smokeFindChest();
           else smokeContinueAfterChest();
@@ -721,6 +739,9 @@
           smoke.stage = "attributesClosed";
         }
         if (smoke.stage === "inventory") {
+          if (smoke.nudist) smokeCheck("nudist-inventory",
+            !(event.items || []).some((item) => item.text === "Armor" || /being worn/.test(item.text)),
+            "Live starting inventory contains no armor");
           if (smoke.mode === "explore") smokeCheck("explore-inventory",
             event.items?.some((item) => /wand of wishing.*\(0:3\)/.test(item.text)),
             (event.items || []).map((item) => item.text).join("; "));
@@ -1236,14 +1257,15 @@
       : "An adventure awaits";
   }
   function setAdventureMode(mode) {
-    state.mode = ["beginner", "explore"].includes(mode) ? mode : "standard";
+    state.mode = ["beginner", "explore", "pauper"].includes(mode) ? mode : "standard";
     const badge = $("adventure-mode");
     badge.textContent = state.playtest ? `Playtest · ${state.playtest.mode}` : state.mode === "explore" ? "Explore · non-scoring" :
-      state.mode === "beginner" ? "Beginner start" : "Standard start";
+      state.mode === "beginner" ? "Beginner start" : state.mode === "pauper" ? "Pauper start" : "Standard start";
     badge.classList.toggle("beginner", state.mode === "beginner");
     badge.hidden = false;
     $("beginner-help").hidden = state.mode !== "beginner";
     $("explore-help").hidden = state.mode !== "explore";
+    $("pauper-help").hidden = state.mode !== "pauper";
   }
   function showSavedGames(savedGames) {
     const select = $("saved-game-select");
@@ -1254,8 +1276,8 @@
       if (!name) continue;
       const option = document.createElement("option");
       option.value = name;
-      option.dataset.mode = ["beginner", "explore"].includes(mode) ? mode : "standard";
-      option.textContent = `${name} · ${{ standard: "Standard", beginner: "Beginner", explore: "Explore" }[option.dataset.mode]}`;
+      option.dataset.mode = ["beginner", "explore", "pauper"].includes(mode) ? mode : "standard";
+      option.textContent = `${name} · ${{ standard: "Standard", beginner: "Beginner", explore: "Explore", pauper: "Pauper" }[option.dataset.mode]}`;
       select.append(option);
     }
     $("saved-game-picker").hidden = select.options.length < 1;
@@ -2037,7 +2059,8 @@
           smoke.enabled = true;
           smoke.stage = "start";
           smoke.gender = event.testGender || "female";
-          smoke.mode = ["beginner", "explore"].includes(event.testMode) ? event.testMode : "standard";
+          smoke.mode = ["beginner", "explore", "pauper"].includes(event.testMode) ? event.testMode : "standard";
+          smoke.nudist = !!event.testNudist;
           diagnostic(
             "boot",
             true,
@@ -2052,6 +2075,11 @@
             $("player-alignment").value = "neutral";
             $("player-mode").value = smoke.mode;
             updateModeHelp();
+            $("player-nudist").checked = smoke.nudist;
+            if (smoke.nudist) smokeCheck("nudist-creation",
+              !$('nudist-option').hidden && !$('player-nudist').disabled &&
+              $('player-nudist').checked,
+              "Nudist start is selected in the new-game form");
             if (smoke.mode === "beginner") {
               smokeCheck("beginner-creation",
                 $("mode-help").textContent.includes("magic whistle") &&
@@ -2062,6 +2090,10 @@
               $("mode-help").textContent.includes("non-scoring") &&
               $("mode-help").textContent.includes("wand of wishing"),
               "Explore creation explains native non-scoring play and its starting wand");
+            if (smoke.mode === "pauper") smokeCheck("pauper-creation",
+              $("mode-help").textContent.includes("no items or spells") &&
+              $("mode-help").textContent.includes("trained weapon"),
+              "Pauper creation explains the starting rules");
             setTimeout(() => $("new-game-form").requestSubmit(),
               smoke.mode !== "standard" ? 900 : 0);
           }, 100);
@@ -2164,6 +2196,7 @@
         $("adventure-mode").hidden = true;
         $("beginner-help").hidden = true;
         $("explore-help").hidden = true;
+        $("pauper-help").hidden = true;
         addMessage(exitText);
         setStatus(exitText);
         $("welcome").hidden = false;
@@ -2243,9 +2276,14 @@
       : "Available choices follow NetHack’s role and race restrictions.";
   }
   function updateModeHelp() {
-    $("mode-help").textContent = $("player-mode").value === "explore"
+    const mode = $("player-mode").value;
+    $("nudist-option").hidden = !["standard", "beginner"].includes(mode);
+    $("player-nudist").disabled = $("nudist-option").hidden;
+    $("mode-help").textContent = mode === "explore"
       ? "NetHack’s non-scoring discovery mode. Start with a wand of wishing and choose whether to accept death. Separate saves; no Beginner supply chest."
-      : $("player-mode").value === "beginner"
+      : mode === "pauper"
+      ? "Start with no items or spells, and no trained weapon or spell skills. Normal death and scoring rules; separate saves."
+      : mode === "beginner"
       ? "A named supply chest nearby holds 1,000 gold, an identified uncursed magic whistle, 2 food rations and an identified uncursed healing potion. Move onto its square and choose Loot. Your role keeps its usual gear. Normal combat and death rules apply."
       : "Your role’s usual supplies. Normal NetHack rules apply.";
   }
@@ -2276,6 +2314,7 @@
       gender: $("player-gender").value,
       alignment: $("player-alignment").value,
       mode: $("player-mode").value,
+      nudist: !$('player-nudist').disabled && $('player-nudist').checked,
     });
   });
   $("load-button").onclick = () => {

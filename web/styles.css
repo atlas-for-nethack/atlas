@@ -839,6 +839,28 @@ h1 {
   line-height: 1.5;
   margin: 8px 0 12px;
 }
+.starting-option {
+  margin: 0 0 12px;
+  color: #a4b9a7;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.starting-option label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 10px;
+  letter-spacing: 0;
+}
+.starting-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  padding: 0;
+  accent-color: var(--accent);
+}
+.starting-option p { margin: 4px 0 0 20px; }
 .primary-button {
   background: var(--accent);
   color: #202920;

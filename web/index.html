@@ -381,10 +381,15 @@
               <option value="standard" selected>Standard</option>
               <option value="beginner">Beginner</option>
               <option value="explore">Explore</option>
+              <option value="pauper">Pauper</option>
             </select>
             <p id="mode-help" class="mode-help">
               Your role’s usual supplies. Normal NetHack rules apply.
             </p>
+            <div id="nudist-option" class="starting-option">
+              <label for="player-nudist"><input type="checkbox" id="player-nudist" /> Nudist start</label>
+              <p>Begin without your role’s starting armor. Wearing armor later ends the nudist conduct.</p>
+            </div>
             <button type="submit" class="primary-button">
               Begin your descent <span>↗</span>
             </button>
@@ -520,6 +525,11 @@
         <p>Explore is NetHack’s native, non-scoring discovery mode. You begin with a wand of wishing. Use <strong>Zap</strong> to use it and request an item.</p>
         <p>If NetHack asks <strong>Die?</strong>, choose <strong>No</strong> to keep playing. You can still choose to end the adventure. Restoring an Explore save also offers to keep the save file.</p>
         <p>Explore adventures have their own saves and do not enter the high-score list. Normal role supplies apply, without the Beginner supply chest.</p>
+      </section>
+      <section id="pauper-help" class="beginner-help" hidden>
+        <h3>A Pauper start</h3>
+        <p>You begin without items or spells and with no trained weapon or spell skills. Find equipment and develop skills as you play.</p>
+        <p>You can still have a pet; a Knight’s pony starts without a saddle. There is no Beginner supply chest or Explore wand. Death and scoring work as in Standard, and Pauper saves are kept separately.</p>
       </section>
       <p class="help-note">
         Click a neighboring tile to move one step, including diagonally. Click a
