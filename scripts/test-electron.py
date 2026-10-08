@@ -12,7 +12,12 @@ import tempfile
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--gender', choices=['male', 'female'], default='female')
+parser.add_argument('--quit-timeout', action='store_true',
+                    help='Freeze the engine, close the window and expect the 8-second quit cancel')
 args = parser.parse_args()
+if args.quit_timeout and os.name != 'nt':
+    # ponytail: Windows only; Linux can use SIGSTOP and a window manager close.
+    parser.error('--quit-timeout runs on Windows only')
 ROOT = Path(__file__).resolve().parents[1]
 HOST = ROOT / 'electron'
 OUT = ROOT / '.artifacts'
@@ -36,6 +41,44 @@ def fingerprint(path):
 
 real_before = {path: fingerprint(path) for path in REAL_FILES}
 
+
+def check_quit_timeout(process, log_path):
+    """Close the window while the engine cannot answer, as Alt+F4 does."""
+    import ctypes
+    import re
+    import time
+    from ctypes import wintypes
+    kernel, user, ntdll = ctypes.windll.kernel32, ctypes.windll.user32, ctypes.windll.ntdll
+    log = lambda: log_path.read_text(errors='replace')
+    deadline = time.time() + 30
+    while not (found := re.search(r'Atlas engine pid (\d+)', log())):
+        assert time.time() < deadline and process.poll() is None, 'No engine started'
+        time.sleep(0.2)
+    time.sleep(2)
+    engine = kernel.OpenProcess(0x0800 | 0x1000, False, int(found[1]))  # suspend/resume, query
+    try:
+        ntdll.NtSuspendProcess(engine)
+        windows = []
+        callback = ctypes.WINFUNCTYPE(wintypes.BOOL, wintypes.HWND, wintypes.LPARAM)(
+            lambda hwnd, _: windows.append(hwnd) or True)
+        user.EnumWindows(callback, 0)
+        owner = wintypes.DWORD()
+        for hwnd in windows:
+            user.GetWindowThreadProcessId(hwnd, ctypes.byref(owner))
+            if owner.value == process.pid and user.IsWindowVisible(hwnd):
+                user.PostMessageW(hwnd, 0x0010, 0, 0)  # WM_CLOSE
+        time.sleep(9.5)
+        assert process.poll() is None, 'The app closed although the engine never saved'
+        assert 'Atlas error: Finish the current game prompt' in log(), 'No quit-cancel message'
+        # The queued save still runs once the engine resumes; the canceled quit stays canceled.
+        ntdll.NtResumeProcess(engine)
+        time.sleep(3)
+        assert process.poll() is None, 'The late save closed the app after the quit was canceled'
+    finally:
+        ntdll.NtResumeProcess(engine)
+        kernel.CloseHandle(engine)
+        subprocess.run(['taskkill', '/T', '/F', '/PID', str(process.pid)], capture_output=True)
+
 subprocess.run(['npm', 'run', 'build'], cwd=HOST, check=True, shell=WINDOWS)
 run = Path(tempfile.mkdtemp(prefix='electron-', dir=OUT))
 report = run / 'diagnostics.jsonl'
@@ -46,6 +89,10 @@ env.update(ATLAS_TEST_GENDER=args.gender, ATLAS_TEST_MODE='standard', ATLAS_TEST
 electron = HOST / 'node_modules/electron/dist' / ('electron.exe' if WINDOWS else 'electron')
 with (run / 'application.log').open('w') as log:
     process = subprocess.Popen([str(electron), str(HOST), '--self-test'], env=env, stdout=log, stderr=log)
+    if args.quit_timeout:
+        check_quit_timeout(process, run / 'application.log')
+        print('PASS: a close with a frozen engine was canceled after 8 seconds and the app stayed open.')
+        raise SystemExit(f'Evidence: {run}')
     try:
         code = process.wait(timeout=90)
     except subprocess.TimeoutExpired:

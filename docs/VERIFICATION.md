@@ -173,6 +173,16 @@ front. In a manual run with the default data folder, the user started a
 character with every facet set to Random and played. Closing the window
 during the game saved it and showed no error dialog.
 
+For issue #5, `python scripts/test-electron.py --quit-timeout` passed on
+Windows 11 x64. The test lets the self-test start a game and suspends the
+engine process. Then it closes the window with the same message that
+Alt+F4 sends. After 9.5 seconds the app was still open, and the host had
+sent the Mac message "Finish the current game prompt, then save and quit
+again. Your game is still running." After the engine resumed, the queued
+save ran and the engine exited, and the app stayed open. The normal
+self-test checks the saved-game list, a load and the save on quit. The
+window menu Quit item arrives with #7, so it was not tested.
+
 Later on 2026-10-08, the engine and the Electron host ran natively on an Arch
 Linux x64 laptop (glibc 2.44, Wayland desktop session, Node 26.10.0).
 `ENGINE_ARCH=native ./scripts/build-engine.sh` built the engine. The first

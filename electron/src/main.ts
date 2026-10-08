@@ -365,6 +365,7 @@ function consume(data: Buffer) {
 }
 
 function send(event: Body) {
+  if (selfTest && event.type === "error") console.log(`Atlas error: ${event.text}`);
   events.push(event);
   if (ready && !flushScheduled) {
     flushScheduled = true;
