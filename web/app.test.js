@@ -6,7 +6,7 @@ const vm = require("node:vm");
 // Execute the complete production app and its registered handlers. Images and
 // animation frames are delivered explicitly so callback order is deterministic.
 // The injected accessor only exposes closure state in this in-memory test copy.
-function app({ host = false } = {}) {
+function app({ host = false, platform = "MacIntel" } = {}) {
   const elements = new Map(), images = [], frames = [], sent = [], storage = new Map();
   let document;
   class Element {
@@ -48,8 +48,8 @@ function app({ host = false } = {}) {
   get("player-role").value = "Wizard";
   for (const field of ["race", "gender", "alignment"]) get("player-" + field).value = "random";
   const bridge = { postMessage: (message) => sent.push(message) };
-  const window = { ...(host ? { atlasHost: bridge } : { webkit: { messageHandlers: { nethack: bridge } } }),
-    addEventListener() {}, devicePixelRatio: 1 };
+  const hosts = { true: { atlasHost: bridge }, false: { webkit: { messageHandlers: { nethack: bridge } } }, none: {} };
+  const window = { ...hosts[host], navigator: { platform }, addEventListener() {}, devicePixelRatio: 1 };
   const context = vm.createContext({ window, document, location: { search: "" }, URLSearchParams,
     AtlasInput: require("./input.js"), AtlasCharacter: require("./character.js"),
     AtlasTiles: { paintMap: () => false, paint: () => false },
@@ -202,4 +202,7 @@ console.log("Actual app subtitle tests passed: disclosed broad context, reused m
     assert.deepEqual(a.press("s", mod), [{ action: "save" }]);
   }
 }
+// A browser preview has no host, so its labels follow the browser's platform.
+assert.equal(app({ host: "none", platform: "Win32" }).get("actions-shortcut").textContent, "Ctrl+K");
+assert.equal(app({ host: "none", platform: "MacIntel" }).get("actions-shortcut").textContent, "⌘K");
 console.log("Actual app bridge tests passed: host object or WebKit handler, shortcut labels, Ctrl shortcuts and engine Ctrl keys.");

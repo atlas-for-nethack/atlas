@@ -8,7 +8,9 @@
   const host = window.atlasHost || window.webkit?.messageHandlers?.nethack;
   const native = !!host;
   // Off the Mac, Ctrl+K and Ctrl+S stand in for Command+K and Command+S.
-  const ctrlShortcuts = !!window.atlasHost;
+  // A preview without a host follows the browser's platform.
+  const ctrlShortcuts = window.atlasHost ? true
+    : !host && !/Mac/.test(window.navigator?.platform || "");
   const replay = !native && new URLSearchParams(location.search).has("replay");
   const preview =
     !native && (replay || new URLSearchParams(location.search).has("preview"));
@@ -1279,7 +1281,7 @@
   function send(data) {
     if (native) host.postMessage(data);
     else if (preview) previewAction(data);
-    else toast("Open Atlas for NetHack on macOS to play.");
+    else toast("Open the Atlas for NetHack app to play.");
   }
   function toast(text) {
     $("toast").textContent = text;
@@ -2950,7 +2952,7 @@
     send({ action: "ready" });
   } else {
     $("welcome-footnote").textContent =
-      "Open the bundled macOS application to play.";
+      "Open the Atlas for NetHack app to play.";
     $("load-button").disabled = true;
   }
   async function loadReplay() {
@@ -2978,7 +2980,7 @@
         showInspector(inspection);
       }
       setTimeout(centerPlayer, 100);
-      setStatus("Recorded engine state · open the macOS app for live play");
+      setStatus("Recorded engine state · open the Atlas app for live play");
     } catch (error) {
       toast("Could not open engine transcript: " + error.message);
     }
@@ -3198,12 +3200,12 @@
         });
       else {
         toast(
-          "Design preview — launch the macOS app for real NetHack gameplay."
+          "Design preview — open the Atlas app for real NetHack gameplay."
         );
         state.waiting = true;
       }
     } else if (data.action === "save") {
-      toast("Design preview — launch the macOS app to save a real adventure.");
+      toast("Design preview — open the Atlas app to save a real adventure.");
       state.waiting = true;
     } else if (data.action === "menu" || data.action === "input") {
       state.waiting = true;
