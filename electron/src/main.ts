@@ -419,6 +419,15 @@ function createWindow() {
   win.loadURL(PAGE);
 }
 
+// A self-test fails on any main-process exception instead of showing a dialog.
+if (selfTest) {
+  const fail = (error: unknown) => {
+    console.error(`Atlas main-process failure: ${error instanceof Error ? error.stack : error}`);
+    app.exit(1);
+  };
+  process.on("uncaughtException", fail);
+  process.on("unhandledRejection", fail);
+}
 protocol.registerSchemesAsPrivileged([
   { scheme: "atlas", privileges: { standard: true, secure: true, supportFetchAPI: true } },
 ]);
