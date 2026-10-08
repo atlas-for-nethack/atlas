@@ -482,7 +482,8 @@
               state.mode === "explore" && !$("explore-help").hidden &&
               $("help-dialog").open && $("explore-help").getBoundingClientRect().height > 0 &&
               $("adventure-mode").textContent.includes("non-scoring") &&
-              state.messages.some((text) => text.includes("non-scoring explore")) &&
+              // Unix says "explore/discovery mode", Windows "discovery mode".
+              state.messages.some((text) => /non-scoring .*discovery mode/.test(text)) &&
               !state.commands.some((command) => command.name === "wizwish"),
               "Explore guide and badge match native discovery mode without wizard commands");
             else if (smoke.mode === "pauper") smokeCheck("pauper-help",

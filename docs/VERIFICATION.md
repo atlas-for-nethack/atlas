@@ -206,6 +206,22 @@ issue #6. The Electron self-test ran on Arch, not under WSL. Nobody tested a
 packaged Linux app, X11, other distributions, checkpoint recovery in the
 Electron host, or Linux ARM64.
 
+On 2026-10-08, for issue #6, `python scripts/test-electron.py --mode MODE`
+passed on Windows 11 x64 for Standard, Beginner, Explore and Pauper. Before each
+run, the test played and saved an AtlasSmoke game in the other three mode
+folders, as `test-native.py` does. It also saved an AtlasKeep game in the tested
+mode folder. Then it appended bytes to that folder's engine copy. The engine
+copy is `nethack.exe` on Windows and `nhdat` on Linux. After each run, the
+engine copy matched the bundled engine and the AtlasKeep save was unchanged.
+The saves, score files, sysconf and engine copy in the other mode folders were
+also unchanged. Only the Explore mode folder's sysconf set `EXPLORERS`.
+`test-explore.py` checks that the engine refuses Explore without it. The web
+self-test expected the Unix Explore message, so it now also accepts the Windows
+message "You are in non-scoring discovery mode." The run timeout went from 90
+to 120 seconds for the longer mode checks. One Beginner run failed because the
+random map had no empty floor next to the hero. Two later Beginner runs passed.
+`--quit-timeout` passed again. Nobody ran the new checks on Linux yet.
+
 On 2026-10-08, the README clarification for issue #2 was checked against the
 pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,
 chat replies, hearing-dependent item use and hearing-message handling.

@@ -152,6 +152,9 @@ python3 scripts/test-native.py --gender female
 python3 scripts/test-native.py --gender male
 python3 scripts/test-electron.py
 python3 scripts/test-electron.py --quit-timeout
+python3 scripts/test-electron.py --mode beginner
+python3 scripts/test-electron.py --mode explore
+python3 scripts/test-electron.py --mode pauper
 python3 scripts/test-native.py --mode beginner
 python3 scripts/test-native.py --mode explore
 python3 scripts/test-native.py --mode pauper
