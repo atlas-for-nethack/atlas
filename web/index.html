@@ -25,7 +25,7 @@
             title="Browse and choose an action (⌘K)"
             disabled
           >
-            Actions <span>⌘K</span>
+            Actions <span id="actions-shortcut">⌘K</span>
           </button>
           <button
             class="icon-button"
@@ -42,7 +42,7 @@
           >
             ⚙</button
           ><button class="quiet-button" id="save-button" disabled>
-            Save & exit <span>⌘S</span>
+            Save & exit <span id="save-shortcut">⌘S</span>
           </button>
         </div>
       </header>
@@ -508,11 +508,11 @@
             <dt>Kick</dt>
             <dd>Ctrl+D</dd>
             <dt>Browse all actions</dt>
-            <dd>Actions / ⌘K</dd>
+            <dd>Actions / <span id="help-actions-shortcut">⌘K</span></dd>
             <dt>Extended command</dt>
             <dd>#</dd>
             <dt>Save & exit</dt>
-            <dd>⌘S</dd>
+            <dd id="help-save-shortcut">⌘S</dd>
           </dl>
         </div>
       </div>

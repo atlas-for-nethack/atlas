@@ -3,7 +3,12 @@
   const $ = (id) => document.getElementById(id);
   const canvas = $("dungeon"),
     ctx = canvas.getContext("2d", { alpha: false });
-  const native = !!window.webkit?.messageHandlers?.nethack;
+  // Bridge: the Electron preload supplies window.atlasHost; the Mac host
+  // supplies the WebKit message handler. Events arrive via receiveNative.
+  const host = window.atlasHost || window.webkit?.messageHandlers?.nethack;
+  const native = !!host;
+  // Off the Mac, Ctrl+K and Ctrl+S stand in for Command+K and Command+S.
+  const ctrlShortcuts = !!window.atlasHost;
   const replay = !native && new URLSearchParams(location.search).has("replay");
   const preview =
     !native && (replay || new URLSearchParams(location.search).has("preview"));
@@ -421,7 +426,7 @@
           smoke.stage = "directionAnswered";
           setTimeout(() => smokePress("ArrowUp"), 200);
         } else {
-          smoke.stage = "directionCancelled";
+          smoke.stage = "directionCanceled";
           setTimeout(() => smokePress("Escape"), 200);
         }
         return;
@@ -668,7 +673,7 @@
           smoke.beforeDirectionCancel = smokeSnapshot();
           smoke.stage = "directionCancel";
           setTimeout(() => key("o"), 100);
-        } else if (smoke.stage === "directionCancelled") {
+        } else if (smoke.stage === "directionCanceled") {
           smokeCheck(
             "direction-cancel",
             smokeSnapshot().turn === smoke.beforeDirectionCancel.turn &&
@@ -678,7 +683,7 @@
           smoke.stage = "saveValidation";
           smoke.beforeSaveValidation = smokeSnapshot();
           setTimeout(() => chooseAction(state.commands.find(command => command.name === "save")), 100);
-        } else if (smoke.stage === "saveCancelled") {
+        } else if (smoke.stage === "saveCanceled") {
           smokeCheck("yn-default-enter", smokeSnapshot().turn === smoke.beforeSaveValidation.turn,
             "Enter on the focused No canceled the real save prompt without advancing time");
           smoke.saved = smokeSnapshot();
@@ -830,7 +835,7 @@
                 state.input === event && $("engine-dialog").open,
                 "Invalid x leaves the real yes/no prompt open and awaiting a valid answer"
               );
-              smoke.stage = "saveCancelled";
+              smoke.stage = "saveCanceled";
               document.dispatchEvent(
                 new KeyboardEvent("keydown", {
                   key: "Enter",
@@ -1199,11 +1204,11 @@
           smoke.petStart = smokeSnapshot();
           smoke.petStep = 0;
           begin();
-        } else if (smoke.stage === "pet-answered" || smoke.stage === "pet-cancelled") {
+        } else if (smoke.stage === "pet-answered" || smoke.stage === "pet-canceled") {
           const now = smokeSnapshot();
           smokeCheck("pet-no-turn", JSON.stringify(now) === JSON.stringify(smoke.petStart),
             "Naming/selection preserves the hero position and turn");
-          smoke.stage = smoke.stage === "pet-cancelled" ? "pet-cancel-inspect" : "pet-inspect";
+          smoke.stage = smoke.stage === "pet-canceled" ? "pet-cancel-inspect" : "pet-inspect";
           send({ action: "inspect", x: smoke.pet.x, y: smoke.pet.y });
         }
       } else if (event.kind === "menu") {
@@ -1223,7 +1228,7 @@
         if (smoke.petStep === 0) {
           setTimeout(() => smokeClickTile(smoke.pet.x, smoke.pet.y), 300);
         } else if (smoke.petStep === 2) {
-          smoke.stage = "pet-cancelled";
+          smoke.stage = "pet-canceled";
           setTimeout(() => smokePress("Escape"), 100);
         } else {
           const dx = Math.sign(smoke.pet.x - state.cursor.x);
@@ -1272,7 +1277,7 @@
     "#ebe9cc",
   ];
   function send(data) {
-    if (native) window.webkit.messageHandlers.nethack.postMessage(data);
+    if (native) host.postMessage(data);
     else if (preview) previewAction(data);
     else toast("Open Atlas for NetHack on macOS to play.");
   }
@@ -2732,8 +2737,16 @@
     event.preventDefault();
     cancelInput();
   });
+  const modifier = ctrlShortcuts ? "Ctrl+" : "⌘";
+  for (const [id, letter] of [["actions-shortcut", "K"], ["save-shortcut", "S"],
+    ["help-actions-shortcut", "K"], ["help-save-shortcut", "S"]])
+    $(id).textContent = modifier + letter;
+  $("actions-button").title = `Browse and choose an action (${modifier}K)`;
+  // Windows reports AltGr as Ctrl+Alt, so Alt rules out a Ctrl shortcut.
+  const isShortcut = (event) =>
+    ctrlShortcuts ? event.ctrlKey && !event.altKey : event.metaKey;
   document.addEventListener("keydown", (event) => {
-    if (event.metaKey && event.key.toLowerCase() === "k") {
+    if (isShortcut(event) && event.key.toLowerCase() === "k") {
       event.preventDefault();
       if ($("actions-dialog").open) $("actions-dialog").close();
       else openActions();
@@ -2742,7 +2755,7 @@
     const activeDialog = document.querySelector("dialog[open]");
     if (activeDialog && activeDialog.id !== "engine-dialog") return;
     if (!state.active) return;
-    if (event.metaKey && event.key.toLowerCase() === "s") {
+    if (isShortcut(event) && event.key.toLowerCase() === "s") {
       event.preventDefault();
       requestSave();
       return;

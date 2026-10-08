@@ -15,6 +15,21 @@ for actual glyph escapes; the JSON serializer does not interpret them. Upstream
 name normalization, byte-length limits and native player-name restrictions are
 unchanged.
 
+## Interface bridge
+
+The interface sends each action object to its host through one function. If
+the host supplies `window.atlasHost`, the interface calls
+`window.atlasHost.postMessage(action)`. The Electron preload supplies this
+object. Otherwise, the interface calls
+`window.webkit.messageHandlers.nethack.postMessage(action)`, the Mac host
+handler. Every host delivers events by calling `window.receiveNative(event)`
+with one event or an array of events.
+
+With `window.atlasHost`, the interface uses Ctrl+K for the action list and
+Ctrl+S for save and exit, and its labels show Ctrl. With the Mac handler,
+these shortcuts use Command. NetHack binds neither Ctrl+K nor Ctrl+S. The
+interface sends every other Ctrl key to the engine as a control character.
+
 ## Host → engine
 
 ### Play mode and native UI messages

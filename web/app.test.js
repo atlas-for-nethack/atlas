@@ -6,7 +6,7 @@ const vm = require("node:vm");
 // Execute the complete production app and its registered handlers. Images and
 // animation frames are delivered explicitly so callback order is deterministic.
 // The injected accessor only exposes closure state in this in-memory test copy.
-function app() {
+function app({ host = false } = {}) {
   const elements = new Map(), images = [], frames = [], sent = [], storage = new Map();
   let document;
   class Element {
@@ -47,7 +47,8 @@ function app() {
   document.activeElement = get("dungeon");
   get("player-role").value = "Wizard";
   for (const field of ["race", "gender", "alignment"]) get("player-" + field).value = "random";
-  const window = { webkit: { messageHandlers: { nethack: { postMessage: (message) => sent.push(message) } } },
+  const bridge = { postMessage: (message) => sent.push(message) };
+  const window = { ...(host ? { atlasHost: bridge } : { webkit: { messageHandlers: { nethack: bridge } } }),
     addEventListener() {}, devicePixelRatio: 1 };
   const context = vm.createContext({ window, document, location: { search: "" }, URLSearchParams,
     AtlasInput: require("./input.js"), AtlasCharacter: require("./character.js"),
@@ -55,7 +56,8 @@ function app() {
     localStorage: { getItem: (key) => storage.get(key), setItem: (key, value) => storage.set(key, value) },
     requestAnimationFrame: (callback) => frames.push(callback), setTimeout: () => 1, clearTimeout() {},
     Image: class { constructor() { images.push(this); } }, console });
-  const source = fs.readFileSync(process.env.ATLAS_APP_SOURCE || __dirname + "/app.js", "utf8");
+  const source = fs.readFileSync(process.env.ATLAS_APP_SOURCE || __dirname + "/app.js", "utf8")
+    .replace(/\r\n/g, "\n"); // Windows checkouts
   assert(source.endsWith("})();\n"), "test accessor insertion follows the production closure");
   vm.runInContext(source.slice(0, -6) + "globalThis.appState = state;\n})();\n", context);
   const receive = (event) => window.receiveNative(event);
@@ -172,3 +174,32 @@ assert.equal(location("Dlvl: 3"), "Explore. Observe. Survive.", "unclassified br
 a.receive({ type: "boot", playtest: { label: "Selected fixture", mode: "inspection" } });
 assert.equal(location("Home 3"), "Test start: Selected fixture · starting map revealed");
 console.log("Actual app subtitle tests passed: disclosed broad context, reused materials, neutral fallback, branch changes and playtest labels.");
+
+{
+  // Each host shows its own shortcut modifier and keeps the other one free for the engine.
+  for (const host of [false, true]) {
+    const a = app({ host }), mod = host ? { ctrlKey: true } : { metaKey: true }, label = host ? "Ctrl+" : "⌘";
+    a.receive({ type: "started" });
+    for (const [id, letter] of [["actions-shortcut", "K"], ["save-shortcut", "S"],
+      ["help-actions-shortcut", "K"], ["help-save-shortcut", "S"]])
+      assert.equal(a.get(id).textContent, label + letter);
+    assert.ok(a.get("actions-button").title.endsWith(`(${label}K)`));
+    a.receive({ type: "input", kind: "key", command: true });
+    assert.deepEqual(a.press("k"), [{ action: "key", key: "k" }], "the bridge carries engine keys");
+    a.receive({ type: "input", kind: "key", command: true });
+    assert.deepEqual(a.press("k", mod), [], "the action list shortcut sends nothing to the engine");
+    assert.equal(a.get("actions-dialog").open, true);
+    a.get("actions-dialog").close();
+    const engineCtrl = host ? ["d"] : ["d", "k", "s"];
+    for (const letter of engineCtrl) {
+      a.receive({ type: "input", kind: "key", command: true });
+      assert.deepEqual(a.press(letter, { ctrlKey: true }),
+        [{ action: "key", key: String.fromCharCode(letter.charCodeAt(0) & 31) }], "Ctrl+" + letter + " reaches the engine");
+    }
+    a.receive({ type: "input", kind: "key", command: true });
+    if (host) assert.ok(!a.press("s", { ctrlKey: true, altKey: true }).some((m) => m.action === "save"),
+      "AltGr (Ctrl+Alt) never saves");
+    assert.deepEqual(a.press("s", mod), [{ action: "save" }]);
+  }
+}
+console.log("Actual app bridge tests passed: host object or WebKit handler, shortcut labels, Ctrl shortcuts and engine Ctrl keys.");
