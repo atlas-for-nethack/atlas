@@ -166,7 +166,10 @@ game. The action list screenshot was inspected and shows Ctrl labels. The
 per-user and ProgramData NetHack folders did not exist after the runs.
 `node web/app.test.js` and `node web/input.test.js` passed. Nobody tested
 Beginner, Explore or Pauper in the Electron host, checkpoint recovery,
-tileset import, the 8-second quit timeout, a second launch, or Linux.
+tileset import, the 8-second quit timeout, or Linux. A second launch with
+the same isolated data folder exited at once with code 0, and the first
+instance kept running. Nobody checked that the first window came to the
+front.
 
 On 2026-10-08, the README clarification for issue #2 was checked against the
 pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,
