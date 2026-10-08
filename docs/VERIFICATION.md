@@ -117,6 +117,14 @@ contents and creates a checksum. Build/release outputs belong outside Git.
 
 ## Evidence and limits
 
+On 2026-10-08, the v1.1.0 release candidate passed the Universal 2 app build
+and bundle/source/license/signature verification. The starting-condition,
+Beginner and Explore engine tests, focused JavaScript tests, and all 19 packaging
+regressions passed. A fresh isolated native Pauper run with Deaf and No starting
+pet passed creation, gameplay, save and restore on Apple Silicon. This candidate
+retains the platform limits described below: no Intel gameplay, execution on
+macOS 13, or complete campaign was tested.
+
 On 2026-10-08, the same feature branch added Blind, Deaf and No starting pet
 to every mode, and Nudist to Explore. `scripts/test-starting-options.py` passed
 against the real NetHack 5.0 engine for all four Blind/Deaf and no-pet starts,

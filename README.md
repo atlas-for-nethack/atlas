@@ -28,17 +28,17 @@ Captured from Atlas 1.0.0 using disposable developer saves. Only the game view i
 
 ## Play
 
-Download `Atlas-for-NetHack-1.0.0.zip` from [GitHub Releases](https://github.com/atlas-for-nethack/atlas/releases), unzip it, move **Atlas.app** to your Applications folder, and open it. If you prefer to compile the app yourself, follow [Build from source](#build-from-source) below. Generated apps are not included in a Git clone.
+Download `Atlas-for-NetHack-1.1.0.zip` from [GitHub Releases](https://github.com/atlas-for-nethack/atlas/releases), unzip it, move **Atlas.app** to your Applications folder, and open it. If you prefer to compile the app yourself, follow [Build from source](#build-from-source) below. Generated apps are not included in a Git clone.
 
 This release is not signed with an Apple Developer ID or notarized by Apple. If macOS blocks the first launch, open **System Settings → Privacy & Security**, find the message about Atlas, choose **Open Anyway**, then confirm **Open**. Approve the app only if you trust the download from this repository. See [Apple's instructions](https://support.apple.com/en-us/102445) for details. The build retains an ad hoc integrity signature; it does not establish a verified developer identity.
 
-To check the download, save the ZIP and its matching `Atlas-for-NetHack-1.0.0.zip.sha256` file in the same folder. In Terminal, change to that folder and run:
+To check the download, save the ZIP and its matching `Atlas-for-NetHack-1.1.0.zip.sha256` file in the same folder. In Terminal, change to that folder and run:
 
 ```sh
-shasum -a 256 -c Atlas-for-NetHack-1.0.0.zip.sha256
+shasum -a 256 -c Atlas-for-NetHack-1.1.0.zip.sha256
 ```
 
-The result should be `Atlas-for-NetHack-1.0.0.zip: OK`. The checksum confirms that your ZIP matches the hash published on the release page; it is not a digital signature or independent proof of who built it. Checksum verification is optional and Terminal is not needed to play.
+The result should be `Atlas-for-NetHack-1.1.0.zip: OK`. The checksum confirms that your ZIP matches the hash published on the release page; it is not a digital signature or independent proof of who built it. Checksum verification is optional and Terminal is not needed to play.
 
 Once installed, no Homebrew, terminal, server, network connection, or separate NetHack installation is required to play. The default build produces a Universal 2 app containing Apple Silicon and Intel binaries and targeting macOS 13 or later. Gameplay has been tested on Apple Silicon; the Intel build has been compiled and structurally validated but has not been run on Intel hardware.
 
