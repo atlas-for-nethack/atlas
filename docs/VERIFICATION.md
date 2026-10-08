@@ -118,8 +118,10 @@ contents and creates a checksum. Build/release outputs belong outside Git.
 ## Evidence and limits
 
 On 2026-10-08, the README clarification for issue #2 was checked against the
-pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech
-and hearing-message handling. The documentation diff passed `git diff --check`.
+pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,
+chat replies, hearing-dependent item use and hearing-message handling.
+Spellcasting and chanting checks were also inspected; deafness does not
+prevent chanting. The documentation diff passed `git diff --check`.
 No gameplay code changed; no build or gameplay tests were run for this edit.
 
 On 2026-10-08, the v1.1.0 release candidate passed the Universal 2 app build

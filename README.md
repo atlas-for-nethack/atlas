@@ -50,7 +50,13 @@ Atlas includes an optional **Beginner** start. Choose it during character creati
 
 New **Standard**, **Beginner**, and **Explore** characters can choose a Nudist start. NetHack omits their starting armor and tracks the nudist conduct; wearing armor later ends it. Pauper already implies Nudist.
 
-Every mode can begin **Blind from birth**, **Deaf from birth**, or with **No starting pet**. Blind and Deaf are permanent starting conditions. Blindness hides unexplored surroundings, including the nearby Beginner chest until you find it through ordinary play. Deafness prevents your character from hearing sounds and speech in the dungeon. No starting pet removes only the initial companion; you can tame creatures later. Starting conditions do not change existing saves.
+Every mode can begin **Blind from birth**, **Deaf from birth**, or with **No starting pet**. Blind and Deaf are permanent starting conditions. Blindness hides unexplored surroundings, including the nearby Beginner chest until you find it through ordinary play. No starting pet removes only the initial companion; you can tame creatures later. Starting conditions do not change existing saves.
+
+Deafness prevents your character from hearing sounds and speech in the dungeon. While deaf, you cannot:
+
+- Hear ambient sound messages in the dungeon
+- Hear monsters’ replies through `#chat`
+- Use items that require you to hear
 
 Naming and other modal prompts include **What just happened**, showing the engine’s recent action messages before you answer. Scroll, potion and spellbook effects remain readable while the dialog covers the journal.
 
