@@ -117,6 +117,197 @@ contents and creates a checksum. Build/release outputs belong outside Git.
 
 ## Evidence and limits
 
+On 2026-10-08, the `electron-port` branch built the engine for two more
+platforms. No Electron host, packaged app or Mac build was tested. The macOS
+build path is not meant to change, but nobody rebuilt or tested it.
+
+- Linux x64: `scripts/build-engine.sh` built the engine under WSL 2 Ubuntu
+  26.04. The binary links only libc and libm. It needs glibc 2.42 or later, so
+  it does not run on older distributions yet. `test-engine.py`,
+  `test-actions.py`, `test-context.py`, `test-item-menus.py` and
+  `test-engine-fork.py` passed against the real engine. One of five
+  `test-actions.py` runs failed its "wait takes one turn" check on a random
+  game. Four more runs passed. `test-character-rules.py` needs Node and
+  `test-recovery.py` compiles the Swift helper, so neither ran.
+- Windows x64: Git Bash and llvm-mingw 20260908 (UCRT) built the engine on an
+  AMD64 computer with Windows 11. The binary links only Windows system DLLs,
+  including the Universal CRT. The same five suites passed. These suites test a
+  new game, movement, save and exact restore. They also test the save after
+  stdin closes and checkpoint recovery with `recover.exe`. `--showpaths` and the test runs kept
+  every file in the isolated runtime. After the runs, the per-user and
+  ProgramData NetHack folders did not exist.
+- The fork audit passed with 2 documented modifications on Linux and 4 on
+  Windows. `test-engine-fork.py` also checks that the Windows patch is exact,
+  safe to apply twice, and applies to both files or neither.
+
+Later on 2026-10-08, the Windows patch of `windmain.c` got one more edit, so
+the Windows engine honors `EXPLORERS` in `sysconf` (ADR 0001). The rebuilt
+Windows x64 engine passed `test-explore.py`. That test now also checks that,
+without `EXPLORERS`, a game started in Explore mode and the `#exploremode`
+command both stay in normal play. With `EXPLORERS=*`, the Explore restore,
+checkpoint recovery and death checks passed on Windows. `test-engine.py`,
+`test-actions.py`, `test-context.py`, `test-item-menus.py` and
+`test-engine-fork.py` passed again, and the fork audit passed with 4
+modifications. `test-beginner.py` does not run on Windows yet because it
+expects a `save` folder. The Linux and macOS engines were not rebuilt for this
+edit, because it changes only a Windows file.
+
+Nobody built Windows ARM64 or Linux ARM64. Nobody tested Windows releases
+other than Windows 11, or a complete campaign.
+
+Later on 2026-10-08, the Electron host in `electron/` (Electron 44.7.0,
+TypeScript 7.0.2) played a Standard game on Windows 11 x64.
+`python scripts/test-electron.py` passed for a female and a male character.
+The test builds the host with `npm run build` and starts it with `--self-test`
+and an isolated data folder under `.artifacts/`. The same interface self-test
+as the Mac native test created a character, moved, inspected, used the action
+list and direction bar, read, saved and restored. The final quit saved the
+game. The action list screenshot was inspected and shows Ctrl labels. The
+per-user and ProgramData NetHack folders did not exist after the runs.
+`node web/app.test.js` and `node web/input.test.js` passed. Nobody tested
+Beginner, Explore or Pauper in the Electron host, checkpoint recovery,
+tileset import, the 8-second quit timeout, or Linux. A second launch with
+the same isolated data folder exited at once with code 0, and the first
+instance kept running. Nobody checked that the first window came to the
+front. In a manual run with the default data folder, the user started a
+character with every facet set to Random and played. Closing the window
+during the game saved it and showed no error dialog.
+
+For issue #5, `python scripts/test-electron.py --quit-timeout` passed on
+Windows 11 x64. The test lets the self-test start a game and suspends the
+engine process. Then it closes the window with the same message that
+Alt+F4 sends. After 9.5 seconds the app was still open, and the host had
+sent the Mac message "Finish the current game prompt, then save and quit
+again. Your game is still running." After the engine resumed, the queued
+save ran and the engine exited, and the app stayed open. The normal
+self-test checks the saved-game list, a load and the save on quit. The
+window menu Quit item arrives with #7, so it was not tested.
+
+Later on 2026-10-08, the engine and the Electron host ran natively on an Arch
+Linux x64 laptop (glibc 2.44, Wayland desktop session, Node 26.10.0).
+`ENGINE_ARCH=native ./scripts/build-engine.sh` built the engine. The first
+attempt failed when two parallel `make` jobs wrote the Lua library at once
+(`lzio.o: file truncated`); the second attempt passed unchanged.
+`test-engine.py`, `test-actions.py`, `test-context.py`, `test-item-menus.py`,
+`test-explore.py`, `test-engine-fork.py` and `test-character-rules.py` passed.
+In ten more `test-actions.py` runs, two failed the check that a named wait
+takes exactly one turn, the same check that failed once under WSL.
+`python3 scripts/test-electron.py` passed for a female and a male character,
+with the Linux launch described in [the protocol](protocol.md). The final quit
+saved to `save/<uid>AtlasSmoke`. `~/nethack`, `~/.nethackrc` and
+`~/.config/NetHack Atlas` did not exist before or after the runs. A self-test
+run against a mode folder holding a stale `nhdat` and an edited `symbols`
+replaced the `nhdat`, kept the edit and passed. The game and action-list
+screenshots were inspected. One self-test run each in Beginner,
+Explore and Pauper saved in that mode's own `save/` folder and restored. Their
+save-picker check failed only because no same-name save existed in a second
+mode, as `test-native.py` prepares; Electron coverage of the modes belongs to
+issue #6. The Electron self-test ran on Arch, not under WSL. Nobody tested a
+packaged Linux app, X11, other distributions, checkpoint recovery in the
+Electron host, or Linux ARM64.
+
+On 2026-10-08, for issue #6, `python scripts/test-electron.py --mode MODE`
+passed on Windows 11 x64 for Standard, Beginner, Explore and Pauper. Before each
+run, the test played and saved an AtlasSmoke game in the other three mode
+folders, as `test-native.py` does. It also saved an AtlasKeep game in the tested
+mode folder. Then it appended bytes to that folder's engine copy. The engine
+copy is `nethack.exe` on Windows and `nhdat` on Linux. After each run, the
+engine copy matched the bundled engine and the AtlasKeep save was unchanged.
+The saves, score files, sysconf and engine copy in the other mode folders were
+also unchanged. Only the Explore mode folder's sysconf set `EXPLORERS`.
+`test-explore.py` checks that the engine refuses Explore without it. The web
+self-test expected the Unix Explore message, so it now also accepts the Windows
+message "You are in non-scoring discovery mode." The run timeout went from 90
+to 120 seconds for the longer mode checks. One Beginner run failed because the
+random map had no empty floor next to the hero. Two later Beginner runs passed.
+`--quit-timeout` passed again. Nobody ran the new checks on Linux yet.
+
+On 2026-10-08, for issue #6, `python3 scripts/test-electron.py --mode MODE`
+passed on Arch Linux x86_64 (kernel 7.2.8, Electron 44.7.0, Wayland session)
+for Standard, Beginner, Explore and Pauper, each on the first run. The engine
+was the existing native build from the issue #9 Linux launch, unchanged since.
+After each run, the appended-to `nhdat` matched the bundled engine, the
+AtlasKeep save was unchanged, the other three mode folders were unchanged, and
+only the Explore folder's sysconf set `EXPLORERS`. The Pauper restore
+screenshot was inspected. `--quit-timeout` is Windows-only and was not run.
+Nobody tested a packaged Linux app, X11, other distributions or Linux ARM64.
+With these runs, the issue #9 acceptance criteria are met. Its self-test item
+named WSL; the native Arch runs above were accepted in its place, and nobody ran
+the mode checks under WSL.
+
+On 2026-10-08, a tiled Hyprland 0.56 window on a 1920x1080 display was 942
+pixels wide, but the Electron host's 1000-pixel minimum width drew the page
+1000 pixels wide and the compositor clipped its right edge. The minimum is now
+640 pixels. The welcome and game screens were inspected at 942, 700 and 620
+pixels wide with no horizontal overflow. In the tiled window the page matched
+the 942-pixel tile, grew to 1896 pixels on an empty workspace and returned to
+942. The Standard self-test passed again. The 700-pixel minimum height is
+unchanged; at 520 pixels tall the welcome card is clipped, so short vertical
+tiles remain untested and unfixed.
+
+On 2026-10-08, for issues #7 and #8, the Electron host gained checkpoint
+recovery, a File menu and tileset import, tested on Arch Linux x64 under
+Wayland only. `python3 scripts/test-electron-recovery.py` passed: with the
+host's own options, a live engine's checkpoint was left alone, a recovery with
+a missing `recover` failed and left every level file byte-identical, a killed
+engine's game was recovered and restored at the same turn and position, the
+original level files moved to `Recovered Checkpoints/`, no staging folder was
+left, and an incomplete checkpoint was kept. In the app, a game whose engine
+was killed with SIGKILL was recovered at the next start, the journal showed
+the Standard recovery message, and Continue loaded it.
+`python3 scripts/test-electron-tileset-import.py` passed: the NetHack Classic
+sheet imported at 16 pixels, saved and reloaded unchanged; a 16-bit sheet was
+re-encoded as 8-bit; and a wrong tile size, a Boolean tile size, an animated
+PNG, a BMP, an incomplete sheet and tampered saved base64 were refused. A saved
+import appeared in the app's tileset list at startup and drew the map. The
+File menu listed Import Tileset…, Show Save Folder and Quit with no
+accelerators; Import Tileset… opened the system dialog with a PNG filter, and
+canceling it showed no error. The Standard self-test passed again. Nobody
+pressed Ctrl+R, Ctrl+W or Alt keys with the menu present, chose a file in the
+dialog, opened Show Save Folder from the menu, or ran any of this on Windows.
+
+On 2026-10-08, the issue #7 and #8 work ran on Windows 11 x64 from
+`npm start`-style launches of the unpackaged host, with an isolated data
+folder. `test-electron-recovery.py`, `test-electron-tileset-import.py`,
+`test-electron.py` and `test-electron.py --quit-timeout` passed. The
+quit-timeout script prints PASS and then exits with status 1 by design of its
+final `SystemExit`. Hands-on checks found three faults, fixed here. The window
+was 1440x930 including the menu bar, so the page was shorter than on the Mac.
+It now uses that size for the page alone. A lone Alt press focused the File
+menu. The host now drops it, so Alt does nothing and Alt+c still opened the
+chat direction prompt. File → Import Tileset… opened the picker before the tile
+size could be set. It now opens Display settings at the size fields. The
+shared welcome card also cut off its bottom, including Continue, without a
+scroll bar. Its grid row is now bounded, and the form scrolled to Continue in a
+1440x930 page. The Mac app uses the same page, but nobody checked it there.
+After the fixes, Ctrl+R and Ctrl+W reached the game and left the window open.
+`official.png` imported at 16 pixels and was still listed after a restart.
+Show Save Folder opened the data folder in Explorer. File → Quit saved the game
+and closed the app with no checkpoint left. After `nethack.exe` was ended in
+Task Manager, Atlas showed that the game stopped and stayed open. At the next
+start it rebuilt the save, moved the original checkpoint files to
+`Recovered Checkpoints`, and Continue loaded the game at its last checkpoint.
+Nobody looked for the journal's recovery message on Windows. Issue #11 records
+that a wrong tile size cannot be corrected without choosing the file again.
+Nobody tested a packaged Windows app or Windows ARM64.
+
+For issue #10, `.github/workflows/macos.yml` runs on every push and pull
+request to `electron-port` on a GitHub macOS runner. It runs
+`scripts/build-app.sh` and `scripts/verify-bundle.py`. Then it runs
+`test-engine.py`, `test-actions.py`, `test-context.py`, `test-item-menus.py`,
+`test-engine-fork.py`, `test-explore.py` and every `web/*.test.js`. If a step
+fails, it uploads `.artifacts/`, which holds the build log and the engine
+test events. The tests use temporary game folders only. A pass proves that the
+Universal 2 app builds, passes bundle verification, and that the arm64 engine
+passes those tests on the runner. It does not prove Mac gameplay in the app,
+Intel gameplay, macOS 13 support or Developer ID signing. The native app test
+(`test-native.py`) needs a logged-in desktop, so the workflow does not run it.
+The upstream maintainer still runs it. `test-actions.py` sometimes fails its
+"wait takes one turn" check on a random game. Rerun it before you treat that
+failure as real. On 2026-10-08, the first run (run 37871136408, commit
+`4755677`) passed on a `macos-latest` arm64 runner in 2 minutes 16 seconds.
+Every listed test printed PASS, and no diagnostics were uploaded.
+
 On 2026-10-08, the README clarification for issue #2 was checked against the
 pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,
 chat replies, hearing-dependent item use and hearing-message handling.

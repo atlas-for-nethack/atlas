@@ -14,6 +14,11 @@ import time
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 RUNTIME = ROOT / 'engine' / 'runtime'
+# Windows NetHack ignores HOME and NETHACKDIR and reads -p/-r/-@ nowhere; its
+# portable sysconf keeps every file beside the executable, and an options file
+# survives the second Windows options pass (see docs/protocol.md).
+WINDOWS = os.name == 'nt'
+OPTIONS_FILE = 'atlas.nethackrc'
 OPTIONS = 'gender:female,align:neutral,color,hilite_pet,!autopickup,time,!news,checkpoint'
 
 
@@ -27,10 +32,12 @@ def engine_environment(directory, options=OPTIONS, mode='standard', fixture_envi
     # Keep execution/locale settings, not ambient engine options, config paths,
     # dynamic-loader overrides, save locations, wizard kits or Atlas test hooks.
     environment = {key: os.environ[key] for key in
-                   ('PATH', 'TMPDIR', 'LANG', 'LC_ALL', 'LC_CTYPE', 'TERM', 'USER', 'LOGNAME')
+                   ('PATH', 'TMPDIR', 'LANG', 'LC_ALL', 'LC_CTYPE', 'TERM', 'USER', 'LOGNAME', 'SYSTEMROOT')
                    if key in os.environ}
     environment.update(HOME=str(target), NETHACKDIR=str(target), HACKDIR=str(target),
                        NETHACKOPTIONS=options, ATLAS_PLAY_MODE=mode)
+    if WINDOWS:
+        environment['NETHACKOPTIONS'] = '@' + OPTIONS_FILE
     if fixture_environment:
         assert set(fixture_environment) <= {'SHOPTYPE'}, fixture_environment
         environment.update(fixture_environment)
@@ -45,6 +52,12 @@ class Game:
             config = pathlib.Path(config).resolve(strict=True)
             assert config.is_relative_to(pathlib.Path(directory).resolve()), config
             arguments.append('-nethackrc='+str(config))
+        if WINDOWS:
+            # Role and race become options; a config file is merged before them.
+            arguments = [str(pathlib.Path(directory) / 'nethack.exe'), '-u', name]
+            prefix = config.read_text() + '\n' if config is not None else ''
+            (pathlib.Path(directory) / OPTIONS_FILE).write_text(
+                prefix + f'OPTIONS=role:{role},race:human,{options}\n')
         self.process = subprocess.Popen(
             arguments,
             cwd=directory, env=engine_environment(directory, options, mode, fixture_environment),
@@ -168,14 +181,30 @@ class Game:
             assert reprompt_verified, 'Invalid yes/no answer did not emit a new input event'
 
 
+def prepare_runtime(target):
+    """Populate an isolated runtime; Windows needs its own executable copy."""
+    if WINDOWS:
+        for path in RUNTIME.iterdir():
+            if path.is_file() and path.suffix != '.nethackrc' and not path.name.startswith('.'):
+                shutil.copy2(path, target / path.name)
+        return
+    for name in ['nhdat', 'license', 'symbols', 'sysconf']:
+        shutil.copy2(RUNTIME / name, target / name)
+    for name in ['perm', 'record', 'logfile', 'xlogfile']:
+        (target / name).touch()
+    (target / 'save').mkdir()
+
+
+def saved_games(target):
+    if WINDOWS:
+        return [p for p in target.iterdir() if p.name.endswith('.NetHack-saved-game')]
+    return list((target / 'save').iterdir())
+
+
 def main():
     with tempfile.TemporaryDirectory(prefix='atelier-engine-') as directory:
         target = pathlib.Path(directory)
-        for name in ['nhdat', 'license', 'symbols', 'sysconf']:
-            shutil.copy2(RUNTIME / name, target / name)
-        for name in ['perm', 'record', 'logfile', 'xlogfile']:
-            (target / name).touch()
-        (target / 'save').mkdir()
+        prepare_runtime(target)
 
         game = Game(directory)
         game.start()
@@ -205,7 +234,7 @@ def main():
         (ROOT / '.artifacts').mkdir(exist_ok=True)
         (ROOT / '.artifacts' / 'game-events.json').write_text(json.dumps(game.events, indent=2))
         game.finish()
-        assert list((target / 'save').iterdir()), 'No save file'
+        assert saved_games(target), 'No save file'
         print(f'PASS new game, inventory, safe hover, movement, save (turn {saved_turn}; {len(game.events)} JSON events)')
 
         restored = Game(directory)
@@ -229,7 +258,7 @@ def main():
         disconnected.process.stdin.close()
         disconnected.process.wait(timeout=5)
         assert disconnected.process.returncode == 0
-        assert list((target / 'save').iterdir()), 'EOF did not save'
+        assert saved_games(target), 'EOF did not save'
         print('PASS parent EOF safely saves using upstream hangup handling')
 
         crashed = Game(directory)
@@ -238,9 +267,10 @@ def main():
         assert struct.unpack('i', checkpoint.read_bytes()[:4])[0] == crashed.process.pid
         crashed.process.kill()
         crashed.process.wait(timeout=5)
-        recovery = subprocess.run([str(RUNTIME / 'recover'), checkpoint.stem], cwd=directory,
+        recover = target / 'recover.exe' if WINDOWS else RUNTIME / 'recover'
+        recovery = subprocess.run([str(recover), checkpoint.stem], cwd=directory,
                                   env=engine_environment(directory), capture_output=True, text=True)
-        assert recovery.returncode == 0 and list((target / 'save').iterdir()), (recovery.stdout, recovery.stderr)
+        assert recovery.returncode == 0 and saved_games(target), (recovery.stdout, recovery.stderr)
         recovered = Game(directory)
         recovered.start()
         assert recovered.turn == saved_turn and recovered.cursor == position

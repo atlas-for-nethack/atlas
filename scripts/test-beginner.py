@@ -6,7 +6,6 @@ import importlib.util
 import os
 from pathlib import Path
 import re
-import shutil
 import subprocess
 import tempfile
 from unittest.mock import patch
@@ -22,11 +21,7 @@ ALIGNMENTS = {'Knight': 'lawful', 'Samurai': 'lawful', 'Rogue': 'chaotic'}
 
 
 def prepare(directory):
-    for name in ['nhdat', 'license', 'symbols', 'sysconf']:
-        shutil.copy2(engine_test.RUNTIME / name, directory / name)
-    for name in ['perm', 'record', 'logfile', 'xlogfile']:
-        (directory / name).touch()
-    (directory / 'save').mkdir()
+    engine_test.prepare_runtime(directory)
 
 
 @contextmanager

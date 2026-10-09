@@ -3,7 +3,14 @@
   const $ = (id) => document.getElementById(id);
   const canvas = $("dungeon"),
     ctx = canvas.getContext("2d", { alpha: false });
-  const native = !!window.webkit?.messageHandlers?.nethack;
+  // Bridge: the Electron preload supplies window.atlasHost; the Mac host
+  // supplies the WebKit message handler. Events arrive via receiveNative.
+  const host = window.atlasHost || window.webkit?.messageHandlers?.nethack;
+  const native = !!host;
+  // Off the Mac, Ctrl+K and Ctrl+S stand in for Command+K and Command+S.
+  // A preview without a host follows the browser's platform.
+  const ctrlShortcuts = window.atlasHost ? true
+    : !host && !/Mac/.test(window.navigator?.platform || "");
   const replay = !native && new URLSearchParams(location.search).has("replay");
   const preview =
     !native && (replay || new URLSearchParams(location.search).has("preview"));
@@ -421,7 +428,7 @@
           smoke.stage = "directionAnswered";
           setTimeout(() => smokePress("ArrowUp"), 200);
         } else {
-          smoke.stage = "directionCancelled";
+          smoke.stage = "directionCanceled";
           setTimeout(() => smokePress("Escape"), 200);
         }
         return;
@@ -475,7 +482,8 @@
               state.mode === "explore" && !$("explore-help").hidden &&
               $("help-dialog").open && $("explore-help").getBoundingClientRect().height > 0 &&
               $("adventure-mode").textContent.includes("non-scoring") &&
-              state.messages.some((text) => text.includes("non-scoring explore")) &&
+              // Unix says "explore/discovery mode", Windows "discovery mode".
+              state.messages.some((text) => /non-scoring .*discovery mode/.test(text)) &&
               !state.commands.some((command) => command.name === "wizwish"),
               "Explore guide and badge match native discovery mode without wizard commands");
             else if (smoke.mode === "pauper") smokeCheck("pauper-help",
@@ -668,7 +676,7 @@
           smoke.beforeDirectionCancel = smokeSnapshot();
           smoke.stage = "directionCancel";
           setTimeout(() => key("o"), 100);
-        } else if (smoke.stage === "directionCancelled") {
+        } else if (smoke.stage === "directionCanceled") {
           smokeCheck(
             "direction-cancel",
             smokeSnapshot().turn === smoke.beforeDirectionCancel.turn &&
@@ -678,7 +686,7 @@
           smoke.stage = "saveValidation";
           smoke.beforeSaveValidation = smokeSnapshot();
           setTimeout(() => chooseAction(state.commands.find(command => command.name === "save")), 100);
-        } else if (smoke.stage === "saveCancelled") {
+        } else if (smoke.stage === "saveCanceled") {
           smokeCheck("yn-default-enter", smokeSnapshot().turn === smoke.beforeSaveValidation.turn,
             "Enter on the focused No canceled the real save prompt without advancing time");
           smoke.saved = smokeSnapshot();
@@ -830,7 +838,7 @@
                 state.input === event && $("engine-dialog").open,
                 "Invalid x leaves the real yes/no prompt open and awaiting a valid answer"
               );
-              smoke.stage = "saveCancelled";
+              smoke.stage = "saveCanceled";
               document.dispatchEvent(
                 new KeyboardEvent("keydown", {
                   key: "Enter",
@@ -1199,11 +1207,11 @@
           smoke.petStart = smokeSnapshot();
           smoke.petStep = 0;
           begin();
-        } else if (smoke.stage === "pet-answered" || smoke.stage === "pet-cancelled") {
+        } else if (smoke.stage === "pet-answered" || smoke.stage === "pet-canceled") {
           const now = smokeSnapshot();
           smokeCheck("pet-no-turn", JSON.stringify(now) === JSON.stringify(smoke.petStart),
             "Naming/selection preserves the hero position and turn");
-          smoke.stage = smoke.stage === "pet-cancelled" ? "pet-cancel-inspect" : "pet-inspect";
+          smoke.stage = smoke.stage === "pet-canceled" ? "pet-cancel-inspect" : "pet-inspect";
           send({ action: "inspect", x: smoke.pet.x, y: smoke.pet.y });
         }
       } else if (event.kind === "menu") {
@@ -1223,7 +1231,7 @@
         if (smoke.petStep === 0) {
           setTimeout(() => smokeClickTile(smoke.pet.x, smoke.pet.y), 300);
         } else if (smoke.petStep === 2) {
-          smoke.stage = "pet-cancelled";
+          smoke.stage = "pet-canceled";
           setTimeout(() => smokePress("Escape"), 100);
         } else {
           const dx = Math.sign(smoke.pet.x - state.cursor.x);
@@ -1272,9 +1280,9 @@
     "#ebe9cc",
   ];
   function send(data) {
-    if (native) window.webkit.messageHandlers.nethack.postMessage(data);
+    if (native) host.postMessage(data);
     else if (preview) previewAction(data);
-    else toast("Open Atlas for NetHack on macOS to play.");
+    else toast("Open the Atlas for NetHack app to play.");
   }
   function toast(text) {
     $("toast").textContent = text;
@@ -2732,8 +2740,16 @@
     event.preventDefault();
     cancelInput();
   });
+  const modifier = ctrlShortcuts ? "Ctrl+" : "⌘";
+  for (const [id, letter] of [["actions-shortcut", "K"], ["save-shortcut", "S"],
+    ["help-actions-shortcut", "K"], ["help-save-shortcut", "S"]])
+    $(id).textContent = modifier + letter;
+  $("actions-button").title = `Browse and choose an action (${modifier}K)`;
+  // Windows reports AltGr as Ctrl+Alt, so Alt rules out a Ctrl shortcut.
+  const isShortcut = (event) =>
+    ctrlShortcuts ? event.ctrlKey && !event.altKey : event.metaKey;
   document.addEventListener("keydown", (event) => {
-    if (event.metaKey && event.key.toLowerCase() === "k") {
+    if (isShortcut(event) && event.key.toLowerCase() === "k") {
       event.preventDefault();
       if ($("actions-dialog").open) $("actions-dialog").close();
       else openActions();
@@ -2742,7 +2758,7 @@
     const activeDialog = document.querySelector("dialog[open]");
     if (activeDialog && activeDialog.id !== "engine-dialog") return;
     if (!state.active) return;
-    if (event.metaKey && event.key.toLowerCase() === "s") {
+    if (isShortcut(event) && event.key.toLowerCase() === "s") {
       event.preventDefault();
       requestSave();
       return;
@@ -2937,7 +2953,7 @@
     send({ action: "ready" });
   } else {
     $("welcome-footnote").textContent =
-      "Open the bundled macOS application to play.";
+      "Open the Atlas for NetHack app to play.";
     $("load-button").disabled = true;
   }
   async function loadReplay() {
@@ -2965,7 +2981,7 @@
         showInspector(inspection);
       }
       setTimeout(centerPlayer, 100);
-      setStatus("Recorded engine state · open the macOS app for live play");
+      setStatus("Recorded engine state · open the Atlas app for live play");
     } catch (error) {
       toast("Could not open engine transcript: " + error.message);
     }
@@ -3185,12 +3201,12 @@
         });
       else {
         toast(
-          "Design preview — launch the macOS app for real NetHack gameplay."
+          "Design preview — open the Atlas app for real NetHack gameplay."
         );
         state.waiting = true;
       }
     } else if (data.action === "save") {
-      toast("Design preview — launch the macOS app to save a real adventure.");
+      toast("Design preview — open the Atlas app to save a real adventure.");
       state.waiting = true;
     } else if (data.action === "menu" || data.action === "input") {
       state.waiting = true;

@@ -15,6 +15,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 spec = importlib.util.spec_from_file_location('actions_test', ROOT / 'scripts' / 'test-actions.py')
 actions = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(actions)
+# Upstream Windows authorizes debug mode by the player name alone, not sysconf.
+WIZARD = 'wizard' if actions.engine_test.WINDOWS else 'AtlasContext'
 
 BASE = '''des.level_init({style="solidfill", fg=" "});
 des.level_flags("noflip", "nomongen");
@@ -40,7 +42,7 @@ class Fixture:
         actions.prepare(directory)
         config = self.directory / 'sysconf'
         config.write_text(config.read_text().replace('WIZARDS=', 'WIZARDS=*'))
-        self.game = actions.Game(directory, name='AtlasContext',
+        self.game = actions.Game(directory, name=WIZARD,
                                  options=actions.OPTIONS + ',playmode:debug,pettype:none')
         self.game.start()
         assert 'wizloaddes' in actions.catalog(self.game), 'Isolated wizard setup failed'
@@ -162,7 +164,7 @@ def main():
             fixture.hints(['down', 'pickup', 'loot'])
             saved_turn, saved_position = game.turn, game.cursor
             game.finish(automatic=True)
-            fixture.game = game = actions.Game(directory, name='AtlasContext',
+            fixture.game = game = actions.Game(directory, name=WIZARD,
                 options=actions.OPTIONS + ',playmode:debug,pettype:none')
             game.start()
             assert game.turn == saved_turn and game.cursor == saved_position

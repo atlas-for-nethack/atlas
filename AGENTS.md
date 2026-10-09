@@ -5,13 +5,14 @@
 Build a self-contained, offline macOS application around the real NetHack 5.0 engine. Preserve upstream gameplay rules and make the interface comfortable for keyboard and mouse play. The default distribution targets macOS 13 or later and contains both Apple Silicon and Intel binaries.
 
 - `native/`: Swift AppKit host, local WKWebView, process bridge, save recovery and tile import.
+- `electron/`: TypeScript Electron host for Windows and Linux, built with `tsc` only. It accepts the same bridge actions as `native/`.
 - `web/`: dependency-free HTML/CSS/JavaScript interface and canvas renderer.
 - `engine/`: maintained C window port, build configuration and cross-compilation support. `winatelier.c` replaces the upstream shim only inside the generated build tree.
 - `assets/tiles/`: shipped artwork, tile mappings, conversion script, provenance and licenses.
 - `scripts/`: builds, engine tests, native application tests and bundle verification.
 - `docs/`: architecture, protocol, UI, source/licensing and verification evidence.
 
-Read `README.md` and the relevant documents before changing an integration boundary. Keep `docs/protocol.md` synchronized with changes to the C, Swift or JavaScript bridge.
+Read `README.md` and the relevant documents before changing an integration boundary. Keep `docs/protocol.md` synchronized with changes to the C, Swift, TypeScript or JavaScript bridge and to engine launch, including its Windows launch section.
 
 ## Working approach
 
@@ -96,6 +97,7 @@ python3 scripts/test-recovery.py
 node web/input.test.js
 python3 scripts/test-native.py --gender female
 python3 scripts/test-native.py --gender male
+python3 scripts/test-electron.py
 python3 scripts/verify-bundle.py
 ```
 
@@ -117,3 +119,17 @@ Keep release applications, ZIP archives and checksums outside Git history. They 
 For project-original Modern tilesets, use the shared seven-tier creature catalog in `assets/tiles/creature-scale.json` and `creature_scale.py`: Tiny, Small, Standard, Large, Very Large, Huge, Massive. Every creature has one assigned tier across all Modern artwork. Preserve aspect ratio without width caps reducing tier height. Classic creatures remain one square; do not impose this policy on third-party tilesets.
 
 Within each original artwork family, Classic and Modern must share identical walls, doors, floors, objects, and architectural rendering. Only creature/statue display sizing differs between editions.
+
+## Agent skills
+
+### Issue tracker
+
+Work is tracked in GitHub Issues on the fork `lukethan/atlas`, not upstream. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five default triage labels, each named after its role (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one root `CONTEXT.md` plus `docs/adr/`. See `docs/agents/domain.md`.

@@ -22,6 +22,7 @@
  * 2026-10-05: reuse approved Gehennom ground on the actual Plane of Fire.
  * 2026-10-06: select Astral sanctuary presentation by named level identity.
  * 2026-10-06: resolve host Save by command identity and preserve valid UTF-8 JSON.
+ * 2026-10-08: build on Windows with binary stdio and no console tty port.
  * Maintained replacement: engine/winatelier.c. See docs/ENGINE_FORK.md.
  * NetHack Atelier JSON window port. Copyright 2026 NetHack Atlas project.
  * Distributed under the NetHack General Public License; see bundled license.
@@ -33,6 +34,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#ifdef _WIN32
+#include <fcntl.h>
+#include <io.h>
+#endif
 
 #define AWINDOWS 64
 #define AROWS 4096
@@ -551,6 +556,11 @@ static int readkey(const char *kind) {
     return '\033';
 }
 static void init(int *argc UNUSED, char **argv UNUSED) {
+#ifdef _WIN32
+    /* Exact protocol bytes: no CRLF translation, and no Ctrl-Z end of file. */
+    _setmode(_fileno(stdin),_O_BINARY);
+    _setmode(_fileno(stdout),_O_BINARY);
+#endif
     setvbuf(stdout,NULL,_IOLBF,0);
     iflags.window_inited=TRUE;
     puts("{\"type\":\"hello\",\"version\":\"5.0.0\",\"protocol\":1,\"width\":80,\"height\":21}");
@@ -1111,3 +1121,11 @@ struct window_procs shim_procs={
  .win_status_init=noop,.win_status_finish=noop,.win_status_enablefield=enablefield,.win_status_update=updatestatus,
  .win_can_suspend=genl_can_suspend_no,.win_update_inventory=inventory,.win_ctrl_nhwindow=control
 };
+
+#ifdef _WIN32
+/* The upstream Windows main opens the console tty port unconditionally.
+ * Atlas talks over pipes and links no console port. */
+int GUILaunched = FALSE;
+void nethack_enter_consoletty(void) {}
+void consoletty_open(int mode UNUSED) {}
+#endif

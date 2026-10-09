@@ -1322,6 +1322,8 @@ dialog h2 {
 }
 .welcome-card {
   max-height: calc(100vh - 140px);
+  /* Without a bounded row the form grows past the card instead of scrolling. */
+  grid-template-rows: minmax(0, 1fr);
 }
 .welcome-content {
   overflow-y: auto;

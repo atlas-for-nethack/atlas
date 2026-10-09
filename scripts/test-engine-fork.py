@@ -16,6 +16,7 @@ def load(name, path):
 
 
 patch = load('beginner_patch', ROOT/'engine/apply-beginner-patch.py')
+windows = load('windows_patch', ROOT/'engine/apply-windows-patch.py')
 fork = load('fork_audit', ROOT/'scripts/audit-engine-fork.py')
 archive = ROOT/'vendor/nethack-500-src.tgz'
 with tempfile.TemporaryDirectory(prefix='atlas-fork-') as temporary:
@@ -29,7 +30,7 @@ with tempfile.TemporaryDirectory(prefix='atlas-fork-') as temporary:
             target = tree/relative
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(upstream.extractfile(member).read())
-    original = (tree/'src/allmain.c').read_text()
+    original = (tree/'src/allmain.c').read_bytes().decode()
     noticed = patch.apply_text(original)
     legacy = original.replace(patch.original, patch.patched, 1)
     assert patch.apply_text(legacy) == noticed, 'Existing hook migration failed'
@@ -43,7 +44,7 @@ with tempfile.TemporaryDirectory(prefix='atlas-fork-') as temporary:
             pass
         else:
             raise AssertionError('Unexpected patch shape accepted')
-    (tree/'src/allmain.c').write_text(noticed)
+    (tree/'src/allmain.c').write_bytes(noticed.encode())
     (tree/'win/shim/winshim.c').write_bytes((ROOT/'engine/winatelier.c').read_bytes())
     (tree/'sys/unix/hints/atelier').write_bytes((ROOT/'engine/hints').read_bytes())
     result = fork.audit(archive, tree)
@@ -56,6 +57,29 @@ with tempfile.TemporaryDirectory(prefix='atlas-fork-') as temporary:
         except ValueError:
             return
         raise AssertionError('Unrecorded source change accepted')
+
+    # Windows startup fixes: exact, idempotent and all-or-nothing.
+    pristine = {name: (tree/name).read_bytes() for name in windows.PATCHES}
+    for index, (name, saved) in enumerate(pristine.items()):
+        text = saved.decode()
+        applied = windows.apply_text(name, text)
+        assert windows.apply_text(name, applied) == applied, 'Windows patch is not idempotent'
+        for invalid in [text.replace('Copyright (c)', 'Removed copyright', 1)] + [
+                text.replace(original, '', 1) for original, _ in windows.PATCHES[name]['edits']]:
+            try:
+                windows.apply_text(name, invalid)
+            except ValueError:
+                pass
+            else:
+                raise AssertionError('Unexpected Windows patch shape accepted')
+        (tree/name).write_bytes(applied.encode())
+        if index == 0:
+            rejected()  # one Windows file alone is not a documented state
+    result = fork.audit(archive, tree)
+    assert result['unchangedFileCount'] == 1261
+    assert set(result['modifiedFiles']) == fork.MODIFIED | fork.WINDOWS_MODIFIED
+    for name, saved in pristine.items():
+        (tree/name).write_bytes(saved)
 
     original_path = tree/'src/mon.c'
     saved = original_path.read_bytes()
@@ -70,4 +94,4 @@ with tempfile.TemporaryDirectory(prefix='atlas-fork-') as temporary:
     extra.unlink()
     (tree/'sys/unix/hints/atelier').write_text('unexpected settings\n')
     rejected()
-print('PASS: pristine/legacy patch migration, idempotence, expected inventory and rejection of unexpected source changes.')
+print('PASS: pristine/legacy patch migration, idempotence, expected inventory, Windows startup fixes and rejection of unexpected source changes.')

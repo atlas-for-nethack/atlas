@@ -14,6 +14,8 @@ import tarfile
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE_SHA256 = '2959b7886aac76185b90aea0c9f80d14343f604de0ae96b3dd2a760f7ab3bde9'
 MODIFIED = {'src/allmain.c', 'win/shim/winshim.c'}
+# Windows builds only: startup fixes from engine/apply-windows-patch.py.
+WINDOWS_MODIFIED = {'sys/windows/windmain.c', 'sys/windows/windsys.c'}
 GENERATED = {'src/tile.c', 'include/date.h', 'include/nhlua.h'}
 SOURCE_DIRS = ('src', 'include', 'dat', 'win', 'sys', 'util')
 
@@ -29,6 +31,9 @@ def audit(archive, tree):
     spec = importlib.util.spec_from_file_location('atlas_beginner_patch', ROOT/'engine/apply-beginner-patch.py')
     patch = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(patch)
+    spec = importlib.util.spec_from_file_location('atlas_windows_patch', ROOT/'engine/apply-windows-patch.py')
+    windows_patch = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(windows_patch)
     entries, changed, unchanged = {}, [], 0
     with tarfile.open(archive, 'r:gz') as upstream:
         for member in upstream:
@@ -53,6 +58,8 @@ def audit(archive, tree):
                     raise ValueError('Shim replacement dropped upstream notices')
                 if 'Modified by the NetHack Atlas project:' not in expected.decode():
                     raise ValueError('Shim replacement lacks modification notice')
+            elif name in WINDOWS_MODIFIED and current != original:
+                expected = windows_patch.apply_text(name, original.decode()).encode()
             else:
                 expected = original
             if current != expected:
@@ -61,8 +68,8 @@ def audit(archive, tree):
                 changed.append(name)
             else:
                 unchanged += 1
-    if set(changed) != MODIFIED:
-        raise ValueError('Expected the two documented upstream modifications')
+    if set(changed) not in (MODIFIED, MODIFIED | WINDOWS_MODIFIED):
+        raise ValueError('Expected the documented upstream modifications')
     hint = tree/'sys/unix/hints/atelier'
     if not hint.is_file() or hint.read_bytes() != (ROOT/'engine/hints').read_bytes():
         raise ValueError('Atlas build hint missing or inconsistent')

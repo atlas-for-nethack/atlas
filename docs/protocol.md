@@ -15,6 +15,66 @@ for actual glyph escapes; the JSON serializer does not interpret them. Upstream
 name normalization, byte-length limits and native player-name restrictions are
 unchanged.
 
+## Interface bridge
+
+The interface sends each action object to its host through one function. If
+the host supplies `window.atlasHost`, the interface calls
+`window.atlasHost.postMessage(action)`. The Electron preload supplies this
+object. Otherwise, the interface calls
+`window.webkit.messageHandlers.nethack.postMessage(action)`, the Mac host
+handler. Every host delivers events by calling `window.receiveNative(event)`
+with one event or an array of events.
+
+With `window.atlasHost`, the interface uses Ctrl+K for the action list and
+Ctrl+S for save and exit, and its labels show Ctrl. With the Mac handler,
+these shortcuts use Command. A browser preview without a host uses Command on
+a Mac and Ctrl elsewhere. NetHack binds neither Ctrl+K nor Ctrl+S. The
+interface sends every other Ctrl key to the engine as a control character.
+
+The Electron host in `electron/` loads the interface from the `atlas://app/`
+scheme. That scheme serves only `web/` and `assets/`, with a content security
+policy that allows only the same origin and `data:` and `blob:` images. The window uses
+context isolation and a sandboxed renderer. The host blocks navigation, new
+windows and permission requests. The main process accepts only the 13 Mac
+actions (`ready`, `diagnostic`, `start`, `load`, `key`, `command`, `input`,
+`position`, `menu`, `inspect`, `save`, `importTileset` and `showSaveFolder`)
+with the Mac limits, and only from the main frame of that page. It delivers
+events in batches through `window.receiveNative`. The data folder is
+`NetHack Atlas/5.0` under the per-user application data folder, and
+`ATLAS_DATA_DIR` replaces it. With `ATLAS_DATA_DIR`, the browser profile and
+the single-instance lock move to a sibling folder that ends in `-electron`.
+`--self-test` reads the same `ATLAS_TEST_` variables, `ATLAS_DIAGNOSTICS` and
+`ATLAS_SNAPSHOT` as the Mac host and uses non-persistent web storage.
+
+The Electron window has one File menu with Import Tileset…, Show Save Folder
+and Quit. It has no accelerators, so every Ctrl and Alt key reaches the
+interface and the game; the default menu's reload and developer tools are gone.
+The host drops a lone Alt press so that it cannot focus the menu bar. Alt with a
+letter still reaches the interface. Import Tileset… opens Display settings at
+the tile size fields. The interface's own import button then sends
+`importTileset` with that size as usual. Quit closes
+the window, which saves a running game first.
+
+`importTileset` opens the system file dialog for one PNG sheet. The host
+checks the PNG header and chunks before decoding, with the Mac host's size,
+pixel, tile-count and canonical-base64 limits, and refuses animated PNGs.
+Electron decodes PNG only, so the BMP sheets that the Mac accepts are refused.
+The host re-encodes the sheet as 8-bit PNG and sends
+`{type:"tilesetImported", tileset, persistent:true}`. It replaces
+`imported-tileset.json` in the data folder only after writing the new file
+completely, and adds that tileset to `boot.tilesets` at the next start. An
+invalid saved file is kept and reported as an `error`.
+
+At startup, before the interface lists saves, the Electron host recovers
+interrupted games in every existing mode folder, as the Mac host does. A
+checkpoint is skipped unless its owner process is gone. Recovery copies the
+level files to a private `.recovery-*` staging folder in the mode folder, runs
+the runtime's `recover` (`recover.exe` on Windows) with `-d` set to that folder,
+publishes the rebuilt save only if none exists, and moves the original level
+files to `Recovered Checkpoints/`. A failed recovery leaves the checkpoint
+untouched. Recovered and failed games are reported as `message` and `error`
+events prefixed with the mode name.
+
 ## Host → engine
 
 ### Play mode and native UI messages
@@ -352,7 +412,50 @@ Set `HOME` to the app's writable data directory to isolate user configuration. K
 
 Most output is JSON, but upstream fatal startup errors may be plain text on stdout; surface such lines as diagnostics. An engine exit before receiving `hello` is a launch failure. `exit` is an engine window-port notification; the child process termination remains authoritative.
 
-## Verification
+### Windows engine launch
+
+The JSON events and input commands are the same on Windows. The launch and the
+runtime folder are different:
+
+- Upstream Windows NetHack ignores `HOME`, `NETHACKDIR` and `HACKDIR`. Each
+  runtime folder holds its own `nethack.exe` and `recover.exe`. Its `sysconf`
+  contains `PORTABLE_DEVICE_PATHS=1`, which keeps every file in that folder.
+  Startup also needs `sysconf.template`, `symbols.template`,
+  `nethackrc.template`, `Guidebook.txt`, `opthelp` and `nhdat500` there.
+- Launch `nethack.exe -u NAME`. Add `-X` for Explore. Upstream Windows does not
+  read `-p`, `-r` or `-@`.
+- Write the options to `atlas.nethackrc` in the runtime folder as one
+  `OPTIONS=` line. For a new game, include `role:`, `race:`, `gender:` and
+  `align:`, and use `random` for a facet that the player did not choose. Then set `NETHACKOPTIONS=@atlas.nethackrc`.
+  Windows reads the options twice. Option parsing writes into the
+  environment value, so a plain `NETHACKOPTIONS` list keeps only its first
+  option. The file name must be shorter than 128 characters, so use the
+  relative name.
+- The checkpoint is `NAME.0` in the runtime folder, with no user ID prefix.
+  Its first four bytes hold the Windows process ID. The save is
+  `NAME.NetHack-saved-game` in the same folder. Run `recover.exe NAME` from
+  the runtime folder.
+- Upstream Windows allows debug mode only for a player named `wizard`, and
+  ignores `WIZARDS`. The Atlas Windows patch allows Explore mode only when
+  `sysconf` contains `EXPLORERS=*` (ADR 0001). With `number_pad` on, the letter direction keys stay bound
+  beside the digits. The command catalog reports the bindings that the engine
+  really uses.
+
+### Linux engine launch
+
+The Electron host launches the Linux engine like the Mac host. The engine runs
+from the runtime folder; it is not copied.
+
+- Set `cwd`, `HOME`, `NETHACKDIR` and `HACKDIR` to the mode folder. Its data
+  folder is `~/.config/NetHack Atlas/5.0`.
+- Copy `nhdat` and `license` into the mode folder when they differ from the
+  runtime, and `symbols` and `sysconf` when missing. Create `save/`, `record`,
+  `logfile`, `xlogfile` and `perm` there.
+- Launch `nethack -u NAME -@`, plus `-X` for Explore. For a new game, add
+  `-p ROLE` and `-r RACE` for chosen facets. Set plain comma-separated
+  `NETHACKOPTIONS`.
+- Saves are `save/<uid>NAME` in the mode folder, as on the Mac.
+
 
 Run `python3 scripts/test-engine.py`. This uses the bundled game engine and data in a temporary runtime, tests new game, actual movement, turn-free hover (including unexplored cells), inventory, manual save, exact turn/position restoration, automatic save from inventory and direction prompts, stdin EOF save, and SIGKILL checkpoint recovery. It writes `.artifacts/game-events.json` containing an actual playable game's rendering events for frontend visual QA. The Intel slice is built and its Mach-O architecture/deployment target checked; executing Intel gameplay still requires an Intel Mac or Rosetta and was not tested on this host.
 

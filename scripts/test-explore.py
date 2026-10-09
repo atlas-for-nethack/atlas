@@ -15,10 +15,11 @@ spec.loader.exec_module(beginner)
 engine = beginner.engine_test
 
 
-def prepare(directory):
+def prepare(directory, explorers=True):
     beginner.prepare(directory)
-    config = directory / 'sysconf'
-    config.write_text(config.read_text() + '\nEXPLORERS=*\n')
+    if explorers:
+        config = directory / 'sysconf'
+        config.write_text(config.read_text() + '\nEXPLORERS=*\n')
 
 
 @contextmanager
@@ -29,7 +30,8 @@ def game_at(directory):
                            options=beginner.OPTIONS + ',align:neutral,playmode:explore', mode='explore')
     try:
         game.start()
-        assert any('non-scoring explore' in e.get('text', '') for e in game.events)
+        # Unix says "explore/discovery mode", Windows says "discovery mode".
+        assert any('non-scoring' in e.get('text', '') for e in game.events)
         commands = next(e['commands'] for e in reversed(game.events) if e['type'] == 'commands')
         assert not any(c['name'] == 'wizwish' for c in commands)
         yield game
@@ -37,6 +39,27 @@ def game_at(directory):
         if game.process.poll() is None:
             game.process.kill()
             game.process.wait(timeout=5)
+
+
+def check_refused():
+    """Without EXPLORERS in sysconf, neither playmode nor #exploremode enters Explore."""
+    with tempfile.TemporaryDirectory(prefix='atlas-explore-refused-') as temporary:
+        directory = Path(temporary)
+        prepare(directory, explorers=False)
+        game = engine.Game(str(directory), name='AtlasRefused',
+                           options=beginner.OPTIONS + ',align:neutral,playmode:explore', mode='explore')
+        try:
+            game.start()
+            assert not any('non-scoring' in e.get('text', '') for e in game.events), 'Explore granted'
+            game.send('command exploremode')
+            game.wait_input()
+            assert any('cannot access explore mode' in e.get('text', '') for e in game.events), game.events[-5:]
+            game.finish(automatic=True)
+        finally:
+            if game.process.poll() is None:
+                game.process.kill()
+                game.process.wait(timeout=5)
+    print('PASS: Explore refused without EXPLORERS in sysconf')
 
 
 def check_restore():
@@ -59,7 +82,8 @@ def check_restore():
             checkpoint = next(directory.glob('*.0'))
             game.process.kill()
             game.process.wait(timeout=5)
-        result = subprocess.run([str(engine.RUNTIME / 'recover'), checkpoint.stem],
+        recover = directory / 'recover.exe' if engine.WINDOWS else engine.RUNTIME / 'recover'
+        result = subprocess.run([str(recover), checkpoint.stem],
                                 cwd=directory, env=engine.engine_environment(directory, mode='explore'),
                                 capture_output=True, text=True)
         assert result.returncode == 0, (result.stdout, result.stderr)
@@ -122,5 +146,6 @@ def check_death():
 
 
 if __name__ == '__main__':
+    check_refused()
     check_restore()
     check_death()
