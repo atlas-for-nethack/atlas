@@ -304,7 +304,9 @@ Intel gameplay, macOS 13 support or Developer ID signing. The native app test
 (`test-native.py`) needs a logged-in desktop, so the workflow does not run it.
 The upstream maintainer still runs it. `test-actions.py` sometimes fails its
 "wait takes one turn" check on a random game. Rerun it before you treat that
-failure as real. The workflow did not run on GitHub before this record on 2026-10-08.
+failure as real. On 2026-10-08, the first run (run 37871136408, commit
+`4755677`) passed on a `macos-latest` arm64 runner in 2 minutes 16 seconds.
+Every listed test printed PASS, and no diagnostics were uploaded.
 
 On 2026-10-08, the README clarification for issue #2 was checked against the
 pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,
