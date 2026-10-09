@@ -275,13 +275,15 @@ async function importTileset(body: Body) {
 }
 
 // One small menu without accelerators, so every Ctrl and Alt key reaches the
-// game. Import uses the interface's button so its tile size settings apply.
+// game. Import opens Display settings at the tile size fields, because the
+// picker uses those sizes and they must be set first.
 function configureMenu() {
   Menu.setApplicationMenu(Menu.buildFromTemplate([{
     label: "File",
     submenu: [
-      { label: "Import Tileset…", click: () =>
-        win?.webContents.executeJavaScript('document.getElementById("import-tiles-button")?.click()') },
+      { label: "Import Tileset…", click: () => win?.webContents.executeJavaScript(
+        '{ const d = document.getElementById("settings-dialog"); if (!d.open) d.showModal();' +
+        ' document.getElementById("import-tile-width").focus(); }') },
       { label: "Show Save Folder", click: showSaveFolder },
       { type: "separator" },
       { label: "Quit", click: () => win ? win.close() : app.quit() },
@@ -471,13 +473,17 @@ function createWindow() {
     }
   });
   win = new BrowserWindow({
-    width: 1440, height: 930, minWidth: 640, minHeight: 700,
+    // The page gets 1440x930 as on the Mac; the menu bar adds to the window.
+    width: 1440, height: 930, minWidth: 640, minHeight: 700, useContentSize: true,
     title: "Atlas for NetHack", backgroundColor: "#090c11",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true, sandbox: true, nodeIntegration: false, session: browserSession,
     },
   });
+  // A lone Alt would focus the File menu and take the next keys from the game.
+  // Alt+letter still reaches the page, which ignores Alt by itself.
+  win.webContents.on("before-input-event", (event, input) => { if (input.key === "Alt") event.preventDefault(); });
   win.webContents.on("will-navigate", (event) => event.preventDefault());
   win.webContents.setWindowOpenHandler(() => ({ action: "deny" }));
   if (selfTest) win.webContents.on("console-message", (details) => console.log(`Atlas UI: ${details.message}`));

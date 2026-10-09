@@ -262,9 +262,34 @@ PNG, a BMP, an incomplete sheet and tampered saved base64 were refused. A saved
 import appeared in the app's tileset list at startup and drew the map. The
 File menu listed Import Tileset…, Show Save Folder and Quit with no
 accelerators; Import Tileset… opened the system dialog with a PNG filter, and
-cancelling it showed no error. The Standard self-test passed again. Nobody
+canceling it showed no error. The Standard self-test passed again. Nobody
 pressed Ctrl+R, Ctrl+W or Alt keys with the menu present, chose a file in the
 dialog, opened Show Save Folder from the menu, or ran any of this on Windows.
+
+On 2026-10-08, the issue #7 and #8 work ran on Windows 11 x64 from
+`npm start`-style launches of the unpackaged host, with an isolated data
+folder. `test-electron-recovery.py`, `test-electron-tileset-import.py`,
+`test-electron.py` and `test-electron.py --quit-timeout` passed. The
+quit-timeout script prints PASS and then exits with status 1 by design of its
+final `SystemExit`. Hands-on checks found three faults, fixed here. The window
+was 1440x930 including the menu bar, so the page was shorter than on the Mac.
+It now uses that size for the page alone. A lone Alt press focused the File
+menu. The host now drops it, so Alt does nothing and Alt+c still opened the
+chat direction prompt. File → Import Tileset… opened the picker before the tile
+size could be set. It now opens Display settings at the size fields. The
+shared welcome card also cut off its bottom, including Continue, without a
+scroll bar. Its grid row is now bounded, and the form scrolled to Continue in a
+1440x930 page. The Mac app uses the same page, but nobody checked it there.
+After the fixes, Ctrl+R and Ctrl+W reached the game and left the window open.
+`official.png` imported at 16 pixels and was still listed after a restart.
+Show Save Folder opened the data folder in Explorer. File → Quit saved the game
+and closed the app with no checkpoint left. After `nethack.exe` was ended in
+Task Manager, Atlas showed that the game stopped and stayed open. At the next
+start it rebuilt the save, moved the original checkpoint files to
+`Recovered Checkpoints`, and Continue loaded the game at its last checkpoint.
+Nobody looked for the journal's recovery message on Windows. Issue #11 records
+that a wrong tile size cannot be corrected without choosing the file again.
+Nobody tested a packaged Windows app or Windows ARM64.
 
 On 2026-10-08, the README clarification for issue #2 was checked against the
 pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,

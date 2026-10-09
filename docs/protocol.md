@@ -49,8 +49,10 @@ the single-instance lock move to a sibling folder that ends in `-electron`.
 The Electron window has one File menu with Import Tileset…, Show Save Folder
 and Quit. It has no accelerators, so every Ctrl and Alt key reaches the
 interface and the game; the default menu's reload and developer tools are gone.
-Import Tileset… clicks the interface's own import button, so the interface's
-tile size applies and the interface sends `importTileset` as usual. Quit closes
+The host drops a lone Alt press so that it cannot focus the menu bar. Alt with a
+letter still reaches the interface. Import Tileset… opens Display settings at
+the tile size fields. The interface's own import button then sends
+`importTileset` with that size as usual. Quit closes
 the window, which saves a running game first.
 
 `importTileset` opens the system file dialog for one PNG sheet. The host
