@@ -231,6 +231,9 @@ AtlasKeep save was unchanged, the other three mode folders were unchanged, and
 only the Explore folder's sysconf set `EXPLORERS`. The Pauper restore
 screenshot was inspected. `--quit-timeout` is Windows-only and was not run.
 Nobody tested a packaged Linux app, X11, other distributions or Linux ARM64.
+With these runs, the issue #9 acceptance criteria are met. Its self-test item
+named WSL; the native Arch runs above were accepted in its place, and nobody ran
+the mode checks under WSL.
 
 On 2026-10-08, a tiled Hyprland 0.56 window on a 1920x1080 display was 942
 pixels wide, but the Electron host's 1000-pixel minimum width drew the page
