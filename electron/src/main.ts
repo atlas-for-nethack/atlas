@@ -429,7 +429,7 @@ function createWindow() {
     }
   });
   win = new BrowserWindow({
-    width: 1440, height: 930, minWidth: 1000, minHeight: 700,
+    width: 1440, height: 930, minWidth: 640, minHeight: 700,
     title: "Atlas for NetHack", backgroundColor: "#090c11",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),

@@ -232,6 +232,16 @@ only the Explore folder's sysconf set `EXPLORERS`. The Pauper restore
 screenshot was inspected. `--quit-timeout` is Windows-only and was not run.
 Nobody tested a packaged Linux app, X11, other distributions or Linux ARM64.
 
+On 2026-10-08, a tiled Hyprland 0.56 window on a 1920x1080 display was 942
+pixels wide, but the Electron host's 1000-pixel minimum width drew the page
+1000 pixels wide and the compositor clipped its right edge. The minimum is now
+640 pixels. The welcome and game screens were inspected at 942, 700 and 620
+pixels wide with no horizontal overflow. In the tiled window the page matched
+the 942-pixel tile, grew to 1896 pixels on an empty workspace and returned to
+942. The Standard self-test passed again. The 700-pixel minimum height is
+unchanged; at 520 pixels tall the welcome card is clipped, so short vertical
+tiles remain untested and unfixed.
+
 On 2026-10-08, the README clarification for issue #2 was checked against the
 pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,
 chat replies, hearing-dependent item use and hearing-message handling.
