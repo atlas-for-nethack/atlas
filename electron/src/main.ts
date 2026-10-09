@@ -1,10 +1,12 @@
 // The Electron host for Windows and Linux. It does the jobs of native/App.swift: it
 // starts the engine, relays the bridge and saves on quit. NetHack owns the game.
-import { app, BrowserWindow, ipcMain, Menu, net, protocol, session, shell } from "electron";
+import { app, BrowserWindow, dialog, ipcMain, Menu, net, protocol, session, shell } from "electron";
 import { spawn, type ChildProcess } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { recoverInterruptedGames } from "./recovery";
+import * as TilesetImport from "./tileset-import";
 
 type Body = Record<string, unknown>;
 
@@ -56,6 +58,8 @@ let stderrTail = "";
 let playMode = "standard";
 let currentInput = "";
 const preferencesFile = path.join(app.getPath("userData"), "preferences.json");
+const importedTilesetFile = path.join(dataDir, "imported-tileset.json");
+let customTileset: Body | null = null;
 let lastCharacterName = "Adventurer";
 
 const modeDir = (mode: string) =>
@@ -149,7 +153,7 @@ function tileManifest(): unknown[] {
     // Exercise a requested atlas in the isolated self-test.
     const index = list.findIndex((tileset) => tileset.id === env.ATLAS_TEST_TILESET);
     if (selfTest && index > 0) list.unshift(...list.splice(index, 1));
-    return list;
+    return customTileset ? [...list, customTileset] : list;
   } catch {
     return [];
   }
@@ -238,13 +242,51 @@ function receive(body: Body) {
       if (engine) write("save");
       break;
     case "importTileset":
-      // ponytail: the file dialog and import arrive with the window menu (#7).
-      send({ type: "error", text: "Tileset import is not available in this version yet." });
+      importTileset(body);
       break;
     case "showSaveFolder":
-      shell.openPath(engine ? modeDir(playMode) : dataDir);
+      showSaveFolder();
       break;
   }
+}
+
+function showSaveFolder() {
+  shell.openPath(engine ? modeDir(playMode) : dataDir);
+}
+
+// As on the Mac: the interface supplies the tile size, the host decodes the
+// chosen sheet and keeps it as the one persistent custom tileset.
+async function importTileset(body: Body) {
+  if (!win) return;
+  const choice = await dialog.showOpenDialog(win, {
+    title: "Import Tileset", properties: ["openFile"], filters: [{ name: "PNG tilesheet", extensions: ["png"] }],
+    message: "Choose a NetHack 5.0 tilesheet. Set its tile size in Display settings before import.",
+  });
+  if (choice.canceled || choice.filePaths.length !== 1) return;
+  try {
+    const imported = TilesetImport.convert(choice.filePaths[0], body.tileWidth ?? 32, body.tileHeight ?? 32);
+    TilesetImport.persist(imported, importedTilesetFile);
+    customTileset = imported.manifest;
+    send({ type: "tilesetImported", tileset: imported.manifest, persistent: true });
+  } catch (error) {
+    send({ type: "error",
+      text: `The tileset could not be imported. Your previous import is unchanged. ${(error as Error).message}` });
+  }
+}
+
+// One small menu without accelerators, so every Ctrl and Alt key reaches the
+// game. Import uses the interface's button so its tile size settings apply.
+function configureMenu() {
+  Menu.setApplicationMenu(Menu.buildFromTemplate([{
+    label: "File",
+    submenu: [
+      { label: "Import Tileset…", click: () =>
+        win?.webContents.executeJavaScript('document.getElementById("import-tiles-button")?.click()') },
+      { label: "Show Save Folder", click: showSaveFolder },
+      { type: "separator" },
+      { label: "Quit", click: () => win ? win.close() : app.quit() },
+    ],
+  }]));
 }
 
 function launch(options: Body, restoring: boolean) {
@@ -489,9 +531,27 @@ if (!app.requestSingleInstanceLock()) {
   });
   app.on("window-all-closed", () => app.quit());
   app.whenReady().then(() => {
-    // No default menu: no reload, developer tools or Ctrl+letter accelerators.
-    Menu.setApplicationMenu(null);
+    // The default menu's reload, developer tools and Ctrl+letter accelerators are gone.
+    configureMenu();
     fs.mkdirSync(dataDir, { recursive: true });
+    // Recover interrupted games in every existing mode folder before the
+    // interface lists saves. Live engines' checkpoints are left alone.
+    const recover = path.join(runtime, windows ? "recover.exe" : "recover");
+    for (const mode of MODES) {
+      if (!fs.existsSync(modeDir(mode))) continue;
+      for (const report of recoverInterruptedGames(modeDir(mode), recover))
+        if (report.disposition === "recovered" || report.disposition === "failed")
+          send({ type: report.disposition === "failed" ? "error" : "message",
+            text: `${mode[0].toUpperCase() + mode.slice(1)}: ${report.detail}` });
+    }
+    if (fs.existsSync(importedTilesetFile)) {
+      try {
+        customTileset = TilesetImport.reload(importedTilesetFile).manifest;
+      } catch (error) {
+        send({ type: "error", text: "The saved custom tileset could not be loaded. Using bundled tiles. " +
+          `Your import file has been kept. ${(error as Error).message}` });
+      }
+    }
     createWindow();
   });
 }

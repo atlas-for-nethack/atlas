@@ -245,6 +245,27 @@ the 942-pixel tile, grew to 1896 pixels on an empty workspace and returned to
 unchanged; at 520 pixels tall the welcome card is clipped, so short vertical
 tiles remain untested and unfixed.
 
+On 2026-10-08, for issues #7 and #8, the Electron host gained checkpoint
+recovery, a File menu and tileset import, tested on Arch Linux x64 under
+Wayland only. `python3 scripts/test-electron-recovery.py` passed: with the
+host's own options, a live engine's checkpoint was left alone, a recovery with
+a missing `recover` failed and left every level file byte-identical, a killed
+engine's game was recovered and restored at the same turn and position, the
+original level files moved to `Recovered Checkpoints/`, no staging folder was
+left, and an incomplete checkpoint was kept. In the app, a game whose engine
+was killed with SIGKILL was recovered at the next start, the journal showed
+the Standard recovery message, and Continue loaded it.
+`python3 scripts/test-electron-tileset-import.py` passed: the NetHack Classic
+sheet imported at 16 pixels, saved and reloaded unchanged; a 16-bit sheet was
+re-encoded as 8-bit; and a wrong tile size, a Boolean tile size, an animated
+PNG, a BMP, an incomplete sheet and tampered saved base64 were refused. A saved
+import appeared in the app's tileset list at startup and drew the map. The
+File menu listed Import Tileset…, Show Save Folder and Quit with no
+accelerators; Import Tileset… opened the system dialog with a PNG filter, and
+cancelling it showed no error. The Standard self-test passed again. Nobody
+pressed Ctrl+R, Ctrl+W or Alt keys with the menu present, chose a file in the
+dialog, opened Show Save Folder from the menu, or ran any of this on Windows.
+
 On 2026-10-08, the README clarification for issue #2 was checked against the
 pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,
 chat replies, hearing-dependent item use and hearing-message handling.

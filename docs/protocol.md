@@ -46,6 +46,33 @@ the single-instance lock move to a sibling folder that ends in `-electron`.
 `--self-test` reads the same `ATLAS_TEST_` variables, `ATLAS_DIAGNOSTICS` and
 `ATLAS_SNAPSHOT` as the Mac host and uses non-persistent web storage.
 
+The Electron window has one File menu with Import Tileset…, Show Save Folder
+and Quit. It has no accelerators, so every Ctrl and Alt key reaches the
+interface and the game; the default menu's reload and developer tools are gone.
+Import Tileset… clicks the interface's own import button, so the interface's
+tile size applies and the interface sends `importTileset` as usual. Quit closes
+the window, which saves a running game first.
+
+`importTileset` opens the system file dialog for one PNG sheet. The host
+checks the PNG header and chunks before decoding, with the Mac host's size,
+pixel, tile-count and canonical-base64 limits, and refuses animated PNGs.
+Electron decodes PNG only, so the BMP sheets that the Mac accepts are refused.
+The host re-encodes the sheet as 8-bit PNG and sends
+`{type:"tilesetImported", tileset, persistent:true}`. It replaces
+`imported-tileset.json` in the data folder only after writing the new file
+completely, and adds that tileset to `boot.tilesets` at the next start. An
+invalid saved file is kept and reported as an `error`.
+
+At startup, before the interface lists saves, the Electron host recovers
+interrupted games in every existing mode folder, as the Mac host does. A
+checkpoint is skipped unless its owner process is gone. Recovery copies the
+level files to a private `.recovery-*` staging folder in the mode folder, runs
+the runtime's `recover` (`recover.exe` on Windows) with `-d` set to that folder,
+publishes the rebuilt save only if none exists, and moves the original level
+files to `Recovered Checkpoints/`. A failed recovery leaves the checkpoint
+untouched. Recovered and failed games are reported as `message` and `error`
+events prefixed with the mode name.
+
 ## Host → engine
 
 ### Play mode and native UI messages

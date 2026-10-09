@@ -155,6 +155,8 @@ python3 scripts/test-electron.py --quit-timeout
 python3 scripts/test-electron.py --mode beginner
 python3 scripts/test-electron.py --mode explore
 python3 scripts/test-electron.py --mode pauper
+python3 scripts/test-electron-recovery.py
+python3 scripts/test-electron-tileset-import.py
 python3 scripts/test-native.py --mode beginner
 python3 scripts/test-native.py --mode explore
 python3 scripts/test-native.py --mode pauper
@@ -177,7 +179,7 @@ Contributor and coding-agent guidance lives in [AGENTS.md](AGENTS.md). Commit so
 ## Implementation
 
 - `native/`: Cocoa application, offline WebKit renderer, process bridge, save directory, menus, and tileset import.
-- `electron/`: Electron host for Windows and Linux, process bridge and save directory.
+- `electron/`: Electron host for Windows and Linux, process bridge, save directory, recovery, window menu and tileset import.
 - `web/`: dependency-free game UI and tile canvas.
 - `engine/`: custom NetHack window port and runtime output.
 - `scripts/`: reproducible engine/application builds and verification.
