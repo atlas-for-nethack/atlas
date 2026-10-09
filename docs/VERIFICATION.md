@@ -291,6 +291,21 @@ Nobody looked for the journal's recovery message on Windows. Issue #11 records
 that a wrong tile size cannot be corrected without choosing the file again.
 Nobody tested a packaged Windows app or Windows ARM64.
 
+For issue #10, `.github/workflows/macos.yml` runs on every push and pull
+request to `electron-port` on a GitHub macOS runner. It runs
+`scripts/build-app.sh` and `scripts/verify-bundle.py`. Then it runs
+`test-engine.py`, `test-actions.py`, `test-context.py`, `test-item-menus.py`,
+`test-engine-fork.py`, `test-explore.py` and every `web/*.test.js`. If a step
+fails, it uploads `.artifacts/`, which holds the build log and the engine
+test events. The tests use temporary game folders only. A pass proves that the
+Universal 2 app builds, passes bundle verification, and that the arm64 engine
+passes those tests on the runner. It does not prove Mac gameplay in the app,
+Intel gameplay, macOS 13 support or Developer ID signing. The native app test
+(`test-native.py`) needs a logged-in desktop, so the workflow does not run it.
+The upstream maintainer still runs it. `test-actions.py` sometimes fails its
+"wait takes one turn" check on a random game. Rerun it before you treat that
+failure as real. The workflow did not run on GitHub before this record on 2026-10-08.
+
 On 2026-10-08, the README clarification for issue #2 was checked against the
 pinned NetHack 5.0 source: the Deaf property, ambient sounds, monster speech,
 chat replies, hearing-dependent item use and hearing-message handling.

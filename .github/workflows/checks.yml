@@ -1,4 +1,4 @@
-# Engine-free checks for the fork. Engine and app tests still run locally.
+# Engine-free checks for the fork. macos.yml builds and tests the Mac app.
 name: Checks
 on: [push, pull_request]
 jobs:

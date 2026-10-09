@@ -1,0 +1,41 @@
+# Builds and checks the Mac app so Windows and Linux work cannot break it.
+# The native app test needs a logged-in desktop and stays with the maintainer.
+name: macOS
+on:
+  push:
+    branches: [electron-port]
+  pull_request:
+    branches: [electron-port]
+jobs:
+  mac-build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 24
+      - name: Build the app
+        shell: bash
+        run: |
+          mkdir -p .artifacts
+          ./scripts/build-app.sh 2>&1 | tee .artifacts/build-app.log
+      - name: Verify the bundle
+        run: python3 scripts/verify-bundle.py
+      # Each test makes its own temporary game folders. No real save is used.
+      - name: Engine tests
+        run: |
+          python3 scripts/test-engine.py
+          python3 scripts/test-actions.py
+          python3 scripts/test-context.py
+          python3 scripts/test-item-menus.py
+          python3 scripts/test-engine-fork.py
+          python3 scripts/test-explore.py
+      - name: Interface tests
+        run: for test in web/*.test.js; do node "$test"; done
+      - name: Upload diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: macos-diagnostics
+          path: .artifacts/
+          if-no-files-found: ignore
