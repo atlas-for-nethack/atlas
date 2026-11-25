@@ -20,7 +20,7 @@
     },
     {
       "file": "scripts/package.py",
-      "sha256": "7257a515016dd2ff54717df965e8fec286f71e5e0c863a298e84052c24f59c19"
+      "sha256": "4d35a0080adae8a2bdd2ea08df9929668a42e7575c59dcd6ea079cdc5681f433"
     },
     {
       "file": "vendor/NetHack-5.0.0/dat/nhtiles.bmp",

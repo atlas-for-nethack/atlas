@@ -5,7 +5,7 @@ October 6, 2026. The owner's final choice is MIT for independently owned applica
 | Component | Terms and boundary |
 | --- | --- |
 | Pinned NetHack 5.0.0, maintained window port and actual upstream modifications | NGPL, full text in assets/tiles/sources/NGPL.txt and the engine's license resource; dated modification notices and complete source accompany the engine |
-| Pinned Lua 5.4.8 | MIT, upstream copyright/notice in docs/LUA-LICENSE.txt and supplied original source archive |
+| Pinned Lua 5.4.9 | MIT, upstream copyright/notice in docs/LUA-LICENSE.txt and supplied original source archive |
 | NetHack Classic artwork and NetHack-derived names/order/catalog metadata | NGPL; no CC BY alternative for upstream-derived material |
 | Original Lantern and Soot & Brass pixels, Classic/Modern editions, regional derivatives, procedural frost and Water artwork | CC BY 4.0 under the owner's final choice; full text, attribution, scope and retained sources in the family/central notices |
 | Independent Swift source under `native/`, including host, recovery, import and development launchers | MIT, explicitly selected by the owner on October 6, 2026; scoped grant in [LICENSE.txt](../LICENSE.txt), full text in [MIT-LICENSE.txt](MIT-LICENSE.txt) |

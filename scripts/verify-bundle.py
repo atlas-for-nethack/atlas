@@ -10,9 +10,11 @@ import plistlib
 import json
 import struct
 import hashlib
+import re
 import subprocess
 import importlib.util
 import tarfile
+import tempfile
 import package
 
 root = Path(__file__).resolve().parents[1]
@@ -44,13 +46,21 @@ for path in [app / 'Contents/MacOS/NetHackAtlas', resources / 'engine/nethack', 
         for line in dependencies.splitlines()[1:]:
             dependency = line.strip().split(' (')[0]
             assert dependency.startswith(('/usr/lib/', '/System/Library/')), (path, dependency)
+lua_archive = next(name for name in package.source_pins() if name.startswith('lua-'))
+lua_version = lua_archive.removeprefix('lua-').removesuffix('.tar.gz').encode()
+with tempfile.TemporaryDirectory() as directory:
+    for arch in ('arm64', 'x86_64'):
+        thin = Path(directory) / arch
+        subprocess.run(['lipo', '-thin', arch, str(resources / 'engine/nethack'), '-output', str(thin)], check=True)
+        linked_versions = set(re.findall(rb'Lua (\d+\.\d+\.\d+)', thin.read_bytes()))
+        assert linked_versions == {lua_version}, f'{arch} engine has unexpected Lua versions: {linked_versions}'
 for name in ['LICENSE.txt', 'LICENSES.md', 'docs/MIT-LICENSE.txt', 'docs/LUA-LICENSE.txt', 'web/index.html', 'web/app.js', 'web/input.js', 'web/character.js', 'web/tiles.js', 'web/styles.css', 'engine/nhdat', 'engine/license',
              'engine/sysconf', 'assets/tiles/creature-scale.json', 'assets/tiles/creature_scale.py', 'assets/tiles/manifest.json', 'assets/tiles/LICENSES.txt',
              'assets/tiles/lantern/LICENSE.txt', 'assets/tiles/lantern/modern-provenance.json',
              'assets/tiles/soot-and-brass/LICENSE.txt',
              'assets/tiles/soot-and-brass/modern-provenance.json', 'assets/tiles/sources/CC-BY-4.0.txt',
              'assets/tiles/sources/NGPL.txt',
-             'Source/atlas-source.tar.gz', 'Source/nethack-500-src.tgz', 'Source/lua-5.4.8.tar.gz',
+             'Source/atlas-source.tar.gz', 'Source/nethack-500-src.tgz', 'Source/lua-5.4.9.tar.gz',
              'Source/apply-beginner-patch.py', 'Source/package.py', 'Source/source-pins.json', 'docs/ENGINE_FORK.md',
              'Source/engine-upstream-modifications.tar.gz', 'Source/engine-fork-audit.json']:
     assert (resources / name).is_file(), name

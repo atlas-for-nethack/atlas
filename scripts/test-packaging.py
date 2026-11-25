@@ -295,12 +295,12 @@ class PackagingTests(unittest.TestCase):
 
     def pins(self):
         return {name: {'sha256': hashlib.sha256(data).hexdigest(), 'url': 'https://invalid.example/' + name}
-                for name, data in [('nethack-500-src.tgz', b'NetHack fixture'), ('lua-5.4.8.tar.gz', b'Lua fixture')]}
+                for name, data in [('nethack-500-src.tgz', b'NetHack fixture'), ('lua-5.4.9.tar.gz', b'Lua fixture')]}
 
     def test_cached_offline_sources_never_download(self):
         pins = self.pins()
         self.file('vendor/nethack-500-src.tgz', b'NetHack fixture')
-        self.file('vendor/lua-5.4.8.tar.gz', b'Lua fixture')
+        self.file('vendor/lua-5.4.9.tar.gz', b'Lua fixture')
         with patch('package.urllib.request.urlopen', side_effect=AssertionError('network forbidden')) as network:
             package.ensure_sources(self.root / 'vendor', offline=True, pins=pins)
             package.ensure_sources(self.root / 'vendor', pins=pins)
@@ -318,14 +318,14 @@ class PackagingTests(unittest.TestCase):
                 package.ensure_sources(self.root / 'vendor', pins=pins)
             network.assert_not_called()
         self.assertEqual((self.root / 'vendor/nethack-500-src.tgz').read_bytes(), b'corrupt sentinel')
-        self.assertFalse((self.root / 'vendor/lua-5.4.8.tar.gz').exists())
+        self.assertFalse((self.root / 'vendor/lua-5.4.9.tar.gz').exists())
 
     def test_both_pins_checked_including_cached_lua_and_symlinks(self):
         self.file('vendor/nethack-500-src.tgz', b'NetHack fixture')
-        lua = self.file('vendor/lua-5.4.8.tar.gz', b'Lua fixture')
+        lua = self.file('vendor/lua-5.4.9.tar.gz', b'Lua fixture')
         package.verify_pins(self.root / 'vendor', self.pins())
         lua.write_bytes(b'corrupt Lua')
-        with self.assertRaisesRegex(ValueError, 'lua-5.4.8.tar.gz'):
+        with self.assertRaisesRegex(ValueError, 'lua-5.4.9.tar.gz'):
             package.verify_pins(self.root / 'vendor', self.pins())
         lua.unlink()
         lua.symlink_to(self.file('elsewhere', b'Lua fixture'))
@@ -333,14 +333,14 @@ class PackagingTests(unittest.TestCase):
             package.verify_pins(self.root / 'vendor', self.pins())
 
     def test_download_failure_does_not_publish_invalid_archive(self):
-        pins = {'lua-5.4.8.tar.gz': self.pins()['lua-5.4.8.tar.gz']}
+        pins = {'lua-5.4.9.tar.gz': self.pins()['lua-5.4.9.tar.gz']}
         with patch('package.urllib.request.urlopen', return_value=io.BytesIO(b'corrupt download')):
             with self.assertRaisesRegex(ValueError, 'Downloaded source archive checksum'):
                 package.ensure_sources(self.root / 'vendor', pins=pins)
         self.assertEqual(list((self.root / 'vendor').iterdir()), [])
         with patch('package.urllib.request.urlopen', return_value=io.BytesIO(b'Lua fixture')):
             package.ensure_sources(self.root / 'vendor', pins=pins)
-        self.assertEqual((self.root / 'vendor/lua-5.4.8.tar.gz').read_bytes(), b'Lua fixture')
+        self.assertEqual((self.root / 'vendor/lua-5.4.9.tar.gz').read_bytes(), b'Lua fixture')
 
     def test_failed_build_preflight_preserves_previous_complete_app(self):
         # Exercise the real entrypoint only up to its intentionally failing pin
@@ -396,6 +396,7 @@ class PackagingTests(unittest.TestCase):
                          'engine/hints', 'engine/sysconf', 'scripts/build-engine.sh',
                          'scripts/package.py', 'scripts/source-pins.json',
                          'docs/SOURCE.md', 'README.md', 'AGENTS.md', 'LICENSE.txt', 'LICENSES.md', '.gitignore',
+                         'mise.toml', 'mise.lock',
                          'vendor/NetHack-5.0.0/src/allmain.c',
                          'vendor/NetHack-5.0.0/win/shim/winshim.c',
                          'vendor/NetHack-5.0.0/sys/unix/hints/atelier')
@@ -404,7 +405,7 @@ class PackagingTests(unittest.TestCase):
         for name in ('nethack', 'recover', 'nhdat', 'license', 'symbols', 'sysconf'):
             self.file('engine/runtime/' + name)
         self.file('vendor/nethack-500-src.tgz', b'NetHack fixture')
-        self.file('vendor/lua-5.4.8.tar.gz', b'Lua fixture')
+        self.file('vendor/lua-5.4.9.tar.gz', b'Lua fixture')
         self.file('assets/.DS_Store', b'cache sentinel')
         self.file('scripts/source.pyc', b'cache sentinel')
         self.file('assets/private.env', b'untracked private sentinel')

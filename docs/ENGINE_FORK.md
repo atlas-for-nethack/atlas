@@ -8,7 +8,7 @@ upstream source path, even though it is not a fork of the gameplay rules.
 
 ## Upstream baseline
 
-Inventory maintained October 6, 2026; source audit counts checked October 6, 2026:
+Inventory maintained through November 25, 2026; source audit counts checked November 25, 2026:
 
 - Release: **NetHack 5.0.0**.
 - Original archive: [nethack-500-src.tgz](https://www.nethack.org/download/5.0.0/nethack-500-src.tgz).
@@ -122,7 +122,13 @@ and sets relocatable paths and a macOS 13 deployment target. These are build
 choices, not edits to the original configuration headers. The packaged private
 system configuration comes from [`engine/sysconf`](../engine/sysconf).
 
-Lua 5.4.8 is a separate checksum-pinned dependency under its MIT license, not an
+November 25, 2026: the build hint sets NetHack's existing
+`NHL_VERSION_EXPECTED` override to `50409`, matching the pinned Lua 5.4.9
+release while retaining NetHack's sandbox version check. The prepared build
+tree is refreshed when the source pin or build hint changes. This does not
+modify another upstream NetHack source file.
+
+Lua 5.4.9 is a separate checksum-pinned dependency under its MIT license, not an
 upstream NetHack patch. Native and cross-compilation support is maintained in
 [`scripts/build-engine.sh`](../scripts/build-engine.sh) and
 [`engine/build-cross.py`](../engine/build-cross.py).
@@ -168,7 +174,7 @@ with these files under `Contents/Resources/Source/`:
 | `engine-upstream-modifications.tar.gz` | Exact updated `src/allmain.c`, replacement `win/shim/winshim.c`, and added `sys/unix/hints/atelier` used by this build. Extract over the original NetHack tree to inspect the updated source directly. |
 | `engine-fork-audit.json` | File hashes and classified changes measured when the source payload was packaged. |
 | `atlas-source.tar.gz` | Maintained port, patch helper, build scripts, documentation and application source. |
-| `lua-5.4.8.tar.gz` | Complete source for the static Lua dependency. |
+| `lua-5.4.9.tar.gz` | Complete source for the static Lua dependency. |
 
 The patch helper, port, hints and system configuration also accompany the
 archives as individual files. [SOURCE.md](SOURCE.md) gives reconstruction steps.
