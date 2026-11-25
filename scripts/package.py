@@ -25,7 +25,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 PINS_FILE = Path(__file__).with_name('source-pins.json')
-SOURCE_ROOTS = ('native', 'web', 'engine', 'scripts', 'tools', 'docs', 'README.md', 'AGENTS.md', 'LICENSE.txt', 'LICENSES.md', '.gitignore')
+SOURCE_ROOTS = ('native', 'web', 'engine', 'scripts', 'tools', 'docs', 'README.md', 'AGENTS.md', 'LICENSE.txt', 'LICENSES.md', '.gitignore', 'mise.toml', 'mise.lock')
 RESOURCE_ROOTS = ('web', 'assets', 'tools', 'docs', 'README.md', 'AGENTS.md', 'LICENSE.txt', 'LICENSES.md')
 SOURCE_INVENTORY = 'source-inventory.json'
 MAX_ARCHIVE_DEPTH = 8

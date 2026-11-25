@@ -1,0 +1,8 @@
+min_version = "2026.11.7"
+
+[tools]
+node = "26.13.1"
+
+[settings]
+lockfile = true
+lockfile_platforms = ["macos-arm64", "macos-x64"]

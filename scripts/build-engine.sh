@@ -8,20 +8,26 @@ export PYTHONDONTWRITEBYTECODE=1
 python3 scripts/package.py pins vendor --ensure
 mkdir -p engine/runtime
 ARCHIVE=vendor/nethack-500-src.tgz
-[ -d vendor/NetHack-5.0.0 ] || tar xzf "$ARCHIVE" -C vendor
 SOURCE="$ROOT/vendor/NetHack-5.0.0"
+BUILD_SIGNATURE="$(cat scripts/source-pins.json engine/hints | shasum -a 256 | cut -d ' ' -f 1)"
+# NetHack's generated Makefiles do not rebuild objects when CFLAGS or the Lua
+# source pin changes. Start with a fresh disposable tree for either change.
+if [ -d "$SOURCE" ] && { [ ! -f "$SOURCE/.atlas-build-signature" ] || [ "$(cat "$SOURCE/.atlas-build-signature")" != "$BUILD_SIGNATURE" ]; }; then
+  rm -rf "$SOURCE"
+fi
+[ -d vendor/NetHack-5.0.0 ] || tar xzf "$ARCHIVE" -C vendor
 python3 engine/apply-beginner-patch.py "$SOURCE"
 cp engine/winatelier.c "$SOURCE/win/shim/winshim.c"
 cp engine/hints "$SOURCE/sys/unix/hints/atelier"
 python3 scripts/audit-engine-fork.py
 cd "$SOURCE"
 sh sys/unix/setup.sh sys/unix/hints/atelier
-if [ ! -f lib/lua-5.4.8/src/lua.h ]; then
+if [ ! -f lib/lua-5.4.9/src/lua.h ]; then
   mkdir -p lib
-  tar xzf "$ROOT/vendor/lua-5.4.8.tar.gz" -C lib
+  tar xzf "$ROOT/vendor/lua-5.4.9.tar.gz" -C lib
 fi
-make -j8 all
-make nhtiles.bmp
+make -j8 all LUA_VERSION=5.4.9
+make nhtiles.bmp LUA_VERSION=5.4.9
 # The upstream recover rule does not depend on Makefile/linker flags.
 make -C util -W recover.o recover
 # Universal 2 by default. Cross-compiled generators remain native, so no
@@ -43,4 +49,5 @@ cp dat/nhdat dat/license dat/symbols "$ROOT/engine/runtime/"
 cp "$ROOT/engine/sysconf" "$ROOT/engine/runtime/sysconf"
 mkdir -p "$ROOT/engine/runtime/save"
 touch "$ROOT/engine/runtime/record" "$ROOT/engine/runtime/logfile" "$ROOT/engine/runtime/xlogfile" "$ROOT/engine/runtime/perm"
+printf '%s\n' "$BUILD_SIGNATURE" > "$SOURCE/.atlas-build-signature"
 printf '\nBuilt engine/runtime/nethack and bundled data.\n'

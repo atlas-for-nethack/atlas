@@ -1,6 +1,6 @@
 # NetHack engine integration
 
-This is the real NetHack 5.0.0 engine, downloaded from the official release and pinned by SHA-256. `scripts/build-engine.sh` verifies the source archive, installs the custom window port, compiles static Lua 5.4.8 (also checksum pinned), builds NetHack and its game database, and produces Universal 2 executables in `engine/runtime/`.
+This is the real NetHack 5.0.0 engine, downloaded from the official release and pinned by SHA-256. `scripts/build-engine.sh` verifies the source archive, installs the custom window port, compiles static Lua 5.4.9 (also checksum pinned), builds NetHack and its game database, and produces Universal 2 executables in `engine/runtime/`.
 
 See [the living engine fork record](../docs/ENGINE_FORK.md) for the exact upstream modifications, dated notices and NGPL source payload. `python3 scripts/audit-engine-fork.py` checks the prepared source tree against the pinned release; engine builds and app source packaging run this audit automatically.
 

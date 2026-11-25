@@ -101,6 +101,8 @@ The build downloads checksum-pinned NetHack and Lua sources, compiles both archi
 
 No additional packages are required for the build. The artwork and icon are already in the repository. Pillow is needed only to regenerate tile assets; Node.js is needed only for the focused JavaScript tests. Later builds can reuse the downloaded source archives.
 
+For JavaScript tests, install [mise](https://mise.jdx.dev/getting-started.html), then run `mise trust mise.toml` and `mise install --locked`. The project lock pins Node for Apple Silicon and Intel Macs. Run tests with `mise exec -- node web/input.test.js`; Node is not included in the player app.
+
 The engine is a separate C process with a custom window port; it retains the upstream NetHack game rules. Cocoa and system WebKit provide the desktop shell and interface.
 
 The [living NetHack fork record](docs/ENGINE_FORK.md) documents the optional Beginner starting-supply hook, the window-port replacement, dated change notices and the source packaged with each build.

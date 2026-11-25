@@ -250,15 +250,37 @@ The following limits remain relevant:
   and `Program in disorder!`; navigation, corridor restoration and save/restore
   completed. No upstream patch or warning suppression has been applied.
 
-The engine pins NetHack 5.0.0 and Lua 5.4.8. Track NetHack reports C500-6
-(container-item buffer handling) and C500-12 (recovery while swallowed) against
-[the upstream known-bug list](https://www.nethack.org/v500/bugs.html), and review
-[Lua 5.4.8 parser, collector and finalization issues](https://www.lua.org/bugs.html#5.4.8)
-against the embedded runtime. No backport or dependency substitution addresses
-these follow-ups in this snapshot. NetHack's bounded Lua allocator and safe
-level-loading libraries narrow exposure, but smoke tests do not establish
-absence or remediation. Dependency updates need focused reproduction, updated
-source inventory/notices, save compatibility and rebuilt runtime checks.
+On November 25, 2026, a focused static scan of the then-current `f6b6cec`
+branch found no reportable finding in the bridge, imported tilesets, recovery,
+build pins or engine input. That scan was not exhaustive and did not inspect
+generated or downloaded source. A diff-scan attempt on this branch failed to
+resolve its Git HEAD; all changed text files were reviewed directly. The app
+embeds checksum-pinned NetHack 5.0.0 and now
+[Lua 5.4.9](https://www.lua.org/versions.html), the final 5.4 release;
+[Node 26.13.1](https://nodejs.org/en/blog/release/v26.13.1/) is pinned for
+developer tests only. No third-party JavaScript or Python package is required
+at player runtime.
+
+The Lua update passed a fresh Universal 2 engine build, upstream source audit
+(1,263 unchanged files; the same two documented modifications), real-engine
+gameplay, save/restore, recovery, release-engine, action, context, item-menu and
+isolation checks. Both engine slices contain only the expected Lua version.
+The rebuilt app passed source, license, architecture, system-dependency, signature
+and bundle checks. Focused JavaScript and 19 packaging tests passed. An isolated
+native Cocoa/WebKit smoke test passed on Apple Silicon for startup, map,
+inventory, inspection, save, restore and quit. The first native test attempt
+aborted inside macOS application registration under the command sandbox; the
+same test passed outside that sandbox. PNG pixels generated from the five
+recipes matched shipped artwork, and only the provenance hash of the changed
+packaging helper was updated; shipped PNG bytes were retained.
+
+[NetHack's C500-6 and C500-12 reports](https://www.nethack.org/v500/bugs.html)
+remain in the pinned 5.0.0 source. [C500-6's container buffer
+fix](https://github.com/NetHack/NetHack/commit/3a0c6f17c72bdead48f38fd52080aee55013b266)
+is in the TTY window code that Atlas excludes from its build. C500-12 can affect
+checkpoint recovery when swallowed or engulfed and remains a data-preservation
+follow-up.
+This review does not establish complete gameplay coverage or Intel execution.
 
 Documentation-only changes require content, command and link inspection, without
 rerunning unrelated gameplay suites.

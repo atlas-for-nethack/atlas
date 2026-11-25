@@ -1,13 +1,13 @@
 # Included source and third-party licenses
 
-The app includes the complete, checksum-verified NetHack 5.0.0 release archive and Lua 5.4.8 source archive under `Contents/Resources/Source`. `atlas-source.tar.gz` contains the application source, modified NetHack window port, build configuration, scripts and documentation. Tile artwork, transformation source, conversion script and notices are under `Contents/Resources/assets/tiles`.
+The app includes the complete, checksum-verified NetHack 5.0.0 release archive and Lua 5.4.9 source archive under `Contents/Resources/Source`. `atlas-source.tar.gz` contains the application source, modified NetHack window port, build configuration, scripts, developer-tool pins and documentation. Tile artwork, transformation source, conversion script and notices are under `Contents/Resources/assets/tiles`.
 
 The [living engine fork record](ENGINE_FORK.md) identifies every modified upstream file and the dated NGPL notices. `engine-upstream-modifications.tar.gz` contains the exact two updated upstream source files and the added build hint. `engine-fork-audit.json` records the source comparison performed during packaging. These accompany the original release archive so recipients can inspect the updated files directly or reconstruct them using the maintained build scripts.
 
 To reconstruct a build tree from the application:
 
 1. Extract `atlas-source.tar.gz` into a writable folder. Its `source-inventory.json` records the maintained files for offline packaging without a Git checkout.
-2. Create `vendor/` there and copy in `nethack-500-src.tgz` and `lua-5.4.8.tar.gz` from the app's Source folder.
+2. Create `vendor/` there and copy in `nethack-500-src.tgz` and `lua-5.4.9.tar.gz` from the app's Source folder.
 3. Copy the app's `Contents/Resources/assets` directory into the build folder.
 4. Run `ATLAS_OFFLINE_BUILD=1 ./scripts/build-app.sh` on a Mac with Xcode command-line tools and Python 3. This mode refuses downloads, uses the included NetHack and Lua archives, and checks both pins before preparing or packaging a build. Missing or corrupt archives fail explicitly. App packaging always rebuilds a native-only engine/recovery runtime as Universal 2; `ENGINE_ARCH=native ./scripts/build-engine.sh` remains available for engine-only iteration. Omit the environment variable only when downloads of missing pinned archives are intended.
 
